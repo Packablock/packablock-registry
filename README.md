@@ -1,6 +1,12 @@
 # packablock-api
 
-To install dependencies:
+The registry server component for packablock.
+
+<img width="128" height="128" alt="packablock-registry-avatar-512" src="https://github.com/user-attachments/assets/38f97ec9-3e72-49e5-b98b-2c0555a760ac" />
+
+
+
+### To install dependencies:
 
 ```bash
 bun install
