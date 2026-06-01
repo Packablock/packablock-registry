@@ -15,6 +15,8 @@ import {
 	deleteWebhook,
 	archiveLog,
 	getArchivedLogs,
+	getCachedPackage,
+	saveCachedPackage,
 } from "./database.js";
 import { verifyInMemoryChain, splitRawDocuments } from "./verify.js";
 import { verifyGithubOidcToken } from "./oidc.js";
@@ -957,11 +959,26 @@ server.post("/api/v1/packages/latest", async (request, reply) => {
 		});
 	}
 
-	// User is authorized! Fetch latest versions of the requested packages from NPM registry
+	// User is authorized! Fetch latest versions of the requested packages with caching
 	const results: Record<string, string> = {};
+	const cacheTtlMs = process.env.PACKAGE_CACHE_TTL_MS
+		? Number.parseInt(process.env.PACKAGE_CACHE_TTL_MS, 10)
+		: 3600000; // Default: 1 hour
 
 	await Promise.all(
 		packages.map(async (pkg) => {
+			// 1. Try reading from persistent SQLite cache first
+			try {
+				const cachedVersion = getCachedPackage(pkg, cacheTtlMs);
+				if (cachedVersion !== null) {
+					results[pkg] = cachedVersion;
+					return;
+				}
+			} catch (err) {
+				// Fallback to fetching
+			}
+
+			// 2. Fetch from upstream NPM registry
 			try {
 				const res = await fetch(`https://registry.npmjs.org/${pkg}/latest`, {
 					signal: AbortSignal.timeout(3000),
@@ -970,6 +987,10 @@ server.post("/api/v1/packages/latest", async (request, reply) => {
 					const data = (await res.json()) as any;
 					if (data && data.version) {
 						results[pkg] = data.version;
+						// Save to cache
+						try {
+							saveCachedPackage(pkg, data.version);
+						} catch (e) {}
 					}
 				}
 			} catch (err) {

@@ -35,6 +35,12 @@ export interface ArchivedLogRecord {
 	archived_at: string;
 }
 
+export interface PackageCacheRecord {
+	package_name: string;
+	version: string;
+	cached_at: string;
+}
+
 export interface WebhookRecord {
 	id: number;
 	repo_id: number;
@@ -124,6 +130,15 @@ export function initDb(): void {
       block_count INTEGER NOT NULL,
       last_block_hash TEXT NOT NULL,
       archived_at TEXT NOT NULL
+    );
+  `);
+
+	// Create Package Cache table for caching upstream package versions
+	db.run(`
+    CREATE TABLE IF NOT EXISTS package_cache (
+      package_name TEXT PRIMARY KEY,
+      version TEXT NOT NULL,
+      cached_at TEXT NOT NULL
     );
   `);
 
@@ -359,4 +374,41 @@ export function getArchivedLogs(repoId: number): ArchivedLogRecord[] {
 		"SELECT * FROM archived_logs WHERE repo_id = ? ORDER BY epoch_index ASC;",
 	);
 	return query.all(repoId) as ArchivedLogRecord[];
+}
+
+/**
+ * Retrieves a cached package version if it exists and is within TTL.
+ */
+export function getCachedPackage(
+	packageName: string,
+	ttlMs: number,
+): string | null {
+	const query = db.prepare(
+		"SELECT * FROM package_cache WHERE package_name = ?;",
+	);
+	const record = query.get(packageName) as PackageCacheRecord | null;
+	if (record) {
+		const age = Date.now() - new Date(record.cached_at).getTime();
+		if (age < ttlMs) {
+			return record.version;
+		}
+	}
+	return null;
+}
+
+/**
+ * Caches or updates an upstream package version.
+ */
+export function saveCachedPackage(packageName: string, version: string): void {
+	const now = new Date().toISOString();
+	db.run(
+		`
+    INSERT INTO package_cache (package_name, version, cached_at)
+    VALUES (?, ?, ?)
+    ON CONFLICT(package_name) DO UPDATE SET
+      version = excluded.version,
+      cached_at = excluded.cached_at;
+  `,
+		[packageName, version, now],
+	);
 }
