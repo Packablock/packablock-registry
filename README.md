@@ -1,4 +1,4 @@
-# packablock-api
+# packablock-registry (Packablock Supply Chain Trust Registry)
 
 The registry server component for packablock.
 

@@ -221,6 +221,14 @@ export function verifyInMemoryChain(chainContent: string): VerificationReport {
     const dataDocStr = docs[2 * i];
     const metaDocStr = docs[2 * i + 1];
     
+    if (dataDocStr === undefined || metaDocStr === undefined) {
+      return {
+        valid: false,
+        reason: 'Malformed document pair in chain.',
+        tamperedComponent: 'structure'
+      };
+    }
+    
     const blockReport = verifySingleBlock(i, dataDocStr, metaDocStr, expectedPrevHash);
     if (!blockReport.valid) {
       return blockReport;

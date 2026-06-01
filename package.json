@@ -1,5 +1,5 @@
 {
-  "name": "packablock-api",
+  "name": "packablock-registry",
   "module": "index.ts",
   "type": "module",
   "scripts": {

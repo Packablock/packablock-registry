@@ -22,7 +22,7 @@ server.addContentTypeParser(['text/yaml', 'application/yaml', 'text/plain'], { p
  * Health check endpoint
  */
 server.get('/health', async () => {
-  return { status: 'ok', service: 'packablock-api' };
+  return { status: 'ok', service: 'packablock-registry' };
 });
 
 /**
@@ -143,7 +143,7 @@ server.post('/api/v1/log/push', async (request, reply) => {
       headers: {
         'Authorization': `Bearer ${token}`,
         'Accept': 'application/vnd.github+json',
-        'User-Agent': 'Packablock-API'
+        'User-Agent': 'Packablock-Registry'
       }
     });
 
@@ -166,7 +166,7 @@ server.post('/api/v1/log/push', async (request, reply) => {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/vnd.github+json',
-          'User-Agent': 'Packablock-API'
+          'User-Agent': 'Packablock-Registry'
         }
       }
     );
@@ -376,7 +376,7 @@ server.post('/api/v1/packages/latest', async (request, reply) => {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Accept': 'application/vnd.github+json',
-            'User-Agent': 'Packablock-API'
+            'User-Agent': 'Packablock-Registry'
           }
         });
 
@@ -436,7 +436,7 @@ export async function startServer(port = 3000): Promise<void> {
   
   try {
     await server.listen({ port, host: '0.0.0.0' });
-    console.log(`🚀 Packablock API Server successfully listening on http://localhost:${port}`);
+    console.log(`🚀 Packablock Supply Chain Trust Registry successfully listening on http://localhost:${port}`);
   } catch (err) {
     server.log.error(err);
     process.exit(1);
