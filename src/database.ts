@@ -25,6 +25,16 @@ export interface LogRecord {
 	updated_at: string;
 }
 
+export interface ArchivedLogRecord {
+	id: number;
+	repo_id: number;
+	epoch_index: number;
+	chain_content: string;
+	block_count: number;
+	last_block_hash: string;
+	archived_at: string;
+}
+
 export interface WebhookRecord {
 	id: number;
 	repo_id: number;
@@ -101,6 +111,19 @@ export function initDb(): void {
       url TEXT NOT NULL,
       secret TEXT,
       created_at TEXT NOT NULL
+    );
+  `);
+
+	// Create Archived Logs table for key rotations / rollovers
+	db.run(`
+    CREATE TABLE IF NOT EXISTS archived_logs (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      repo_id INTEGER NOT NULL REFERENCES repositories(id) ON DELETE CASCADE,
+      epoch_index INTEGER NOT NULL,
+      chain_content TEXT NOT NULL,
+      block_count INTEGER NOT NULL,
+      last_block_hash TEXT NOT NULL,
+      archived_at TEXT NOT NULL
     );
   `);
 
@@ -299,4 +322,41 @@ export function deleteWebhook(id: number, repoId: number): boolean {
 		repoId,
 	]);
 	return result.changes > 0;
+}
+
+/**
+ * Archives a repository's current active package log during key rollover.
+ */
+export function archiveLog(
+	repoId: number,
+	chainContent: string,
+	blockCount: number,
+	lastBlockHash: string,
+): void {
+	const now = new Date().toISOString();
+
+	// Calculate next epoch index (how many logs are already archived for this repo)
+	const countQuery = db.prepare(
+		"SELECT COUNT(*) as count FROM archived_logs WHERE repo_id = ?",
+	);
+	const countResult = countQuery.get(repoId) as { count: number };
+	const nextEpochIndex = countResult.count;
+
+	db.run(
+		`
+    INSERT INTO archived_logs (repo_id, epoch_index, chain_content, block_count, last_block_hash, archived_at)
+    VALUES (?, ?, ?, ?, ?, ?);
+  `,
+		[repoId, nextEpochIndex, chainContent, blockCount, lastBlockHash, now],
+	);
+}
+
+/**
+ * Retrieves all archived package logs for a repository sorted by epoch index.
+ */
+export function getArchivedLogs(repoId: number): ArchivedLogRecord[] {
+	const query = db.prepare(
+		"SELECT * FROM archived_logs WHERE repo_id = ? ORDER BY epoch_index ASC;",
+	);
+	return query.all(repoId) as ArchivedLogRecord[];
 }

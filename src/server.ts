@@ -13,6 +13,8 @@ import {
 	addWebhook,
 	getWebhooks,
 	deleteWebhook,
+	archiveLog,
+	getArchivedLogs,
 } from "./database.js";
 import { verifyInMemoryChain, splitRawDocuments } from "./verify.js";
 import { verifyGithubOidcToken } from "./oidc.js";
@@ -618,6 +620,177 @@ server.post("/api/v1/log/push", async (request, reply) => {
 		return reply.status(500).send({
 			error: "Internal Server Error",
 			message: `Failed to save log history to database: ${err.message}`,
+		});
+	}
+});
+
+/**
+ * Coordinate key rollover and archive the legacy package chain history.
+ * POST /api/v1/repo/:owner/:repo/rollover
+ */
+server.post("/api/v1/repo/:owner/:repo/rollover", async (request, reply) => {
+	const { owner, repo } = request.params as { owner: string; repo: string };
+	const body = request.body as any;
+
+	if (!body || !body.previous_chain_hash || !body.new_genesis_block) {
+		return reply.status(400).send({
+			error: "Bad Request",
+			message:
+				'Fields "previous_chain_hash" and "new_genesis_block" are required in body.',
+		});
+	}
+
+	const { previous_chain_hash, new_genesis_block } = body;
+
+	// Extract auth headers
+	const authHeader = request.headers["authorization"];
+	const repoTokenHeader = request.headers["x-repo-token"] as string | undefined;
+
+	let token = "";
+	if (repoTokenHeader) {
+		token = repoTokenHeader;
+	} else if (authHeader && authHeader.startsWith("Bearer ")) {
+		token = authHeader.substring(7);
+	}
+
+	if (!token) {
+		return reply.status(401).send({
+			error: "Unauthorized",
+			message:
+				'Authentication required. Provide "X-Repo-Token" or "Authorization: Bearer <token>" header.',
+		});
+	}
+
+	// Resolve repo by token
+	const tokenRepo = getRepositoryByToken(token);
+	if (
+		!tokenRepo ||
+		tokenRepo.owner.toLowerCase() !== owner.toLowerCase() ||
+		tokenRepo.repo.toLowerCase() !== repo.toLowerCase()
+	) {
+		return reply.status(403).send({
+			error: "Forbidden",
+			message: "Invalid registration token for this repository path.",
+		});
+	}
+
+	// Fetch current active log
+	const activeLog = getLog(tokenRepo.id);
+	if (!activeLog) {
+		return reply.status(400).send({
+			error: "Bad Request",
+			message:
+				"No active package log found to roll over. Push an initial chain log first.",
+		});
+	}
+
+	// Assert previous_chain_hash matches activeLog.last_block_hash
+	if (activeLog.last_block_hash !== previous_chain_hash) {
+		return reply.status(409).send({
+			error: "Conflict",
+			message: `Rollover alignment mismatch. Current anchored hash is '${activeLog.last_block_hash}', but client provided '${previous_chain_hash}'.`,
+		});
+	}
+
+	// Verify the new genesis block
+	const report = verifyInMemoryChain(new_genesis_block);
+	if (!report.valid) {
+		return reply.status(422).send({
+			error: "Unprocessable Entity",
+			message: `Invalid new genesis block chain content: ${report.reason}`,
+		});
+	}
+
+	// Check that the new genesis block links back correctly
+	const docs = splitRawDocuments(new_genesis_block);
+	if (docs.length < 2) {
+		return reply.status(400).send({
+			error: "Bad Request",
+			message:
+				"New genesis block must contain exactly one data doc and one meta doc.",
+		});
+	}
+	const metaDoc = YAML.parse(docs[1]!);
+	const meta = metaDoc?.["$yaml-chain-meta"];
+	if (!meta || meta.block_index !== 0) {
+		return reply.status(400).send({
+			error: "Bad Request",
+			message: "Invalid rollover block index: must be genesis (index 0).",
+		});
+	}
+	if (meta.prev_meta_hash !== previous_chain_hash) {
+		return reply.status(400).send({
+			error: "Bad Request",
+			message: `New genesis block prev_meta_hash '${meta.prev_meta_hash}' does not match expected '${previous_chain_hash}'.`,
+		});
+	}
+
+	try {
+		// 1. Archive the old active log
+		archiveLog(
+			tokenRepo.id,
+			activeLog.chain_content,
+			activeLog.block_count,
+			activeLog.last_block_hash,
+		);
+
+		// 2. Save the new genesis block as the new active log
+		saveLog(tokenRepo.id, new_genesis_block, 1, report.lastBlockHash!);
+
+		return {
+			success: true,
+			owner,
+			repo,
+			archivedBlockCount: activeLog.block_count,
+			archivedChainHash: activeLog.last_block_hash,
+			newGenesisHash: report.lastBlockHash,
+			message:
+				"Key rotation boundary coordinated and legacy log archived successfully.",
+		};
+	} catch (err: any) {
+		request.log.error(err);
+		return reply.status(500).send({
+			error: "Internal Server Error",
+			message: err.message,
+		});
+	}
+});
+
+/**
+ * Retrieve all archived logs for a repository.
+ * GET /api/v1/repo/:owner/:repo/archive
+ */
+server.get("/api/v1/repo/:owner/:repo/archive", async (request, reply) => {
+	const { owner, repo } = request.params as { owner: string; repo: string };
+
+	// Resolve repository
+	const record = getRepositoryByPath(owner, repo);
+	if (!record) {
+		return reply.status(404).send({
+			error: "Not Found",
+			message: `Repository not found: "${owner}/${repo}".`,
+		});
+	}
+
+	try {
+		const archives = getArchivedLogs(record.id);
+		return {
+			success: true,
+			owner,
+			repo,
+			archives: archives.map((archive) => ({
+				epochIndex: archive.epoch_index,
+				blockCount: archive.block_count,
+				lastBlockHash: archive.last_block_hash,
+				chainContent: archive.chain_content,
+				archivedAt: archive.archived_at,
+			})),
+		};
+	} catch (err: any) {
+		request.log.error(err);
+		return reply.status(500).send({
+			error: "Internal Server Error",
+			message: err.message,
 		});
 	}
 });
