@@ -743,7 +743,7 @@ server.post("/api/v1/packages/latest", async (request, reply) => {
 				headers: {
 					Authorization: `Bearer ${token}`,
 					Accept: "application/vnd.github+json",
-					"User-Agent": "Packablock-API",
+					"User-Agent": "Packablock-Registry",
 				},
 			});
 
