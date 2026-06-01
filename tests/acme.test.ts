@@ -132,4 +132,85 @@ describe("Registry ACME Verification Challenge Endpoints", () => {
 		expect(data.error).toBe("Bad Request");
 		expect(data.message).toContain("Invalid verificationType");
 	});
+
+	it("should successfully verify premium pending account via mocked github-api pathway", async () => {
+		// 1. Seed a premium pending record
+		const registerRes = await server.inject({
+			method: "POST",
+			url: "/api/v1/acme/new-account",
+			payload: {
+				owner: "testowner",
+				repo: "premium-api-repo",
+				isPremium: true,
+			},
+		});
+		const registerData = JSON.parse(registerRes.body);
+		expect(registerData.success).toBe(true);
+		expect(registerData.challengeNonce).toBeDefined();
+
+		// Set mock environment variable
+		process.env.MOCK_GITHUB_API = "true";
+
+		// 2. Request verification
+		const verifyRes = await server.inject({
+			method: "POST",
+			url: "/api/v1/acme/verify",
+			payload: {
+				owner: "testowner",
+				repo: "premium-api-repo",
+				verificationType: "github-api",
+			},
+		});
+
+		expect(verifyRes.statusCode).toBe(200);
+		const verifyData = JSON.parse(verifyRes.body);
+		expect(verifyData.success).toBe(true);
+		expect(verifyData.verificationStatus).toBe("verified");
+		expect(verifyData.registrationToken).toBeDefined();
+		expect(verifyData.registrationToken.startsWith("pb_reg_")).toBe(true);
+
+		// Clean up environment
+		delete process.env.MOCK_GITHUB_API;
+	});
+
+	it("should successfully verify premium pending account via mocked github-attestation pathway", async () => {
+		// 1. Seed a premium pending record
+		const registerRes = await server.inject({
+			method: "POST",
+			url: "/api/v1/acme/new-account",
+			payload: {
+				owner: "testowner",
+				repo: "premium-attestation-repo",
+				isPremium: true,
+			},
+		});
+		const registerData = JSON.parse(registerRes.body);
+		expect(registerData.success).toBe(true);
+		expect(registerData.challengeNonce).toBeDefined();
+
+		// Set mock environment variable
+		process.env.MOCK_GITHUB_API = "true";
+
+		// 2. Request verification
+		const verifyRes = await server.inject({
+			method: "POST",
+			url: "/api/v1/acme/verify",
+			payload: {
+				owner: "testowner",
+				repo: "premium-attestation-repo",
+				verificationType: "github-attestation",
+				attestationBundle: { mock: "bundle_data" },
+			},
+		});
+
+		expect(verifyRes.statusCode).toBe(200);
+		const verifyData = JSON.parse(verifyRes.body);
+		expect(verifyData.success).toBe(true);
+		expect(verifyData.verificationStatus).toBe("verified");
+		expect(verifyData.registrationToken).toBeDefined();
+		expect(verifyData.registrationToken.startsWith("pb_reg_")).toBe(true);
+
+		// Clean up environment
+		delete process.env.MOCK_GITHUB_API;
+	});
 });

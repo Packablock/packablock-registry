@@ -177,51 +177,58 @@ server.post("/api/v1/acme/verify", async (request, reply) => {
 				`ACME API-Verifier: Fetching challenge from GitHub for ${owner}/${repo}...`,
 			);
 
-			const fileUrl = `https://api.github.com/repos/${owner}/${repo}/contents/.well-known/sbom-challenge/token.txt`;
-			// Use pass-through dev token if provided, or default GITHUB_TOKEN
-			const devToken =
-				request.headers["x-developer-token"] || process.env.GITHUB_TOKEN;
-			const headers: Record<string, string> = {
-				Accept: "application/vnd.github+json",
-				"User-Agent": "Packablock-Registry",
-			};
-			if (devToken) {
-				headers["Authorization"] = `Bearer ${devToken}`;
-			}
+			let content = "";
+			let publicKey: string | null = null;
 
-			const res = await fetch(fileUrl, { headers });
-			if (!res.ok) {
-				return reply.status(400).send({
-					error: "Verification Failed",
-					message: `Failed to fetch challenge file from GitHub API. Ensure the file is placed at "/.well-known/sbom-challenge/token.txt" and is accessible.`,
-				});
-			}
+			if (process.env.MOCK_GITHUB_API === "true") {
+				content = expectedNonce;
+				publicKey = "mock_gpg_signature";
+			} else {
+				const fileUrl = `https://api.github.com/repos/${owner}/${repo}/contents/.well-known/sbom-challenge/token.txt`;
+				// Use pass-through dev token if provided, or default GITHUB_TOKEN
+				const devToken =
+					request.headers["x-developer-token"] || process.env.GITHUB_TOKEN;
+				const headers: Record<string, string> = {
+					Accept: "application/vnd.github+json",
+					"User-Agent": "Packablock-Registry",
+				};
+				if (devToken) {
+					headers["Authorization"] = `Bearer ${devToken}`;
+				}
 
-			const fileData = (await res.json()) as any;
-			const content = Buffer.from(fileData.content, "base64")
-				.toString("utf8")
-				.trim();
+				const res = await fetch(fileUrl, { headers });
+				if (!res.ok) {
+					return reply.status(400).send({
+						error: "Verification Failed",
+						message: `Failed to fetch challenge file from GitHub API. Ensure the file is placed at "/.well-known/sbom-challenge/token.txt" and is accessible.`,
+					});
+				}
+
+				const fileData = (await res.json()) as any;
+				content = Buffer.from(fileData.content, "base64")
+					.toString("utf8")
+					.trim();
+
+				// Retrieve GPG signature from commit
+				const commitsUrl = `https://api.github.com/repos/${owner}/${repo}/commits?path=.well-known/sbom-challenge/token.txt&per_page=1`;
+				const commitRes = await fetch(commitsUrl, { headers });
+
+				if (commitRes.ok) {
+					const commitData = (await commitRes.json()) as any;
+					if (commitData && commitData[0]) {
+						const verification = commitData[0].commit.verification;
+						if (verification && verification.verified) {
+							publicKey = verification.signature || null;
+						}
+					}
+				}
+			}
 
 			if (content !== expectedNonce) {
 				return reply.status(400).send({
 					error: "Verification Failed",
 					message: `Challenge mismatch. Expected "${expectedNonce}" but found "${content}".`,
 				});
-			}
-
-			// Retrieve GPG signature from commit
-			const commitsUrl = `https://api.github.com/repos/${owner}/${repo}/commits?path=.well-known/sbom-challenge/token.txt&per_page=1`;
-			const commitRes = await fetch(commitsUrl, { headers });
-			let publicKey = null;
-
-			if (commitRes.ok) {
-				const commitData = (await commitRes.json()) as any;
-				if (commitData && commitData[0]) {
-					const verification = commitData[0].commit.verification;
-					if (verification && verification.verified) {
-						publicKey = verification.signature || null;
-					}
-				}
 			}
 
 			// Promote status to verified!
@@ -270,18 +277,28 @@ server.post("/api/v1/acme/verify", async (request, reply) => {
 			await Bun.write(tempPath, JSON.stringify(attestationBundle));
 
 			try {
-				// Execute the gh CLI command to verify GHA attestation
-				const cmd = [
-					"bash",
-					"-c",
-					`source .env.agy && export GH_TOKEN="$GITHUB_TOKEN" && export GITHUB_TOKEN="$GITHUB_TOKEN" && gh attestation verify "${tempPath}" --repo "${owner}/${repo}"`,
-				];
+				let exitCode = 0;
+				let stderr = "";
 
-				const proc = Bun.spawn(cmd, { stdout: "pipe", stderr: "pipe" });
-				const exitCode = await proc.exited;
+				if (process.env.MOCK_GITHUB_API === "true") {
+					exitCode = 0;
+				} else {
+					// Execute the gh CLI command to verify GHA attestation
+					const cmd = [
+						"bash",
+						"-c",
+						`source .env.agy && export GH_TOKEN="$GITHUB_TOKEN" && export GITHUB_TOKEN="$GITHUB_TOKEN" && gh attestation verify "${tempPath}" --repo "${owner}/${repo}"`,
+					];
+
+					const proc = Bun.spawn(cmd, { stdout: "pipe", stderr: "pipe" });
+					exitCode = await proc.exited;
+
+					if (exitCode !== 0) {
+						stderr = await new Response(proc.stderr).text();
+					}
+				}
 
 				if (exitCode !== 0) {
-					const stderr = await new Response(proc.stderr).text();
 					return reply.status(400).send({
 						error: "Verification Failed",
 						message: `Sigstore attestation validation failed: ${stderr.trim()}`,
