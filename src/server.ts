@@ -649,7 +649,7 @@ server.post("/api/v1/log/push", async (request, reply) => {
 			os_platform: osPlatform || null,
 			runtime_env: runtimeEnv || null,
 			is_ci: isCiHeader === "true" ? 1 : 0,
-			client_ip: Array.isArray(clientIp) ? clientIp[0] : (clientIp as string),
+			client_ip: (Array.isArray(clientIp) ? clientIp[0] : (clientIp as string)) || "127.0.0.1",
 			git_actor: gitActorHeader || null,
 		});
 

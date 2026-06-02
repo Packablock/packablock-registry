@@ -36,3 +36,7 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 # local SQLite databases
 packablock.sqlite
 *.sqlite
+
+# local Docker host volume data mount
+data/
+
