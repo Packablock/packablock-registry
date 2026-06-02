@@ -1566,6 +1566,21 @@ export const adminHtml = `<!DOCTYPE html>
 
                 const nodes = root.descendants();
 
+                // Assign epoch indexes to nodes in the linear chain chronologically
+                let currentEpoch = 0;
+                nodes.forEach((d) => {
+                    if (d.depth === 0) {
+                        d.epoch = 0;
+                    } else {
+                        if (d.data.type === "rollover") {
+                            currentEpoch++;
+                        }
+                        d.epoch = currentEpoch;
+                    }
+                });
+
+                const maxEpoch = Math.max(...nodes.map(d => d.epoch || 0));
+
                 // Space the nodes proportionally along the width of the timeline based on their timestamps
                 const blockNodes = nodes.filter(d => d.depth > 0 && d.data.timestamp);
                 const times = blockNodes
@@ -1609,11 +1624,17 @@ export const adminHtml = `<!DOCTYPE html>
                 }
 
                 // Alternate vertical positions (d.x) to create a gorgeous undulating trust chain
+                // separated into visually separate tracks per epoch
                 nodes.forEach((d) => {
-                    if (d.depth > 0) {
-                        d.x = (d.depth % 2 === 0) ? -55 : 55;
+                    if (d.depth === 0) {
+                        d.x = 0;
+                    } else {
+                        const epochCenter = maxEpoch > 0 ? (d.epoch - maxEpoch / 2) * 180 : 0;
+                        const undulation = (d.depth % 2 === 0) ? -35 : 35;
+                        d.x = epochCenter + undulation;
                     }
                 });
+                
                 const links = root.links();
 
                 const initialX = 80;
