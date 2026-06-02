@@ -923,7 +923,10 @@ export const adminHtml = `<!DOCTYPE html>
             if (hash === '#projects') {
                 showPage('projects');
             } else if (hash.startsWith('#project/')) {
-                const projectId = hash.substring(9);
+                const parts = hash.substring(9).split('/');
+                const projectId = parts[0];
+                const projectTab = parts[1] || 'checks'; // default tab
+
                 let p = projects.find(item => item.id === projectId);
                 if (!p) {
                     await loadProjectsData();
@@ -937,12 +940,15 @@ export const adminHtml = `<!DOCTYPE html>
                     document.getElementById('project-title').textContent = p.name;
                     await loadProjectDashboardDetails();
                     showPage('project-dashboard');
-                    showProjectView(activeProjectView || 'checks');
+                    renderProjectView(projectTab);
                 } else {
                     window.location.hash = '#projects';
                 }
             } else if (hash.startsWith('#repo/')) {
-                const repoId = parseInt(hash.substring(6), 10);
+                const parts = hash.substring(6).split('/');
+                const repoId = parseInt(parts[0], 10);
+                const ledgerTab = parts[1] || 'timeline'; // default tab
+
                 let repo = allRepos.find(r => r.id === repoId);
                 if (!repo) {
                     await loadProjectsData();
@@ -959,6 +965,7 @@ export const adminHtml = `<!DOCTYPE html>
                         await loadProjectDashboardDetails();
                     }
                     await drilldownRepo(repoId);
+                    renderLedgerView(ledgerTab);
                 } else {
                     window.location.hash = '#projects';
                 }
@@ -1194,6 +1201,12 @@ export const adminHtml = `<!DOCTYPE html>
         }
 
         function showProjectView(viewId) {
+            if (currentProjectId) {
+                window.location.hash = \`#project/\${currentProjectId}/\${viewId}\`;
+            }
+        }
+
+        function renderProjectView(viewId) {
             activeProjectView = viewId;
             document.getElementById('project-view-checks').style.display = viewId === 'checks' ? 'flex' : 'none';
             document.getElementById('project-view-integrations').style.display = viewId === 'integrations' ? 'flex' : 'none';
@@ -1434,8 +1447,7 @@ export const adminHtml = `<!DOCTYPE html>
             document.getElementById('btn-toggle-tier').onclick = () => toggleRepoPremium(repo.id);
             document.getElementById('btn-revoke-token').onclick = () => revokeToken(repo.id);
 
-            // Reset ledger view to timeline when opening a repository drilldown
-            toggleLedgerView('timeline');
+
 
             // Draw full vertical audit ledger
             let timelineHtml = '<div class="mono" style="color: var(--text-muted); padding: 1.5rem; text-align: center;">Empty Ledger</div>';
@@ -1562,6 +1574,12 @@ export const adminHtml = `<!DOCTYPE html>
         }
 
         function toggleLedgerView(viewType) {
+            if (selectedRepo) {
+                window.location.hash = \`#repo/\${selectedRepo.id}/\${viewType}\`;
+            }
+        }
+
+        function renderLedgerView(viewType) {
             if (viewType === 'timeline') {
                 document.getElementById('drilldown-timeline-view').style.display = 'block';
                 document.getElementById('drilldown-tree-view').style.display = 'none';
