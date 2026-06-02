@@ -518,12 +518,12 @@ export const adminHtml = `<!DOCTYPE html>
 <body class="h-full">
 
     <header id="header-panel" style="display: none;">
-        <a href="#" onclick="showPage('projects')" class="logo">
+        <a href="#projects" class="logo">
             <span class="logo-dot"></span>
             Packablock <span class="mono" style="color: var(--accent-green); font-size: 0.9rem;">[registry]</span>
         </a>
         <div class="nav-links" style="display: flex; align-items: center; gap: 0.75rem;">
-            <button id="nav-projects" onclick="showPage('projects')" class="nav-btn active">My Projects</button>
+            <button id="nav-projects" onclick="window.location.hash = '#projects'" class="nav-btn active">My Projects</button>
             <button onclick="toggleTheme()" class="nav-btn" style="display: inline-flex; align-items: center; gap: 0.25rem;">
                 <span id="theme-icon">☀️</span> <span id="theme-text">Light Mode</span>
             </button>
@@ -620,7 +620,7 @@ export const adminHtml = `<!DOCTYPE html>
             <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
                 <div>
                     <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.875rem;">
-                        <a href="#" onclick="showPage('projects')" style="color: inherit; text-decoration: none;">Projects</a>
+                        <a href="#projects" style="color: inherit; text-decoration: none;">Projects</a>
                         <span>/</span>
                         <span id="breadcrumb-project-name" style="color: var(--text-main);">Project Name</span>
                     </div>
@@ -674,7 +674,7 @@ export const adminHtml = `<!DOCTYPE html>
         <div id="repo-drilldown-page" class="slide-in" style="display: none; flex-direction: column; gap: 2rem;">
             <div>
                 <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.875rem;">
-                    <a href="#" onclick="showPage('projects')" style="color: inherit; text-decoration: none;">Projects</a>
+                    <a href="#projects" style="color: inherit; text-decoration: none;">Projects</a>
                     <span>/</span>
                     <a href="#" id="repo-project-breadcrumb" style="color: inherit; text-decoration: none;">Project</a>
                     <span>/</span>
@@ -902,7 +902,73 @@ export const adminHtml = `<!DOCTYPE html>
             }
         });
 
-        // Check authentication state on landing
+        async function handleRouting() {
+            currentToken = getCookie('pb_admin_session');
+            if (!currentToken) {
+                updateUserDropdown();
+                document.getElementById('header-panel').style.display = 'none';
+                showPage('login');
+                return;
+            }
+
+            document.getElementById('header-panel').style.display = 'flex';
+            updateUserDropdown();
+
+            const hash = window.location.hash || '#projects';
+            
+            if (projects.length === 0) {
+                await loadProjectsData();
+            }
+
+            if (hash === '#projects') {
+                showPage('projects');
+            } else if (hash.startsWith('#project/')) {
+                const projectId = hash.substring(9);
+                let p = projects.find(item => item.id === projectId);
+                if (!p) {
+                    await loadProjectsData();
+                    p = projects.find(item => item.id === projectId);
+                }
+                
+                if (p) {
+                    currentProjectId = p.id;
+                    currentProjectName = p.name;
+                    document.getElementById('breadcrumb-project-name').textContent = p.name;
+                    document.getElementById('project-title').textContent = p.name;
+                    await loadProjectDashboardDetails();
+                    showPage('project-dashboard');
+                    showProjectView(activeProjectView || 'checks');
+                } else {
+                    window.location.hash = '#projects';
+                }
+            } else if (hash.startsWith('#repo/')) {
+                const repoId = parseInt(hash.substring(6), 10);
+                let repo = allRepos.find(r => r.id === repoId);
+                if (!repo) {
+                    await loadProjectsData();
+                    repo = allRepos.find(r => r.id === repoId);
+                }
+
+                if (repo) {
+                    let p = projects.find(item => item.id === repo.project_id);
+                    if (p) {
+                        currentProjectId = p.id;
+                        currentProjectName = p.name;
+                    }
+                    if (currentProjectId) {
+                        await loadProjectDashboardDetails();
+                    }
+                    await drilldownRepo(repoId);
+                } else {
+                    window.location.hash = '#projects';
+                }
+            } else if (hash === '#login') {
+                window.location.hash = '#projects';
+            } else {
+                window.location.hash = '#projects';
+            }
+        }
+
         window.addEventListener('DOMContentLoaded', async () => {
             // Setup theme UI state
             const savedTheme = localStorage.getItem('pb-theme');
@@ -911,16 +977,11 @@ export const adminHtml = `<!DOCTYPE html>
                 document.getElementById('theme-text').textContent = 'Dark Mode';
             }
 
-            currentToken = getCookie('pb_admin_session');
-            if (currentToken) {
-                updateUserDropdown();
-                document.getElementById('header-panel').style.display = 'flex';
-                await loadProjectsData();
-                showPage('projects');
-            } else {
-                document.getElementById('loading-view').style.display = 'none';
-                document.getElementById('auth-view').style.display = 'flex';
-            }
+            // Bind routing handler to hash change event
+            window.addEventListener('hashchange', handleRouting);
+
+            // Execute initial route
+            await handleRouting();
         });
 
         function getCookie(name) {
@@ -960,7 +1021,12 @@ export const adminHtml = `<!DOCTYPE html>
                     updateUserDropdown();
                     document.getElementById('header-panel').style.display = 'flex';
                     await loadProjectsData();
-                    showPage('projects');
+                    const intended = window.location.hash;
+                    if (intended && intended !== '#login' && intended !== '#projects') {
+                        await handleRouting();
+                    } else {
+                        window.location.hash = '#projects';
+                    }
                 } else {
                     const data = await res.json();
                     errDiv.textContent = data.message || 'Authentication failed.';
@@ -976,8 +1042,8 @@ export const adminHtml = `<!DOCTYPE html>
             setCookie('pb_admin_session', '', -1);
             currentToken = '';
             document.getElementById('header-panel').style.display = 'none';
-            showPage('login');
             document.getElementById('admin-token').value = '';
+            window.location.hash = '#login';
         }
 
         function showPage(pageId) {
@@ -1036,12 +1102,12 @@ export const adminHtml = `<!DOCTYPE html>
                 card.innerHTML = \`
                     <div class="card-header-row">
                         <div>
-                            <h3 onclick="viewProject('\${p.id}', '\${escapeHtml(p.name)}')" style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem; cursor: pointer; display: inline-block; transition: color 0.15s ease;" onmouseover="this.style.color='var(--accent-purple)'" onmouseout="this.style.color=''" class="project-title-link">\${escapeHtml(p.name)}</h3>
+                            <h3 onclick="window.location.hash = '#project/\${p.id}'" style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem; cursor: pointer; display: inline-block; transition: color 0.15s ease;" onmouseover="this.style.color='var(--accent-purple)'" onmouseout="this.style.color=''" class="project-title-link">\${escapeHtml(p.name)}</h3>
                             <p style="font-size: 0.8125rem; color: var(--text-muted);">ID: <span class="mono">\${p.id}</span> • Created: \${new Date(p.created_at).toLocaleDateString()}</p>
                         </div>
                         <div style="display: flex; gap: 0.5rem; align-items: center;">
                             <span class="badge badge-purple">\${p.repoCount} linked repos</span>
-                            <button onclick="viewProject('\${p.id}', '\${escapeHtml(p.name)}')" class="btn btn-secondary" style="padding: 0.375rem 0.75rem; font-size: 0.8125rem;">Manage</button>
+                            <button onclick="window.location.hash = '#project/\${p.id}'" class="btn btn-secondary" style="padding: 0.375rem 0.75rem; font-size: 0.8125rem;">Manage</button>
                         </div>
                     </div>
                 \`;
@@ -1089,8 +1155,12 @@ export const adminHtml = `<!DOCTYPE html>
         async function viewProject(id, name) {
             currentProjectId = id;
             currentProjectName = name;
-            document.getElementById('breadcrumb-project-name').textContent = name;
-            document.getElementById('project-title').textContent = name;
+            if (!currentProjectName && projects.length > 0) {
+                const p = projects.find(item => item.id === id);
+                if (p) currentProjectName = p.name;
+            }
+            document.getElementById('breadcrumb-project-name').textContent = currentProjectName;
+            document.getElementById('project-title').textContent = currentProjectName;
 
             await loadProjectDashboardDetails();
             showPage('project-dashboard');
@@ -1170,11 +1240,11 @@ export const adminHtml = `<!DOCTYPE html>
                 card.innerHTML = \`
                     <div class="card-header-row">
                         <div class="card-title-group">
-                            <h3 onclick="drilldownRepo('\${r.id}')" style="font-size: 1.125rem; font-weight: 700; cursor: pointer; display: inline-block; transition: color 0.15s ease;" onmouseover="this.style.color='var(--accent-purple)'" onmouseout="this.style.color=''" class="repo-title-link">\${escapeHtml(r.owner)}/\${escapeHtml(r.repo)}</h3>
+                            <h3 onclick="window.location.hash = '#repo/\${r.id}'" style="font-size: 1.125rem; font-weight: 700; cursor: pointer; display: inline-block; transition: color 0.15s ease;" onmouseover="this.style.color='var(--accent-purple)'" onmouseout="this.style.color=''" class="repo-title-link">\${escapeHtml(r.owner)}/\${escapeHtml(r.repo)}</h3>
                             <span class="badge \${tierClass}">\${tierText}</span>
                             <span class="badge \${statusClass}">Status: \${r.verification_status}</span>
                         </div>
-                        <button onclick="drilldownRepo('\${r.id}')" class="btn btn-secondary" style="padding: 0.375rem 0.75rem; font-size: 0.8125rem;">Audit & Roll</button>
+                        <button onclick="window.location.hash = '#repo/\${r.id}'" class="btn btn-secondary" style="padding: 0.375rem 0.75rem; font-size: 0.8125rem;">Audit & Roll</button>
                     </div>
                     <div class="input-group">
                         <label>Visual Ledger Chain (DAG Blocks)</label>
@@ -1182,7 +1252,7 @@ export const adminHtml = `<!DOCTYPE html>
                             \${timelineHtml}
                         </div>
                     </div>
-                \`;
+\`;
                 list.appendChild(card);
             });
         }
@@ -1338,7 +1408,8 @@ export const adminHtml = `<!DOCTYPE html>
 
             selectedRepo = repo;
             document.getElementById('repo-project-breadcrumb').textContent = currentProjectName;
-            document.getElementById('repo-project-breadcrumb').onclick = () => viewProject(currentProjectId, currentProjectName);
+            document.getElementById('repo-project-breadcrumb').onclick = null;
+            document.getElementById('repo-project-breadcrumb').href = \`#project/\${currentProjectId}\`;
             document.getElementById('breadcrumb-repo-path').textContent = \`\${repo.owner}/\${repo.repo}\`;
             document.getElementById('drilldown-repo-title').textContent = \`\${repo.owner}/\${repo.repo}\`;
 
