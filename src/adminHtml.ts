@@ -22,6 +22,23 @@ export const adminHtml = `<!DOCTYPE html>
             --accent-purple: #8b5cf6;
             --accent-purple-glow: rgba(139, 92, 246, 0.15);
             --accent-cyan: #06b6d4;
+            --glass-bg: rgba(17, 24, 39, 0.7);
+            --header-bg: rgba(11, 15, 25, 0.8);
+        }
+
+        :root[data-theme="light"] {
+            --bg-base: #f3f4f6;
+            --bg-surface: #ffffff;
+            --bg-card: #f9fafb;
+            --border-muted: #e5e7eb;
+            --text-main: #111827;
+            --text-muted: #4b5563;
+            --accent-green-glow: rgba(16, 185, 129, 0.1);
+            --accent-red-glow: rgba(239, 68, 68, 0.1);
+            --accent-amber-glow: rgba(245, 158, 11, 0.1);
+            --accent-purple-glow: rgba(139, 92, 246, 0.1);
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --header-bg: rgba(243, 244, 246, 0.85);
         }
 
         * {
@@ -38,6 +55,7 @@ export const adminHtml = `<!DOCTYPE html>
             display: flex;
             flex-direction: column;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         code, pre, .mono {
@@ -46,11 +64,12 @@ export const adminHtml = `<!DOCTYPE html>
 
         /* Glassmorphism utility */
         .glass-panel {
-            background: rgba(17, 24, 39, 0.7);
+            background: var(--glass-bg);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--border-muted);
             border-radius: 12px;
+            transition: background 0.3s ease, border-color 0.3s ease;
         }
 
         /* Animation utilities */
@@ -85,11 +104,12 @@ export const adminHtml = `<!DOCTYPE html>
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(11, 15, 25, 0.8);
+            background: var(--header-bg);
             backdrop-filter: blur(8px);
             position: sticky;
             top: 0;
             z-index: 50;
+            transition: background 0.3s ease, border-color 0.3s ease;
         }
 
         .logo {
@@ -442,6 +462,9 @@ export const adminHtml = `<!DOCTYPE html>
         </a>
         <div class="nav-links">
             <button id="nav-projects" onclick="showPage('projects')" class="nav-btn active">My Projects</button>
+            <button onclick="toggleTheme()" class="nav-btn" style="display: inline-flex; align-items: center; gap: 0.25rem;">
+                <span id="theme-icon">☀️</span> <span id="theme-text">Light Mode</span>
+            </button>
             <button onclick="logout()" class="nav-btn">Sign Out</button>
         </div>
     </header>
@@ -707,6 +730,14 @@ export const adminHtml = `<!DOCTYPE html>
     </div>
 
     <script>
+        // Apply theme immediately from localStorage
+        (function() {
+            const savedTheme = localStorage.getItem('pb-theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+
         let currentToken = '';
         let activePage = 'login';
         let projects = [];
@@ -716,8 +747,31 @@ export const adminHtml = `<!DOCTYPE html>
         let selectedRepo = null;
         let activeProjectView = 'checks';
 
+        function toggleTheme() {
+            const root = document.documentElement;
+            const currentTheme = root.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                root.removeAttribute('data-theme');
+                localStorage.setItem('pb-theme', 'dark');
+                document.getElementById('theme-icon').textContent = '☀️';
+                document.getElementById('theme-text').textContent = 'Light Mode';
+            } else {
+                root.setAttribute('data-theme', 'light');
+                localStorage.setItem('pb-theme', 'light');
+                document.getElementById('theme-icon').textContent = '🌙';
+                document.getElementById('theme-text').textContent = 'Dark Mode';
+            }
+        }
+
         // Check authentication state on landing
         window.addEventListener('DOMContentLoaded', async () => {
+            // Setup theme UI state
+            const savedTheme = localStorage.getItem('pb-theme');
+            if (savedTheme === 'light') {
+                document.getElementById('theme-icon').textContent = '🌙';
+                document.getElementById('theme-text').textContent = 'Dark Mode';
+            }
+
             currentToken = getCookie('pb_admin_session');
             if (currentToken) {
                 document.getElementById('header-panel').style.display = 'flex';
