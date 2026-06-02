@@ -33,6 +33,28 @@ import { verifyInMemoryChain, splitRawDocuments } from "./verify.js";
 import { verifyGithubOidcToken } from "./oidc.js";
 import { adminHtml } from "./adminHtml.js";
 
+/**
+ * Resolves the signing identity badge based on available metadata.
+ */
+export function resolveIdentityBadge(parsedMeta: any): string | null {
+	if (!parsedMeta) return null;
+	if (parsedMeta.oidc_claims?.actor) {
+		return `OIDC: ${parsedMeta.oidc_claims.actor}`;
+	}
+	const sshFingerprint = parsedMeta.ssh_fingerprint || parsedMeta.ssh_key_fingerprint;
+	if (sshFingerprint) {
+		return `SSH: ${sshFingerprint}`;
+	}
+	const gitActor = parsedMeta.git_actor || parsedMeta.committer;
+	if (gitActor) {
+		return `Git: ${gitActor}`;
+	}
+	if (parsedMeta.gpg_signature) {
+		return "GPG Signed";
+	}
+	return null;
+}
+
 export const server = fastify({ logger: true });
 
 // Register content type parser for plain text / YAML payloads
@@ -1337,6 +1359,210 @@ server.get("/api/v1/repo/:id/sigs", async (request, reply) => {
 		return reply.status(500).send({
 			error: "Internal Server Error",
 			message: `Failed to audit signatures: ${err.message}`,
+		});
+	}
+});
+
+/**
+ * GET /api/v1/repo/:id/tree
+ * Returns a structured JSON visualization tree and flat graph representing the complete package chain blocks.
+ */
+server.get("/api/v1/repo/:id/tree", async (request, reply) => {
+	const { id } = request.params as { id: string };
+	const repoId = Number.parseInt(id, 10);
+	if (Number.isNaN(repoId)) {
+		return reply.status(400).send({
+			error: "Bad Request",
+			message: "Invalid repository ID format.",
+		});
+	}
+
+	const repoRecord = getRepositoryById(repoId);
+	if (!repoRecord) {
+		return reply.status(404).send({
+			error: "Not Found",
+			message: `Repository with ID ${repoId} not registered.`,
+		});
+	}
+
+	const logRecord = getLog(repoRecord.id);
+	const archivedLogs = getArchivedLogs(repoRecord.id);
+
+	if (!logRecord && archivedLogs.length === 0) {
+		return reply.status(404).send({
+			error: "Not Found",
+			message: "No package history log exists for this repository yet.",
+		});
+	}
+
+	try {
+		const blocks: Array<{
+			dataDocStr: string;
+			metaDocStr: string;
+		}> = [];
+
+		for (const log of archivedLogs) {
+			const docs = splitRawDocuments(log.chain_content);
+			const blockCount = docs.length / 2;
+			for (let i = 0; i < blockCount; i++) {
+				const dataDocStr = docs[2 * i];
+				const metaDocStr = docs[2 * i + 1];
+				if (dataDocStr !== undefined && metaDocStr !== undefined) {
+					blocks.push({ dataDocStr, metaDocStr });
+				}
+			}
+		}
+
+		if (logRecord) {
+			const docs = splitRawDocuments(logRecord.chain_content);
+			const blockCount = docs.length / 2;
+			for (let i = 0; i < blockCount; i++) {
+				const dataDocStr = docs[2 * i];
+				const metaDocStr = docs[2 * i + 1];
+				if (dataDocStr !== undefined && metaDocStr !== undefined) {
+					blocks.push({ dataDocStr, metaDocStr });
+				}
+			}
+		}
+
+		interface TreeNode {
+			id: string;
+			name: string;
+			block_index?: number;
+			version?: string;
+			timestamp?: string;
+			data_hash?: string;
+			prev_meta_hash?: string;
+			meta_hash?: string;
+			identityBadge?: string | null;
+			type: "root" | "block" | "rollover";
+			children: TreeNode[];
+		}
+
+		interface GraphNode {
+			id: string;
+			label: string;
+			block_index?: number;
+			version?: string;
+			timestamp?: string;
+			data_hash?: string;
+			prev_meta_hash?: string;
+			meta_hash?: string;
+			identityBadge?: string | null;
+			type: "root" | "block" | "rollover";
+		}
+
+		interface GraphEdge {
+			source: string;
+			target: string;
+		}
+
+		const nodesMap = new Map<string, TreeNode>();
+		const flatNodes: GraphNode[] = [];
+		const flatEdges: GraphEdge[] = [];
+
+		let firstPrevHash =
+			"0000000000000000000000000000000000000000000000000000000000000000";
+		const firstBlock = blocks[0];
+		if (firstBlock) {
+			try {
+				const parsedMeta = YAML.parse(firstBlock.metaDocStr)?.["$yaml-chain-meta"];
+				if (parsedMeta?.prev_meta_hash) {
+					firstPrevHash = parsedMeta.prev_meta_hash;
+				}
+			} catch (e) {}
+		}
+
+		// Create root node
+		const rootNode: TreeNode = {
+			id: firstPrevHash,
+			name: "Genesis Anchor",
+			type: "root",
+			children: [],
+		};
+		nodesMap.set(firstPrevHash, rootNode);
+		flatNodes.push({
+			id: firstPrevHash,
+			label: "Genesis Anchor",
+			type: "root",
+		});
+
+		for (const block of blocks) {
+			try {
+				const parsedData = YAML.parse(block.dataDocStr);
+				const parsedMeta = YAML.parse(block.metaDocStr)?.["$yaml-chain-meta"];
+
+				if (parsedMeta) {
+					const metaHash = parsedMeta.meta_hash;
+					const prevMetaHash = parsedMeta.prev_meta_hash || firstPrevHash;
+					const isRollover = !!parsedData?.genesis_rollover;
+					const badge = resolveIdentityBadge(parsedMeta);
+
+					const node: TreeNode = {
+						id: metaHash,
+						name: `Block #${parsedMeta.block_index}`,
+						block_index: parsedMeta.block_index,
+						version: parsedMeta.version,
+						timestamp: parsedMeta.timestamp,
+						data_hash: parsedMeta.data_hash,
+						prev_meta_hash: prevMetaHash,
+						meta_hash: metaHash,
+						identityBadge: badge,
+						type: isRollover ? "rollover" : "block",
+						children: [],
+					};
+
+					nodesMap.set(metaHash, node);
+
+					flatNodes.push({
+						id: metaHash,
+						label: `Block #${parsedMeta.block_index}`,
+						block_index: parsedMeta.block_index,
+						version: parsedMeta.version,
+						timestamp: parsedMeta.timestamp,
+						data_hash: parsedMeta.data_hash,
+						prev_meta_hash: prevMetaHash,
+						meta_hash: metaHash,
+						identityBadge: badge,
+						type: isRollover ? "rollover" : "block",
+					});
+
+					flatEdges.push({
+						source: prevMetaHash,
+						target: metaHash,
+					});
+				}
+			} catch (e) {
+				// Ignore malformed block parsing
+			}
+		}
+
+		// Build hierarchy
+		for (const [_, node] of nodesMap) {
+			if (node.type === "root") continue;
+			const parentHash = node.prev_meta_hash;
+			if (parentHash && nodesMap.has(parentHash)) {
+				nodesMap.get(parentHash)!.children.push(node);
+			} else {
+				// Fallback to attaching to root
+				rootNode.children.push(node);
+			}
+		}
+
+		return {
+			success: true,
+			repository: `${repoRecord.owner}/${repoRecord.repo}`,
+			blockCount: blocks.length,
+			tree: rootNode,
+			graph: {
+				nodes: flatNodes,
+				edges: flatEdges,
+			},
+		};
+	} catch (err: any) {
+		return reply.status(500).send({
+			error: "Internal Server Error",
+			message: `Failed to construct visualization tree: ${err.message}`,
 		});
 	}
 });
