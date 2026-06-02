@@ -785,6 +785,13 @@ export const adminHtml = `<!DOCTYPE html>
         </div>
     </main>
 
+    <!-- UI Footer -->
+    <footer style="padding: 2rem; text-align: center; font-size: 0.8125rem; color: var(--text-muted); border-top: 1px solid var(--border-muted); margin-top: auto; display: flex; justify-content: center; align-items: center; gap: 0.5rem; background-color: var(--bg-surface);">
+        <span>© 2026 Packablock Inc.</span>
+        <span>•</span>
+        <span>Registry Version: <span class="mono" style="color: var(--text-main);">1.0.1</span></span>
+    </footer>
+
     <!-- Create Project Modal -->
     <div id="create-project-modal" class="modal-overlay">
         <div class="modal-panel glass-panel">
