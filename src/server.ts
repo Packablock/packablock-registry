@@ -6,6 +6,7 @@ import {
 	registerRepository,
 	getRepositoryByToken,
 	getRepositoryByPath,
+	getRepositoryById,
 	saveLog,
 	getLog,
 	registerPremiumPending,
@@ -1189,6 +1190,199 @@ server.get("/api/v1/repo/:owner/:repo/sigs", async (request, reply) => {
 		return reply.status(500).send({
 			error: "Internal Server Error",
 			message: `Failed to audit signatures: ${err.message}`,
+		});
+	}
+});
+
+/**
+ * GET /api/v1/repo/:id/history
+ * Retrieve chronological package chain blocks for a repository by its database ID.
+ */
+server.get("/api/v1/repo/:id/history", async (request, reply) => {
+	const { id } = request.params as { id: string };
+	const repoId = Number.parseInt(id, 10);
+	if (Number.isNaN(repoId)) {
+		return reply.status(400).send({
+			error: "Bad Request",
+			message: "Invalid repository ID format.",
+		});
+	}
+
+	const repoRecord = getRepositoryById(repoId);
+	if (!repoRecord) {
+		return reply.status(404).send({
+			error: "Not Found",
+			message: `Repository with ID ${repoId} not registered.`,
+		});
+	}
+
+	const logRecord = getLog(repoRecord.id);
+	const archivedLogs = getArchivedLogs(repoRecord.id);
+
+	if (!logRecord && archivedLogs.length === 0) {
+		return reply.status(404).send({
+			error: "Not Found",
+			message: "No package history log exists for this repository yet.",
+		});
+	}
+
+	try {
+		const history: any[] = [];
+		const logsToProcess: Array<{ chain_content: string }> = [...archivedLogs];
+		if (logRecord) {
+			logsToProcess.push(logRecord);
+		}
+
+		for (const log of logsToProcess) {
+			const docs = splitRawDocuments(log.chain_content);
+			const blockCount = docs.length / 2;
+			for (let i = 0; i < blockCount; i++) {
+				const dataDocStr = docs[2 * i];
+				const metaDocStr = docs[2 * i + 1];
+				if (dataDocStr === undefined || metaDocStr === undefined) continue;
+
+				const parsedData = YAML.parse(dataDocStr);
+				const parsedMeta = YAML.parse(metaDocStr)?.["$yaml-chain-meta"];
+
+				if (parsedMeta) {
+					history.push({
+						...parsedData,
+						version: parsedMeta.version,
+						block_index: parsedMeta.block_index,
+						timestamp: parsedMeta.timestamp,
+						data_hash: parsedMeta.data_hash,
+						prev_meta_hash: parsedMeta.prev_meta_hash,
+						meta_hash: parsedMeta.meta_hash,
+					});
+				}
+			}
+		}
+
+		return history;
+	} catch (err: any) {
+		return reply.status(500).send({
+			error: "Internal Server Error",
+			message: `Failed to parse log history: ${err.message}`,
+		});
+	}
+});
+
+/**
+ * GET /api/v1/repo/:id/sigs
+ * Historical signature auditing for a repository by its database ID.
+ */
+server.get("/api/v1/repo/:id/sigs", async (request, reply) => {
+	const { id } = request.params as { id: string };
+	const repoId = Number.parseInt(id, 10);
+	if (Number.isNaN(repoId)) {
+		return reply.status(400).send({
+			error: "Bad Request",
+			message: "Invalid repository ID format.",
+		});
+	}
+
+	const repoRecord = getRepositoryById(repoId);
+	if (!repoRecord) {
+		return reply.status(404).send({
+			error: "Not Found",
+			message: `Repository with ID ${repoId} not registered.`,
+		});
+	}
+
+	const logRecord = getLog(repoRecord.id);
+	const archivedLogs = getArchivedLogs(repoRecord.id);
+
+	if (!logRecord && archivedLogs.length === 0) {
+		return reply.status(404).send({
+			error: "Not Found",
+			message: "No package history log exists for this repository yet.",
+		});
+	}
+
+	try {
+		const signatures: any[] = [];
+		const logsToProcess: Array<{ chain_content: string }> = [...archivedLogs];
+		if (logRecord) {
+			logsToProcess.push(logRecord);
+		}
+
+		for (const log of logsToProcess) {
+			const docs = splitRawDocuments(log.chain_content);
+			const blockCount = docs.length / 2;
+			for (let i = 0; i < blockCount; i++) {
+				const metaDocStr = docs[2 * i + 1];
+				if (metaDocStr === undefined) continue;
+
+				const parsedMeta = YAML.parse(metaDocStr)?.["$yaml-chain-meta"];
+
+				if (parsedMeta) {
+					signatures.push({
+						blockIndex: parsedMeta.block_index,
+						timestamp: parsedMeta.timestamp,
+						metaHash: parsedMeta.meta_hash,
+						signingStrategy: parsedMeta.hashing_strategy || "raw",
+						signature: parsedMeta.signature || null,
+						committer: parsedMeta.committer || null,
+						oidcClaims: parsedMeta.oidc_claims || null,
+						sshFingerprint: parsedMeta.ssh_fingerprint || parsedMeta.ssh_key_fingerprint || null,
+						gpgSignature: parsedMeta.gpg_signature || null,
+						gitActor: parsedMeta.git_actor || parsedMeta.committer || null,
+					});
+				}
+			}
+		}
+
+		return signatures;
+	} catch (err: any) {
+		return reply.status(500).send({
+			error: "Internal Server Error",
+			message: `Failed to audit signatures: ${err.message}`,
+		});
+	}
+});
+
+/**
+ * POST /api/v1/alerts
+ * Register a new outbound webhook alert.
+ */
+server.post("/api/v1/alerts", async (request, reply) => {
+	const body = request.body as {
+		repo_id?: number | string;
+		url?: string;
+		secret?: string;
+	};
+
+	if (!body || body.repo_id === undefined || !body.url) {
+		return reply.status(400).send({
+			error: "Bad Request",
+			message: 'Fields "repo_id" and "url" are required in request body.',
+		});
+	}
+
+	const repoId = typeof body.repo_id === "string" ? Number.parseInt(body.repo_id, 10) : body.repo_id;
+	if (typeof repoId !== "number" || Number.isNaN(repoId)) {
+		return reply.status(400).send({
+			error: "Bad Request",
+			message: 'Field "repo_id" must be a valid integer.',
+		});
+	}
+
+	const repoRecord = getRepositoryById(repoId);
+	if (!repoRecord) {
+		return reply.status(404).send({
+			error: "Not Found",
+			message: `Repository with ID ${repoId} not registered.`,
+		});
+	}
+
+	try {
+		const secret = body.secret || null;
+		const webhook = addWebhook(repoId, body.url, secret);
+		return reply.status(201).send(webhook);
+	} catch (err: any) {
+		return reply.status(500).send({
+			error: "Internal Server Error",
+			message: err.message,
 		});
 	}
 });

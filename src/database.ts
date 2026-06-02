@@ -317,6 +317,15 @@ export function getRepositoryByToken(token: string): RepositoryRecord | null {
 }
 
 /**
+ * Looks up a repository by its database ID.
+ */
+export function getRepositoryById(id: number): RepositoryRecord | null {
+	const query = db.prepare("SELECT * FROM repositories WHERE id = ?");
+	const record = query.get(id) as RepositoryRecord | null;
+	return record;
+}
+
+/**
  * Looks up a repository by its owner and name.
  */
 export function getRepositoryByPath(
