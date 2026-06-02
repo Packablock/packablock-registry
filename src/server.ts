@@ -28,10 +28,10 @@ import {
 	getAllRepos,
 	togglePremium,
 	revokeRepositoryToken,
+	purgeStaleRepositories,
 } from "./database.js";
 import { verifyInMemoryChain, splitRawDocuments } from "./verify.js";
 import { verifyGithubOidcToken } from "./oidc.js";
-import { adminHtml } from "./adminHtml.js";
 
 /**
  * Resolves the signing identity badge based on available metadata.
@@ -89,7 +89,7 @@ server.get("/api/v1/version", async () => {
  * Root route - redirects to administrative dashboard
  */
 server.get("/", async (request, reply) => {
-	return reply.redirect("/admin");
+	return reply.redirect("/health");
 });
 
 /**
@@ -2133,65 +2133,36 @@ server.delete(
 
 /**
  * ==========================================================================
- * ADMINISTRATIVE DASHBOARD WEB UI & PROJECTS API ROUTES (Milestone api #10)
+ * INTERNAL MANAGEMENT & MONITORING API ROUTES (Phase 1 zero-trust migration)
  * ==========================================================================
  */
 
-const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "admin_secret_token_1234";
-
-async function verifyAdminAuth(request: any, reply: any) {
-	const authHeader = request.headers["authorization"];
-	let token = "";
-	if (authHeader && authHeader.startsWith("Bearer ")) {
-		token = authHeader.substring(7);
-	} else {
-		const cookieHeader = request.headers["cookie"];
-		if (cookieHeader) {
-			const cookies = cookieHeader.split(";").reduce((acc: any, c: string) => {
-				const [k, v] = c.trim().split("=");
-				if (k && v) acc[k] = decodeURIComponent(v);
-				return acc;
-			}, {});
-			token = cookies["pb_admin_session"] || "";
-		}
-	}
-
-	if (token !== ADMIN_TOKEN) {
+async function verifyInternalAuth(request: any, reply: any) {
+	const internalToken =
+		process.env.INTERNAL_REGISTRY_TOKEN || "internal_secret_token_1234";
+	const requestToken = request.headers["x-packablock-internal-token"];
+	if (!requestToken || requestToken !== internalToken) {
 		return reply.status(401).send({
 			error: "Unauthorized",
-			message: "Invalid or missing administrator session credentials.",
+			message: "Invalid or missing internal registry token.",
 		});
 	}
 }
 
-// 1. GET /admin: Serves the high-fidelity admin dashboard sitemap SPA
-server.get("/admin", async (request, reply) => {
-	reply.type("text/html").send(adminHtml);
-});
-
-// 2. POST /api/v1/admin/login: Sets the HTTP-only admin session cookie
-server.post("/api/v1/admin/login", async (request, reply) => {
-	const body = request.body as any;
-	const token = body?.token;
-
-	if (token === ADMIN_TOKEN) {
-		return { success: true };
-	} else {
-		return reply.status(401).send({
-			error: "Unauthorized",
-			message: "Incorrect administrator access token.",
-		});
-	}
-});
-
-// 3. GET /api/v1/admin/projects: List all projects mapped in registry
+// 1. GET /api/v1/internal/system/status: Detailed system metrics
 server.get(
-	"/api/v1/admin/projects",
-	{ preHandler: verifyAdminAuth },
+	"/api/v1/internal/system/status",
+	{ preHandler: verifyInternalAuth },
 	async (request, reply) => {
 		try {
 			const projects = getProjects();
-			return { success: true, projects };
+			const repos = getAllRepos();
+			return {
+				success: true,
+				status: "Secured",
+				projectsCount: projects.length,
+				reposCount: repos.length,
+			};
 		} catch (err: any) {
 			return reply.status(500).send({
 				error: "Internal Server Error",
@@ -2201,65 +2172,10 @@ server.get(
 	},
 );
 
-// 4. POST /api/v1/admin/projects: Create a new project container
-server.post(
-	"/api/v1/admin/projects",
-	{ preHandler: verifyAdminAuth },
-	async (request, reply) => {
-		const body = request.body as any;
-		const name = body?.name;
-
-		if (!name || typeof name !== "string") {
-			return reply.status(400).send({
-				error: "Bad Request",
-				message: "Project name is required.",
-			});
-		}
-
-		try {
-			const project = createProject(name);
-			return { success: true, project };
-		} catch (err: any) {
-			return reply.status(500).send({
-				error: "Internal Server Error",
-				message: err.message,
-			});
-		}
-	},
-);
-
-// 5. POST /api/v1/admin/projects/link: Groups a repo under a project
-server.post(
-	"/api/v1/admin/projects/link",
-	{ preHandler: verifyAdminAuth },
-	async (request, reply) => {
-		const body = request.body as any;
-		const repoId = body?.repoId;
-		const projectId = body?.projectId;
-
-		if (repoId === undefined) {
-			return reply.status(400).send({
-				error: "Bad Request",
-				message: "repoId parameter is required.",
-			});
-		}
-
-		try {
-			linkRepoToProject(repoId, projectId || null);
-			return { success: true };
-		} catch (err: any) {
-			return reply.status(500).send({
-				error: "Internal Server Error",
-				message: err.message,
-			});
-		}
-	},
-);
-
-// 6. GET /api/v1/admin/repos: Lists all registered repositories
+// 2. GET /api/v1/internal/repos: Lists all registered repositories
 server.get(
-	"/api/v1/admin/repos",
-	{ preHandler: verifyAdminAuth },
+	"/api/v1/internal/repos",
+	{ preHandler: verifyInternalAuth },
 	async (request, reply) => {
 		try {
 			const repos = getAllRepos();
@@ -2273,72 +2189,224 @@ server.get(
 	},
 );
 
-// 7. GET /api/v1/admin/projects/:id/checks: Detailed state and timeline logs of repos mapped to project
+// 3. GET /api/v1/internal/chain/tree: Retrieve package chain tree representing block state for visual rendering
 server.get(
-	"/api/v1/admin/projects/:id/checks",
-	{ preHandler: verifyAdminAuth },
+	"/api/v1/internal/chain/tree",
+	{ preHandler: verifyInternalAuth },
 	async (request, reply) => {
-		const { id } = request.params as any;
-		try {
-			const repos = getProjectRepos(id);
-			const enrichedRepos = repos.map((r) => {
-				const log = getLog(r.id);
-				return {
-					...r,
-					log: log || null,
-				};
-			});
-			return { success: true, repos: enrichedRepos };
-		} catch (err: any) {
-			return reply.status(500).send({
-				error: "Internal Server Error",
-				message: err.message,
-			});
-		}
-	},
-);
+		const query = request.query as any;
+		const id = query?.repo_id || query?.id;
+		let repoRecord: any = null;
 
-// 8. GET /api/v1/admin/projects/:id/integrations: Client pushes and runner metadata auditing events
-server.get(
-	"/api/v1/admin/projects/:id/integrations",
-	{ preHandler: verifyAdminAuth },
-	async (request, reply) => {
-		const { id } = request.params as any;
-		try {
-			const repos = getProjectRepos(id);
-			let allEvents: any[] = [];
-			for (const r of repos) {
-				const events = getIntegrationEvents(r.id);
-				const mappedEvents = events.map((e) => ({
-					...e,
-					owner: r.owner,
-					repo: r.repo,
-				}));
-				allEvents = [...allEvents, ...mappedEvents];
+		if (id) {
+			const repoId = Number.parseInt(id, 10);
+			if (!Number.isNaN(repoId)) {
+				repoRecord = getRepositoryById(repoId);
 			}
-			// Sort events chronologically descending
-			allEvents.sort(
-				(a, b) =>
-					new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
-			);
-			return { success: true, events: allEvents };
+		} else if (query?.owner && query?.repo) {
+			repoRecord = getRepositoryByPath(query.owner, query.repo);
+		}
+
+		if (!repoRecord) {
+			return reply.status(404).send({
+				error: "Not Found",
+				message: "Repository not found.",
+			});
+		}
+
+		const logRecord = getLog(repoRecord.id);
+		const archivedLogs = getArchivedLogs(repoRecord.id);
+
+		if (!logRecord && archivedLogs.length === 0) {
+			return reply.status(404).send({
+				error: "Not Found",
+				message: "No package history log exists for this repository yet.",
+			});
+		}
+
+		try {
+			const blocks: Array<{
+				dataDocStr: string;
+				metaDocStr: string;
+			}> = [];
+
+			for (const log of archivedLogs) {
+				const docs = splitRawDocuments(log.chain_content);
+				const blockCount = docs.length / 2;
+				for (let i = 0; i < blockCount; i++) {
+					const dataDocStr = docs[2 * i];
+					const metaDocStr = docs[2 * i + 1];
+					if (dataDocStr !== undefined && metaDocStr !== undefined) {
+						blocks.push({ dataDocStr, metaDocStr });
+					}
+				}
+			}
+
+			if (logRecord) {
+				const docs = splitRawDocuments(logRecord.chain_content);
+				const blockCount = docs.length / 2;
+				for (let i = 0; i < blockCount; i++) {
+					const dataDocStr = docs[2 * i];
+					const metaDocStr = docs[2 * i + 1];
+					if (dataDocStr !== undefined && metaDocStr !== undefined) {
+						blocks.push({ dataDocStr, metaDocStr });
+					}
+				}
+			}
+
+			interface TreeNode {
+				id: string;
+				name: string;
+				block_index?: number;
+				version?: string;
+				timestamp?: string;
+				data_hash?: string;
+				prev_meta_hash?: string;
+				meta_hash?: string;
+				identityBadge?: string | null;
+				type: "root" | "block" | "rollover";
+				children: TreeNode[];
+			}
+
+			interface GraphNode {
+				id: string;
+				label: string;
+				block_index?: number;
+				version?: string;
+				timestamp?: string;
+				data_hash?: string;
+				prev_meta_hash?: string;
+				meta_hash?: string;
+				identityBadge?: string | null;
+				type: "root" | "block" | "rollover";
+			}
+
+			interface GraphEdge {
+				source: string;
+				target: string;
+			}
+
+			const nodesMap = new Map<string, TreeNode>();
+			const flatNodes: GraphNode[] = [];
+			const flatEdges: GraphEdge[] = [];
+
+			let firstPrevHash =
+				"0000000000000000000000000000000000000000000000000000000000000000";
+			const firstBlock = blocks[0];
+			if (firstBlock) {
+				try {
+					const parsedMeta = YAML.parse(firstBlock.metaDocStr)?.[
+						"$yaml-chain-meta"
+					];
+					if (parsedMeta?.prev_meta_hash) {
+						firstPrevHash = parsedMeta.prev_meta_hash;
+					}
+				} catch (e) {}
+			}
+
+			// Create root node
+			const rootNode: TreeNode = {
+				id: firstPrevHash,
+				name: "Genesis Anchor",
+				type: "root",
+				children: [],
+			};
+			nodesMap.set(firstPrevHash, rootNode);
+			flatNodes.push({
+				id: firstPrevHash,
+				label: "Genesis Anchor",
+				type: "root",
+			});
+
+			for (const block of blocks) {
+				try {
+					const parsedData = YAML.parse(block.dataDocStr);
+					const parsedMeta = YAML.parse(block.metaDocStr)?.["$yaml-chain-meta"];
+
+					if (parsedMeta) {
+						const metaHash = parsedMeta.meta_hash;
+						const prevMetaHash = parsedMeta.prev_meta_hash || firstPrevHash;
+						const isRollover = !!parsedData?.genesis_rollover;
+						const badge = resolveIdentityBadge(parsedMeta);
+
+						const node: TreeNode = {
+							id: metaHash,
+							name: `Block #${parsedMeta.block_index}`,
+							block_index: parsedMeta.block_index,
+							version: parsedMeta.version,
+							timestamp: parsedMeta.timestamp,
+							data_hash: parsedMeta.data_hash,
+							prev_meta_hash: prevMetaHash,
+							meta_hash: metaHash,
+							identityBadge: badge,
+							type: isRollover ? "rollover" : "block",
+							children: [],
+						};
+
+						nodesMap.set(metaHash, node);
+
+						flatNodes.push({
+							id: metaHash,
+							label: `Block #${parsedMeta.block_index}`,
+							block_index: parsedMeta.block_index,
+							version: parsedMeta.version,
+							timestamp: parsedMeta.timestamp,
+							data_hash: parsedMeta.data_hash,
+							prev_meta_hash: prevMetaHash,
+							meta_hash: metaHash,
+							identityBadge: badge,
+							type: isRollover ? "rollover" : "block",
+						});
+
+						flatEdges.push({
+							source: prevMetaHash,
+							target: metaHash,
+						});
+					}
+				} catch (e) {
+					// Ignore malformed block parsing
+				}
+			}
+
+			// Build hierarchy
+			for (const [_, node] of nodesMap) {
+				if (node.type === "root") continue;
+				const parentHash = node.prev_meta_hash;
+				if (parentHash && nodesMap.has(parentHash)) {
+					nodesMap.get(parentHash)!.children.push(node);
+				} else {
+					// Fallback to attaching to root
+					rootNode.children.push(node);
+				}
+			}
+
+			return {
+				success: true,
+				repository: `${repoRecord.owner}/${repoRecord.repo}`,
+				blockCount: blocks.length,
+				tree: rootNode,
+				graph: {
+					nodes: flatNodes,
+					edges: flatEdges,
+				},
+			};
 		} catch (err: any) {
 			return reply.status(500).send({
 				error: "Internal Server Error",
-				message: err.message,
+				message: `Failed to construct visualization tree: ${err.message}`,
 			});
 		}
 	},
 );
 
-// 9. POST /api/v1/admin/repo/:id/toggle-premium: Toggles premium access and promotions
+// 4. POST /api/v1/internal/repo/:id/toggle-premium: Toggles premium access and promotions
 server.post(
-	"/api/v1/admin/repo/:id/toggle-premium",
-	{ preHandler: verifyAdminAuth },
+	"/api/v1/internal/repo/:id/toggle-premium",
+	{ preHandler: verifyInternalAuth },
 	async (request, reply) => {
 		const { id } = request.params as any;
 		try {
-			togglePremium(parseInt(id, 10));
+			togglePremium(Number.parseInt(id, 10));
 			return { success: true };
 		} catch (err: any) {
 			return reply.status(500).send({
@@ -2349,15 +2417,32 @@ server.post(
 	},
 );
 
-// 10. POST /api/v1/admin/repo/:id/revoke: Revokes access token
+// 5. POST /api/v1/internal/repo/:id/revoke: Revokes access token
 server.post(
-	"/api/v1/admin/repo/:id/revoke",
-	{ preHandler: verifyAdminAuth },
+	"/api/v1/internal/repo/:id/revoke",
+	{ preHandler: verifyInternalAuth },
 	async (request, reply) => {
 		const { id } = request.params as any;
 		try {
-			revokeRepositoryToken(parseInt(id, 10));
+			revokeRepositoryToken(Number.parseInt(id, 10));
 			return { success: true };
+		} catch (err: any) {
+			return reply.status(500).send({
+				error: "Internal Server Error",
+				message: err.message,
+			});
+		}
+	},
+);
+
+// 6. POST /api/v1/internal/purge-stale: Garbage collects unverified repositories in pending status
+server.post(
+	"/api/v1/internal/purge-stale",
+	{ preHandler: verifyInternalAuth },
+	async (request, reply) => {
+		try {
+			const purgedCount = purgeStaleRepositories();
+			return { success: true, purgedCount };
 		} catch (err: any) {
 			return reply.status(500).send({
 				error: "Internal Server Error",

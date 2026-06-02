@@ -643,3 +643,13 @@ export function revokeRepositoryToken(repoId: number): void {
 		repoId,
 	]);
 }
+
+/**
+ * Admin action to garbage collect unverified repositories in pending status.
+ */
+export function purgeStaleRepositories(): number {
+	const result = db.run(
+		"DELETE FROM repositories WHERE verification_status = 'pending'",
+	);
+	return result.changes;
+}
