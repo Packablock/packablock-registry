@@ -51,6 +51,14 @@ server.get("/health", async () => {
 });
 
 /**
+ * Root route - redirects to administrative dashboard
+ */
+server.get("/", async (request, reply) => {
+	return reply.redirect("/admin");
+});
+
+
+/**
  * Register a new repository. Returns a registration token.
  */
 server.post("/api/v1/repos/register", async (request, reply) => {
