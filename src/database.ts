@@ -1,8 +1,10 @@
 import { Database } from "bun:sqlite";
 import path from "node:path";
+import { watch } from "node:fs";
 
 let db: Database;
 let DB_FILE = "";
+let watcher: any = null;
 
 export interface RepositoryRecord {
 	id: number;
@@ -82,6 +84,29 @@ export function initDb(): void {
 
 	// Enable foreign keys
 	db.run("PRAGMA foreign_keys = ON;");
+
+	// In development mode, watch for file changes in the data directory and update automatically
+	if (process.env.NODE_ENV !== "production") {
+		const dbDir = path.dirname(DB_FILE);
+		try {
+			if (!watcher) {
+				watcher = watch(dbDir, (eventType, filename) => {
+					console.log(`[DEV MODE] File change detected in data directory: ${filename} (Event: ${eventType})`);
+					if (filename === path.basename(DB_FILE)) {
+						console.log(`[DEV MODE] Re-initializing database connection to: ${DB_FILE}`);
+						try {
+							db.close();
+						} catch (e) {}
+						db = new Database(DB_FILE, { create: true });
+						db.run("PRAGMA foreign_keys = ON;");
+					}
+				});
+				console.log(`[DEV MODE] Watching for file changes in data directory: ${dbDir}`);
+			}
+		} catch (err) {
+			console.error(`[DEV MODE] Failed to watch data directory: ${err}`);
+		}
+	}
 
 	// Create Repositories table with premium support
 	db.run(`
