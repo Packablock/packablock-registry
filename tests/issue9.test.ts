@@ -26,7 +26,16 @@ function createValidChainPair(
 	dataObj: any,
 	metaExtra: any = {},
 ) {
-	const dataDocStr = YAML.stringify(dataObj);
+	let finalDataObj = dataObj;
+	if (
+		dataObj &&
+		typeof dataObj === "object" &&
+		!("lockfiles" in dataObj) &&
+		!("genesis_rollover" in dataObj)
+	) {
+		finalDataObj = { lockfiles: dataObj };
+	}
+	const dataDocStr = YAML.stringify(finalDataObj);
 	const dataHash = sha256(dataDocStr.trim());
 
 	const metaObjWithoutHash = {
@@ -132,10 +141,7 @@ describe("Issue #9 - SemVer-based alerting & webhook triggers on registry push e
 		// Block 0: foo (1.0.0), bar (>=2.0.0) -> triggers open fuse constraint warning
 		const block0 = createValidChainPair(0, GENESIS_PREV_HASH, {
 			"package-lock.json": {
-				packages: [
-					{ foo: "1.0.0" },
-					{ bar: ">=2.0.0" },
-				],
+				packages: [{ foo: "1.0.0" }, { bar: ">=2.0.0" }],
 			},
 		});
 
@@ -211,10 +217,7 @@ describe("Issue #9 - SemVer-based alerting & webhook triggers on registry push e
 		// Build a chain that contains block0 + block1
 		const block0 = createValidChainPair(0, GENESIS_PREV_HASH, {
 			"package-lock.json": {
-				packages: [
-					{ foo: "1.0.0" },
-					{ bar: ">=2.0.0" },
-				],
+				packages: [{ foo: "1.0.0" }, { bar: ">=2.0.0" }],
 			},
 		});
 
@@ -293,10 +296,7 @@ describe("Issue #9 - SemVer-based alerting & webhook triggers on registry push e
 	it("should trigger dependency_regression and high_drift_velocity health warnings on third block push", async () => {
 		const block0 = createValidChainPair(0, GENESIS_PREV_HASH, {
 			"package-lock.json": {
-				packages: [
-					{ foo: "1.0.0" },
-					{ bar: ">=2.0.0" },
-				],
+				packages: [{ foo: "1.0.0" }, { bar: ">=2.0.0" }],
 			},
 		});
 

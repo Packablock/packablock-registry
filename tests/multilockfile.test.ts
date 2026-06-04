@@ -18,7 +18,16 @@ function createValidChainPair(
 	dataObj: any,
 	metaExtra: any = {},
 ) {
-	const dataDocStr = YAML.stringify(dataObj);
+	let finalDataObj = dataObj;
+	if (
+		dataObj &&
+		typeof dataObj === "object" &&
+		!("lockfiles" in dataObj) &&
+		!("genesis_rollover" in dataObj)
+	) {
+		finalDataObj = { lockfiles: dataObj };
+	}
+	const dataDocStr = YAML.stringify(finalDataObj);
 	const dataHash = sha256(dataDocStr.trim());
 
 	const metaObjWithoutHash = {
@@ -101,10 +110,7 @@ describe("Registry Multi-Lockfile and Chain Events (init/forget)", () => {
 		const block0 = createValidChainPair(0, GENESIS_PREV_HASH, {
 			"package-lock.json": {
 				chain_event: "init",
-				packages: [
-					{ "package-a": "1.0.0" },
-					{ "package-b": "2.0.0" },
-				],
+				packages: [{ "package-a": "1.0.0" }, { "package-b": "2.0.0" }],
 			},
 		});
 
@@ -134,9 +140,7 @@ describe("Registry Multi-Lockfile and Chain Events (init/forget)", () => {
 		const block1 = createValidChainPair(1, block0.metaHash, {
 			"bun.lockb": {
 				chain_event: "init",
-				packages: [
-					{ "package-c": "3.0.0" },
-				],
+				packages: [{ "package-c": "3.0.0" }],
 			},
 		});
 
@@ -169,8 +173,12 @@ describe("Registry Multi-Lockfile and Chain Events (init/forget)", () => {
 		let historyData = JSON.parse(historyRes.body);
 		expect(historyData.history).toHaveLength(2);
 		// block 1 details should contain full parsedData
-		expect(historyData.history[1].packages["bun.lockb"].packages).toEqual([{ "package-c": "3.0.0" }]);
-		expect(historyData.history[1].packages["package-lock.json"]).toBeUndefined(); // block 1 parsed data only has bun.lockb
+		expect(
+			historyData.history[1].packages.lockfiles["bun.lockb"].packages,
+		).toEqual([{ "package-c": "3.0.0" }]);
+		expect(
+			historyData.history[1].packages.lockfiles["package-lock.json"],
+		).toBeUndefined(); // block 1 parsed data only has bun.lockb
 
 		// Block 2: Forget package-lock.json
 		const block2 = createValidChainPair(2, block1.metaHash, {
@@ -206,9 +214,7 @@ describe("Registry Multi-Lockfile and Chain Events (init/forget)", () => {
 		// Let's verify package-c gets updated, and package-a/b are not in the old/new package sets.
 		const block3 = createValidChainPair(3, block2.metaHash, {
 			"bun.lockb": {
-				packages: [
-					{ "package-c": [{ old: "3.0.0" }, { new: "3.1.0" }] },
-				],
+				packages: [{ "package-c": [{ old: "3.0.0" }, { new: "3.1.0" }] }],
 			},
 		});
 

@@ -18,35 +18,42 @@ The registry server component for Packablock. It receives, verifies, stores, and
 
 ## 💾 Attestation Chain Data Format
 
-The registry parses block payloads using a nested, multi-lockfile format. Each lockfile in the repository is represented by its own root key containing its packages and state.
+The registry parses block payloads using a nested, multi-lockfile layout format where lockfiles are grouped under the `lockfiles` root key. The root payload can also contain a `package.json` key defining package constraints.
 
 ### 1. Lockfile Initialization (`init` event)
-To start tracking a new lockfile or re-initialize one, include a `chain_event: init` metadata field and the complete list of packages:
+To start tracking a new lockfile or re-initialize one, include a `chain_event: init` metadata field and the complete list of packages under `lockfiles`:
 
 ```yaml
-package-lock.json:
-  chain_event: init
-  packages:
-    - lodash: "4.17.21"
-    - express: "4.18.2"
+lockfiles:
+  package-lock.json:
+    chain_event: init
+    packages:
+      - lodash: "4.17.21"
+      - express: "4.18.2"
+package.json:
+  constraints:
+    - lodash: "^4.17.21"
+    - express: "^4.18.2"
 ```
 
 ### 2. Lockfile Updates (Diff Format)
-Subsequent blocks contain version differences for individual lockfiles rather than full package lists. The registry aggregates these diffs to maintain the current active package manifest state:
+Subsequent blocks contain version differences for individual lockfiles rather than full package lists under `lockfiles`:
 
 ```yaml
-package-lock.json:
-  packages:
-    - lodash: [{ old: "4.17.21" }, { new: "4.17.22" }]
-    - debug: [{ new: "4.3.4" }]
+lockfiles:
+  package-lock.json:
+    packages:
+      - lodash: [{ old: "4.17.21" }, { new: "4.17.22" }]
+      - debug: [{ new: "4.3.4" }]
 ```
 
 ### 3. Lockfile Removal (`forget` event)
-To stop tracking a lockfile entirely and clear it from the repository's active package database state, send a `chain_event: forget` event:
+To stop tracking a lockfile entirely and clear it from the repository's active package database state, send a `chain_event: forget` event under `lockfiles`:
 
 ```yaml
-package-lock.json:
-  chain_event: forget
+lockfiles:
+  package-lock.json:
+    chain_event: forget
 ```
 
 ---

@@ -30,7 +30,16 @@ function createValidChainPair(
 	dataObj: any,
 	metaExtra: any = {},
 ) {
-	const dataDocStr = YAML.stringify(dataObj);
+	let finalDataObj = dataObj;
+	if (
+		dataObj &&
+		typeof dataObj === "object" &&
+		!("lockfiles" in dataObj) &&
+		!("genesis_rollover" in dataObj)
+	) {
+		finalDataObj = { lockfiles: dataObj };
+	}
+	const dataDocStr = YAML.stringify(finalDataObj);
 	const dataHash = sha256(dataDocStr.trim());
 
 	const metaObjWithoutHash = {
@@ -295,7 +304,8 @@ describe("Registry Auditing and Webhooks", () => {
 			expect(historyData.history[0].dataHash).toBe(block0.dataHash);
 			expect(historyData.history[0].metaHash).toBe(block0.metaHash);
 			expect(
-				historyData.history[0].packages["package-lock.json"].packages[0]["packa-block"]
+				historyData.history[0].packages.lockfiles["package-lock.json"]
+					.packages[0]["packa-block"],
 			).toBe("1.0.0");
 
 			// Assert Block 1 history
@@ -304,7 +314,8 @@ describe("Registry Auditing and Webhooks", () => {
 			expect(historyData.history[1].dataHash).toBe(block1.dataHash);
 			expect(historyData.history[1].metaHash).toBe(block1.metaHash);
 			expect(
-				historyData.history[1].packages["package-lock.json"].packages[0]["packa-block"][1].new
+				historyData.history[1].packages.lockfiles["package-lock.json"]
+					.packages[0]["packa-block"][1].new,
 			).toBe("1.1.0");
 
 			// Test GET /sigs
@@ -537,18 +548,13 @@ describe("Registry Auditing and Webhooks", () => {
 			// Construct 2 blocks
 			const block0 = createValidChainPair(0, GENESIS_PREV_HASH, {
 				"package-lock.json": {
-					packages: [
-						{ "package-a": "1.0.0" },
-					],
+					packages: [{ "package-a": "1.0.0" }],
 				},
 			});
 
 			const block1 = createValidChainPair(1, block0.metaHash, {
 				"package-lock.json": {
-					packages: [
-						{ "package-a": "1.0.0" },
-						{ "package-b": "2.0.0" },
-					],
+					packages: [{ "package-a": "1.0.0" }, { "package-b": "2.0.0" }],
 				},
 			});
 

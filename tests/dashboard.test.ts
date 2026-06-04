@@ -18,7 +18,16 @@ function createValidChainPair(
 	prevMetaHash: string,
 	dataObj: any,
 ) {
-	const dataDocStr = YAML.stringify(dataObj);
+	let finalDataObj = dataObj;
+	if (
+		dataObj &&
+		typeof dataObj === "object" &&
+		!("lockfiles" in dataObj) &&
+		!("genesis_rollover" in dataObj)
+	) {
+		finalDataObj = { lockfiles: dataObj };
+	}
+	const dataDocStr = YAML.stringify(finalDataObj);
 	const dataHash = sha256(dataDocStr.trim());
 
 	const metaObjWithoutHash = {

@@ -413,11 +413,16 @@ interface SemVerWarning {
 
 function parsePackages(dataObj: any): Record<string, string> {
 	const pkgs: Record<string, string> = {};
-	if (!dataObj || typeof dataObj !== "object") {
+	if (
+		!dataObj ||
+		typeof dataObj !== "object" ||
+		!dataObj.lockfiles ||
+		typeof dataObj.lockfiles !== "object"
+	) {
 		return pkgs;
 	}
 
-	for (const [lockfileName, lockfileVal] of Object.entries(dataObj)) {
+	for (const [lockfileName, lockfileVal] of Object.entries(dataObj.lockfiles)) {
 		if (!lockfileVal || typeof lockfileVal !== "object") {
 			continue;
 		}
@@ -473,7 +478,10 @@ function parsePackages(dataObj: any): Record<string, string> {
 	return pkgs;
 }
 
-function reconstructPackagesAtBlock(docs: string[], upToBlockCount: number): Record<string, string> {
+function reconstructPackagesAtBlock(
+	docs: string[],
+	upToBlockCount: number,
+): Record<string, string> {
 	const currentPackages: Record<string, string> = {};
 	const allKeys = new Set<string>();
 
@@ -482,8 +490,13 @@ function reconstructPackagesAtBlock(docs: string[], upToBlockCount: number): Rec
 		if (!dataDocStr) continue;
 		try {
 			const parsed = YAML.parse(dataDocStr);
-			if (parsed && typeof parsed === "object") {
-				for (const [key, val] of Object.entries(parsed)) {
+			if (
+				parsed &&
+				typeof parsed === "object" &&
+				parsed.lockfiles &&
+				typeof parsed.lockfiles === "object"
+			) {
+				for (const [key, val] of Object.entries(parsed.lockfiles)) {
 					if (val && typeof val === "object" && (val as any).packages) {
 						allKeys.add(key);
 					}
@@ -502,8 +515,14 @@ function reconstructPackagesAtBlock(docs: string[], upToBlockCount: number): Rec
 
 			try {
 				const parsed = YAML.parse(dataDocStr);
-				if (parsed && typeof parsed === "object" && filename in parsed) {
-					const inner = parsed[filename];
+				if (
+					parsed &&
+					typeof parsed === "object" &&
+					parsed.lockfiles &&
+					typeof parsed.lockfiles === "object" &&
+					filename in parsed.lockfiles
+				) {
+					const inner = parsed.lockfiles[filename];
 					if (i === 0) {
 						isTracked = true;
 					} else if (inner && typeof inner === "object") {
@@ -2074,9 +2093,18 @@ server.get("/api/v1/repo/:owner/:repo/tree", async (request, reply) => {
 				const metaHash = parsedMeta.meta_hash;
 				const prevMetaHash = parsedMeta.prev_meta_hash || firstPrevHash;
 				let packagesCount = 0;
-				if (parsedData && typeof parsedData === "object") {
-					for (const [key, val] of Object.entries(parsedData)) {
-						if (val && typeof val === "object" && Array.isArray((val as any).packages)) {
+				if (
+					parsedData &&
+					typeof parsedData === "object" &&
+					parsedData.lockfiles &&
+					typeof parsedData.lockfiles === "object"
+				) {
+					for (const [key, val] of Object.entries(parsedData.lockfiles)) {
+						if (
+							val &&
+							typeof val === "object" &&
+							Array.isArray((val as any).packages)
+						) {
 							packagesCount += (val as any).packages.length;
 						}
 					}
