@@ -791,6 +791,87 @@ function reconstructConstraintsAtBlock(
 	return currentConstraints;
 }
 
+function reconstructConstraintsWithManifestsAtBlock(
+	docs: string[],
+	upToBlockCount: number,
+): Record<string, { constraint: string; manifest: string }> {
+	const currentConstraints: Record<
+		string,
+		{ constraint: string; manifest: string }
+	> = {};
+	for (let i = 0; i < upToBlockCount; i++) {
+		const dataDocStr = docs[2 * i];
+		if (!dataDocStr) continue;
+		try {
+			const parsed = YAML.parse(dataDocStr);
+			if (!parsed || typeof parsed !== "object") continue;
+			for (const [manifestKey, manifestData] of Object.entries(parsed)) {
+				if (
+					manifestKey === "lockfiles" ||
+					manifestKey === "$yaml-chain-meta" ||
+					manifestKey === "genesis_rollover" ||
+					manifestKey === "rotated_at" ||
+					manifestKey === "previous_chain_hash"
+				) {
+					continue;
+				}
+				if (!manifestData || typeof manifestData !== "object") continue;
+				const pkgJson = manifestData as any;
+				if (pkgJson.chain_event === "init") {
+					for (const [k, v] of Object.entries(currentConstraints)) {
+						if (v.manifest === manifestKey) {
+							delete currentConstraints[k];
+						}
+					}
+				}
+				if (Array.isArray(pkgJson.constraints)) {
+					for (const item of pkgJson.constraints) {
+						if (item && typeof item === "object") {
+							for (const [name, val] of Object.entries(item)) {
+								if (typeof val === "string") {
+									currentConstraints[name] = {
+										constraint: val,
+										manifest: manifestKey,
+									};
+								} else if (Array.isArray(val)) {
+									let isRemoved = false;
+									let newConstraint = "";
+									for (const op of val) {
+										if (op && typeof op === "object") {
+											if (op.msg === "removed") {
+												isRemoved = true;
+											}
+											if (op.new !== undefined) {
+												newConstraint = String(op.new);
+											}
+										}
+									}
+									if (isRemoved) {
+										delete currentConstraints[name];
+									} else if (newConstraint) {
+										currentConstraints[name] = {
+											constraint: newConstraint,
+											manifest: manifestKey,
+										};
+									}
+								}
+							}
+						}
+					}
+				} else if (typeof pkgJson.constraints === "object") {
+					for (const [name, val] of Object.entries(pkgJson.constraints)) {
+						currentConstraints[name] = {
+							constraint: String(val),
+							manifest: manifestKey,
+						};
+					}
+				}
+			}
+		} catch {}
+	}
+	return currentConstraints;
+}
+
 function auditSemVerHealth(
 	oldPkgs: Record<string, string>,
 	newPkgs: Record<string, string>,
@@ -1859,38 +1940,46 @@ server.get("/api/v1/repo/:owner/:repo/candlesticks", async (request, reply) => {
 		}
 
 		// Reconstruct latest constraints by replaying block history
-		const constraints = reconstructConstraintsAtBlock(docs, blockCount);
+		const constraints = reconstructConstraintsWithManifestsAtBlock(
+			docs,
+			blockCount,
+		);
 
 		// Resolve all candlesticks in parallel to optimize upstream fetch performance
-		const candlestickPromises = Object.entries(constraints).map(async ([pkg, constraint]) => {
-			const currentPinned = latestPkgs[pkg] || "0.0.0";
-			const range = parseSemVerConstraint(constraint, currentPinned);
+		const candlestickPromises = Object.entries(constraints).map(
+			async ([pkg, info]) => {
+				const currentPinned = latestPkgs[pkg] || "0.0.0";
+				const range = parseSemVerConstraint(info.constraint, currentPinned);
 
-			const first = firstSeen[pkg] || {
-				version: currentPinned,
-				timestamp: new Date().toISOString(),
-			};
+				const first = firstSeen[pkg] || {
+					version: currentPinned,
+					timestamp: new Date().toISOString(),
+				};
 
-			// Resolve latest upstream
-			const upstream = await resolveLatestUpstream(pkg);
-			const latestUpstreamVersion = upstream ? upstream.version : currentPinned;
-			const latestUpstreamTimestamp = upstream
-				? upstream.cachedAt
-				: new Date().toISOString();
+				// Resolve latest upstream
+				const upstream = await resolveLatestUpstream(pkg);
+				const latestUpstreamVersion = upstream
+					? upstream.version
+					: currentPinned;
+				const latestUpstreamTimestamp = upstream
+					? upstream.cachedAt
+					: new Date().toISOString();
 
-			return {
-				package: pkg,
-				constraint: constraint,
-				min_version: range.min,
-				max_version: range.max,
-				type: range.type,
-				current_pinned_version: currentPinned,
-				first_seen_version: first.version,
-				first_seen_timestamp: first.timestamp,
-				latest_upstream_version: latestUpstreamVersion,
-				latest_upstream_timestamp: latestUpstreamTimestamp,
-			};
-		});
+				return {
+					package: pkg,
+					manifest: info.manifest,
+					constraint: info.constraint,
+					min_version: range.min,
+					max_version: range.max,
+					type: range.type,
+					current_pinned_version: currentPinned,
+					first_seen_version: first.version,
+					first_seen_timestamp: first.timestamp,
+					latest_upstream_version: latestUpstreamVersion,
+					latest_upstream_timestamp: latestUpstreamTimestamp,
+				};
+			},
+		);
 
 		const candlesticks = await Promise.all(candlestickPromises);
 
