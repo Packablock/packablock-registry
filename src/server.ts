@@ -17,6 +17,7 @@ import {
 	archiveLog,
 	getArchivedLogs,
 	getCachedPackage,
+	getCachedPackageRecord,
 	saveCachedPackage,
 	logIntegrationEvent,
 	getIntegrationEvents,
@@ -409,6 +410,143 @@ interface SemVerWarning {
 	type: string;
 	reason: string;
 	severity: "warning" | "critical";
+}
+
+export interface SemVerRange {
+	min: string;
+	max: string; // 'infinity' or a version string
+	type: "pinned" | "caret" | "tilde" | "open";
+}
+
+export function parseSemVerConstraint(
+	constraint: string,
+	currentPinned: string,
+): SemVerRange {
+	const clean = constraint.trim().replace(/^v/, "");
+
+	if (clean === "*" || clean === "latest" || clean === "") {
+		return { min: "0.0.0", max: "infinity", type: "open" };
+	}
+
+	// Pinned strict (e.g., "1.5.0", "=1.5.0")
+	if (/^\d+\.\d+(\.\d+)?/.test(clean) || clean.startsWith("=")) {
+		const ver = clean.replace(/^=/, "").trim();
+		return { min: ver, max: ver, type: "pinned" };
+	}
+
+	// Tilde operator (e.g., "~1.5.0")
+	if (clean.startsWith("~")) {
+		const ver = clean.slice(1).trim();
+		const parts = ver.split(".");
+		const major = parts[0] || "0";
+		const minor = parts[1] || "0";
+		const maxVal = `${major}.${minor}.999`;
+		return { min: ver, max: maxVal, type: "tilde" };
+	}
+
+	// Caret operator (e.g., "^1.5.0")
+	if (clean.startsWith("^")) {
+		const ver = clean.slice(1).trim();
+		const parts = ver.split(".");
+		const major = parts[0] || "0";
+		const minor = parts[1] || "0";
+		const patch = parts[2] || "0";
+
+		if (major !== "0") {
+			return { min: ver, max: `${major}.99.99`, type: "caret" };
+		} else if (minor !== "0") {
+			return { min: ver, max: `0.${minor}.99`, type: "caret" };
+		} else {
+			return { min: ver, max: `0.0.${patch}`, type: "caret" };
+		}
+	}
+
+	// Open operators (e.g., ">=1.5.0")
+	if (clean.startsWith(">=") || clean.startsWith(">")) {
+		const ver = clean.replace(/^>=?/, "").trim();
+		return { min: ver, max: "infinity", type: "open" };
+	}
+
+	// Open operators (e.g., "<=1.5.0")
+	if (clean.startsWith("<=") || clean.startsWith("<")) {
+		const ver = clean.replace(/^<=?/, "").trim();
+		return { min: "0.0.0", max: ver, type: "open" };
+	}
+
+	// Default fallback: treat as pinned
+	return { min: currentPinned, max: currentPinned, type: "pinned" };
+}
+
+function parseConstraints(dataObj: any): Record<string, string> {
+	const constraints: Record<string, string> = {};
+	if (!dataObj || typeof dataObj !== "object") {
+		return constraints;
+	}
+	const pkgJson = dataObj["package.json"];
+	if (!pkgJson || typeof pkgJson !== "object") {
+		return constraints;
+	}
+	const rawConstraints = pkgJson.constraints;
+	if (!rawConstraints) {
+		return constraints;
+	}
+
+	if (Array.isArray(rawConstraints)) {
+		for (const item of rawConstraints) {
+			if (item && typeof item === "object") {
+				for (const [name, constraint] of Object.entries(item)) {
+					constraints[name] = String(constraint);
+				}
+			}
+		}
+	} else if (typeof rawConstraints === "object") {
+		for (const [name, constraint] of Object.entries(rawConstraints)) {
+			constraints[name] = String(constraint);
+		}
+	}
+
+	return constraints;
+}
+
+async function resolveLatestUpstream(
+	pkg: string,
+): Promise<{ version: string; cachedAt: string } | null> {
+	const cacheTtlMs = process.env.PACKAGE_CACHE_TTL_MS
+		? Number.parseInt(process.env.PACKAGE_CACHE_TTL_MS, 10)
+		: 3600000; // 1 hour
+
+	const cached = getCachedPackageRecord(pkg);
+	if (cached) {
+		const age = Date.now() - new Date(cached.cached_at).getTime();
+		if (age < cacheTtlMs) {
+			return { version: cached.version, cachedAt: cached.cached_at };
+		}
+	}
+
+	try {
+		const res = await fetch(`https://registry.npmjs.org/${pkg}/latest`, {
+			signal: AbortSignal.timeout(3000),
+		});
+		if (res.ok) {
+			const data = (await res.json()) as any;
+			if (data && data.version) {
+				saveCachedPackage(pkg, data.version);
+				const updated = getCachedPackageRecord(pkg);
+				if (updated) {
+					return { version: updated.version, cachedAt: updated.cached_at };
+				}
+				return { version: data.version, cachedAt: new Date().toISOString() };
+			}
+		}
+	} catch (err) {
+		// ignore
+	}
+
+	if (cached) {
+		return { version: cached.version, cachedAt: cached.cached_at };
+	}
+
+	return null;
 }
 
 function parsePackages(dataObj: any): Record<string, string> {
@@ -1581,6 +1719,136 @@ server.get("/api/v1/repo/:owner/:repo/sigs", async (request, reply) => {
 		return reply.status(500).send({
 			error: "Internal Server Error",
 			message: `Failed to audit signatures: ${err.message}`,
+		});
+	}
+});
+
+/**
+ * GET /api/v1/repo/:owner/:repo/candlesticks
+ * Retrieves the candlesticks YAML representation for rendering D3 charts.
+ */
+server.get("/api/v1/repo/:owner/:repo/candlesticks", async (request, reply) => {
+	const { owner, repo } = request.params as any;
+	if (!owner || !repo) {
+		return reply.status(400).send({
+			error: "Bad Request",
+			message: "Fields 'owner' and 'repo' are required in route parameters.",
+		});
+	}
+
+	const repoRecord = getRepositoryByPath(owner, repo);
+	if (!repoRecord) {
+		return reply.status(404).send({
+			error: "Not Found",
+			message: "Repository not registered.",
+		});
+	}
+
+	const logRecord = getLog(repoRecord.id);
+	const archivedLogs = getArchivedLogs(repoRecord.id);
+
+	if (!logRecord && archivedLogs.length === 0) {
+		return reply.status(404).send({
+			error: "Not Found",
+			message: "No package history log exists for this repository yet.",
+		});
+	}
+
+	try {
+		const logsToProcess: Array<{ chain_content: string }> = [...archivedLogs];
+		if (logRecord) {
+			logsToProcess.push(logRecord);
+		}
+
+		let docs: string[] = [];
+		for (const log of logsToProcess) {
+			const logDocs = splitRawDocuments(log.chain_content);
+			docs = docs.concat(logDocs);
+		}
+
+		const blockCount = docs.length / 2;
+		if (blockCount === 0) {
+			return reply.status(404).send({
+				error: "Not Found",
+				message: "No blocks found in repository history.",
+			});
+		}
+
+		// Reconstruct latest packages
+		const latestPkgs = reconstructPackagesAtBlock(docs, blockCount);
+
+		// Reconstruct package versions chronologically to find first seen version and timestamp
+		const firstSeen: Record<string, { version: string; timestamp: string }> =
+			{};
+		for (let i = 0; i < blockCount; i++) {
+			const dataDocStr = docs[2 * i];
+			const metaDocStr = docs[2 * i + 1];
+			if (dataDocStr === undefined || metaDocStr === undefined) continue;
+
+			let parsedMeta: any;
+			try {
+				parsedMeta = YAML.parse(metaDocStr)?.["$yaml-chain-meta"];
+			} catch {}
+			if (!parsedMeta) continue;
+
+			const pkgsAtBlock = reconstructPackagesAtBlock(docs, i + 1);
+			for (const [name, ver] of Object.entries(pkgsAtBlock)) {
+				if (!firstSeen[name]) {
+					firstSeen[name] = {
+						version: ver,
+						timestamp: parsedMeta.timestamp || new Date().toISOString(),
+					};
+				}
+			}
+		}
+
+		// Parse constraints from the latest block data
+		const latestDataDocStr = docs[2 * (blockCount - 1)];
+		const latestParsedData = latestDataDocStr
+			? YAML.parse(latestDataDocStr)
+			: null;
+		const constraints = parseConstraints(latestParsedData);
+
+		const candlesticks: any[] = [];
+
+		// For each constraint, trace and build candlestick record
+		for (const [pkg, constraint] of Object.entries(constraints)) {
+			const currentPinned = latestPkgs[pkg] || "0.0.0";
+			const range = parseSemVerConstraint(constraint, currentPinned);
+
+			const first = firstSeen[pkg] || {
+				version: currentPinned,
+				timestamp: new Date().toISOString(),
+			};
+
+			// Resolve latest upstream
+			const upstream = await resolveLatestUpstream(pkg);
+			const latestUpstreamVersion = upstream ? upstream.version : currentPinned;
+			const latestUpstreamTimestamp = upstream
+				? upstream.cachedAt
+				: new Date().toISOString();
+
+			candlesticks.push({
+				package: pkg,
+				constraint: constraint,
+				min_version: range.min,
+				max_version: range.max,
+				type: range.type,
+				current_pinned_version: currentPinned,
+				first_seen_version: first.version,
+				first_seen_timestamp: first.timestamp,
+				latest_upstream_version: latestUpstreamVersion,
+				latest_upstream_timestamp: latestUpstreamTimestamp,
+			});
+		}
+
+		const yamlResponse = YAML.stringify(candlesticks);
+		reply.header("Content-Type", "application/yaml");
+		return reply.send(yamlResponse);
+	} catch (err: any) {
+		return reply.status(500).send({
+			error: "Internal Server Error",
+			message: `Failed to generate candlesticks: ${err.message}`,
 		});
 	}
 });

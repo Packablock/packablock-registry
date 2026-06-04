@@ -486,6 +486,15 @@ export function getCachedPackage(
 	return null;
 }
 
+export function getCachedPackageRecord(
+	packageName: string,
+): PackageCacheRecord | null {
+	const query = db.prepare(
+		"SELECT * FROM package_cache WHERE package_name = ?;",
+	);
+	return query.get(packageName) as PackageCacheRecord | null;
+}
+
 /**
  * Caches or updates an upstream package version.
  */

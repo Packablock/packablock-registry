@@ -122,6 +122,22 @@ Retrieves a JSON representation of the visualization tree and flat graph represe
   }
   ```
 
+#### 3. `GET /api/v1/repo/:owner/:repo/candlesticks`
+Retrieves a YAML representation of package version candlesticks computed from SemVer constraints and chronological block history.
+- **Response** (`application/yaml`):
+  ```yaml
+  - package: lodash
+    constraint: ^4.17.21
+    min_version: 4.17.21
+    max_version: 4.99.99
+    type: caret
+    current_pinned_version: 4.18.0
+    first_seen_version: 4.17.21
+    first_seen_timestamp: "2026-06-03T16:25:35Z"
+    latest_upstream_version: 4.20.0
+    latest_upstream_timestamp: "2026-06-03T18:30:00Z"
+  ```
+
 ---
 
 ## 🚀 Getting Started
