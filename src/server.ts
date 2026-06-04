@@ -735,6 +735,62 @@ function reconstructPackagesAtBlock(
 	return currentPackages;
 }
 
+function reconstructConstraintsAtBlock(
+	docs: string[],
+	upToBlockCount: number,
+): Record<string, string> {
+	const currentConstraints: Record<string, string> = {};
+	for (let i = 0; i < upToBlockCount; i++) {
+		const dataDocStr = docs[2 * i];
+		if (!dataDocStr) continue;
+		try {
+			const parsed = YAML.parse(dataDocStr);
+			const pkgJson = parsed?.["package.json"];
+			if (pkgJson && typeof pkgJson === "object") {
+				if (pkgJson.chain_event === "init") {
+					for (const k of Object.keys(currentConstraints)) {
+						delete currentConstraints[k];
+					}
+				}
+				if (Array.isArray(pkgJson.constraints)) {
+					for (const item of pkgJson.constraints) {
+						if (item && typeof item === "object") {
+							for (const [name, val] of Object.entries(item)) {
+								if (typeof val === "string") {
+									currentConstraints[name] = val;
+								} else if (Array.isArray(val)) {
+									let isRemoved = false;
+									let newConstraint = "";
+									for (const op of val) {
+										if (op && typeof op === "object") {
+											if (op.msg === "removed") {
+												isRemoved = true;
+											}
+											if (op.new !== undefined) {
+												newConstraint = String(op.new);
+											}
+										}
+									}
+									if (isRemoved) {
+										delete currentConstraints[name];
+									} else if (newConstraint) {
+										currentConstraints[name] = newConstraint;
+									}
+								}
+							}
+						}
+					}
+				} else if (typeof pkgJson.constraints === "object") {
+					for (const [name, val] of Object.entries(pkgJson.constraints)) {
+						currentConstraints[name] = String(val);
+					}
+				}
+			}
+		} catch {}
+	}
+	return currentConstraints;
+}
+
 function auditSemVerHealth(
 	oldPkgs: Record<string, string>,
 	newPkgs: Record<string, string>,
@@ -1802,17 +1858,11 @@ server.get("/api/v1/repo/:owner/:repo/candlesticks", async (request, reply) => {
 			}
 		}
 
-		// Parse constraints from the latest block data
-		const latestDataDocStr = docs[2 * (blockCount - 1)];
-		const latestParsedData = latestDataDocStr
-			? YAML.parse(latestDataDocStr)
-			: null;
-		const constraints = parseConstraints(latestParsedData);
+		// Reconstruct latest constraints by replaying block history
+		const constraints = reconstructConstraintsAtBlock(docs, blockCount);
 
-		const candlesticks: any[] = [];
-
-		// For each constraint, trace and build candlestick record
-		for (const [pkg, constraint] of Object.entries(constraints)) {
+		// Resolve all candlesticks in parallel to optimize upstream fetch performance
+		const candlestickPromises = Object.entries(constraints).map(async ([pkg, constraint]) => {
 			const currentPinned = latestPkgs[pkg] || "0.0.0";
 			const range = parseSemVerConstraint(constraint, currentPinned);
 
@@ -1828,7 +1878,7 @@ server.get("/api/v1/repo/:owner/:repo/candlesticks", async (request, reply) => {
 				? upstream.cachedAt
 				: new Date().toISOString();
 
-			candlesticks.push({
+			return {
 				package: pkg,
 				constraint: constraint,
 				min_version: range.min,
@@ -1839,8 +1889,10 @@ server.get("/api/v1/repo/:owner/:repo/candlesticks", async (request, reply) => {
 				first_seen_timestamp: first.timestamp,
 				latest_upstream_version: latestUpstreamVersion,
 				latest_upstream_timestamp: latestUpstreamTimestamp,
-			});
-		}
+			};
+		});
+
+		const candlesticks = await Promise.all(candlestickPromises);
 
 		const yamlResponse = YAML.stringify(candlesticks);
 		reply.header("Content-Type", "application/yaml");
