@@ -62,6 +62,12 @@ export interface PackageCacheRecord {
 	cached_at: string;
 }
 
+export interface RepositoryCandlesticksCacheRecord {
+	repo_id: number;
+	cached_yaml: string;
+	updated_at: string;
+}
+
 export interface WebhookRecord {
 	id: number;
 	repo_id: number;
@@ -189,6 +195,15 @@ export function initDb(): void {
       package_name TEXT PRIMARY KEY,
       version TEXT NOT NULL,
       cached_at TEXT NOT NULL
+    );
+  `);
+
+	// Create Repository Candlesticks Cache table
+	db.run(`
+    CREATE TABLE IF NOT EXISTS repository_candlesticks_cache (
+      repo_id INTEGER PRIMARY KEY REFERENCES repositories(id) ON DELETE CASCADE,
+      cached_yaml TEXT NOT NULL,
+      updated_at TEXT NOT NULL
     );
   `);
 
@@ -661,4 +676,36 @@ export function purgeStaleRepositories(): number {
 		"DELETE FROM repositories WHERE verification_status = 'pending'",
 	);
 	return result.changes;
+}
+
+/**
+ * Gets cached candlesticks YAML representation for a repository.
+ */
+export function getCachedCandlesticks(
+	repoId: number,
+): RepositoryCandlesticksCacheRecord | null {
+	const query = db.prepare(
+		"SELECT * FROM repository_candlesticks_cache WHERE repo_id = ?;",
+	);
+	return query.get(repoId) as RepositoryCandlesticksCacheRecord | null;
+}
+
+/**
+ * Caches or updates candlesticks YAML representation for a repository.
+ */
+export function saveCachedCandlesticks(
+	repoId: number,
+	cachedYaml: string,
+): void {
+	const now = new Date().toISOString();
+	db.run(
+		`
+    INSERT INTO repository_candlesticks_cache (repo_id, cached_yaml, updated_at)
+    VALUES (?, ?, ?)
+    ON CONFLICT(repo_id) DO UPDATE SET
+      cached_yaml = excluded.cached_yaml,
+      updated_at = excluded.updated_at;
+  `,
+		[repoId, cachedYaml, now],
+	);
 }

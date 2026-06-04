@@ -30,6 +30,8 @@ import {
 	togglePremium,
 	revokeRepositoryToken,
 	purgeStaleRepositories,
+	getCachedCandlesticks,
+	saveCachedCandlesticks,
 } from "./database.js";
 import { verifyInMemoryChain, splitRawDocuments } from "./verify.js";
 import { verifyGithubOidcToken } from "./oidc.js";
@@ -508,6 +510,24 @@ function parseConstraints(dataObj: any): Record<string, string> {
 	return constraints;
 }
 
+function fetchLatestUpstreamBackground(pkg: string): void {
+	(async () => {
+		try {
+			const res = await fetch(`https://registry.npmjs.org/${pkg}/latest`, {
+				signal: AbortSignal.timeout(5000),
+			});
+			if (res.ok) {
+				const data = (await res.json()) as any;
+				if (data && data.version) {
+					saveCachedPackage(pkg, data.version);
+				}
+			}
+		} catch (err) {
+			// ignore background errors
+		}
+	})();
+}
+
 async function resolveLatestUpstream(
 	pkg: string,
 ): Promise<{ version: string; cachedAt: string } | null> {
@@ -518,34 +538,14 @@ async function resolveLatestUpstream(
 	const cached = getCachedPackageRecord(pkg);
 	if (cached) {
 		const age = Date.now() - new Date(cached.cached_at).getTime();
-		if (age < cacheTtlMs) {
-			return { version: cached.version, cachedAt: cached.cached_at };
+		if (age >= cacheTtlMs) {
+			fetchLatestUpstreamBackground(pkg);
 		}
-	}
-
-	try {
-		const res = await fetch(`https://registry.npmjs.org/${pkg}/latest`, {
-			signal: AbortSignal.timeout(3000),
-		});
-		if (res.ok) {
-			const data = (await res.json()) as any;
-			if (data && data.version) {
-				saveCachedPackage(pkg, data.version);
-				const updated = getCachedPackageRecord(pkg);
-				if (updated) {
-					return { version: updated.version, cachedAt: updated.cached_at };
-				}
-				return { version: data.version, cachedAt: new Date().toISOString() };
-			}
-		}
-	} catch (err) {
-		// ignore
-	}
-
-	if (cached) {
 		return { version: cached.version, cachedAt: cached.cached_at };
 	}
 
+	// Trigger background fetch and return null immediately to avoid blocking
+	fetchLatestUpstreamBackground(pkg);
 	return null;
 }
 
@@ -1222,6 +1222,22 @@ server.post("/api/v1/log/push", async (request, reply) => {
 			`Successfully stored log for "${resolvedRepo.owner}/${resolvedRepo.repo}". Total blocks: ${report.blockCount}`,
 		);
 
+		// Trigger background pre-computation and caching of candlesticks
+		(async () => {
+			try {
+				const yamlResponse = await generateCandlesticksYaml(
+					resolvedRepo.owner,
+					resolvedRepo.repo,
+					resolvedRepo.id,
+				);
+				saveCachedCandlesticks(resolvedRepo.id, yamlResponse);
+			} catch (err) {
+				request.log.error(
+					`Failed to pre-compute candlesticks in background: ${err}`,
+				);
+			}
+		})();
+
 		// Extract client execution metadata headers
 		const clientVersion = request.headers["x-client-version"] as
 			| string
@@ -1467,6 +1483,22 @@ server.post("/api/v1/repo/:owner/:repo/rollover", async (request, reply) => {
 
 		// 2. Save the new genesis block as the new active log
 		saveLog(tokenRepo.id, new_genesis_block, 1, report.lastBlockHash!);
+
+		// Trigger background pre-computation and caching of candlesticks
+		(async () => {
+			try {
+				const yamlResponse = await generateCandlesticksYaml(
+					tokenRepo.owner,
+					tokenRepo.repo,
+					tokenRepo.id,
+				);
+				saveCachedCandlesticks(tokenRepo.id, yamlResponse);
+			} catch (err) {
+				request.log.error(
+					`Failed to pre-compute candlesticks in background after rollover: ${err}`,
+				);
+			}
+		})();
 
 		return {
 			success: true,
@@ -1870,6 +1902,236 @@ server.get("/api/v1/repo/:owner/:repo/sigs", async (request, reply) => {
 });
 
 /**
+ * Reusable helper to generate the candlesticks representation.
+ */
+async function generateCandlesticksYaml(
+	owner: string,
+	repo: string,
+	repoId: number,
+): Promise<string> {
+	const logRecord = getLog(repoId);
+	const archivedLogs = getArchivedLogs(repoId);
+
+	if (!logRecord && archivedLogs.length === 0) {
+		throw new Error("No package history log exists for this repository yet.");
+	}
+
+	const logsToProcess: Array<{ chain_content: string }> = [...archivedLogs];
+	if (logRecord) {
+		logsToProcess.push(logRecord);
+	}
+
+	let docs: string[] = [];
+	for (const log of logsToProcess) {
+		const logDocs = splitRawDocuments(log.chain_content);
+		docs = docs.concat(logDocs);
+	}
+
+	const blockCount = docs.length / 2;
+	if (blockCount === 0) {
+		throw new Error("No blocks found in repository history.");
+	}
+
+	// Reconstruct packages and first seen versions chronologically in a single pass
+	const firstSeen: Record<string, { version: string; timestamp: string }> = {};
+	const lockfileStates: Record<
+		string,
+		{ isTracked: boolean; packages: Record<string, string> }
+	> = {};
+
+	for (let i = 0; i < blockCount; i++) {
+		const dataDocStr = docs[2 * i];
+		const metaDocStr = docs[2 * i + 1];
+		if (dataDocStr === undefined || metaDocStr === undefined) continue;
+
+		let parsedData: any = null;
+		try {
+			parsedData = dataDocStr ? YAML.parse(dataDocStr) : null;
+		} catch {}
+
+		let parsedMeta: any = null;
+		try {
+			parsedMeta = metaDocStr
+				? YAML.parse(metaDocStr)?.["$yaml-chain-meta"]
+				: null;
+		} catch {}
+
+		if (
+			parsedData &&
+			typeof parsedData === "object" &&
+			parsedData.lockfiles &&
+			typeof parsedData.lockfiles === "object"
+		) {
+			for (const [filename, inner] of Object.entries(parsedData.lockfiles)) {
+				if (!lockfileStates[filename]) {
+					lockfileStates[filename] = { isTracked: false, packages: {} };
+				}
+				const state = lockfileStates[filename];
+
+				if (i === 0) {
+					state.isTracked = true;
+				} else if (inner && typeof inner === "object") {
+					const innerObj = inner as any;
+					if (innerObj.chain_event === "init") {
+						state.isTracked = true;
+					} else if (innerObj.chain_event === "forget") {
+						state.isTracked = false;
+						state.packages = {};
+					} else if (innerObj.packages) {
+						state.isTracked = true;
+					}
+				}
+
+				if (inner && state.isTracked) {
+					const innerObj = inner as any;
+					if (
+						Array.isArray(innerObj.packages) &&
+						innerObj.packages.length > 0
+					) {
+						const firstItem = innerObj.packages[0];
+						let isDiff = false;
+						if (firstItem && typeof firstItem === "object") {
+							const values = Object.values(firstItem);
+							if (values.length > 0 && Array.isArray(values[0])) {
+								isDiff = true;
+							}
+						}
+
+						if (!isDiff) {
+							state.packages = {};
+							for (const item of innerObj.packages) {
+								if (item && typeof item === "object") {
+									for (const [name, ver] of Object.entries(item)) {
+										state.packages[name] = String(ver);
+									}
+								}
+							}
+						} else {
+							for (const item of innerObj.packages) {
+								if (item && typeof item === "object") {
+									for (const [name, ops] of Object.entries(item)) {
+										if (Array.isArray(ops)) {
+											let isRemoved = false;
+											let newVer = "";
+											for (const op of ops) {
+												if (op && typeof op === "object") {
+													if (op.msg === "removed") {
+														isRemoved = true;
+													}
+													if (op.new !== undefined) {
+														newVer = String(op.new);
+													}
+												}
+											}
+											if (isRemoved) {
+												delete state.packages[name];
+											} else if (newVer) {
+												state.packages[name] = newVer;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		// Gather all active packages at this block height
+		const pkgsAtBlock: Record<string, string> = {};
+		for (const state of Object.values(lockfileStates)) {
+			if (state.isTracked) {
+				Object.assign(pkgsAtBlock, state.packages);
+			}
+		}
+
+		// Record first seen version/timestamp
+		const timestamp = parsedMeta?.timestamp || new Date().toISOString();
+		for (const [name, ver] of Object.entries(pkgsAtBlock)) {
+			if (!firstSeen[name]) {
+				firstSeen[name] = {
+					version: ver,
+					timestamp: timestamp,
+				};
+			}
+		}
+	}
+
+	// At the end, latestPkgs is the set of packages active in the final block height
+	const latestPkgs: Record<string, string> = {};
+	for (const state of Object.values(lockfileStates)) {
+		if (state.isTracked) {
+			Object.assign(latestPkgs, state.packages);
+		}
+	}
+
+	// Reconstruct latest constraints by replaying block history
+	const { constraints, manifests } = reconstructConstraintsWithManifestsAtBlock(
+		docs,
+		blockCount,
+	);
+
+	// Resolve all candlesticks in parallel to optimize upstream fetch performance
+	const candlestickPromises = Object.entries(constraints).map(
+		async ([pkg, info]) => {
+			const currentPinned = latestPkgs[pkg] || "0.0.0";
+			const range = parseSemVerConstraint(info.constraint, currentPinned);
+
+			const first = firstSeen[pkg] || {
+				version: currentPinned,
+				timestamp: new Date().toISOString(),
+			};
+
+			// Resolve latest upstream
+			const upstream = await resolveLatestUpstream(pkg);
+			const latestUpstreamVersion = upstream ? upstream.version : currentPinned;
+			const latestUpstreamTimestamp = upstream
+				? upstream.cachedAt
+				: new Date().toISOString();
+
+			return {
+				package: pkg,
+				manifest: info.manifest,
+				constraint: info.constraint,
+				min_version: range.min,
+				max_version: range.max,
+				type: range.type,
+				current_pinned_version: currentPinned,
+				first_seen_version: first.version,
+				first_seen_timestamp: first.timestamp,
+				latest_upstream_version: latestUpstreamVersion,
+				latest_upstream_timestamp: latestUpstreamTimestamp,
+			};
+		},
+	);
+
+	const candlesticks = await Promise.all(candlestickPromises);
+
+	// Include placeholders for manifests that don't have constraints
+	const activeManifests = new Set(candlesticks.map((c) => c.manifest));
+	for (const manifest of manifests) {
+		if (!activeManifests.has(manifest)) {
+			candlesticks.push({
+				package: null as any,
+				manifest: manifest,
+				constraint: null as any,
+				min_version: null as any,
+				max_version: null as any,
+				type: null as any,
+				current_pinned_version: null as any,
+				first_seen_version: null as any,
+				first_seen_timestamp: null as any,
+				latest_upstream_version: null as any,
+				latest_upstream_timestamp: null as any,
+			});
+		}
+	}
+
+	return YAML.stringify(candlesticks);
+}
+
+/**
  * GET /api/v1/repo/:owner/:repo/candlesticks
  * Retrieves the candlesticks YAML representation for rendering D3 charts.
  */
@@ -1892,7 +2154,6 @@ server.get("/api/v1/repo/:owner/:repo/candlesticks", async (request, reply) => {
 
 	const logRecord = getLog(repoRecord.id);
 	const archivedLogs = getArchivedLogs(repoRecord.id);
-
 	if (!logRecord && archivedLogs.length === 0) {
 		return reply.status(404).send({
 			error: "Not Found",
@@ -1901,116 +2162,21 @@ server.get("/api/v1/repo/:owner/:repo/candlesticks", async (request, reply) => {
 	}
 
 	try {
-		const logsToProcess: Array<{ chain_content: string }> = [...archivedLogs];
-		if (logRecord) {
-			logsToProcess.push(logRecord);
+		// Try to fetch cached candlesticks first
+		const cached = getCachedCandlesticks(repoRecord.id);
+		if (cached) {
+			reply.header("Content-Type", "application/yaml");
+			return reply.send(cached.cached_yaml);
 		}
 
-		let docs: string[] = [];
-		for (const log of logsToProcess) {
-			const logDocs = splitRawDocuments(log.chain_content);
-			docs = docs.concat(logDocs);
-		}
-
-		const blockCount = docs.length / 2;
-		if (blockCount === 0) {
-			return reply.status(404).send({
-				error: "Not Found",
-				message: "No blocks found in repository history.",
-			});
-		}
-
-		// Reconstruct latest packages
-		const latestPkgs = reconstructPackagesAtBlock(docs, blockCount);
-
-		// Reconstruct package versions chronologically to find first seen version and timestamp
-		const firstSeen: Record<string, { version: string; timestamp: string }> =
-			{};
-		for (let i = 0; i < blockCount; i++) {
-			const dataDocStr = docs[2 * i];
-			const metaDocStr = docs[2 * i + 1];
-			if (dataDocStr === undefined || metaDocStr === undefined) continue;
-
-			let parsedMeta: any;
-			try {
-				parsedMeta = YAML.parse(metaDocStr)?.["$yaml-chain-meta"];
-			} catch {}
-			if (!parsedMeta) continue;
-
-			const pkgsAtBlock = reconstructPackagesAtBlock(docs, i + 1);
-			for (const [name, ver] of Object.entries(pkgsAtBlock)) {
-				if (!firstSeen[name]) {
-					firstSeen[name] = {
-						version: ver,
-						timestamp: parsedMeta.timestamp || new Date().toISOString(),
-					};
-				}
-			}
-		}
-
-		// Reconstruct latest constraints by replaying block history
-		const { constraints, manifests } =
-			reconstructConstraintsWithManifestsAtBlock(docs, blockCount);
-
-		// Resolve all candlesticks in parallel to optimize upstream fetch performance
-		const candlestickPromises = Object.entries(constraints).map(
-			async ([pkg, info]) => {
-				const currentPinned = latestPkgs[pkg] || "0.0.0";
-				const range = parseSemVerConstraint(info.constraint, currentPinned);
-
-				const first = firstSeen[pkg] || {
-					version: currentPinned,
-					timestamp: new Date().toISOString(),
-				};
-
-				// Resolve latest upstream
-				const upstream = await resolveLatestUpstream(pkg);
-				const latestUpstreamVersion = upstream
-					? upstream.version
-					: currentPinned;
-				const latestUpstreamTimestamp = upstream
-					? upstream.cachedAt
-					: new Date().toISOString();
-
-				return {
-					package: pkg,
-					manifest: info.manifest,
-					constraint: info.constraint,
-					min_version: range.min,
-					max_version: range.max,
-					type: range.type,
-					current_pinned_version: currentPinned,
-					first_seen_version: first.version,
-					first_seen_timestamp: first.timestamp,
-					latest_upstream_version: latestUpstreamVersion,
-					latest_upstream_timestamp: latestUpstreamTimestamp,
-				};
-			},
+		// Fallback to generating and caching it
+		const yamlResponse = await generateCandlesticksYaml(
+			owner,
+			repo,
+			repoRecord.id,
 		);
+		saveCachedCandlesticks(repoRecord.id, yamlResponse);
 
-		const candlesticks = await Promise.all(candlestickPromises);
-
-		// Include placeholders for manifests that don't have constraints
-		const activeManifests = new Set(candlesticks.map((c) => c.manifest));
-		for (const manifest of manifests) {
-			if (!activeManifests.has(manifest)) {
-				candlesticks.push({
-					package: null as any,
-					manifest: manifest,
-					constraint: null as any,
-					min_version: null as any,
-					max_version: null as any,
-					type: null as any,
-					current_pinned_version: null as any,
-					first_seen_version: null as any,
-					first_seen_timestamp: null as any,
-					latest_upstream_version: null as any,
-					latest_upstream_timestamp: null as any,
-				});
-			}
-		}
-
-		const yamlResponse = YAML.stringify(candlesticks);
 		reply.header("Content-Type", "application/yaml");
 		return reply.send(yamlResponse);
 	} catch (err: any) {
