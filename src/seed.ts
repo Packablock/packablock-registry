@@ -99,7 +99,7 @@ async function runSeeder() {
 		{
 			id: 1,
 			owner: "packablock",
-			repo: "pblk-signer",
+			repo: "pkablk-signer",
 			registration_token: "tok_signer_123",
 			created_at: new Date().toISOString(),
 			is_premium: 1,
@@ -112,7 +112,7 @@ async function runSeeder() {
 		{
 			id: 2,
 			owner: "packablock",
-			repo: "pblk-auditor",
+			repo: "pkablk-auditor",
 			registration_token: "tok_auditor_456",
 			created_at: new Date().toISOString(),
 			is_premium: 0,
@@ -198,7 +198,7 @@ async function runSeeder() {
 	// 4. Seed Cryptographic Ledger Histories
 	console.log("⛓️  Compiling cryptographic chain blocks...");
 
-	// --- A. Ledger for 'packablock/pblk-signer' (Premium, OIDC/SSH/GPG, Rollovers) ---
+	// --- A. Ledger for 'packablock/pkablk-signer' (Premium, OIDC/SSH/GPG, Rollovers) ---
 	let chain1 = "";
 	let prevHash1 = GENESIS_PREV_HASH;
 
@@ -207,10 +207,10 @@ async function runSeeder() {
 		0,
 		prevHash1,
 		{
-			name: "packablock/pblk-signer",
+			name: "packablock/pkablk-signer",
 			version: "1.0.0",
 			commit: "92ab56f",
-			description: "Genesis release of pblk-signer",
+			description: "Genesis release of pkablk-signer",
 		},
 		{
 			ssh_fingerprint: "SHA256:6iz0DBVAEGHOi6th+GYtd+t2/GoETMXrkT8V/jWa6og",
@@ -225,7 +225,7 @@ async function runSeeder() {
 		1,
 		prevHash1,
 		{
-			name: "packablock/pblk-signer",
+			name: "packablock/pkablk-signer",
 			version: "1.1.0",
 			commit: "12bc34d",
 			description: "Add parallel signing pipelines",
@@ -247,7 +247,7 @@ async function runSeeder() {
 		2,
 		prevHash1,
 		{
-			name: "packablock/pblk-signer",
+			name: "packablock/pkablk-signer",
 			version: "1.1.1",
 			commit: "bc87d10",
 			description: "Fix race condition in key buffers",
@@ -282,10 +282,10 @@ async function runSeeder() {
 			genesis_rollover: true,
 			previous_epoch: 0,
 			rollover_reason: "Scheduled quarterly key rotation",
-			rollover_authority: "pblk-rollover-cli",
+			rollover_authority: "pkablk-rollover-cli",
 		},
 		{
-			oidc_claims: { actor: "pblk-rollover-cli" },
+			oidc_claims: { actor: "pkablk-rollover-cli" },
 			git_actor: "owner@packablock.com",
 		},
 	);
@@ -297,7 +297,7 @@ async function runSeeder() {
 		1,
 		prevHash1,
 		{
-			name: "packablock/pblk-signer",
+			name: "packablock/pkablk-signer",
 			version: "2.0.0",
 			commit: "fe29c81",
 			description: "Major breaking key signature change",
@@ -319,7 +319,7 @@ async function runSeeder() {
 		[1, chain1_epoch1, 2, finalHash1, new Date().toISOString()],
 	);
 
-	// --- B. Ledger for 'packablock/pblk-auditor' (Standard Tier, Basic Blocks) ---
+	// --- B. Ledger for 'packablock/pkablk-auditor' (Standard Tier, Basic Blocks) ---
 	let chain2 = "";
 	let prevHash2 = GENESIS_PREV_HASH;
 
@@ -327,10 +327,10 @@ async function runSeeder() {
 		0,
 		prevHash2,
 		{
-			name: "packablock/pblk-auditor",
+			name: "packablock/pkablk-auditor",
 			version: "1.0.0",
 			commit: "7b89fc1",
-			description: "Genesis release of pblk-auditor",
+			description: "Genesis release of pkablk-auditor",
 		},
 		{ git_actor: "contributor1@packablock.com" },
 	);
@@ -341,7 +341,7 @@ async function runSeeder() {
 		1,
 		prevHash2,
 		{
-			name: "packablock/pblk-auditor",
+			name: "packablock/pkablk-auditor",
 			version: "1.0.1",
 			commit: "44ef22c",
 			description: "Implement local integrity parsing",
