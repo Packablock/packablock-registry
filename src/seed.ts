@@ -94,6 +94,16 @@ async function runSeeder() {
 			name: "Packablock Audit Project",
 			created_at: new Date().toISOString(),
 		},
+		{
+			id: "bun-e2e-demo",
+			name: "Bun e2e Demo",
+			created_at: new Date().toISOString(),
+		},
+		{
+			id: "rails-e2e-demo",
+			name: "Rails e2e Demo",
+			created_at: new Date().toISOString(),
+		},
 	];
 
 	const insertProject = db.prepare(
@@ -155,6 +165,30 @@ async function runSeeder() {
 			challenge_nonce: null,
 			pinned_public_key: null,
 			project_id: "ecommerce-core",
+		},
+		{
+			id: 5,
+			owner: "oven-sh",
+			repo: "bun",
+			registration_token: "tok_bun_e2e_demo_123",
+			created_at: new Date().toISOString(),
+			is_premium: 0,
+			verification_status: "none",
+			challenge_nonce: null,
+			pinned_public_key: null,
+			project_id: "bun-e2e-demo",
+		},
+		{
+			id: 6,
+			owner: "rails",
+			repo: "rails",
+			registration_token: "tok_rails_e2e_demo_123",
+			created_at: new Date().toISOString(),
+			is_premium: 0,
+			verification_status: "none",
+			challenge_nonce: null,
+			pinned_public_key: null,
+			project_id: "rails-e2e-demo",
 		},
 	];
 
@@ -486,6 +520,80 @@ async function runSeeder() {
 	`,
 		[4, chain4, 1, finalHash4, new Date().toISOString()],
 	);
+
+	// --- E. Ledger for 'oven-sh/bun' (Standard, Replayed history from E2E demo) ---
+	const bunDemoDir = path.join(
+		process.cwd(),
+		"..",
+		"packablock-demo",
+		"example-bun",
+	);
+	const bunChainPath = path.join(bunDemoDir, "packablock.yaml");
+
+	if (fs.existsSync(bunChainPath)) {
+		console.log("📖 Importing Bun E2E chain from packablock-demo...");
+		const bunContent = fs.readFileSync(bunChainPath, "utf8");
+		const bunDocs = splitRawDocuments(bunContent);
+		const bunBlockCount = bunDocs.length / 2;
+		const lastBunDoc = bunDocs[bunDocs.length - 1];
+		if (lastBunDoc === undefined) {
+			throw new Error("Bun chain is empty");
+		}
+		const bunMetaObj = YAML.parse(lastBunDoc)?.["$yaml-chain-meta"];
+		const bunLastHash = bunMetaObj?.meta_hash;
+
+		console.log(
+			`  Bun E2E block count: ${bunBlockCount}, last hash: ${bunLastHash}`,
+		);
+
+		// Insert active log for Repo 5 (oven-sh/bun)
+		db.run(
+			`
+			INSERT INTO logs (repo_id, chain_content, block_count, last_block_hash, updated_at)
+			VALUES (?, ?, ?, ?, ?)
+		`,
+			[5, bunContent, bunBlockCount, bunLastHash, new Date().toISOString()],
+		);
+	} else {
+		console.log("⚠️ Bun E2E chain file not found in packablock-demo!");
+	}
+
+	// --- F. Ledger for 'rails/rails' (Standard, Replayed history from E2E demo) ---
+	const railsDemoDir = path.join(
+		process.cwd(),
+		"..",
+		"packablock-demo",
+		"example-rails",
+	);
+	const railsChainPath = path.join(railsDemoDir, "packablock.yaml");
+
+	if (fs.existsSync(railsChainPath)) {
+		console.log("📖 Importing Rails E2E chain from packablock-demo...");
+		const railsContent = fs.readFileSync(railsChainPath, "utf8");
+		const railsDocs = splitRawDocuments(railsContent);
+		const railsBlockCount = railsDocs.length / 2;
+		const lastRailsDoc = railsDocs[railsDocs.length - 1];
+		if (lastRailsDoc === undefined) {
+			throw new Error("Rails chain is empty");
+		}
+		const railsMetaObj = YAML.parse(lastRailsDoc)?.["$yaml-chain-meta"];
+		const railsLastHash = railsMetaObj?.meta_hash;
+
+		console.log(
+			`  Rails E2E block count: ${railsBlockCount}, last hash: ${railsLastHash}`,
+		);
+
+		// Insert active log for Repo 6 (rails/rails)
+		db.run(
+			`
+			INSERT INTO logs (repo_id, chain_content, block_count, last_block_hash, updated_at)
+			VALUES (?, ?, ?, ?, ?)
+		`,
+			[6, railsContent, railsBlockCount, railsLastHash, new Date().toISOString()],
+		);
+	} else {
+		console.log("⚠️ Rails E2E chain file not found in packablock-demo!");
+	}
 
 	// 5. Seed Integration Events Dashboard logs
 	console.log("📊 Seeding dashboard Integration Events logs...");
