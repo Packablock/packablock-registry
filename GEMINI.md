@@ -47,4 +47,9 @@ Because the wrapper automatically exports the correct token session keys inside 
 * **Pushes to Windmill**: Deploy templates with `bun start wmill-setup` or `wmill sync push` inside the `windmill/` directory.
 * **Active Workload (WIP)**: Run `./wip.sh` inside the workspace root directory to instantly view all "In Progress" organization tasks with minimal token consumption.
 
+---
+
+## ⚠️ Resource Management & SQLite
+- **No SQLite File/Directory Watchers**: Do not implement filesystem watchers (`fs.watch`) on SQLite database files or their containing directories. SQLite handles concurrency natively. Directory-level watchers trigger multiple callbacks on every database write due to journal/WAL file updates, causing database connections to close/re-open repeatedly, which leaks socket handles and memory.
+
 
