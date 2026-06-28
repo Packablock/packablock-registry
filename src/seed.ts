@@ -589,7 +589,13 @@ async function runSeeder() {
 			INSERT INTO logs (repo_id, chain_content, block_count, last_block_hash, updated_at)
 			VALUES (?, ?, ?, ?, ?)
 		`,
-			[6, railsContent, railsBlockCount, railsLastHash, new Date().toISOString()],
+			[
+				6,
+				railsContent,
+				railsBlockCount,
+				railsLastHash,
+				new Date().toISOString(),
+			],
 		);
 	} else {
 		console.log("⚠️ Rails E2E chain file not found in packablock-demo!");
