@@ -1,6 +1,6 @@
-# packablock-registry (Packablock Supply Chain Trust Registry)
+# packablock-registry (Packablock Supply Chain Policy Control Registry)
 
-The registry server component for Packablock. It receives, verifies, stores, and audits cryptographic package attestation chains pushed by the Packablock client.
+The registry server component for Packablock. It receives, verifies, stores, and audits cryptographic package attestation logs pushed by the Packablock client.
 
 <img width="128" height="128" alt="packablock-registry-avatar-512" src="https://github.com/user-attachments/assets/38f97ec9-3e72-49e5-b98b-2c0555a760ac" />
 
