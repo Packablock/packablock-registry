@@ -41,6 +41,9 @@ ENV NODE_ENV=production
 ENV PORT=3030
 ENV DATABASE_FILE=/data/packablock.sqlite
 
+# Run seeder tool to populate the initial SQLite database with realistic mock data
+RUN DATABASE_FILE=/data/packablock.sqlite bun run src/seed.ts
+
 # Expose service port
 EXPOSE 3030
 

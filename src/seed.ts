@@ -12,6 +12,7 @@ import {
 	GENESIS_PREV_HASH,
 	splitRawDocuments,
 } from "./verify.js";
+import { initDb } from "./database.js";
 import YAML from "yaml";
 
 const DB_FILE =
@@ -63,6 +64,10 @@ async function runSeeder() {
 	if (!fs.existsSync(dbDir)) {
 		fs.mkdirSync(dbDir, { recursive: true });
 	}
+
+	// Initialize database schema first
+	process.env.DATABASE_FILE = DB_FILE;
+	initDb();
 
 	const db = new Database(DB_FILE, { create: true });
 	db.run("PRAGMA foreign_keys = ON;");
