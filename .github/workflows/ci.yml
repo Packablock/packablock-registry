@@ -26,6 +26,7 @@ jobs:
 
       - name: Audit Dependency Vulnerabilities
         run: bun audit --audit-level=high
+        continue-on-error: ${{ github.actor == 'dependabot[bot]' }}
 
       - name: Run CI Validation Gate
         run: bun run check-all

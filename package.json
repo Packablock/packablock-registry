@@ -27,7 +27,7 @@
 		"yaml": "^2.9.0"
 	},
 	"overrides": {
-		"fast-uri": "^3.1.4",
+		"fast-uri": "^3.1.5",
 		"find-my-way": "^9.6.1"
 	},
 	"version": "1.2.0"
