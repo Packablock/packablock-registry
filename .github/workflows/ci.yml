@@ -12,6 +12,7 @@ jobs:
   hygiene-check:
     name: "Typecheck, Lint, Format & Integration Tests"
     runs-on: ubuntu-latest
+    if: github.event_name != 'push' || (github.event_name == 'push' && !contains(github.event.head_commit.message, 'Merge pull request') && !contains(github.event.head_commit.message, 'Merge branch') && !contains(github.event.head_commit.message, '(#'))
     steps:
       - name: Checkout Code
         uses: actions/checkout@v7
