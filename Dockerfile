@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package.json bun.lock ./
 
 # Install all dependencies (including devDependencies for typecheck)
-RUN bun install --frozen-lockfile
+RUN bun install
 
 # Copy source and config files
 COPY tsconfig.json biome.json ./
