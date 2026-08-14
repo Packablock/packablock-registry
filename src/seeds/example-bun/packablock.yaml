@@ -1,0 +1,3462 @@
+lockfiles:
+  package.json:
+    packages: []
+package.json:
+  constraints:
+    - peechy: ^0.4.18
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 0
+  timestamp: Sun Sep 5 14:27:00 2021 -0700
+  hashing_strategy: raw
+  data_hash: b6e71620f126f17db8acf44abf2570f4b130c171235e74d6dc9f853a638bf0c2
+  prev_meta_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+  meta_hash: 5b6151bfcd7cec410bb6eb16b8c3935788fa51f2eacacc9a975e8c304992445b
+---
+lockfiles:
+  bun.lockb:
+    packages: []
+    chain_event: init
+package.json:
+  constraints:
+    - peechy: 0.4.20
+    - "@types/node": ^16.9.2
+    - "@types/puppeteer": ^5.4.4
+    - prettier: ^2.4.1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 1
+  timestamp: Sun Dec 26 01:40:37 2021 -0800
+  hashing_strategy: raw
+  data_hash: 2c54add7de608f3d8d594c4482229eefd3de862d9572cc56d5a760665bed82e2
+  prev_meta_hash: 5b6151bfcd7cec410bb6eb16b8c3935788fa51f2eacacc9a975e8c304992445b
+  meta_hash: 3669787ecb2039d15e23296201b63e7169a4588198ff9ab292cd5eff715a9c0a
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@biomejs/biome": 1.8.3
+      - "@biomejs/cli-darwin-arm64": 1.8.3
+      - "@biomejs/cli-darwin-x64": 1.8.3
+      - "@biomejs/cli-linux-arm64": 1.8.3
+      - "@biomejs/cli-linux-arm64-musl": 1.8.3
+      - "@biomejs/cli-linux-x64": 1.8.3
+      - "@biomejs/cli-linux-x64-musl": 1.8.3
+      - "@biomejs/cli-win32-arm64": 1.8.3
+      - "@biomejs/cli-win32-x64": 1.8.3
+      - "@definitelytyped/dts-critic": 0.0.191
+      - "@definitelytyped/dtslint": 0.0.199
+      - "@definitelytyped/eslint-plugin": 0.0.197
+      - "@definitelytyped/header-parser": 0.0.190
+      - "@definitelytyped/typescript-versions": 0.0.182
+      - "@definitelytyped/utils": 0.0.188
+      - "@es-joy/jsdoccomment": 0.39.4
+      - "@esbuild/aix-ppc64": 0.21.5
+      - "@esbuild/android-arm": 0.21.5
+      - "@esbuild/android-arm64": 0.21.5
+      - "@esbuild/android-x64": 0.21.5
+      - "@esbuild/darwin-arm64": 0.21.5
+      - "@esbuild/darwin-x64": 0.21.5
+      - "@esbuild/freebsd-arm64": 0.21.5
+      - "@esbuild/freebsd-x64": 0.21.5
+      - "@esbuild/linux-arm": 0.21.5
+      - "@esbuild/linux-arm64": 0.21.5
+      - "@esbuild/linux-ia32": 0.21.5
+      - "@esbuild/linux-loong64": 0.21.5
+      - "@esbuild/linux-mips64el": 0.21.5
+      - "@esbuild/linux-ppc64": 0.21.5
+      - "@esbuild/linux-riscv64": 0.21.5
+      - "@esbuild/linux-s390x": 0.21.5
+      - "@esbuild/linux-x64": 0.21.5
+      - "@esbuild/netbsd-x64": 0.21.5
+      - "@esbuild/openbsd-x64": 0.21.5
+      - "@esbuild/sunos-x64": 0.21.5
+      - "@esbuild/win32-arm64": 0.21.5
+      - "@esbuild/win32-ia32": 0.21.5
+      - "@esbuild/win32-x64": 0.21.5
+      - "@eslint-community/eslint-utils": 4.4.0
+      - "@eslint-community/regexpp": 4.11.0
+      - "@eslint/config-array": 0.17.0
+      - "@eslint/eslintrc": 3.1.0
+      - "@eslint/js": 9.7.0
+      - "@eslint/object-schema": 2.1.4
+      - "@humanwhocodes/config-array": 0.11.14
+      - "@humanwhocodes/module-importer": 1.0.1
+      - "@humanwhocodes/object-schema": 2.0.3
+      - "@humanwhocodes/retry": 0.3.0
+      - "@mdn/browser-compat-data": 5.5.49
+      - "@nodelib/fs.scandir": 2.1.5
+      - "@nodelib/fs.stat": 2.0.5
+      - "@nodelib/fs.walk": 1.2.8
+      - "@qiwi/npm-registry-client": 8.9.1
+      - "@types/bun": 1.1.6
+      - "@types/json-schema": 7.0.15
+      - "@types/json5": 0.0.29
+      - "@types/node": 20.12.14
+      - "@types/prop-types": 15.7.12
+      - "@types/react": 18.3.3
+      - "@types/semver": 7.5.8
+      - "@types/ws": 8.5.11
+      - "@typescript-eslint/eslint-plugin": 7.16.1
+      - "@typescript-eslint/parser": 7.16.1
+      - "@typescript-eslint/scope-manager": 7.16.1
+      - "@typescript-eslint/type-utils": 7.16.1
+      - "@typescript-eslint/types": 7.16.1
+      - "@typescript-eslint/typescript-estree": 7.16.1
+      - "@typescript-eslint/utils": 7.16.1
+      - "@typescript-eslint/visitor-keys": 7.16.1
+      - "@ungap/structured-clone": 1.2.0
+      - "@vscode/debugadapter": 1.66.0
+      - "@vscode/debugprotocol": 1.66.0
+      - acorn: 8.12.1
+      - acorn-jsx: 5.3.2
+      - ajv: 6.12.6
+      - ansi-regex: 5.0.1
+      - ansi-styles: 4.3.0
+      - aproba: 1.2.0
+      - are-docs-informative: 0.0.2
+      - are-we-there-yet: 1.1.7
+      - argparse: 2.0.1
+      - array-buffer-byte-length: 1.0.1
+      - array-includes: 3.1.8
+      - array-union: 2.1.0
+      - array.prototype.findlastindex: 1.2.5
+      - array.prototype.flat: 1.3.2
+      - array.prototype.flatmap: 1.3.2
+      - arraybuffer.prototype.slice: 1.0.3
+      - asn1: 0.2.6
+      - assert-plus: 1.0.0
+      - asynckit: 0.4.0
+      - autoprefixer: 10.4.20
+      - available-typed-arrays: 1.0.7
+      - aws-sign2: 0.7.0
+      - aws4: 1.13.0
+      - b4a: 1.6.6
+      - babel-code-frame: 6.26.0
+      - balanced-match: 1.0.2
+      - bare-events: 2.4.2
+      - bcrypt-pbkdf: 1.0.2
+      - brace-expansion: 1.1.11
+      - braces: 3.0.3
+      - browserslist: 4.23.3
+      - buffer-from: 1.1.2
+      - builtin-modules: 1.1.1
+      - builtins: 1.0.3
+      - bun-types: workspace:packages/bun-types
+      - call-bind: 1.0.7
+      - callsites: 3.1.0
+      - camel-case: 4.1.2
+      - caniuse-lite: 1.0.30001653
+      - capital-case: 1.0.4
+      - caseless: 0.12.0
+      - chalk: 4.1.2
+      - change-case: 4.1.2
+      - charm: 1.0.2
+      - chownr: 2.0.0
+      - cliui: 8.0.1
+      - code-point-at: 1.1.0
+      - color-convert: 2.0.1
+      - color-name: 1.1.4
+      - combined-stream: 1.0.8
+      - command-exists: 1.2.9
+      - commander: 2.20.3
+      - comment-parser: 1.3.1
+      - concat-map: 0.0.1
+      - concat-stream: 2.0.0
+      - console-control-strings: 1.1.0
+      - constant-case: 3.0.4
+      - core-util-is: 1.0.3
+      - cross-spawn: 7.0.3
+      - csstype: 3.1.3
+      - dashdash: 1.14.1
+      - data-view-buffer: 1.0.1
+      - data-view-byte-length: 1.0.1
+      - data-view-byte-offset: 1.0.0
+      - debug: 4.3.5
+      - deep-is: 0.1.4
+      - define-data-property: 1.1.4
+      - define-properties: 1.2.1
+      - delayed-stream: 1.0.0
+      - delegates: 1.0.0
+      - diff: 3.5.0
+      - dir-glob: 3.0.1
+      - doctrine: 3.0.0
+      - dot-case: 3.0.4
+      - ecc-jsbn: 0.1.2
+      - electron-to-chromium: 1.5.13
+      - emoji-regex: 8.0.0
+      - es-abstract: 1.23.3
+      - es-define-property: 1.0.0
+      - es-errors: 1.3.0
+      - es-object-atoms: 1.0.0
+      - es-set-tostringtag: 2.0.3
+      - es-shim-unscopables: 1.0.2
+      - es-to-primitive: 1.2.1
+      - esbuild: 0.21.5
+      - escalade: 3.1.2
+      - escape-string-regexp: 4.0.0
+      - eslint: 9.7.0
+      - eslint-config-prettier: 9.1.0
+      - eslint-import-resolver-node: 0.3.9
+      - eslint-module-utils: 2.8.1
+      - eslint-plugin-import: 2.29.1
+      - eslint-plugin-jsdoc: 44.2.7
+      - eslint-scope: 8.0.2
+      - eslint-visitor-keys: 4.0.0
+      - espree: 10.1.0
+      - esprima: 4.0.1
+      - esquery: 1.6.0
+      - esrecurse: 4.3.0
+      - estraverse: 5.3.0
+      - esutils: 2.0.3
+      - extend: 3.0.2
+      - extsprintf: 1.3.0
+      - fast-deep-equal: 3.1.3
+      - fast-fifo: 1.3.2
+      - fast-glob: 3.3.2
+      - fast-json-stable-stringify: 2.1.0
+      - fast-levenshtein: 2.0.6
+      - fastq: 1.17.1
+      - file-entry-cache: 8.0.0
+      - fill-range: 7.1.1
+      - find-up: 5.0.0
+      - flat-cache: 4.0.1
+      - flatted: 3.3.1
+      - for-each: 0.3.3
+      - forever-agent: 0.6.1
+      - form-data: 2.3.3
+      - fraction.js: 4.3.7
+      - fs-minipass: 2.1.0
+      - fs.realpath: 1.0.0
+      - function-bind: 1.1.2
+      - function.prototype.name: 1.1.6
+      - functions-have-names: 1.2.3
+      - gauge: 2.7.4
+      - get-caller-file: 2.0.5
+      - get-intrinsic: 1.2.4
+      - get-symbol-description: 1.0.2
+      - getpass: 0.1.7
+      - glob: 7.2.3
+      - glob-parent: 6.0.2
+      - globals: 14.0.0
+      - globalthis: 1.0.4
+      - globby: 11.1.0
+      - gopd: 1.0.1
+      - graceful-fs: 4.2.11
+      - graphemer: 1.4.0
+      - har-schema: 2.0.0
+      - har-validator: 5.1.5
+      - has-ansi: 2.0.0
+      - has-bigints: 1.0.2
+      - has-flag: 4.0.0
+      - has-property-descriptors: 1.0.2
+      - has-proto: 1.0.3
+      - has-symbols: 1.0.3
+      - has-tostringtag: 1.0.2
+      - has-unicode: 2.0.1
+      - hasown: 2.0.2
+      - header-case: 2.0.4
+      - hosted-git-info: 4.1.0
+      - http-signature: 1.2.0
+      - ignore: 5.3.1
+      - import-fresh: 3.3.0
+      - imurmurhash: 0.1.4
+      - inflight: 1.0.6
+      - inherits: 2.0.4
+      - internal-slot: 1.0.7
+      - is-array-buffer: 3.0.4
+      - is-bigint: 1.0.4
+      - is-boolean-object: 1.1.2
+      - is-callable: 1.2.7
+      - is-core-module: 2.15.0
+      - is-data-view: 1.0.1
+      - is-date-object: 1.0.5
+      - is-extglob: 2.1.1
+      - is-fullwidth-code-point: 3.0.0
+      - is-glob: 4.0.3
+      - is-negative-zero: 2.0.3
+      - is-number: 7.0.0
+      - is-number-object: 1.0.7
+      - is-path-inside: 3.0.3
+      - is-regex: 1.1.4
+      - is-shared-array-buffer: 1.0.3
+      - is-string: 1.0.7
+      - is-symbol: 1.0.4
+      - is-typed-array: 1.1.13
+      - is-typedarray: 1.0.0
+      - is-weakref: 1.0.2
+      - isarray: 2.0.5
+      - isexe: 2.0.0
+      - isstream: 0.1.2
+      - js-tokens: 4.0.0
+      - js-yaml: 4.1.0
+      - jsbn: 0.1.1
+      - jsdoc-type-pratt-parser: 4.0.0
+      - json-buffer: 3.0.1
+      - json-schema: 0.4.0
+      - json-schema-traverse: 0.4.1
+      - json-stable-stringify: 1.1.1
+      - json-stable-stringify-without-jsonify: 1.0.1
+      - json-stringify-safe: 5.0.1
+      - json5: 1.0.2
+      - jsonify: 0.0.1
+      - jsprim: 1.4.2
+      - keyv: 4.5.4
+      - levn: 0.4.1
+      - locate-path: 6.0.0
+      - lodash.merge: 4.6.2
+      - loose-envify: 1.4.0
+      - lower-case: 2.0.2
+      - lru-cache: 6.0.0
+      - merge2: 1.4.1
+      - micromatch: 4.0.7
+      - mime-db: 1.52.0
+      - mime-types: 2.1.35
+      - minimatch: 3.1.2
+      - minimist: 1.2.8
+      - minipass: 5.0.0
+      - minizlib: 2.1.2
+      - mitata: 0.1.11
+      - mkdirp: 0.5.6
+      - ms: 2.1.2
+      - nanoid: 3.3.7
+      - natural-compare: 1.4.0
+      - no-case: 3.0.4
+      - node-releases: 2.0.18
+      - normalize-package-data: 3.0.3
+      - normalize-range: 0.1.2
+      - npm-package-arg: 8.1.5
+      - npmlog: 4.1.2
+      - number-is-nan: 1.0.1
+      - oauth-sign: 0.9.0
+      - object-assign: 4.1.1
+      - object-inspect: 1.13.2
+      - object-keys: 1.1.1
+      - object.assign: 4.1.5
+      - object.fromentries: 2.0.8
+      - object.groupby: 1.0.3
+      - object.values: 1.2.0
+      - once: 1.4.0
+      - optionator: 0.9.4
+      - p-limit: 3.1.0
+      - p-locate: 5.0.0
+      - param-case: 3.0.4
+      - parent-module: 1.0.1
+      - pascal-case: 3.1.2
+      - path-case: 3.0.4
+      - path-exists: 4.0.0
+      - path-is-absolute: 1.0.1
+      - path-key: 3.1.1
+      - path-parse: 1.0.7
+      - path-type: 4.0.0
+      - peechy: 0.4.34
+      - performance-now: 2.1.0
+      - picocolors: 1.0.1
+      - picomatch: 2.3.1
+      - possible-typed-array-names: 1.0.0
+      - postcss: 8.4.41
+      - postcss-value-parser: 4.2.0
+      - prelude-ls: 1.2.1
+      - prettier: 3.3.3
+      - prettier-plugin-organize-imports: 4.1.0
+      - process-nextick-args: 2.0.1
+      - psl: 1.9.0
+      - punycode: 2.3.1
+      - qs: 6.5.3
+      - queue-microtask: 1.2.3
+      - queue-tick: 1.0.1
+      - react: 18.3.1
+      - react-dom: 18.3.1
+      - readable-stream: 3.6.2
+      - regexp.prototype.flags: 1.5.2
+      - request: 2.88.2
+      - require-directory: 2.1.1
+      - resolve: 1.22.8
+      - resolve-from: 4.0.0
+      - retry: 0.12.0
+      - reusify: 1.0.4
+      - rimraf: 3.0.2
+      - run-parallel: 1.2.0
+      - safe-array-concat: 1.1.2
+      - safe-buffer: 5.2.1
+      - safe-regex-test: 1.0.3
+      - safer-buffer: 2.1.2
+      - scheduler: 0.23.2
+      - semver: 7.6.3
+      - sentence-case: 3.0.4
+      - set-blocking: 2.0.0
+      - set-function-length: 1.2.2
+      - set-function-name: 2.0.2
+      - shebang-command: 2.0.0
+      - shebang-regex: 3.0.0
+      - side-channel: 1.0.6
+      - signal-exit: 3.0.7
+      - slash: 3.0.0
+      - slide: 1.1.6
+      - snake-case: 3.0.4
+      - source-map-js: 1.2.0
+      - spdx-correct: 3.2.0
+      - spdx-exceptions: 2.5.0
+      - spdx-expression-parse: 3.0.1
+      - spdx-license-ids: 3.0.18
+      - sprintf-js: 1.0.3
+      - sshpk: 1.18.0
+      - ssri: 8.0.1
+      - streamx: 2.18.0
+      - string-width: 4.2.3
+      - string.prototype.trim: 1.2.9
+      - string.prototype.trimend: 1.0.8
+      - string.prototype.trimstart: 1.0.8
+      - string_decoder: 1.3.0
+      - strip-ansi: 6.0.1
+      - strip-bom: 3.0.0
+      - strip-json-comments: 3.1.1
+      - supports-color: 7.2.0
+      - supports-preserve-symlinks-flag: 1.0.0
+      - tar: 6.2.1
+      - tar-stream: 3.1.7
+      - text-decoder: 1.1.1
+      - text-table: 0.2.0
+      - tmp: 0.2.3
+      - to-regex-range: 5.0.1
+      - tough-cookie: 2.5.0
+      - ts-api-utils: 1.3.0
+      - tsconfig-paths: 3.15.0
+      - tslib: 2.6.3
+      - tslint: 5.14.0
+      - tsutils: 2.29.0
+      - tunnel-agent: 0.6.0
+      - tweetnacl: 0.14.5
+      - type-check: 0.4.0
+      - type-fest: 0.20.2
+      - typed-array-buffer: 1.0.2
+      - typed-array-byte-length: 1.0.1
+      - typed-array-byte-offset: 1.0.2
+      - typed-array-length: 1.0.6
+      - typedarray: 0.0.6
+      - typescript: 5.7.2
+      - unbox-primitive: 1.0.2
+      - undici-types: 5.26.5
+      - update-browserslist-db: 1.1.0
+      - upper-case: 2.0.2
+      - upper-case-first: 2.0.2
+      - uri-js: 4.4.1
+      - util-deprecate: 1.0.2
+      - uuid: 3.4.0
+      - validate-npm-package-license: 3.0.4
+      - validate-npm-package-name: 3.0.0
+      - verror: 1.10.0
+      - which: 2.0.2
+      - which-boxed-primitive: 1.0.2
+      - which-typed-array: 1.1.15
+      - wide-align: 1.1.5
+      - word-wrap: 1.2.5
+      - wrap-ansi: 7.0.0
+      - wrappy: 1.0.2
+      - y18n: 5.0.8
+      - yallist: 4.0.0
+      - yargs: 17.7.2
+      - yargs-parser: 21.1.1
+      - yocto-queue: 0.1.0
+      - "@definitelytyped/dts-critic/typescript": 5.5.3
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin": 6.21.0
+      - "@definitelytyped/dtslint/@typescript-eslint/parser": 6.21.0
+      - "@definitelytyped/dtslint/@typescript-eslint/types": 6.21.0
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree": 6.21.0
+      - "@definitelytyped/dtslint/@typescript-eslint/utils": 6.21.0
+      - "@definitelytyped/dtslint/eslint": 8.57.0
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/types": 6.21.0
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils": 6.21.0
+      - "@definitelytyped/utils/@types/node": 16.18.102
+      - "@definitelytyped/utils/minimatch": 9.0.5
+      - "@definitelytyped/utils/which": 4.0.0
+      - "@eslint-community/eslint-utils/eslint-visitor-keys": 3.4.3
+      - "@typescript-eslint/typescript-estree/minimatch": 9.0.5
+      - "@typescript-eslint/visitor-keys/eslint-visitor-keys": 3.4.3
+      - are-we-there-yet/readable-stream: 2.3.8
+      - babel-code-frame/chalk: 1.1.3
+      - babel-code-frame/js-tokens: 3.0.2
+      - bun-types/typescript: 5.5.3
+      - eslint-import-resolver-node/debug: 3.2.7
+      - eslint-module-utils/debug: 3.2.7
+      - eslint-plugin-import/debug: 3.2.7
+      - eslint-plugin-import/doctrine: 2.1.0
+      - eslint-plugin-import/semver: 6.3.1
+      - fast-glob/glob-parent: 5.1.2
+      - fs-minipass/minipass: 3.3.6
+      - gauge/string-width: 1.0.2
+      - gauge/strip-ansi: 3.0.1
+      - has-ansi/ansi-regex: 2.1.1
+      - minizlib/minipass: 3.3.6
+      - ssri/minipass: 3.3.6
+      - tar/mkdirp: 1.0.4
+      - tslint/chalk: 2.4.2
+      - tslint/js-yaml: 3.14.1
+      - tslint/semver: 5.7.2
+      - tslint/tslib: 1.14.1
+      - tsutils/tslib: 1.14.1
+      - verror/core-util-is: 1.0.2
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/scope-manager": 6.21.0
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/type-utils": 6.21.0
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/visitor-keys": 6.21.0
+      - "@definitelytyped/dtslint/@typescript-eslint/parser/@typescript-eslint/scope-manager": 6.21.0
+      - "@definitelytyped/dtslint/@typescript-eslint/parser/@typescript-eslint/visitor-keys": 6.21.0
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys": 6.21.0
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/minimatch": 9.0.3
+      - "@definitelytyped/dtslint/@typescript-eslint/utils/@typescript-eslint/scope-manager": 6.21.0
+      - "@definitelytyped/dtslint/eslint/@eslint/eslintrc": 2.1.4
+      - "@definitelytyped/dtslint/eslint/@eslint/js": 8.57.0
+      - "@definitelytyped/dtslint/eslint/eslint-scope": 7.2.2
+      - "@definitelytyped/dtslint/eslint/eslint-visitor-keys": 3.4.3
+      - "@definitelytyped/dtslint/eslint/espree": 9.6.1
+      - "@definitelytyped/dtslint/eslint/file-entry-cache": 6.0.1
+      - "@definitelytyped/dtslint/eslint/globals": 13.24.0
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/scope-manager": 6.21.0
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree": 6.21.0
+      - "@definitelytyped/utils/minimatch/brace-expansion": 2.0.1
+      - "@definitelytyped/utils/which/isexe": 3.1.1
+      - "@typescript-eslint/typescript-estree/minimatch/brace-expansion": 2.0.1
+      - are-we-there-yet/readable-stream/isarray: 1.0.0
+      - are-we-there-yet/readable-stream/safe-buffer: 5.1.2
+      - are-we-there-yet/readable-stream/string_decoder: 1.1.1
+      - babel-code-frame/chalk/ansi-styles: 2.2.1
+      - babel-code-frame/chalk/escape-string-regexp: 1.0.5
+      - babel-code-frame/chalk/strip-ansi: 3.0.1
+      - babel-code-frame/chalk/supports-color: 2.0.0
+      - gauge/string-width/is-fullwidth-code-point: 1.0.0
+      - gauge/strip-ansi/ansi-regex: 2.1.1
+      - tslint/chalk/ansi-styles: 3.2.1
+      - tslint/chalk/escape-string-regexp: 1.0.5
+      - tslint/chalk/supports-color: 5.5.0
+      - tslint/js-yaml/argparse: 1.0.10
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/visitor-keys/eslint-visitor-keys": 3.4.3
+      - "@definitelytyped/dtslint/@typescript-eslint/parser/@typescript-eslint/visitor-keys/eslint-visitor-keys": 3.4.3
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys/eslint-visitor-keys": 3.4.3
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/minimatch/brace-expansion": 2.0.1
+      - "@definitelytyped/dtslint/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys": 6.21.0
+      - "@definitelytyped/dtslint/eslint/file-entry-cache/flat-cache": 3.2.0
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys": 6.21.0
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys": 6.21.0
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/minimatch": 9.0.3
+      - babel-code-frame/chalk/strip-ansi/ansi-regex: 2.1.1
+      - tslint/chalk/ansi-styles/color-convert: 1.9.3
+      - tslint/chalk/supports-color/has-flag: 3.0.0
+      - "@definitelytyped/dtslint/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys/eslint-visitor-keys": 3.4.3
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys/eslint-visitor-keys": 3.4.3
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys/eslint-visitor-keys": 3.4.3
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/minimatch/brace-expansion": 2.0.1
+      - tslint/chalk/ansi-styles/color-convert/color-name: 1.1.3
+    chain_event: init
+package.json:
+  constraints:
+    - "@types/bun": ^1.1.3
+    - "@types/react": ^18.3.3
+    - "@typescript-eslint/eslint-plugin": ^7.11.0
+    - "@typescript-eslint/parser": ^7.11.0
+    - "@vscode/debugadapter": ^1.65.0
+    - esbuild: ^0.21.4
+    - eslint: ^9.4.0
+    - eslint-config-prettier: ^9.1.0
+    - mitata: ^0.1.11
+    - peechy: 0.4.34
+    - prettier: ^3.2.5
+    - prettier-plugin-organize-imports: ^4.0.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.0
+    - typescript: ^5.7.2
+    - caniuse-lite: ^1.0.30001620
+    - autoprefixer: ^10.4.19
+    - "@mdn/browser-compat-data": ~5.5.28
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 2
+  timestamp: Fri Jan 17 14:37:26 2025 -0800
+  hashing_strategy: raw
+  data_hash: 36f7d85700e89261bf54b4ca940fe064f6b01bdecc50abb38cd1003c3b6dac3a
+  prev_meta_hash: 3669787ecb2039d15e23296201b63e7169a4588198ff9ab292cd5eff715a9c0a
+  meta_hash: c5fb64094b5e0c7d5e29f226471fd683526cfe95e827cdb5dd54ea01fa37b6d8
+---
+lockfiles:
+  bun.lockb:
+    chain_event: forget
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 3
+  timestamp: Fri Jan 17 14:37:26 2025 -0800
+  hashing_strategy: raw
+  data_hash: ddde9ba50d20de2b267b8374405b860c4578681c1fb319295f96ce175d1a1175
+  prev_meta_hash: c5fb64094b5e0c7d5e29f226471fd683526cfe95e827cdb5dd54ea01fa37b6d8
+  meta_hash: ab93a689480f2edd02b5dc5d7c306ad7652da4da764cf581e21383212673c04c
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/bun":
+          - old: 1.1.6
+          - new: 1.1.17
+          - loc: 8,9
+      - "@types/node":
+          - old: 20.12.14
+          - new: 22.10.7
+          - loc: 31,9
+      - undici-types:
+          - old: 5.26.5
+          - new: 6.20.0
+          - loc: 160,68
+      - bun-types/typescript:
+          - msg: removed
+          - loc: 1,1
+      - "@types/ws/@types/node":
+          - new: 20.12.14
+          - loc: 918,5
+      - "@types/ws/@types/node/undici-types":
+          - new: 5.26.5
+          - loc: 1006,5
+package.json:
+  constraints:
+    - "@types/bun": "*"
+    - "@types/react": ^18.3.3
+    - "@typescript-eslint/eslint-plugin": ^7.11.0
+    - "@typescript-eslint/parser": ^7.11.0
+    - "@vscode/debugadapter": ^1.65.0
+    - esbuild: ^0.21.4
+    - eslint: ^9.4.0
+    - eslint-config-prettier: ^9.1.0
+    - mitata: ^0.1.11
+    - peechy: 0.4.34
+    - prettier: ^3.2.5
+    - prettier-plugin-organize-imports: ^4.0.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.0
+    - typescript: ^5.7.2
+    - caniuse-lite: ^1.0.30001620
+    - autoprefixer: ^10.4.19
+    - "@mdn/browser-compat-data": ~5.5.28
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 4
+  timestamp: Mon Jan 20 23:12:54 2025 -0800
+  hashing_strategy: raw
+  data_hash: 5aebd9f46e7c33cc4626fd593a6a5dde00c026f5416134c88e7d2060650cb5de
+  prev_meta_hash: ab93a689480f2edd02b5dc5d7c306ad7652da4da764cf581e21383212673c04c
+  meta_hash: 0944c22fd8f048758b9ce4824329b567f5f13c0163f9efe0d8dd6086cc92bd6f
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - caniuse-lite:
+          - old: 1.0.30001653
+          - new: 1.0.30001695
+          - loc: 14,9
+      - autoprefixer/caniuse-lite:
+          - new: 1.0.30001653
+          - loc: 926,5
+      - browserslist/caniuse-lite:
+          - new: 1.0.30001653
+          - loc: 932,5
+package.json:
+  constraints:
+    - "@types/bun": "*"
+    - "@types/react": ^18.3.3
+    - "@typescript-eslint/eslint-plugin": ^7.11.0
+    - "@typescript-eslint/parser": ^7.11.0
+    - "@vscode/debugadapter": ^1.65.0
+    - esbuild: ^0.21.4
+    - eslint: ^9.4.0
+    - eslint-config-prettier: ^9.1.0
+    - mitata: ^0.1.11
+    - peechy: 0.4.34
+    - prettier: ^3.2.5
+    - prettier-plugin-organize-imports: ^4.0.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.0
+    - typescript: ^5.7.2
+    - caniuse-lite: ^1.0.30001660
+    - autoprefixer: ^10.4.20
+    - "@mdn/browser-compat-data": ~5.5.28
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 5
+  timestamp: Fri Jan 31 03:47:49 2025 -0800
+  hashing_strategy: raw
+  data_hash: f3eb06b2b6cc8498881cb61a5ae08f1c45f949ed2724439d7b668e34888e861f
+  prev_meta_hash: 0944c22fd8f048758b9ce4824329b567f5f13c0163f9efe0d8dd6086cc92bd6f
+  meta_hash: b58c93ca63f0971dce02f9380816e86c97c4641bd8dccd9469077d97135a5dd6
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/bun":
+          - old: 1.1.17
+          - new: 1.2.2
+          - loc: 8,9
+      - "@types/node":
+          - old: 22.10.7
+          - new: 22.13.5
+          - loc: 31,9
+package.json:
+  constraints:
+    - "@mdn/browser-compat-data": ~5.5.28
+    - "@types/bun": "*"
+    - "@types/react": ^18.3.3
+    - "@typescript-eslint/eslint-plugin": ^7.11.0
+    - "@typescript-eslint/parser": ^7.11.0
+    - "@vscode/debugadapter": ^1.65.0
+    - autoprefixer: ^10.4.19
+    - caniuse-lite: ^1.0.30001620
+    - esbuild: ^0.21.4
+    - eslint: ^9.4.0
+    - eslint-config-prettier: ^9.1.0
+    - mitata: ^0.1.11
+    - peechy: 0.4.34
+    - prettier: ^3.2.5
+    - prettier-plugin-organize-imports: ^4.0.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.0
+    - typescript: ^5.7.2
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 6
+  timestamp: Tue Mar 4 00:04:12 2025 +0000
+  hashing_strategy: raw
+  data_hash: 2b24626f9f0647fe771439b5607447a1e2766f19a5a5cc9047322633a96c55ca
+  prev_meta_hash: b58c93ca63f0971dce02f9380816e86c97c4641bd8dccd9469077d97135a5dd6
+  meta_hash: 8b1fdef5439bdae49c12e01400d9ff3aa7d2556f1319a1b49f05af3a36565918
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/ws":
+          - msg: removed
+          - loc: 1,1
+      - "@types/ws/@types/node":
+          - msg: removed
+          - loc: 1,1
+      - "@types/ws/@types/node/undici-types":
+          - msg: removed
+          - loc: 1,1
+package.json:
+  constraints:
+    - "@mdn/browser-compat-data": ~5.5.28
+    - "@types/bun": "*"
+    - "@types/react": ^18.3.3
+    - "@typescript-eslint/eslint-plugin": ^7.11.0
+    - "@typescript-eslint/parser": ^7.11.0
+    - "@vscode/debugadapter": ^1.65.0
+    - autoprefixer: ^10.4.19
+    - caniuse-lite: ^1.0.30001620
+    - esbuild: ^0.21.4
+    - eslint: ^9.4.0
+    - eslint-config-prettier: ^9.1.0
+    - mitata: ^0.1.11
+    - peechy: 0.4.34
+    - prettier: ^3.2.5
+    - prettier-plugin-organize-imports: ^4.0.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.0
+    - typescript: ^5.7.2
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 7
+  timestamp: Mon Apr 14 19:10:52 2025 -0700
+  hashing_strategy: raw
+  data_hash: cb3053e2ff066cfbd36d359e665593f28b2436e6f1d68e49d03b5111390d1cf0
+  prev_meta_hash: 8b1fdef5439bdae49c12e01400d9ff3aa7d2556f1319a1b49f05af3a36565918
+  meta_hash: 3e5906a3199beecfb42a56cd5ea2cd5d823fc0407280f67bcfc4f63ae296bad9
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - prettier:
+          - old: 3.3.3
+          - new: 3.5.3
+          - loc: 20,9
+package.json:
+  constraints:
+    - "@mdn/browser-compat-data": ~5.5.28
+    - "@types/bun": "*"
+    - "@types/react": ^18.3.3
+    - "@typescript-eslint/eslint-plugin": ^7.11.0
+    - "@typescript-eslint/parser": ^7.11.0
+    - "@vscode/debugadapter": ^1.65.0
+    - autoprefixer: ^10.4.19
+    - caniuse-lite: ^1.0.30001620
+    - esbuild: ^0.21.4
+    - eslint: ^9.4.0
+    - eslint-config-prettier: ^9.1.0
+    - mitata: ^0.1.11
+    - peechy: 0.4.34
+    - prettier: ^3.5.3
+    - prettier-plugin-organize-imports: ^4.0.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.0
+    - typescript: ^5.7.2
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 8
+  timestamp: Thu May 8 23:22:16 2025 -0700
+  hashing_strategy: raw
+  data_hash: 168107a70671c2b0cb4a11e5660b094a05e57eadd68ae3bf51653707be43885c
+  prev_meta_hash: 3e5906a3199beecfb42a56cd5ea2cd5d823fc0407280f67bcfc4f63ae296bad9
+  meta_hash: 3c99a04c61efd048f1e4c6bf06e881ddec788aa26dd4965f5d4de628f31d3c35
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@biomejs/biome":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-darwin-arm64":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-darwin-x64":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-linux-arm64":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-linux-arm64-musl":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-linux-x64":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-linux-x64-musl":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-win32-arm64":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-win32-x64":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dts-critic":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/header-parser":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/typescript-versions":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/utils":
+          - msg: removed
+          - loc: 1,1
+      - "@es-joy/jsdoccomment":
+          - msg: removed
+          - loc: 1,1
+      - "@eslint-community/eslint-utils":
+          - msg: removed
+          - loc: 1,1
+      - "@eslint-community/regexpp":
+          - msg: removed
+          - loc: 1,1
+      - "@eslint/config-array":
+          - msg: removed
+          - loc: 1,1
+      - "@eslint/eslintrc":
+          - msg: removed
+          - loc: 1,1
+      - "@eslint/js":
+          - msg: removed
+          - loc: 1,1
+      - "@eslint/object-schema":
+          - msg: removed
+          - loc: 1,1
+      - "@humanwhocodes/config-array":
+          - msg: removed
+          - loc: 1,1
+      - "@humanwhocodes/module-importer":
+          - msg: removed
+          - loc: 1,1
+      - "@humanwhocodes/object-schema":
+          - msg: removed
+          - loc: 1,1
+      - "@humanwhocodes/retry":
+          - msg: removed
+          - loc: 1,1
+      - "@mdn/browser-compat-data":
+          - msg: removed
+          - loc: 1,1
+      - "@nodelib/fs.scandir":
+          - msg: removed
+          - loc: 1,1
+      - "@nodelib/fs.stat":
+          - msg: removed
+          - loc: 1,1
+      - "@nodelib/fs.walk":
+          - msg: removed
+          - loc: 1,1
+      - "@qiwi/npm-registry-client":
+          - msg: removed
+          - loc: 1,1
+      - "@types/bun":
+          - old: 1.2.2
+          - new: workspace:packages/@types/bun
+          - loc: 38,5
+      - "@types/json-schema":
+          - msg: removed
+          - loc: 1,1
+      - "@types/json5":
+          - msg: removed
+          - loc: 1,1
+      - "@types/node":
+          - old: 22.13.5
+          - new: 22.15.18
+          - loc: 29,9
+      - "@types/prop-types":
+          - old: 15.7.12
+          - new: 15.7.14
+          - loc: 91,5
+      - "@types/react":
+          - old: 18.3.3
+          - new: 18.3.21
+          - loc: 7,9
+      - "@types/semver":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/eslint-plugin":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/parser":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/scope-manager":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/type-utils":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/types":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/typescript-estree":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/utils":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@ungap/structured-clone":
+          - msg: removed
+          - loc: 1,1
+      - "@vscode/debugadapter":
+          - msg: removed
+          - loc: 1,1
+      - "@vscode/debugprotocol":
+          - msg: removed
+          - loc: 1,1
+      - acorn:
+          - msg: removed
+          - loc: 1,1
+      - acorn-jsx:
+          - msg: removed
+          - loc: 1,1
+      - ajv:
+          - msg: removed
+          - loc: 1,1
+      - ansi-regex:
+          - msg: removed
+          - loc: 1,1
+      - ansi-styles:
+          - msg: removed
+          - loc: 1,1
+      - aproba:
+          - msg: removed
+          - loc: 1,1
+      - are-docs-informative:
+          - msg: removed
+          - loc: 1,1
+      - are-we-there-yet:
+          - msg: removed
+          - loc: 1,1
+      - argparse:
+          - msg: removed
+          - loc: 1,1
+      - array-buffer-byte-length:
+          - msg: removed
+          - loc: 1,1
+      - array-includes:
+          - msg: removed
+          - loc: 1,1
+      - array-union:
+          - msg: removed
+          - loc: 1,1
+      - array.prototype.findlastindex:
+          - msg: removed
+          - loc: 1,1
+      - array.prototype.flat:
+          - msg: removed
+          - loc: 1,1
+      - array.prototype.flatmap:
+          - msg: removed
+          - loc: 1,1
+      - arraybuffer.prototype.slice:
+          - msg: removed
+          - loc: 1,1
+      - asn1:
+          - msg: removed
+          - loc: 1,1
+      - assert-plus:
+          - msg: removed
+          - loc: 1,1
+      - asynckit:
+          - msg: removed
+          - loc: 1,1
+      - autoprefixer:
+          - msg: removed
+          - loc: 1,1
+      - available-typed-arrays:
+          - msg: removed
+          - loc: 1,1
+      - aws-sign2:
+          - msg: removed
+          - loc: 1,1
+      - aws4:
+          - msg: removed
+          - loc: 1,1
+      - b4a:
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame:
+          - msg: removed
+          - loc: 1,1
+      - balanced-match:
+          - msg: removed
+          - loc: 1,1
+      - bare-events:
+          - msg: removed
+          - loc: 1,1
+      - bcrypt-pbkdf:
+          - msg: removed
+          - loc: 1,1
+      - brace-expansion:
+          - msg: removed
+          - loc: 1,1
+      - braces:
+          - msg: removed
+          - loc: 1,1
+      - browserslist:
+          - msg: removed
+          - loc: 1,1
+      - buffer-from:
+          - msg: removed
+          - loc: 1,1
+      - builtin-modules:
+          - msg: removed
+          - loc: 1,1
+      - builtins:
+          - msg: removed
+          - loc: 1,1
+      - call-bind:
+          - msg: removed
+          - loc: 1,1
+      - callsites:
+          - msg: removed
+          - loc: 1,1
+      - caniuse-lite:
+          - msg: removed
+          - loc: 1,1
+      - caseless:
+          - msg: removed
+          - loc: 1,1
+      - chalk:
+          - msg: removed
+          - loc: 1,1
+      - charm:
+          - msg: removed
+          - loc: 1,1
+      - chownr:
+          - msg: removed
+          - loc: 1,1
+      - cliui:
+          - msg: removed
+          - loc: 1,1
+      - code-point-at:
+          - msg: removed
+          - loc: 1,1
+      - color-convert:
+          - msg: removed
+          - loc: 1,1
+      - color-name:
+          - msg: removed
+          - loc: 1,1
+      - combined-stream:
+          - msg: removed
+          - loc: 1,1
+      - command-exists:
+          - msg: removed
+          - loc: 1,1
+      - commander:
+          - msg: removed
+          - loc: 1,1
+      - comment-parser:
+          - msg: removed
+          - loc: 1,1
+      - concat-map:
+          - msg: removed
+          - loc: 1,1
+      - concat-stream:
+          - msg: removed
+          - loc: 1,1
+      - console-control-strings:
+          - msg: removed
+          - loc: 1,1
+      - core-util-is:
+          - msg: removed
+          - loc: 1,1
+      - cross-spawn:
+          - msg: removed
+          - loc: 1,1
+      - dashdash:
+          - msg: removed
+          - loc: 1,1
+      - data-view-buffer:
+          - msg: removed
+          - loc: 1,1
+      - data-view-byte-length:
+          - msg: removed
+          - loc: 1,1
+      - data-view-byte-offset:
+          - msg: removed
+          - loc: 1,1
+      - debug:
+          - msg: removed
+          - loc: 1,1
+      - deep-is:
+          - msg: removed
+          - loc: 1,1
+      - define-data-property:
+          - msg: removed
+          - loc: 1,1
+      - define-properties:
+          - msg: removed
+          - loc: 1,1
+      - delayed-stream:
+          - msg: removed
+          - loc: 1,1
+      - delegates:
+          - msg: removed
+          - loc: 1,1
+      - diff:
+          - msg: removed
+          - loc: 1,1
+      - dir-glob:
+          - msg: removed
+          - loc: 1,1
+      - doctrine:
+          - msg: removed
+          - loc: 1,1
+      - ecc-jsbn:
+          - msg: removed
+          - loc: 1,1
+      - electron-to-chromium:
+          - msg: removed
+          - loc: 1,1
+      - emoji-regex:
+          - msg: removed
+          - loc: 1,1
+      - es-abstract:
+          - msg: removed
+          - loc: 1,1
+      - es-define-property:
+          - msg: removed
+          - loc: 1,1
+      - es-errors:
+          - msg: removed
+          - loc: 1,1
+      - es-object-atoms:
+          - msg: removed
+          - loc: 1,1
+      - es-set-tostringtag:
+          - msg: removed
+          - loc: 1,1
+      - es-shim-unscopables:
+          - msg: removed
+          - loc: 1,1
+      - es-to-primitive:
+          - msg: removed
+          - loc: 1,1
+      - escalade:
+          - msg: removed
+          - loc: 1,1
+      - escape-string-regexp:
+          - msg: removed
+          - loc: 1,1
+      - eslint:
+          - msg: removed
+          - loc: 1,1
+      - eslint-config-prettier:
+          - msg: removed
+          - loc: 1,1
+      - eslint-import-resolver-node:
+          - msg: removed
+          - loc: 1,1
+      - eslint-module-utils:
+          - msg: removed
+          - loc: 1,1
+      - eslint-plugin-import:
+          - msg: removed
+          - loc: 1,1
+      - eslint-plugin-jsdoc:
+          - msg: removed
+          - loc: 1,1
+      - eslint-scope:
+          - msg: removed
+          - loc: 1,1
+      - eslint-visitor-keys:
+          - msg: removed
+          - loc: 1,1
+      - espree:
+          - msg: removed
+          - loc: 1,1
+      - esprima:
+          - msg: removed
+          - loc: 1,1
+      - esquery:
+          - msg: removed
+          - loc: 1,1
+      - esrecurse:
+          - msg: removed
+          - loc: 1,1
+      - estraverse:
+          - msg: removed
+          - loc: 1,1
+      - esutils:
+          - msg: removed
+          - loc: 1,1
+      - extend:
+          - msg: removed
+          - loc: 1,1
+      - extsprintf:
+          - msg: removed
+          - loc: 1,1
+      - fast-deep-equal:
+          - msg: removed
+          - loc: 1,1
+      - fast-fifo:
+          - msg: removed
+          - loc: 1,1
+      - fast-glob:
+          - msg: removed
+          - loc: 1,1
+      - fast-json-stable-stringify:
+          - msg: removed
+          - loc: 1,1
+      - fast-levenshtein:
+          - msg: removed
+          - loc: 1,1
+      - fastq:
+          - msg: removed
+          - loc: 1,1
+      - file-entry-cache:
+          - msg: removed
+          - loc: 1,1
+      - fill-range:
+          - msg: removed
+          - loc: 1,1
+      - find-up:
+          - msg: removed
+          - loc: 1,1
+      - flat-cache:
+          - msg: removed
+          - loc: 1,1
+      - flatted:
+          - msg: removed
+          - loc: 1,1
+      - for-each:
+          - msg: removed
+          - loc: 1,1
+      - forever-agent:
+          - msg: removed
+          - loc: 1,1
+      - form-data:
+          - msg: removed
+          - loc: 1,1
+      - fraction.js:
+          - msg: removed
+          - loc: 1,1
+      - fs-minipass:
+          - msg: removed
+          - loc: 1,1
+      - fs.realpath:
+          - msg: removed
+          - loc: 1,1
+      - function-bind:
+          - msg: removed
+          - loc: 1,1
+      - function.prototype.name:
+          - msg: removed
+          - loc: 1,1
+      - functions-have-names:
+          - msg: removed
+          - loc: 1,1
+      - gauge:
+          - msg: removed
+          - loc: 1,1
+      - get-caller-file:
+          - msg: removed
+          - loc: 1,1
+      - get-intrinsic:
+          - msg: removed
+          - loc: 1,1
+      - get-symbol-description:
+          - msg: removed
+          - loc: 1,1
+      - getpass:
+          - msg: removed
+          - loc: 1,1
+      - glob:
+          - msg: removed
+          - loc: 1,1
+      - glob-parent:
+          - msg: removed
+          - loc: 1,1
+      - globals:
+          - msg: removed
+          - loc: 1,1
+      - globalthis:
+          - msg: removed
+          - loc: 1,1
+      - globby:
+          - msg: removed
+          - loc: 1,1
+      - gopd:
+          - msg: removed
+          - loc: 1,1
+      - graceful-fs:
+          - msg: removed
+          - loc: 1,1
+      - graphemer:
+          - msg: removed
+          - loc: 1,1
+      - har-schema:
+          - msg: removed
+          - loc: 1,1
+      - har-validator:
+          - msg: removed
+          - loc: 1,1
+      - has-ansi:
+          - msg: removed
+          - loc: 1,1
+      - has-bigints:
+          - msg: removed
+          - loc: 1,1
+      - has-flag:
+          - msg: removed
+          - loc: 1,1
+      - has-property-descriptors:
+          - msg: removed
+          - loc: 1,1
+      - has-proto:
+          - msg: removed
+          - loc: 1,1
+      - has-symbols:
+          - msg: removed
+          - loc: 1,1
+      - has-tostringtag:
+          - msg: removed
+          - loc: 1,1
+      - has-unicode:
+          - msg: removed
+          - loc: 1,1
+      - hasown:
+          - msg: removed
+          - loc: 1,1
+      - hosted-git-info:
+          - msg: removed
+          - loc: 1,1
+      - http-signature:
+          - msg: removed
+          - loc: 1,1
+      - ignore:
+          - msg: removed
+          - loc: 1,1
+      - import-fresh:
+          - msg: removed
+          - loc: 1,1
+      - imurmurhash:
+          - msg: removed
+          - loc: 1,1
+      - inflight:
+          - msg: removed
+          - loc: 1,1
+      - inherits:
+          - msg: removed
+          - loc: 1,1
+      - internal-slot:
+          - msg: removed
+          - loc: 1,1
+      - is-array-buffer:
+          - msg: removed
+          - loc: 1,1
+      - is-bigint:
+          - msg: removed
+          - loc: 1,1
+      - is-boolean-object:
+          - msg: removed
+          - loc: 1,1
+      - is-callable:
+          - msg: removed
+          - loc: 1,1
+      - is-core-module:
+          - msg: removed
+          - loc: 1,1
+      - is-data-view:
+          - msg: removed
+          - loc: 1,1
+      - is-date-object:
+          - msg: removed
+          - loc: 1,1
+      - is-extglob:
+          - msg: removed
+          - loc: 1,1
+      - is-fullwidth-code-point:
+          - msg: removed
+          - loc: 1,1
+      - is-glob:
+          - msg: removed
+          - loc: 1,1
+      - is-negative-zero:
+          - msg: removed
+          - loc: 1,1
+      - is-number:
+          - msg: removed
+          - loc: 1,1
+      - is-number-object:
+          - msg: removed
+          - loc: 1,1
+      - is-path-inside:
+          - msg: removed
+          - loc: 1,1
+      - is-regex:
+          - msg: removed
+          - loc: 1,1
+      - is-shared-array-buffer:
+          - msg: removed
+          - loc: 1,1
+      - is-string:
+          - msg: removed
+          - loc: 1,1
+      - is-symbol:
+          - msg: removed
+          - loc: 1,1
+      - is-typed-array:
+          - msg: removed
+          - loc: 1,1
+      - is-typedarray:
+          - msg: removed
+          - loc: 1,1
+      - is-weakref:
+          - msg: removed
+          - loc: 1,1
+      - isarray:
+          - msg: removed
+          - loc: 1,1
+      - isexe:
+          - msg: removed
+          - loc: 1,1
+      - isstream:
+          - msg: removed
+          - loc: 1,1
+      - js-yaml:
+          - msg: removed
+          - loc: 1,1
+      - jsbn:
+          - msg: removed
+          - loc: 1,1
+      - jsdoc-type-pratt-parser:
+          - msg: removed
+          - loc: 1,1
+      - json-buffer:
+          - msg: removed
+          - loc: 1,1
+      - json-schema:
+          - msg: removed
+          - loc: 1,1
+      - json-schema-traverse:
+          - msg: removed
+          - loc: 1,1
+      - json-stable-stringify:
+          - msg: removed
+          - loc: 1,1
+      - json-stable-stringify-without-jsonify:
+          - msg: removed
+          - loc: 1,1
+      - json-stringify-safe:
+          - msg: removed
+          - loc: 1,1
+      - json5:
+          - msg: removed
+          - loc: 1,1
+      - jsonify:
+          - msg: removed
+          - loc: 1,1
+      - jsprim:
+          - msg: removed
+          - loc: 1,1
+      - keyv:
+          - msg: removed
+          - loc: 1,1
+      - levn:
+          - msg: removed
+          - loc: 1,1
+      - locate-path:
+          - msg: removed
+          - loc: 1,1
+      - lodash.merge:
+          - msg: removed
+          - loc: 1,1
+      - lru-cache:
+          - msg: removed
+          - loc: 1,1
+      - merge2:
+          - msg: removed
+          - loc: 1,1
+      - micromatch:
+          - msg: removed
+          - loc: 1,1
+      - mime-db:
+          - msg: removed
+          - loc: 1,1
+      - mime-types:
+          - msg: removed
+          - loc: 1,1
+      - minimatch:
+          - msg: removed
+          - loc: 1,1
+      - minimist:
+          - msg: removed
+          - loc: 1,1
+      - minipass:
+          - msg: removed
+          - loc: 1,1
+      - minizlib:
+          - msg: removed
+          - loc: 1,1
+      - mitata:
+          - old: 0.1.11
+          - new: 0.1.14
+          - loc: 9,9
+      - mkdirp:
+          - msg: removed
+          - loc: 1,1
+      - ms:
+          - msg: removed
+          - loc: 1,1
+      - nanoid:
+          - msg: removed
+          - loc: 1,1
+      - natural-compare:
+          - msg: removed
+          - loc: 1,1
+      - node-releases:
+          - msg: removed
+          - loc: 1,1
+      - normalize-package-data:
+          - msg: removed
+          - loc: 1,1
+      - normalize-range:
+          - msg: removed
+          - loc: 1,1
+      - npm-package-arg:
+          - msg: removed
+          - loc: 1,1
+      - npmlog:
+          - msg: removed
+          - loc: 1,1
+      - number-is-nan:
+          - msg: removed
+          - loc: 1,1
+      - oauth-sign:
+          - msg: removed
+          - loc: 1,1
+      - object-assign:
+          - msg: removed
+          - loc: 1,1
+      - object-inspect:
+          - msg: removed
+          - loc: 1,1
+      - object-keys:
+          - msg: removed
+          - loc: 1,1
+      - object.assign:
+          - msg: removed
+          - loc: 1,1
+      - object.fromentries:
+          - msg: removed
+          - loc: 1,1
+      - object.groupby:
+          - msg: removed
+          - loc: 1,1
+      - object.values:
+          - msg: removed
+          - loc: 1,1
+      - once:
+          - msg: removed
+          - loc: 1,1
+      - optionator:
+          - msg: removed
+          - loc: 1,1
+      - p-limit:
+          - msg: removed
+          - loc: 1,1
+      - p-locate:
+          - msg: removed
+          - loc: 1,1
+      - parent-module:
+          - msg: removed
+          - loc: 1,1
+      - path-exists:
+          - msg: removed
+          - loc: 1,1
+      - path-is-absolute:
+          - msg: removed
+          - loc: 1,1
+      - path-key:
+          - msg: removed
+          - loc: 1,1
+      - path-parse:
+          - msg: removed
+          - loc: 1,1
+      - path-type:
+          - msg: removed
+          - loc: 1,1
+      - performance-now:
+          - msg: removed
+          - loc: 1,1
+      - picocolors:
+          - msg: removed
+          - loc: 1,1
+      - picomatch:
+          - msg: removed
+          - loc: 1,1
+      - possible-typed-array-names:
+          - msg: removed
+          - loc: 1,1
+      - postcss:
+          - msg: removed
+          - loc: 1,1
+      - postcss-value-parser:
+          - msg: removed
+          - loc: 1,1
+      - prelude-ls:
+          - msg: removed
+          - loc: 1,1
+      - process-nextick-args:
+          - msg: removed
+          - loc: 1,1
+      - psl:
+          - msg: removed
+          - loc: 1,1
+      - punycode:
+          - msg: removed
+          - loc: 1,1
+      - qs:
+          - msg: removed
+          - loc: 1,1
+      - queue-microtask:
+          - msg: removed
+          - loc: 1,1
+      - queue-tick:
+          - msg: removed
+          - loc: 1,1
+      - readable-stream:
+          - msg: removed
+          - loc: 1,1
+      - regexp.prototype.flags:
+          - msg: removed
+          - loc: 1,1
+      - request:
+          - msg: removed
+          - loc: 1,1
+      - require-directory:
+          - msg: removed
+          - loc: 1,1
+      - resolve:
+          - msg: removed
+          - loc: 1,1
+      - resolve-from:
+          - msg: removed
+          - loc: 1,1
+      - retry:
+          - msg: removed
+          - loc: 1,1
+      - reusify:
+          - msg: removed
+          - loc: 1,1
+      - rimraf:
+          - msg: removed
+          - loc: 1,1
+      - run-parallel:
+          - msg: removed
+          - loc: 1,1
+      - safe-array-concat:
+          - msg: removed
+          - loc: 1,1
+      - safe-buffer:
+          - msg: removed
+          - loc: 1,1
+      - safe-regex-test:
+          - msg: removed
+          - loc: 1,1
+      - safer-buffer:
+          - msg: removed
+          - loc: 1,1
+      - semver:
+          - msg: removed
+          - loc: 1,1
+      - set-blocking:
+          - msg: removed
+          - loc: 1,1
+      - set-function-length:
+          - msg: removed
+          - loc: 1,1
+      - set-function-name:
+          - msg: removed
+          - loc: 1,1
+      - shebang-command:
+          - msg: removed
+          - loc: 1,1
+      - shebang-regex:
+          - msg: removed
+          - loc: 1,1
+      - side-channel:
+          - msg: removed
+          - loc: 1,1
+      - signal-exit:
+          - msg: removed
+          - loc: 1,1
+      - slash:
+          - msg: removed
+          - loc: 1,1
+      - slide:
+          - msg: removed
+          - loc: 1,1
+      - source-map-js:
+          - old: 1.2.0
+          - new: 1.2.1
+          - loc: 15,9
+      - spdx-correct:
+          - msg: removed
+          - loc: 1,1
+      - spdx-exceptions:
+          - msg: removed
+          - loc: 1,1
+      - spdx-expression-parse:
+          - msg: removed
+          - loc: 1,1
+      - spdx-license-ids:
+          - msg: removed
+          - loc: 1,1
+      - sprintf-js:
+          - msg: removed
+          - loc: 1,1
+      - sshpk:
+          - msg: removed
+          - loc: 1,1
+      - ssri:
+          - msg: removed
+          - loc: 1,1
+      - streamx:
+          - msg: removed
+          - loc: 1,1
+      - string-width:
+          - msg: removed
+          - loc: 1,1
+      - string.prototype.trim:
+          - msg: removed
+          - loc: 1,1
+      - string.prototype.trimend:
+          - msg: removed
+          - loc: 1,1
+      - string.prototype.trimstart:
+          - msg: removed
+          - loc: 1,1
+      - string_decoder:
+          - msg: removed
+          - loc: 1,1
+      - strip-ansi:
+          - msg: removed
+          - loc: 1,1
+      - strip-bom:
+          - msg: removed
+          - loc: 1,1
+      - strip-json-comments:
+          - msg: removed
+          - loc: 1,1
+      - supports-color:
+          - msg: removed
+          - loc: 1,1
+      - supports-preserve-symlinks-flag:
+          - msg: removed
+          - loc: 1,1
+      - tar:
+          - msg: removed
+          - loc: 1,1
+      - tar-stream:
+          - msg: removed
+          - loc: 1,1
+      - text-decoder:
+          - msg: removed
+          - loc: 1,1
+      - text-table:
+          - msg: removed
+          - loc: 1,1
+      - tmp:
+          - msg: removed
+          - loc: 1,1
+      - to-regex-range:
+          - msg: removed
+          - loc: 1,1
+      - tough-cookie:
+          - msg: removed
+          - loc: 1,1
+      - ts-api-utils:
+          - msg: removed
+          - loc: 1,1
+      - tsconfig-paths:
+          - msg: removed
+          - loc: 1,1
+      - tslib:
+          - old: 2.6.3
+          - new: 2.8.1
+          - loc: 97,89
+      - tslint:
+          - msg: removed
+          - loc: 1,1
+      - tsutils:
+          - msg: removed
+          - loc: 1,1
+      - tunnel-agent:
+          - msg: removed
+          - loc: 1,1
+      - tweetnacl:
+          - msg: removed
+          - loc: 1,1
+      - type-check:
+          - msg: removed
+          - loc: 1,1
+      - type-fest:
+          - msg: removed
+          - loc: 1,1
+      - typed-array-buffer:
+          - msg: removed
+          - loc: 1,1
+      - typed-array-byte-length:
+          - msg: removed
+          - loc: 1,1
+      - typed-array-byte-offset:
+          - msg: removed
+          - loc: 1,1
+      - typed-array-length:
+          - msg: removed
+          - loc: 1,1
+      - typedarray:
+          - msg: removed
+          - loc: 1,1
+      - typescript:
+          - old: 5.7.2
+          - new: 5.8.3
+          - loc: 16,9
+      - unbox-primitive:
+          - msg: removed
+          - loc: 1,1
+      - undici-types:
+          - old: 6.20.0
+          - new: 6.21.0
+          - loc: 89,69
+      - update-browserslist-db:
+          - msg: removed
+          - loc: 1,1
+      - uri-js:
+          - msg: removed
+          - loc: 1,1
+      - util-deprecate:
+          - msg: removed
+          - loc: 1,1
+      - uuid:
+          - msg: removed
+          - loc: 1,1
+      - validate-npm-package-license:
+          - msg: removed
+          - loc: 1,1
+      - validate-npm-package-name:
+          - msg: removed
+          - loc: 1,1
+      - verror:
+          - msg: removed
+          - loc: 1,1
+      - which:
+          - msg: removed
+          - loc: 1,1
+      - which-boxed-primitive:
+          - msg: removed
+          - loc: 1,1
+      - which-typed-array:
+          - msg: removed
+          - loc: 1,1
+      - wide-align:
+          - msg: removed
+          - loc: 1,1
+      - word-wrap:
+          - msg: removed
+          - loc: 1,1
+      - wrap-ansi:
+          - msg: removed
+          - loc: 1,1
+      - wrappy:
+          - msg: removed
+          - loc: 1,1
+      - y18n:
+          - msg: removed
+          - loc: 1,1
+      - yallist:
+          - msg: removed
+          - loc: 1,1
+      - yargs:
+          - msg: removed
+          - loc: 1,1
+      - yargs-parser:
+          - msg: removed
+          - loc: 1,1
+      - yocto-queue:
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dts-critic/typescript":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/parser":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/types":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/utils":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/types":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/utils/@types/node":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/utils/minimatch":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/utils/which":
+          - msg: removed
+          - loc: 1,1
+      - "@eslint-community/eslint-utils/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/typescript-estree/minimatch":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - are-we-there-yet/readable-stream:
+          - msg: removed
+          - loc: 1,1
+      - autoprefixer/caniuse-lite:
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame/chalk:
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame/js-tokens:
+          - msg: removed
+          - loc: 1,1
+      - browserslist/caniuse-lite:
+          - msg: removed
+          - loc: 1,1
+      - eslint-import-resolver-node/debug:
+          - msg: removed
+          - loc: 1,1
+      - eslint-module-utils/debug:
+          - msg: removed
+          - loc: 1,1
+      - eslint-plugin-import/debug:
+          - msg: removed
+          - loc: 1,1
+      - eslint-plugin-import/doctrine:
+          - msg: removed
+          - loc: 1,1
+      - eslint-plugin-import/semver:
+          - msg: removed
+          - loc: 1,1
+      - fast-glob/glob-parent:
+          - msg: removed
+          - loc: 1,1
+      - fs-minipass/minipass:
+          - msg: removed
+          - loc: 1,1
+      - gauge/string-width:
+          - msg: removed
+          - loc: 1,1
+      - gauge/strip-ansi:
+          - msg: removed
+          - loc: 1,1
+      - has-ansi/ansi-regex:
+          - msg: removed
+          - loc: 1,1
+      - minizlib/minipass:
+          - msg: removed
+          - loc: 1,1
+      - ssri/minipass:
+          - msg: removed
+          - loc: 1,1
+      - tar/mkdirp:
+          - msg: removed
+          - loc: 1,1
+      - tslint/chalk:
+          - msg: removed
+          - loc: 1,1
+      - tslint/js-yaml:
+          - msg: removed
+          - loc: 1,1
+      - tslint/semver:
+          - msg: removed
+          - loc: 1,1
+      - tslint/tslib:
+          - msg: removed
+          - loc: 1,1
+      - tsutils/tslib:
+          - msg: removed
+          - loc: 1,1
+      - verror/core-util-is:
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/scope-manager":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/type-utils":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/parser/@typescript-eslint/scope-manager":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/parser/@typescript-eslint/visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/minimatch":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/utils/@typescript-eslint/scope-manager":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/@eslint/eslintrc":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/@eslint/js":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/eslint-scope":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/espree":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/file-entry-cache":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/globals":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/scope-manager":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/utils/minimatch/brace-expansion":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/utils/which/isexe":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/typescript-estree/minimatch/brace-expansion":
+          - msg: removed
+          - loc: 1,1
+      - are-we-there-yet/readable-stream/isarray:
+          - msg: removed
+          - loc: 1,1
+      - are-we-there-yet/readable-stream/safe-buffer:
+          - msg: removed
+          - loc: 1,1
+      - are-we-there-yet/readable-stream/string_decoder:
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame/chalk/ansi-styles:
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame/chalk/escape-string-regexp:
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame/chalk/strip-ansi:
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame/chalk/supports-color:
+          - msg: removed
+          - loc: 1,1
+      - gauge/string-width/is-fullwidth-code-point:
+          - msg: removed
+          - loc: 1,1
+      - gauge/strip-ansi/ansi-regex:
+          - msg: removed
+          - loc: 1,1
+      - tslint/chalk/ansi-styles:
+          - msg: removed
+          - loc: 1,1
+      - tslint/chalk/escape-string-regexp:
+          - msg: removed
+          - loc: 1,1
+      - tslint/chalk/supports-color:
+          - msg: removed
+          - loc: 1,1
+      - tslint/js-yaml/argparse:
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/parser/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/minimatch/brace-expansion":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/file-entry-cache/flat-cache":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/minimatch":
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame/chalk/strip-ansi/ansi-regex:
+          - msg: removed
+          - loc: 1,1
+      - tslint/chalk/ansi-styles/color-convert:
+          - msg: removed
+          - loc: 1,1
+      - tslint/chalk/supports-color/has-flag:
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/minimatch/brace-expansion":
+          - msg: removed
+          - loc: 1,1
+      - tslint/chalk/ansi-styles/color-convert/color-name:
+          - msg: removed
+          - loc: 1,1
+package.json:
+  constraints:
+    - "@types/react": ^18.3.3
+    - esbuild: ^0.21.4
+    - mitata: ^0.1.11
+    - peechy: 0.4.34
+    - prettier: ^3.5.3
+    - prettier-plugin-organize-imports: ^4.0.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.0
+    - typescript: ^5.7.2
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 9
+  timestamp: Sat May 17 05:21:28 2025 -0700
+  hashing_strategy: raw
+  data_hash: 0f3d8270a7ed986003be98059d45b5550808fd9f282e7937c0ea93a871d8c5e8
+  prev_meta_hash: 3c99a04c61efd048f1e4c6bf06e881ddec788aa26dd4965f5d4de628f31d3c35
+  meta_hash: 84a1df20df3e67b3f8906eeb888f803542ded0e0faa23458eec6d1bc79c20a21
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/prop-types":
+          - msg: removed
+          - loc: 1,1
+      - "@types/react":
+          - old: 18.3.21
+          - new: 19.1.8
+          - loc: 31,9
+package.json:
+  constraints:
+    - esbuild: ^0.21.4
+    - mitata: ^0.1.11
+    - peechy: 0.4.34
+    - prettier: ^3.5.3
+    - prettier-plugin-organize-imports: ^4.0.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.0
+    - typescript: ^5.7.2
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 10
+  timestamp: Wed Jul 2 20:06:43 2025 -0700
+  hashing_strategy: raw
+  data_hash: 61602c40900ff9f5a2729b4be401d1339fc9a1bf1916390901082ab83f11c7c3
+  prev_meta_hash: 84a1df20df3e67b3f8906eeb888f803542ded0e0faa23458eec6d1bc79c20a21
+  meta_hash: 79d65aeb15b7db85fc8798d86428d81f28922d89959209305bdac3384e34aed1
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@lezer/common":
+          - new: 1.2.3
+          - loc: 7,9
+      - "@lezer/cpp":
+          - new: 1.1.3
+          - loc: 8,9
+      - "@lezer/highlight":
+          - new: 1.2.1
+          - loc: 94,91
+      - "@lezer/lr":
+          - new: 1.4.2
+          - loc: 94,121
+package.json:
+  constraints:
+    - "@lezer/common": ^1.2.3
+    - "@lezer/cpp": ^1.1.3
+    - esbuild: ^0.21.4
+    - mitata: ^0.1.11
+    - peechy: 0.4.34
+    - prettier: ^3.5.3
+    - prettier-plugin-organize-imports: ^4.0.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.0
+    - typescript: ^5.7.2
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 11
+  timestamp: Mon Jul 21 16:26:07 2025 -0700
+  hashing_strategy: raw
+  data_hash: 7570b942d0d4720c1ab204d6be142864667f7b8eb53757454dbe1d9d117df013
+  prev_meta_hash: 79d65aeb15b7db85fc8798d86428d81f28922d89959209305bdac3384e34aed1
+  meta_hash: 2bb454b8ed1cce7b40f8901902e89430566c6955d3de5ed5f61d2deb8e73a635
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/node":
+          - old: 22.15.18
+          - new: 24.1.0
+          - loc: 31,9
+      - camel-case:
+          - old: 4.1.2
+          - new: 3.0.0
+          - loc: 181,5
+      - param-case:
+          - old: 3.0.4
+          - new: 2.1.1
+          - loc: 185,211
+      - prettier:
+          - old: 3.5.3
+          - new: 3.6.2
+          - loc: 13,9
+      - prettier-plugin-organize-imports:
+          - old: 4.1.0
+          - new: 4.2.0
+          - loc: 14,9
+      - undici-types:
+          - old: 6.21.0
+          - new: 7.8.0
+          - loc: 163,67
+      - upper-case:
+          - old: 2.0.2
+          - new: 1.1.3
+          - loc: 181,85
+      - "@octokit/app":
+          - new: 14.1.0
+          - loc: 101,5
+      - "@octokit/auth-app":
+          - new: 6.1.4
+          - loc: 101,69
+      - "@octokit/auth-oauth-app":
+          - new: 7.1.0
+          - loc: 103,78
+      - "@octokit/auth-oauth-device":
+          - new: 6.1.0
+          - loc: 105,90
+      - "@octokit/auth-oauth-user":
+          - new: 4.1.0
+          - loc: 103,115
+      - "@octokit/auth-token":
+          - new: 4.0.0
+          - loc: 111,5
+      - "@octokit/auth-unauthenticated":
+          - new: 5.0.1
+          - loc: 101,100
+      - "@octokit/core":
+          - new: 5.2.2
+          - loc: 101,143
+      - "@octokit/endpoint":
+          - new: 9.0.6
+          - loc: 117,5
+      - "@octokit/graphql":
+          - new: 7.1.1
+          - loc: 115,103
+      - "@octokit/oauth-app":
+          - new: 6.1.0
+          - loc: 101,170
+      - "@octokit/oauth-authorization-url":
+          - new: 6.0.2
+          - loc: 121,225
+      - "@octokit/oauth-methods":
+          - new: 4.1.0
+          - loc: 107,96
+      - "@octokit/openapi-types":
+          - new: 24.2.0
+          - loc: 127,5
+      - "@octokit/plugin-paginate-graphql":
+          - new: 4.0.1
+          - loc: 129,5
+      - "@octokit/plugin-paginate-rest":
+          - new: 11.4.4-cjs.2
+          - loc: 101,202
+      - "@octokit/plugin-rest-endpoint-methods":
+          - new: 13.3.2-cjs.1
+          - loc: 133,5
+      - "@octokit/plugin-retry":
+          - new: 6.1.0
+          - loc: 135,5
+      - "@octokit/plugin-throttling":
+          - new: 8.2.0
+          - loc: 137,5
+      - "@octokit/request":
+          - new: 8.4.1
+          - loc: 103,153
+      - "@octokit/request-error":
+          - new: 5.1.1
+          - loc: 103,183
+      - "@octokit/types":
+          - new: 13.10.0
+          - loc: 101,245
+      - "@octokit/webhooks":
+          - new: 12.3.2
+          - loc: 101,274
+      - "@octokit/webhooks-methods":
+          - new: 5.1.1
+          - loc: 145,115
+      - "@octokit/webhooks-types":
+          - new: 7.6.1
+          - loc: 145,154
+      - "@sentry/types":
+          - new: 7.120.3
+          - loc: 151,5
+      - "@types/aws-lambda":
+          - new: 8.10.152
+          - loc: 121,307
+      - "@types/btoa-lite":
+          - new: 1.0.2
+          - loc: 105,227
+      - "@types/jsonwebtoken":
+          - new: 9.0.10
+          - loc: 159,5
+      - "@types/ms":
+          - new: 2.1.0
+          - loc: 159,83
+      - aggregate-error:
+          - new: 3.1.0
+          - loc: 145,190
+      - before-after-hook:
+          - new: 2.2.3
+          - loc: 115,228
+      - bottleneck:
+          - new: 2.19.5
+          - loc: 135,151
+      - btoa-lite:
+          - new: 1.0.0
+          - loc: 105,257
+      - buffer-equal-constant-time:
+          - new: 1.0.1
+          - loc: 175,5
+      - bun-tracestrings:
+          - new: github:oven-sh/bun.report#912ca63
+          - loc: 9,9
+      - clean-css:
+          - new: 4.2.4
+          - loc: 187,5
+      - clean-stack:
+          - new: 2.2.0
+          - loc: 167,74
+      - commander:
+          - new: 2.20.3
+          - loc: 191,5
+      - deprecation:
+          - new: 2.3.1
+          - loc: 103,248
+      - detect-libc:
+          - new: 2.0.4
+          - loc: 199,5
+      - ecdsa-sig-formatter:
+          - new: 1.0.11
+          - loc: 203,5
+      - he:
+          - new: 1.2.0
+          - loc: 207,5
+      - html-minifier:
+          - new: 4.0.0
+          - loc: 177,192
+      - indent-string:
+          - new: 4.0.0
+          - loc: 167,99
+      - jsonwebtoken:
+          - new: 9.0.2
+          - loc: 217,5
+      - jwa:
+          - new: 1.4.2
+          - loc: 219,5
+      - jws:
+          - new: 3.2.2
+          - loc: 217,68
+      - lightningcss:
+          - new: 1.30.1
+          - loc: 177,219
+      - lightningcss-darwin-arm64:
+          - new: 1.30.1
+          - loc: 223,122
+      - lightningcss-darwin-x64:
+          - new: 1.30.1
+          - loc: 223,161
+      - lightningcss-freebsd-x64:
+          - new: 1.30.1
+          - loc: 223,198
+      - lightningcss-linux-arm-gnueabihf:
+          - new: 1.30.1
+          - loc: 223,236
+      - lightningcss-linux-arm64-gnu:
+          - new: 1.30.1
+          - loc: 223,282
+      - lightningcss-linux-arm64-musl:
+          - new: 1.30.1
+          - loc: 223,324
+      - lightningcss-linux-x64-gnu:
+          - new: 1.30.1
+          - loc: 223,367
+      - lightningcss-linux-x64-musl:
+          - new: 1.30.1
+          - loc: 223,407
+      - lightningcss-win32-arm64-msvc:
+          - new: 1.30.1
+          - loc: 223,448
+      - lightningcss-win32-x64-msvc:
+          - new: 1.30.1
+          - loc: 223,491
+      - lodash.includes:
+          - new: 4.3.0
+          - loc: 217,85
+      - lodash.isboolean:
+          - new: 3.0.3
+          - loc: 217,114
+      - lodash.isinteger:
+          - new: 4.0.4
+          - loc: 217,144
+      - lodash.isnumber:
+          - new: 3.0.3
+          - loc: 217,174
+      - lodash.isplainobject:
+          - new: 4.0.6
+          - loc: 217,203
+      - lodash.isstring:
+          - new: 4.0.1
+          - loc: 217,237
+      - lodash.once:
+          - new: 4.1.1
+          - loc: 217,266
+      - lru-cache:
+          - new: 11.0.2-patch.1
+          - loc: 103,273
+      - marked:
+          - new: 12.0.2
+          - loc: 177,246
+      - ms:
+          - new: 2.1.3
+          - loc: 217,291
+      - octokit:
+          - new: 3.2.2
+          - loc: 177,267
+      - once:
+          - new: 1.4.0
+          - loc: 141,142
+      - relateurl:
+          - new: 0.2.7
+          - loc: 211,181
+      - safe-buffer:
+          - new: 5.2.1
+          - loc: 203,83
+      - semver:
+          - new: 7.7.2
+          - loc: 217,307
+      - source-map:
+          - new: 0.6.1
+          - loc: 187,62
+      - uglify-js:
+          - new: 3.19.3
+          - loc: 211,204
+      - universal-github-app-jwt:
+          - new: 1.2.0
+          - loc: 103,330
+      - universal-user-agent:
+          - new: 6.0.1
+          - loc: 103,368
+      - wrappy:
+          - new: 1.0.2
+          - loc: 275,52
+      - "@octokit/app/@octokit/plugin-paginate-rest":
+          - new: 9.2.2
+          - loc: 327,5
+      - "@octokit/app/@octokit/types":
+          - new: 12.6.0
+          - loc: 329,5
+      - "@octokit/auth-unauthenticated/@octokit/types":
+          - new: 12.6.0
+          - loc: 331,5
+      - "@octokit/plugin-throttling/@octokit/types":
+          - new: 12.6.0
+          - loc: 333,5
+      - "@octokit/webhooks/@octokit/webhooks-methods":
+          - new: 4.1.0
+          - loc: 335,5
+      - camel-case/no-case:
+          - new: 2.3.2
+          - loc: 337,5
+      - change-case/camel-case:
+          - new: 4.1.2
+          - loc: 339,5
+      - change-case/param-case:
+          - new: 3.0.4
+          - loc: 341,5
+      - constant-case/upper-case:
+          - new: 2.0.2
+          - loc: 343,5
+      - param-case/no-case:
+          - new: 2.3.2
+          - loc: 345,5
+      - "@octokit/app/@octokit/types/@octokit/openapi-types":
+          - new: 20.0.0
+          - loc: 347,5
+      - "@octokit/auth-unauthenticated/@octokit/types/@octokit/openapi-types":
+          - new: 20.0.0
+          - loc: 349,5
+      - "@octokit/plugin-throttling/@octokit/types/@octokit/openapi-types":
+          - new: 20.0.0
+          - loc: 351,5
+      - camel-case/no-case/lower-case:
+          - new: 1.1.4
+          - loc: 353,5
+      - param-case/no-case/lower-case:
+          - new: 1.1.4
+          - loc: 355,5
+package.json:
+  constraints:
+    - bun-tracestrings: github:oven-sh/bun.report#912ca63e26c51429d3e6799aa2a6ab079b188fd8
+    - "@lezer/common": ^1.2.3
+    - "@lezer/cpp": ^1.1.3
+    - esbuild: ^0.21.4
+    - mitata: ^0.1.11
+    - peechy: 0.4.34
+    - prettier: ^3.5.3
+    - prettier-plugin-organize-imports: ^4.0.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.0
+    - typescript: ^5.7.2
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 12
+  timestamp: Thu Jul 24 23:32:54 2025 -0700
+  hashing_strategy: raw
+  data_hash: 0540fd653f7f11f356317da67dc5d96a3a312b220784d22e3f3a20df1319c186
+  prev_meta_hash: 2bb454b8ed1cce7b40f8901902e89430566c6955d3de5ed5f61d2deb8e73a635
+  meta_hash: bed5ab1c5105c8dafff775fd87a20f4d70bd49f21855094f8d98eb4a83097f56
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - typescript:
+          - old: 5.8.3
+          - new: 5.9.2
+          - loc: 18,9
+      - bun-tracestrings/typescript:
+          - new: 5.8.3
+          - loc: 336,5
+package.json:
+  constraints:
+    - bun-tracestrings: github:oven-sh/bun.report#912ca63e26c51429d3e6799aa2a6ab079b188fd8
+    - "@lezer/common": ^1.2.3
+    - "@lezer/cpp": ^1.1.3
+    - esbuild: ^0.21.4
+    - mitata: ^0.1.11
+    - peechy: 0.4.34
+    - prettier: ^3.5.3
+    - prettier-plugin-organize-imports: ^4.0.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.0
+    - typescript: 5.9.2
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 13
+  timestamp: Fri Aug 1 16:09:44 2025 -0700
+  hashing_strategy: raw
+  data_hash: c4a8031faeadd5fd7f49b748124fb779dce1386dfb6a8b1478956fa75852f136
+  prev_meta_hash: bed5ab1c5105c8dafff775fd87a20f4d70bd49f21855094f8d98eb4a83097f56
+  meta_hash: 4fc2217d4745df25f3179345d1b68d49b4f5e4559938c9c35d953e148c36c890
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@sentry/types":
+          - old: 7.120.3
+          - new: 7.120.4
+          - loc: 150,5
+      - "@types/node":
+          - old: 24.1.0
+          - new: 24.2.1
+          - loc: 31,9
+      - "@types/react":
+          - old: 19.1.8
+          - new: 19.1.10
+          - loc: 34,9
+      - undici-types:
+          - old: 7.8.0
+          - new: 7.10.0
+          - loc: 162,67
+      - bun-tracestrings/typescript:
+          - msg: removed
+          - loc: 1,1
+package.json:
+  constraints:
+    - bun-tracestrings: github:oven-sh/bun.report#912ca63e26c51429d3e6799aa2a6ab079b188fd8
+    - "@lezer/common": ^1.2.3
+    - "@lezer/cpp": ^1.1.3
+    - esbuild: ^0.21.4
+    - mitata: ^0.1.11
+    - peechy: 0.4.34
+    - prettier: ^3.5.3
+    - prettier-plugin-organize-imports: ^4.0.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.0
+    - typescript: 5.9.2
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 14
+  timestamp: Thu Aug 14 22:42:05 2025 -0700
+  hashing_strategy: raw
+  data_hash: 9226c0f43fbefb7e502977b8f99c2aeedc673d5603501df57d33b95f8b5760b7
+  prev_meta_hash: 4fc2217d4745df25f3179345d1b68d49b4f5e4559938c9c35d953e148c36c890
+  meta_hash: 44d34495768ed1b8aa9babe005a17dabc8e8de36d1502ba23b7a5c9ab76411c4
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - prettier-plugin-organize-imports:
+          - old: 4.2.0
+          - new: 4.3.0
+          - loc: 15,9
+package.json:
+  constraints:
+    - "@lezer/common": ^1.2.3
+    - "@lezer/cpp": ^1.1.3
+    - "@types/bun": workspace:*
+    - bun-tracestrings: github:oven-sh/bun.report#912ca63e26c51429d3e6799aa2a6ab079b188fd8
+    - esbuild: ^0.21.5
+    - mitata: ^0.1.14
+    - peechy: 0.4.34
+    - prettier: ^3.6.2
+    - prettier-plugin-organize-imports: ^4.3.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.1
+    - typescript: 5.9.2
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 15
+  timestamp: Fri Oct 3 17:10:28 2025 -0700
+  hashing_strategy: raw
+  data_hash: 78f905c54b1b97527d51ae650da6d30393d42e4950c39bef1de1648a8fc02604
+  prev_meta_hash: 44d34495768ed1b8aa9babe005a17dabc8e8de36d1502ba23b7a5c9ab76411c4
+  meta_hash: 870639909ac13aff91587df20d46d897ccd775147257d5215e71ffebe1989bda
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/react":
+          - msg: removed
+          - loc: 1,1
+      - csstype:
+          - msg: removed
+          - loc: 1,1
+package.json:
+  constraints:
+    - "@lezer/common": ^1.2.3
+    - "@lezer/cpp": ^1.1.3
+    - "@types/bun": workspace:*
+    - bun-tracestrings: github:oven-sh/bun.report#912ca63e26c51429d3e6799aa2a6ab079b188fd8
+    - esbuild: ^0.21.5
+    - mitata: ^0.1.14
+    - peechy: 0.4.34
+    - prettier: ^3.6.2
+    - prettier-plugin-organize-imports: ^4.3.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.1
+    - typescript: 5.9.2
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 16
+  timestamp: Mon Nov 10 15:50:45 2025 -0800
+  hashing_strategy: raw
+  data_hash: bc7a47385ca567ca4d3da4c40157794028314b7c05158de6939bdc63c86a1ccf
+  prev_meta_hash: 870639909ac13aff91587df20d46d897ccd775147257d5215e71ffebe1989bda
+  meta_hash: ab5e8c08bf39c0f35ce52b023e27e50c0133d5912235885922356485c0d374e4
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@lezer/common":
+          - old: 1.2.3
+          - new: 1.3.0
+          - loc: 8,9
+      - "@lezer/highlight":
+          - old: 1.2.1
+          - new: 1.2.3
+          - loc: 90,91
+      - "@lezer/lr":
+          - old: 1.4.2
+          - new: 1.4.3
+          - loc: 90,121
+      - "@types/aws-lambda":
+          - old: 8.10.152
+          - new: 8.10.159
+          - loc: 116,307
+      - "@types/node":
+          - old: 24.2.1
+          - new: 24.10.1
+          - loc: 33,9
+      - detect-libc:
+          - old: 2.0.4
+          - new: 2.1.2
+          - loc: 190,5
+      - lightningcss:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 170,219
+      - lightningcss-darwin-arm64:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 214,162
+      - lightningcss-darwin-x64:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 214,201
+      - lightningcss-freebsd-x64:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 214,238
+      - lightningcss-linux-arm-gnueabihf:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 214,276
+      - lightningcss-linux-arm64-gnu:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 214,322
+      - lightningcss-linux-arm64-musl:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 214,364
+      - lightningcss-linux-x64-gnu:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 214,407
+      - lightningcss-linux-x64-musl:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 214,447
+      - lightningcss-win32-arm64-msvc:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 214,488
+      - lightningcss-win32-x64-msvc:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 214,531
+      - semver:
+          - old: 7.7.2
+          - new: 7.7.3
+          - loc: 208,307
+      - undici-types:
+          - old: 7.10.0
+          - new: 7.16.0
+          - loc: 158,68
+      - lightningcss-android-arm64:
+          - new: 1.30.2
+          - loc: 214,122
+package.json:
+  constraints:
+    - "@lezer/common": ^1.2.3
+    - "@lezer/cpp": ^1.1.3
+    - "@types/bun": workspace:*
+    - bun-tracestrings: github:oven-sh/bun.report#912ca63e26c51429d3e6799aa2a6ab079b188fd8
+    - esbuild: ^0.21.5
+    - mitata: ^0.1.14
+    - peechy: 0.4.34
+    - prettier: ^3.6.2
+    - prettier-plugin-organize-imports: ^4.3.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.1
+    - typescript: 5.9.2
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 17
+  timestamp: Mon Nov 24 20:16:03 2025 -0800
+  hashing_strategy: raw
+  data_hash: 976d238cc4c64ec78f78e28e82d9857da2170edb10c34f5857786a2a8b7a8629
+  prev_meta_hash: ab5e8c08bf39c0f35ce52b023e27e50c0133d5912235885922356485c0d374e4
+  meta_hash: b32ae910e18d407e55c66617a8403272f9f92ba5d2017cb2947833f6a956399a
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/node":
+          - old: 24.10.1
+          - new: 25.0.0
+          - loc: 33,9
+package.json:
+  constraints:
+    - "@lezer/common": ^1.2.3
+    - "@lezer/cpp": ^1.1.3
+    - "@types/bun": workspace:*
+    - bun-tracestrings: github:oven-sh/bun.report#912ca63e26c51429d3e6799aa2a6ab079b188fd8
+    - esbuild: ^0.21.5
+    - mitata: ^0.1.14
+    - peechy: 0.4.34
+    - prettier: ^3.6.2
+    - prettier-plugin-organize-imports: ^4.3.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.1
+    - typescript: 5.9.2
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 18
+  timestamp: Wed Dec 10 18:15:55 2025 -0800
+  hashing_strategy: raw
+  data_hash: c0cad5a6b737052eb8fb4685fcf0a298ffb756cc8bd33d3da433a2c2d6f0a95f
+  prev_meta_hash: b32ae910e18d407e55c66617a8403272f9f92ba5d2017cb2947833f6a956399a
+  meta_hash: bbf692e1daf09d25ca7275674c400b0620e7562d1e26150fdb0941a026455844
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - typescript:
+          - old: 5.9.2
+          - new: 6.0.2
+          - loc: 20,9
+      - bun-tracestrings/typescript:
+          - new: 5.9.2
+          - loc: 331,5
+package.json:
+  constraints:
+    - "@lezer/common": ^1.2.3
+    - "@lezer/cpp": ^1.1.3
+    - "@types/bun": workspace:*
+    - bun-tracestrings: github:oven-sh/bun.report#912ca63e26c51429d3e6799aa2a6ab079b188fd8
+    - esbuild: ^0.21.5
+    - mitata: ^0.1.14
+    - peechy: 0.4.34
+    - prettier: ^3.6.2
+    - prettier-plugin-organize-imports: ^4.3.0
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - source-map-js: ^1.2.1
+    - typescript: 6.0.2
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 19
+  timestamp: Wed Mar 25 16:39:54 2026 +0000
+  hashing_strategy: raw
+  data_hash: 59ef287a60420f6ec8d55f7a39d458978bf41c62f1aded604d011f2398493f30
+  prev_meta_hash: bbf692e1daf09d25ca7275674c400b0620e7562d1e26150fdb0941a026455844
+  meta_hash: 432ee15b337df61ac132b144e7297ecd10623ee9a5b2f6a9515a88ad939c97cc
+---
+lockfiles:
+  Cargo.toml:
+    packages: []
+    chain_event: init
+Cargo.toml:
+  constraints:
+    - rust-argon2: "3.0"
+    - bcrypt: "0.19"
+    - getrandom: "0.4"
+    - strum: "0.26"
+    - phf: "0.11"
+    - hashbrown: "0.15"
+    - allocator-api2: "0.2"
+    - bstr: "1"
+    - scopeguard: "1"
+    - const_format: "0.2"
+    - enum-map: "2"
+    - enumset: "1"
+    - libc: "0.2"
+    - memchr: "2"
+    - rustix: "0.38"
+    - bitflags: "2"
+    - thiserror: "2"
+    - crossbeam: "0.8"
+    - smallvec: "1"
+    - bumpalo: "3"
+    - typed-arena: "2"
+    - itoa: "1"
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 20
+  timestamp: Thu May 14 01:09:34 2026 -0700
+  hashing_strategy: raw
+  data_hash: e0617a4b7f8f2b28afa232c7c5d455a8fd49b8486f7861af6624a6d83a4ddd31
+  prev_meta_hash: 432ee15b337df61ac132b144e7297ecd10623ee9a5b2f6a9515a88ad939c97cc
+  meta_hash: df5aef9504f17d159aa9288e8192ba01036df6f1e0b7e8233ce26f26283b1b53
+---
+lockfiles:
+  Cargo.lock:
+    packages:
+      - aho-corasick: 1.1.4
+      - allocator-api2: 0.2.21
+      - anes: 0.1.6
+      - anstyle: 1.0.14
+      - anyhow: 1.0.102
+      - arrayref: 0.3.9
+      - arrayvec: 0.7.6
+      - autocfg: 1.5.0
+      - base64: 0.22.1
+      - bcrypt: 0.19.0
+      - bitflags: 2.11.1
+      - blake2: 0.10.6
+      - blake2b_simd: 1.0.4
+      - block-buffer: 0.10.4
+      - blowfish: 0.9.1
+      - bstr: 1.12.1
+      - bumpalo: 3.20.2
+      - bun_alloc: 0.0.0
+      - bun_analytics: 0.0.0
+      - bun_api: 0.0.0
+      - bun_ast: 0.0.0
+      - bun_ast_jsc: 0.0.0
+      - bun_base64: 0.0.0
+      - bun_bin: 0.0.0
+      - bun_boringssl: 0.0.0
+      - bun_boringssl_sys: 0.0.0
+      - bun_brotli: 0.0.0
+      - bun_brotli_sys: 0.0.0
+      - bun_bundler: 0.0.0
+      - bun_bundler_jsc: 0.0.0
+      - bun_bunfig: 0.0.0
+      - bun_cares_sys: 0.0.0
+      - bun_clap: 0.0.0
+      - bun_clap_macros: 0.0.0
+      - bun_codegen: 0.0.0
+      - bun_collections: 0.0.0
+      - bun_core: 0.0.0
+      - bun_core_macros: 0.0.0
+      - bun_crash_handler: 0.0.0
+      - bun_csrf: 0.0.0
+      - bun_css: 0.0.0
+      - bun_css_derive: 0.0.0
+      - bun_css_jsc: 0.0.0
+      - bun_dispatch: 0.0.0
+      - bun_dns: 0.0.0
+      - bun_dotenv: 0.0.0
+      - bun_errno: 0.0.0
+      - bun_event_loop: 0.0.0
+      - bun_exe_format: 0.0.0
+      - bun_glob: 0.0.0
+      - bun_hash: 0.0.0
+      - bun_highway: 0.0.0
+      - bun_http: 0.0.0
+      - bun_http_jsc: 0.0.0
+      - bun_http_types: 0.0.0
+      - bun_ini: 0.0.0
+      - bun_install: 0.0.0
+      - bun_install_jsc: 0.0.0
+      - bun_install_types: 0.0.0
+      - bun_io: 0.0.0
+      - bun_js: 0.0.0
+      - bun_js_parser: 0.0.0
+      - bun_js_parser_jsc: 0.0.0
+      - bun_js_printer: 0.0.0
+      - bun_jsc: 0.0.0
+      - bun_jsc_macros: 0.0.0
+      - bun_libarchive: 0.0.0
+      - bun_libarchive_sys: 0.0.0
+      - bun_libdeflate_sys: 0.0.0
+      - bun_libuv_sys: 0.0.0
+      - bun_lolhtml_sys: 0.0.0
+      - bun_md: 0.0.0
+      - bun_meta: 0.0.0
+      - bun_mimalloc_sys: 0.0.0
+      - bun_node-fallbacks: 0.0.0
+      - bun_opaque: 0.0.0
+      - bun_options_types: 0.0.0
+      - bun_output: 0.0.0
+      - bun_output_tags: 0.0.0
+      - bun_parsers: 0.0.0
+      - bun_patch: 0.0.0
+      - bun_patch_jsc: 0.0.0
+      - bun_paths: 0.0.0
+      - bun_perf: 0.0.0
+      - bun_picohttp: 0.0.0
+      - bun_picohttp_sys: 0.0.0
+      - bun_platform: 0.0.0
+      - bun_ptr: 0.0.0
+      - bun_resolve_builtins: 0.0.0
+      - bun_resolver: 0.0.0
+      - bun_router: 0.0.0
+      - bun_runtime: 0.0.0
+      - bun_s3_signing: 0.0.0
+      - bun_safety: 0.0.0
+      - bun_semver: 0.0.0
+      - bun_semver_jsc: 0.0.0
+      - bun_sha_hmac: 0.0.0
+      - bun_shell_parser: 0.0.0
+      - bun_shim_impl: 0.0.0
+      - bun_simdutf_sys: 0.0.0
+      - bun_sourcemap: 0.0.0
+      - bun_sourcemap_jsc: 0.0.0
+      - bun_spawn: 0.0.0
+      - bun_spawn_sys: 0.0.0
+      - bun_sql: 0.0.0
+      - bun_sql_jsc: 0.0.0
+      - bun_standalone_graph: 0.0.0
+      - bun_sys: 0.0.0
+      - bun_sys_jsc: 0.0.0
+      - bun_tcc_sys: 0.0.0
+      - bun_threading: 0.0.0
+      - bun_transpiler: 0.0.0
+      - bun_unicode: 0.0.0
+      - bun_url: 0.0.0
+      - bun_url_jsc: 0.0.0
+      - bun_uws: 0.0.0
+      - bun_uws_sys: 0.0.0
+      - bun_valkey: 0.0.0
+      - bun_watcher: 0.0.0
+      - bun_which: 0.0.0
+      - bun_windows_sys: 0.0.0
+      - bun_wyhash: 0.0.0
+      - bun_zlib: 0.0.0
+      - bun_zlib_sys: 0.0.0
+      - bun_zstd: 0.0.0
+      - bytemuck: 1.25.0
+      - byteorder: 1.5.0
+      - cast: 0.3.0
+      - cfg-if: 1.0.4
+      - ciborium: 0.2.2
+      - ciborium-io: 0.2.2
+      - ciborium-ll: 0.2.2
+      - cipher: 0.4.4
+      - clap: 4.6.1
+      - clap_builder: 4.6.0
+      - clap_lex: 1.1.0
+      - const_format: 0.2.36
+      - const_format_proc_macros: 0.2.34
+      - constant_time_eq: 0.4.2
+      - cpufeatures: 0.2.17
+      - criterion: 0.5.1
+      - criterion-plot: 0.5.0
+      - crossbeam-deque: 0.8.6
+      - crossbeam-epoch: 0.9.18
+      - crossbeam-utils: 0.8.21
+      - crunchy: 0.2.4
+      - crypto-common: 0.1.7
+      - cssparser: 0.36.0
+      - cssparser-macros: 0.6.1
+      - darling: 0.21.3
+      - darling_core: 0.21.3
+      - darling_macro: 0.21.3
+      - derive_more: 2.1.1
+      - derive_more-impl: 2.1.1
+      - digest: 0.10.7
+      - dtoa: 1.0.11
+      - dtoa-short: 0.3.5
+      - either: 1.15.0
+      - encoding_rs: 0.8.35
+      - enum-map: 2.7.3
+      - enum-map-derive: 0.17.0
+      - enumset: 1.1.10
+      - enumset_derive: 0.14.0
+      - equivalent: 1.0.2
+      - errno: 0.3.14
+      - fastrand: 2.4.1
+      - fnv: 1.0.7
+      - foldhash: 0.2.0
+      - futures-core: 0.3.32
+      - futures-task: 0.3.32
+      - futures-util: 0.3.32
+      - generic-array: 0.14.7
+      - getrandom: 0.4.2
+      - half: 2.7.1
+      - hashbrown: 0.17.0
+      - heck: 0.5.0
+      - hermit-abi: 0.5.2
+      - id-arena: 2.3.0
+      - ident_case: 1.0.1
+      - indexmap: 2.14.0
+      - inout: 0.1.4
+      - is-terminal: 0.4.17
+      - itertools: 0.10.5
+      - itoa: 1.0.18
+      - js-sys: 0.3.98
+      - keccak: 0.1.6
+      - konst: 0.2.20
+      - konst_macro_rules: 0.2.19
+      - leb128fmt: 0.1.0
+      - libc: 0.2.186
+      - linux-raw-sys: 0.4.15
+      - log: 0.4.29
+      - lol_html: 2.7.2
+      - lol_html_c_api: 1.3.1
+      - memchr: 2.8.0
+      - mime: 0.3.17
+      - new_debug_unreachable: 1.0.6
+      - num-traits: 0.2.19
+      - once_cell: 1.21.4
+      - oorandom: 11.1.5
+      - paste: 1.0.15
+      - phf: 0.13.1
+      - phf_codegen: 0.13.1
+      - phf_generator: 0.13.1
+      - phf_macros: 0.13.1
+      - phf_shared: 0.13.1
+      - pin-project-lite: 0.2.17
+      - plotters: 0.3.7
+      - plotters-backend: 0.3.7
+      - plotters-svg: 0.3.7
+      - precomputed-hash: 0.1.1
+      - prettyplease: 0.2.37
+      - proc-macro2: 1.0.106
+      - quote: 1.0.45
+      - r-efi: 6.0.0
+      - rand: 0.8.6
+      - rand_core: 0.6.4
+      - rayon: 1.12.0
+      - rayon-core: 1.13.0
+      - regex: 1.12.3
+      - regex-automata: 0.4.14
+      - regex-syntax: 0.8.10
+      - rust-argon2: 3.0.0
+      - rustc-hash: 2.1.2
+      - rustc_version: 0.4.1
+      - rustix: 0.38.44
+      - rustversion: 1.0.22
+      - same-file: 1.0.6
+      - scopeguard: 1.2.0
+      - selectors: 0.33.0
+      - semver: 1.0.28
+      - serde: 1.0.228
+      - serde_core: 1.0.228
+      - serde_derive: 1.0.228
+      - serde_json: 1.0.149
+      - servo_arc: 0.4.3
+      - sha3: 0.10.9
+      - siphasher: 1.0.3
+      - slab: 0.4.12
+      - smallvec: 1.15.1
+      - stable_deref_trait: 1.2.1
+      - strum: 0.26.3
+      - strum_macros: 0.26.4
+      - subtle: 2.6.1
+      - syn: 2.0.117
+      - thiserror: 2.0.18
+      - thiserror-impl: 2.0.18
+      - tinytemplate: 1.2.1
+      - twox-hash: 2.1.2
+      - typed-arena: 2.0.2
+      - typenum: 1.20.0
+      - unicode-ident: 1.0.24
+      - unicode-xid: 0.2.6
+      - version_check: 0.9.5
+      - walkdir: 2.5.0
+      - wasip2: 1.0.3+wasi-0.2.9
+      - wasip3: 0.4.0+wasi-0.3.0-rc-2026-01-06
+      - wasm-bindgen: 0.2.121
+      - wasm-bindgen-macro: 0.2.121
+      - wasm-bindgen-macro-support: 0.2.121
+      - wasm-bindgen-shared: 0.2.121
+      - wasm-encoder: 0.244.0
+      - wasm-metadata: 0.244.0
+      - wasmparser: 0.244.0
+      - web-sys: 0.3.98
+      - winapi-util: 0.1.11
+      - windows-link: 0.2.1
+      - windows-sys: 0.61.2
+      - windows-targets: 0.52.6
+      - windows_aarch64_gnullvm: 0.52.6
+      - windows_aarch64_msvc: 0.52.6
+      - windows_i686_gnu: 0.52.6
+      - windows_i686_gnullvm: 0.52.6
+      - windows_i686_msvc: 0.52.6
+      - windows_x86_64_gnu: 0.52.6
+      - windows_x86_64_gnullvm: 0.52.6
+      - windows_x86_64_msvc: 0.52.6
+      - wit-bindgen: 0.57.1
+      - wit-bindgen-core: 0.51.0
+      - wit-bindgen-rust: 0.51.0
+      - wit-bindgen-rust-macro: 0.51.0
+      - wit-component: 0.244.0
+      - wit-parser: 0.244.0
+      - zerocopy: 0.8.48
+      - zerocopy-derive: 0.8.48
+      - zeroize: 1.8.2
+      - zmij: 1.0.21
+    chain_event: init
+Cargo.toml:
+  constraints:
+    - rust-argon2: "3.0"
+    - bcrypt: "0.19"
+    - getrandom: "0.4"
+    - strum: "0.26"
+    - phf: "0.11"
+    - hashbrown: "0.15"
+    - allocator-api2: "0.2"
+    - bstr: "1"
+    - scopeguard: "1"
+    - const_format: "0.2"
+    - enum-map: "2"
+    - enumset: "1"
+    - libc: "0.2"
+    - memchr: "2"
+    - rustix: "0.38"
+    - bitflags: "2"
+    - thiserror: "2"
+    - crossbeam: "0.8"
+    - smallvec: "1"
+    - bumpalo: "3"
+    - typed-arena: "2"
+    - itoa: "1"
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 21
+  timestamp: Thu May 14 01:09:34 2026 -0700
+  hashing_strategy: raw
+  data_hash: 254d418a275dd1cbb11a4d1491ffb0aa80a7acd5db5519557b18822394ecab84
+  prev_meta_hash: df5aef9504f17d159aa9288e8192ba01036df6f1e0b7e8233ce26f26283b1b53
+  meta_hash: 2d55451b1f496adc5cdf80bbde632a17de9a9dc8f2599496f0fea33c8d8013c6
+---
+lockfiles:
+  Cargo.lock:
+    packages:
+      - bun_codegen:
+          - msg: removed
+          - loc: 1,1
+      - bun_libarchive_sys:
+          - msg: removed
+          - loc: 1,1
+      - bun_meta:
+          - msg: removed
+          - loc: 1,1
+      - bun_node-fallbacks:
+          - msg: removed
+          - loc: 1,1
+      - bun_picohttp_sys:
+          - msg: removed
+          - loc: 1,1
+      - bun_unicode:
+          - msg: removed
+          - loc: 1,1
+      - bun_url_jsc:
+          - msg: removed
+          - loc: 1,1
+Cargo.toml:
+  constraints:
+    - rust-argon2: "3.0"
+    - bcrypt: "0.19"
+    - getrandom: "0.4"
+    - strum: "0.26"
+    - phf: "0.11"
+    - hashbrown: "0.15"
+    - allocator-api2: "0.2"
+    - bstr: "1"
+    - scopeguard: "1"
+    - const_format: "0.2"
+    - enum-map: "2"
+    - enumset: "1"
+    - libc: "0.2"
+    - memchr: "2"
+    - rustix: "0.38"
+    - bitflags: "2"
+    - thiserror: "2"
+    - smallvec: "1"
+    - bumpalo: "3"
+    - typed-arena: "2"
+    - itoa: "1"
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 22
+  timestamp: Sat May 23 22:53:14 2026 -0700
+  hashing_strategy: raw
+  data_hash: ce360a3b6c9ba80f87617ec8431770bae80c116ea19441fbb4e5b8f1353c60f4
+  prev_meta_hash: 2d55451b1f496adc5cdf80bbde632a17de9a9dc8f2599496f0fea33c8d8013c6
+  meta_hash: 87c08d52629522c32e85fd1621fc841e58367114bf87b91f71a9145c1c340cbd
+---
+lockfiles:
+  Cargo.lock:
+    packages:
+      - twox-hash:
+          - msg: removed
+          - loc: 1,1
+Cargo.toml:
+  constraints:
+    - rust-argon2: "3.0"
+    - bcrypt: "0.19"
+    - getrandom: "0.4"
+    - strum: "0.26"
+    - phf: "0.11"
+    - hashbrown: "0.15"
+    - allocator-api2: "0.2"
+    - bstr: "1"
+    - scopeguard: "1"
+    - const_format: "0.2"
+    - enum-map: "2"
+    - enumset: "1"
+    - libc: "0.2"
+    - memchr: "2"
+    - rustix: "0.38"
+    - bitflags: "2"
+    - thiserror: "2"
+    - smallvec: "1"
+    - bumpalo: "3"
+    - typed-arena: "2"
+    - itoa: "1"
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 23
+  timestamp: Thu May 28 13:43:50 2026 -0700
+  hashing_strategy: raw
+  data_hash: 017fbb2004f2efd31782d275cbf25da826a6a18981f9218285b0dd8db8c5acee
+  prev_meta_hash: 87c08d52629522c32e85fd1621fc841e58367114bf87b91f71a9145c1c340cbd
+  meta_hash: c74c4e1751289a15c583826c3b4d77201023d22d70d8df7bf0bada6c7ec147e0
+---
+lockfiles:
+  Cargo.lock:
+    packages:
+      - rand:
+          - msg: removed
+          - loc: 1,1
+      - rand_core:
+          - msg: removed
+          - loc: 1,1
+Cargo.toml:
+  constraints:
+    - rust-argon2: "3.0"
+    - bcrypt: "0.19"
+    - getrandom: "0.4"
+    - strum: "0.26"
+    - hashbrown: "0.15"
+    - allocator-api2: "0.2"
+    - bstr: "1"
+    - scopeguard: "1"
+    - const_format: "0.2"
+    - enum-map: "2"
+    - enumset: "1"
+    - libc: "0.2"
+    - memchr: "2"
+    - rustix: "0.38"
+    - bitflags: "2"
+    - thiserror: "2"
+    - smallvec: "1"
+    - bumpalo: "3"
+    - typed-arena: "2"
+    - itoa: "1"
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 24
+  timestamp: Fri Jun 5 12:58:45 2026 -0700
+  hashing_strategy: raw
+  data_hash: 732cf788c8f409a61700da22cf29fad41df9bf3b6ae6c9b454f51cd13cfb87b9
+  prev_meta_hash: c74c4e1751289a15c583826c3b4d77201023d22d70d8df7bf0bada6c7ec147e0
+  meta_hash: 55904a61080872ad22116166a67b75a9e10fffa76e95fb9c9d3dcc236f5fdaf4

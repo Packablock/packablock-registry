@@ -345,13 +345,15 @@ async function runSeeder() {
 		[1, chain1_epoch1, 2, finalHash1, new Date().toISOString()],
 	);
 
-	// --- B. Ledger for 'packablock/pkablk-auditor' (Standard Tier, imported from demo repo) ---
-	const demoDir = path.join(
-		process.cwd(),
-		"..",
-		"packablock-demo",
-		"example-rollover",
-	);
+	let demoDir = path.join(process.cwd(), "src", "seeds", "example-rollover");
+	if (!fs.existsSync(demoDir)) {
+		demoDir = path.join(
+			process.cwd(),
+			"..",
+			"packablock-demo",
+			"example-rollover",
+		);
+	}
 	const archivedChainPath = path.join(
 		demoDir,
 		"packablock-fd504ac9ca896640ab449c9703490ab6e3370d2558f97eabbd3754a42fc50d58.yaml",
@@ -526,13 +528,15 @@ async function runSeeder() {
 		[4, chain4, 1, finalHash4, new Date().toISOString()],
 	);
 
-	// --- E. Ledger for 'oven-sh/bun' (Standard, Replayed history from E2E demo) ---
-	const bunDemoDir = path.join(
-		process.cwd(),
-		"..",
-		"packablock-demo",
-		"example-bun",
-	);
+	let bunDemoDir = path.join(process.cwd(), "src", "seeds", "example-bun");
+	if (!fs.existsSync(bunDemoDir)) {
+		bunDemoDir = path.join(
+			process.cwd(),
+			"..",
+			"packablock-demo",
+			"example-bun",
+		);
+	}
 	const bunChainPath = path.join(bunDemoDir, "packablock.yaml");
 
 	if (fs.existsSync(bunChainPath)) {
@@ -563,13 +567,15 @@ async function runSeeder() {
 		console.log("⚠️ Bun E2E chain file not found in packablock-demo!");
 	}
 
-	// --- F. Ledger for 'rails/rails' (Standard, Replayed history from E2E demo) ---
-	const railsDemoDir = path.join(
-		process.cwd(),
-		"..",
-		"packablock-demo",
-		"example-rails",
-	);
+	let railsDemoDir = path.join(process.cwd(), "src", "seeds", "example-rails");
+	if (!fs.existsSync(railsDemoDir)) {
+		railsDemoDir = path.join(
+			process.cwd(),
+			"..",
+			"packablock-demo",
+			"example-rails",
+		);
+	}
 	const railsChainPath = path.join(railsDemoDir, "packablock.yaml");
 
 	if (fs.existsSync(railsChainPath)) {

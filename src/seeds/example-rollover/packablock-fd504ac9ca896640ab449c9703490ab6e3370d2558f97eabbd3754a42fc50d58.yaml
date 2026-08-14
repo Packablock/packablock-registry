@@ -1,0 +1,7059 @@
+package.json:
+  chain_event: init
+  constraints:
+    - bun-types: ^0.1.5
+    - mitata: ^0.1.3
+    - peechy: 0.4.32
+    - react: ^18.2.0
+    - react-dom: ^18.2.0
+    - he: ^1.2.0
+    - html-entities: ^2.3.3
+    - prettier: ^2.4.1
+    - typescript: 4.6.3
+Cargo.toml:
+  chain_event: init
+  constraints: []
+bunfig.toml:
+  chain_event: init
+  constraints: []
+tsconfig.json:
+  chain_event: init
+  constraints: []
+packages/bun-types/package.json:
+  chain_event: init
+  constraints: []
+packages/@types/bun/package.json:
+  chain_event: init
+  constraints: []
+lockfiles:
+  bun.lock:
+    chain_event: init
+    packages:
+      - bun-types: 0.1.5
+      - camel-case: 4.1.2
+      - capital-case: 1.0.4
+      - change-case: 4.1.2
+      - constant-case: 3.0.4
+      - dot-case: 3.0.4
+      - he: 1.2.0
+      - header-case: 2.0.4
+      - html-entities: 2.3.3
+      - js-tokens: 4.0.0
+      - loose-envify: 1.4.0
+      - lower-case: 2.0.2
+      - mitata: 0.1.6
+      - no-case: 3.0.4
+      - param-case: 3.0.4
+      - pascal-case: 3.1.2
+      - path-case: 3.0.4
+      - peechy: 0.4.32
+      - prettier: 2.7.1
+      - react: 18.2.0
+      - react-dom: 18.2.0
+      - scheduler: 0.23.0
+      - sentence-case: 3.0.4
+      - snake-case: 3.0.4
+      - tslib: 2.4.0
+      - typescript: 4.6.3
+      - upper-case: 2.0.2
+      - upper-case-first: 2.0.2
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 0
+  timestamp: 2022-08-06T18:08:33Z
+  hashing_strategy: raw
+  data_hash: c779b0da05a8ee31c93ca1481020c35455a835cf64a6e00b96ba0dff747a3e70
+  prev_meta_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+  meta_hash: af3bac6f2575c6576568547c456fc7c3bf75b4abc636df86a52393ecd28a22f5
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - svelte:
+          - new: 3.50.0
+          - loc: 76,10
+package.json:
+  constraints:
+    - svelte:
+        - new: ^3.50.0
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 1
+  timestamp: 2022-09-03T10:57:43Z
+  hashing_strategy: raw
+  data_hash: 0739bc35600a87ba11e5d82066d8867569674b0a555be2a74012b931655d3203
+  prev_meta_hash: af3bac6f2575c6576568547c456fc7c3bf75b4abc636df86a52393ecd28a22f5
+  meta_hash: 7e16e11b9dfb45d132783a281c96381111db9cccffd4d8712e8473084fbd848d
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-types:
+          - old: 0.1.5
+          - new: 0.2.1
+          - loc: 13,10
+      - accepts:
+          - new: 1.3.8
+          - loc: 4,10
+      - array-flatten:
+          - new: 1.1.1
+          - loc: 7,10
+      - body-parser:
+          - new: 1.20.1
+          - loc: 10,10
+      - bytes:
+          - new: 3.1.2
+          - loc: 16,10
+      - call-bind:
+          - new: 1.0.2
+          - loc: 19,10
+      - content-disposition:
+          - new: 0.5.4
+          - loc: 34,10
+      - content-type:
+          - new: 1.0.4
+          - loc: 37,10
+      - cookie:
+          - new: 0.5.0
+          - loc: 40,10
+      - cookie-signature:
+          - new: 1.0.6
+          - loc: 43,10
+      - debug:
+          - new: 2.6.9
+          - loc: 46,10
+      - depd:
+          - new: 2.0.0
+          - loc: 49,10
+      - destroy:
+          - new: 1.2.0
+          - loc: 52,10
+      - ee-first:
+          - new: 1.1.1
+          - loc: 58,10
+      - encodeurl:
+          - new: 1.0.2
+          - loc: 61,10
+      - escape-html:
+          - new: 1.0.3
+          - loc: 64,10
+      - etag:
+          - new: 1.8.1
+          - loc: 67,10
+      - express:
+          - new: 4.18.2
+          - loc: 70,10
+      - finalhandler:
+          - new: 1.2.0
+          - loc: 73,10
+      - forwarded:
+          - new: 0.2.0
+          - loc: 76,10
+      - fresh:
+          - new: 0.5.2
+          - loc: 79,10
+      - function-bind:
+          - new: 1.1.1
+          - loc: 82,10
+      - get-intrinsic:
+          - new: 1.1.3
+          - loc: 85,10
+      - has:
+          - new: 1.0.3
+          - loc: 88,10
+      - has-symbols:
+          - new: 1.0.3
+          - loc: 91,10
+      - http-errors:
+          - new: 2.0.0
+          - loc: 103,10
+      - iconv-lite:
+          - new: 0.4.24
+          - loc: 106,10
+      - inherits:
+          - new: 2.0.4
+          - loc: 109,10
+      - ipaddr.js:
+          - new: 1.9.1
+          - loc: 112,10
+      - media-typer:
+          - new: 0.3.0
+          - loc: 124,10
+      - merge-descriptors:
+          - new: 1.0.1
+          - loc: 127,10
+      - methods:
+          - new: 1.1.2
+          - loc: 130,10
+      - mime:
+          - new: 1.6.0
+          - loc: 133,10
+      - mime-db:
+          - new: 1.52.0
+          - loc: 136,10
+      - mime-types:
+          - new: 2.1.35
+          - loc: 139,10
+      - ms:
+          - new: 2.1.3
+          - loc: 145,10
+      - negotiator:
+          - new: 0.6.3
+          - loc: 148,10
+      - object-inspect:
+          - new: 1.12.2
+          - loc: 154,10
+      - on-finished:
+          - new: 2.4.1
+          - loc: 157,10
+      - parseurl:
+          - new: 1.3.3
+          - loc: 163,10
+      - path-to-regexp:
+          - new: 0.1.7
+          - loc: 172,10
+      - proxy-addr:
+          - new: 2.0.7
+          - loc: 181,10
+      - qs:
+          - new: 6.11.0
+          - loc: 184,10
+      - range-parser:
+          - new: 1.2.1
+          - loc: 187,10
+      - raw-body:
+          - new: 2.5.1
+          - loc: 190,10
+      - safe-buffer:
+          - new: 5.2.1
+          - loc: 199,10
+      - safer-buffer:
+          - new: 2.1.2
+          - loc: 202,10
+      - send:
+          - new: 0.18.0
+          - loc: 208,10
+      - serve-static:
+          - new: 1.15.0
+          - loc: 214,10
+      - setprototypeof:
+          - new: 1.2.0
+          - loc: 217,10
+      - side-channel:
+          - new: 1.0.4
+          - loc: 220,10
+      - statuses:
+          - new: 2.0.1
+          - loc: 226,10
+      - toidentifier:
+          - new: 1.0.1
+          - loc: 232,10
+      - type-is:
+          - new: 1.6.18
+          - loc: 238,10
+      - unpipe:
+          - new: 1.0.0
+          - loc: 244,10
+      - utils-merge:
+          - new: 1.0.1
+          - loc: 253,10
+      - vary:
+          - new: 1.1.2
+          - loc: 256,10
+package.json:
+  constraints:
+    - bun-types:
+        - old: ^0.1.5
+        - new: latest
+        - loc: 1,1
+    - express:
+        - new: ^4.18.2
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 2
+  timestamp: 2022-10-25T07:44:25Z
+  hashing_strategy: raw
+  data_hash: c9c0d0e20fd1cb10d1962bb0d1cb47817ffe44fb79742466f9c26a8645b9021d
+  prev_meta_hash: 7e16e11b9dfb45d132783a281c96381111db9cccffd4d8712e8473084fbd848d
+  meta_hash: 42bce75b8e9ef459b545c35ba1d1eb156d9c909388d1981a5af1c1fae7ca9d2e
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - react:
+          - old: 18.2.0
+          - new: 18.3.0-next-2ac77aab9-20221029
+          - loc: 193,10
+      - react-dom:
+          - old: 18.2.0
+          - new: 18.3.0-next-2ac77aab9-20221029
+          - loc: 196,10
+      - scheduler:
+          - old: 0.23.0
+          - new: 0.24.0-next-2ac77aab9-20221029
+          - loc: 205,10
+package.json:
+  constraints:
+    - react:
+        - old: ^18.2.0
+        - new: next
+        - loc: 1,1
+    - react-dom:
+        - old: ^18.2.0
+        - new: next
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 3
+  timestamp: 2022-11-01T05:10:28Z
+  hashing_strategy: raw
+  data_hash: 1f7bbfcd779eb0e989082680651c1abc770a6872571b4050f601543e8a7b1651
+  prev_meta_hash: 42bce75b8e9ef459b545c35ba1d1eb156d9c909388d1981a5af1c1fae7ca9d2e
+  meta_hash: 41caedffc069c55f57e1ea3d937c4673c5418f5992ff2fe0927253e9ca738f9f
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - accepts:
+          - msg: removed
+          - loc: 1,1
+      - array-flatten:
+          - msg: removed
+          - loc: 1,1
+      - body-parser:
+          - msg: removed
+          - loc: 1,1
+      - bun-types:
+          - msg: removed
+          - loc: 1,1
+      - bytes:
+          - msg: removed
+          - loc: 1,1
+      - call-bind:
+          - msg: removed
+          - loc: 1,1
+      - content-disposition:
+          - msg: removed
+          - loc: 1,1
+      - content-type:
+          - msg: removed
+          - loc: 1,1
+      - cookie:
+          - msg: removed
+          - loc: 1,1
+      - cookie-signature:
+          - msg: removed
+          - loc: 1,1
+      - debug:
+          - old: 2.6.9
+          - new: 4.3.4
+          - loc: 142,10
+      - depd:
+          - msg: removed
+          - loc: 1,1
+      - destroy:
+          - msg: removed
+          - loc: 1,1
+      - ee-first:
+          - msg: removed
+          - loc: 1,1
+      - encodeurl:
+          - msg: removed
+          - loc: 1,1
+      - escape-html:
+          - msg: removed
+          - loc: 1,1
+      - etag:
+          - msg: removed
+          - loc: 1,1
+      - express:
+          - msg: removed
+          - loc: 1,1
+      - finalhandler:
+          - msg: removed
+          - loc: 1,1
+      - forwarded:
+          - msg: removed
+          - loc: 1,1
+      - fresh:
+          - msg: removed
+          - loc: 1,1
+      - function-bind:
+          - msg: removed
+          - loc: 1,1
+      - get-intrinsic:
+          - msg: removed
+          - loc: 1,1
+      - has:
+          - msg: removed
+          - loc: 1,1
+      - has-symbols:
+          - msg: removed
+          - loc: 1,1
+      - he:
+          - msg: removed
+          - loc: 1,1
+      - html-entities:
+          - msg: removed
+          - loc: 1,1
+      - http-errors:
+          - msg: removed
+          - loc: 1,1
+      - iconv-lite:
+          - msg: removed
+          - loc: 1,1
+      - ipaddr.js:
+          - msg: removed
+          - loc: 1,1
+      - media-typer:
+          - msg: removed
+          - loc: 1,1
+      - merge-descriptors:
+          - msg: removed
+          - loc: 1,1
+      - methods:
+          - msg: removed
+          - loc: 1,1
+      - mime:
+          - msg: removed
+          - loc: 1,1
+      - mime-db:
+          - msg: removed
+          - loc: 1,1
+      - mime-types:
+          - msg: removed
+          - loc: 1,1
+      - ms:
+          - old: 2.1.3
+          - new: 2.1.2
+          - loc: 319,10
+      - negotiator:
+          - msg: removed
+          - loc: 1,1
+      - object-inspect:
+          - msg: removed
+          - loc: 1,1
+      - on-finished:
+          - msg: removed
+          - loc: 1,1
+      - parseurl:
+          - msg: removed
+          - loc: 1,1
+      - path-to-regexp:
+          - msg: removed
+          - loc: 1,1
+      - peechy:
+          - old: 0.4.32
+          - new: 0.4.33
+          - loc: 367,10
+      - prettier:
+          - old: 2.7.1
+          - new: 2.8.3
+          - loc: 376,10
+      - proxy-addr:
+          - msg: removed
+          - loc: 1,1
+      - qs:
+          - msg: removed
+          - loc: 1,1
+      - range-parser:
+          - msg: removed
+          - loc: 1,1
+      - raw-body:
+          - msg: removed
+          - loc: 1,1
+      - react:
+          - old: 18.3.0-next-2ac77aab9-20221029
+          - new: 18.3.0-next-ee8509801-20230117
+          - loc: 385,10
+      - react-dom:
+          - old: 18.3.0-next-2ac77aab9-20221029
+          - new: 18.3.0-next-ee8509801-20230117
+          - loc: 388,10
+      - safe-buffer:
+          - msg: removed
+          - loc: 1,1
+      - safer-buffer:
+          - msg: removed
+          - loc: 1,1
+      - scheduler:
+          - old: 0.24.0-next-2ac77aab9-20221029
+          - new: 0.24.0-next-ee8509801-20230117
+          - loc: 406,10
+      - send:
+          - msg: removed
+          - loc: 1,1
+      - serve-static:
+          - msg: removed
+          - loc: 1,1
+      - setprototypeof:
+          - msg: removed
+          - loc: 1,1
+      - side-channel:
+          - msg: removed
+          - loc: 1,1
+      - statuses:
+          - msg: removed
+          - loc: 1,1
+      - svelte:
+          - msg: removed
+          - loc: 1,1
+      - toidentifier:
+          - msg: removed
+          - loc: 1,1
+      - tslib:
+          - old: 2.4.0
+          - new: 2.4.1
+          - loc: 442,10
+      - type-is:
+          - msg: removed
+          - loc: 1,1
+      - typescript:
+          - old: 4.6.3
+          - new: 4.9.4
+          - loc: 454,10
+      - unpipe:
+          - msg: removed
+          - loc: 1,1
+      - utils-merge:
+          - msg: removed
+          - loc: 1,1
+      - vary:
+          - msg: removed
+          - loc: 1,1
+      - "@eslint/eslintrc":
+          - new: 1.4.1
+          - loc: 4,10
+      - "@humanwhocodes/config-array":
+          - new: 0.11.8
+          - loc: 7,10
+      - "@humanwhocodes/module-importer":
+          - new: 1.0.1
+          - loc: 10,10
+      - "@humanwhocodes/object-schema":
+          - new: 1.2.1
+          - loc: 13,10
+      - "@nodelib/fs.scandir":
+          - new: 2.1.5
+          - loc: 16,10
+      - "@nodelib/fs.stat":
+          - new: 2.0.5
+          - loc: 19,10
+      - "@nodelib/fs.walk":
+          - new: 1.2.8
+          - loc: 22,10
+      - "@types/json-schema":
+          - new: 7.0.11
+          - loc: 25,10
+      - "@types/prop-types":
+          - new: 15.7.5
+          - loc: 28,10
+      - "@types/react":
+          - new: 18.0.27
+          - loc: 31,10
+      - "@types/scheduler":
+          - new: 0.16.2
+          - loc: 34,10
+      - "@types/semver":
+          - new: 7.3.13
+          - loc: 37,10
+      - "@typescript-eslint/eslint-plugin":
+          - new: 5.48.2
+          - loc: 40,10
+      - "@typescript-eslint/parser":
+          - new: 5.48.2
+          - loc: 43,10
+      - "@typescript-eslint/scope-manager":
+          - new: 5.48.2
+          - loc: 46,10
+      - "@typescript-eslint/type-utils":
+          - new: 5.48.2
+          - loc: 49,10
+      - "@typescript-eslint/types":
+          - new: 5.48.2
+          - loc: 52,10
+      - "@typescript-eslint/typescript-estree":
+          - new: 5.48.2
+          - loc: 55,10
+      - "@typescript-eslint/utils":
+          - new: 5.48.2
+          - loc: 58,10
+      - "@typescript-eslint/visitor-keys":
+          - new: 5.48.2
+          - loc: 61,10
+      - acorn:
+          - new: 8.8.1
+          - loc: 64,10
+      - acorn-jsx:
+          - new: 5.3.2
+          - loc: 67,10
+      - ajv:
+          - new: 6.12.6
+          - loc: 70,10
+      - ansi-regex:
+          - new: 5.0.1
+          - loc: 73,10
+      - ansi-styles:
+          - new: 4.3.0
+          - loc: 76,10
+      - argparse:
+          - new: 2.0.1
+          - loc: 79,10
+      - array-union:
+          - new: 2.1.0
+          - loc: 82,10
+      - balanced-match:
+          - new: 1.0.2
+          - loc: 85,10
+      - brace-expansion:
+          - new: 1.1.11
+          - loc: 88,10
+      - braces:
+          - new: 3.0.2
+          - loc: 91,10
+      - bun-webkit:
+          - new: 0.0.1-60d11703a533fd694cd1d6ddda04813eecb5d69f
+          - loc: 94,10
+      - bun-webkit-linux-amd64:
+          - new: 0.0.1-60d11703a533fd694cd1d6ddda04813eecb5d69f
+          - loc: 97,10
+      - bun-webkit-linux-arm64:
+          - new: 0.0.1-60d11703a533fd694cd1d6ddda04813eecb5d69f
+          - loc: 100,10
+      - bun-webkit-macos-amd64:
+          - new: 0.0.1-60d11703a533fd694cd1d6ddda04813eecb5d69f
+          - loc: 103,10
+      - bun-webkit-macos-arm64:
+          - new: 0.0.1-60d11703a533fd694cd1d6ddda04813eecb5d69f
+          - loc: 106,10
+      - callsites:
+          - new: 3.1.0
+          - loc: 109,10
+      - chalk:
+          - new: 4.1.2
+          - loc: 118,10
+      - color-convert:
+          - new: 2.0.1
+          - loc: 124,10
+      - color-name:
+          - new: 1.1.4
+          - loc: 127,10
+      - concat-map:
+          - new: 0.0.1
+          - loc: 130,10
+      - cross-spawn:
+          - new: 7.0.3
+          - loc: 136,10
+      - csstype:
+          - new: 3.1.1
+          - loc: 139,10
+      - deep-is:
+          - new: 0.1.4
+          - loc: 145,10
+      - dir-glob:
+          - new: 3.0.1
+          - loc: 148,10
+      - doctrine:
+          - new: 3.0.0
+          - loc: 151,10
+      - escape-string-regexp:
+          - new: 4.0.0
+          - loc: 157,10
+      - eslint:
+          - new: 8.32.0
+          - loc: 160,10
+      - eslint-config-prettier:
+          - new: 8.6.0
+          - loc: 163,10
+      - eslint-scope:
+          - new: 7.1.1
+          - loc: 166,10
+      - eslint-utils:
+          - new: 3.0.0
+          - loc: 169,10
+      - eslint-visitor-keys:
+          - new: 3.3.0
+          - loc: 172,10
+      - espree:
+          - new: 9.4.1
+          - loc: 175,10
+      - esquery:
+          - new: 1.4.0
+          - loc: 178,10
+      - esrecurse:
+          - new: 4.3.0
+          - loc: 181,10
+      - estraverse:
+          - new: 5.3.0
+          - loc: 184,10
+      - esutils:
+          - new: 2.0.3
+          - loc: 187,10
+      - fast-deep-equal:
+          - new: 3.1.3
+          - loc: 190,10
+      - fast-glob:
+          - new: 3.2.12
+          - loc: 193,10
+      - fast-json-stable-stringify:
+          - new: 2.1.0
+          - loc: 196,10
+      - fast-levenshtein:
+          - new: 2.0.6
+          - loc: 199,10
+      - fastq:
+          - new: 1.15.0
+          - loc: 202,10
+      - file-entry-cache:
+          - new: 6.0.1
+          - loc: 205,10
+      - fill-range:
+          - new: 7.0.1
+          - loc: 208,10
+      - find-up:
+          - new: 5.0.0
+          - loc: 211,10
+      - flat-cache:
+          - new: 3.0.4
+          - loc: 214,10
+      - flatted:
+          - new: 3.2.7
+          - loc: 217,10
+      - fs.realpath:
+          - new: 1.0.0
+          - loc: 220,10
+      - glob:
+          - new: 7.2.3
+          - loc: 223,10
+      - glob-parent:
+          - new: 6.0.2
+          - loc: 226,10
+      - globals:
+          - new: 13.19.0
+          - loc: 229,10
+      - globby:
+          - new: 11.1.0
+          - loc: 232,10
+      - grapheme-splitter:
+          - new: 1.0.4
+          - loc: 235,10
+      - has-flag:
+          - new: 4.0.0
+          - loc: 238,10
+      - ignore:
+          - new: 5.2.4
+          - loc: 244,10
+      - import-fresh:
+          - new: 3.3.0
+          - loc: 247,10
+      - imurmurhash:
+          - new: 0.1.4
+          - loc: 250,10
+      - inflight:
+          - new: 1.0.6
+          - loc: 253,10
+      - is-extglob:
+          - new: 2.1.1
+          - loc: 259,10
+      - is-glob:
+          - new: 4.0.3
+          - loc: 262,10
+      - is-number:
+          - new: 7.0.0
+          - loc: 265,10
+      - is-path-inside:
+          - new: 3.0.3
+          - loc: 268,10
+      - isexe:
+          - new: 2.0.0
+          - loc: 271,10
+      - js-sdsl:
+          - new: 4.2.0
+          - loc: 274,10
+      - js-yaml:
+          - new: 4.1.0
+          - loc: 280,10
+      - json-schema-traverse:
+          - new: 0.4.1
+          - loc: 283,10
+      - json-stable-stringify-without-jsonify:
+          - new: 1.0.1
+          - loc: 286,10
+      - levn:
+          - new: 0.4.1
+          - loc: 289,10
+      - locate-path:
+          - new: 6.0.0
+          - loc: 292,10
+      - lodash.merge:
+          - new: 4.6.2
+          - loc: 295,10
+      - lru-cache:
+          - new: 6.0.0
+          - loc: 304,10
+      - merge2:
+          - new: 1.4.1
+          - loc: 307,10
+      - micromatch:
+          - new: 4.0.5
+          - loc: 310,10
+      - minimatch:
+          - new: 3.1.2
+          - loc: 313,10
+      - natural-compare:
+          - new: 1.4.0
+          - loc: 322,10
+      - natural-compare-lite:
+          - new: 1.4.0
+          - loc: 325,10
+      - once:
+          - new: 1.4.0
+          - loc: 331,10
+      - optionator:
+          - new: 0.9.1
+          - loc: 334,10
+      - p-limit:
+          - new: 3.1.0
+          - loc: 337,10
+      - p-locate:
+          - new: 5.0.0
+          - loc: 340,10
+      - parent-module:
+          - new: 1.0.1
+          - loc: 346,10
+      - path-exists:
+          - new: 4.0.0
+          - loc: 355,10
+      - path-is-absolute:
+          - new: 1.0.1
+          - loc: 358,10
+      - path-key:
+          - new: 3.1.1
+          - loc: 361,10
+      - path-type:
+          - new: 4.0.0
+          - loc: 364,10
+      - picomatch:
+          - new: 2.3.1
+          - loc: 370,10
+      - prelude-ls:
+          - new: 1.2.1
+          - loc: 373,10
+      - punycode:
+          - new: 2.2.0
+          - loc: 379,10
+      - queue-microtask:
+          - new: 1.2.3
+          - loc: 382,10
+      - regexpp:
+          - new: 3.2.0
+          - loc: 391,10
+      - resolve-from:
+          - new: 4.0.0
+          - loc: 394,10
+      - reusify:
+          - new: 1.0.4
+          - loc: 397,10
+      - rimraf:
+          - new: 3.0.2
+          - loc: 400,10
+      - run-parallel:
+          - new: 1.2.0
+          - loc: 403,10
+      - semver:
+          - new: 7.3.8
+          - loc: 409,10
+      - shebang-command:
+          - new: 2.0.0
+          - loc: 415,10
+      - shebang-regex:
+          - new: 3.0.0
+          - loc: 418,10
+      - slash:
+          - new: 3.0.0
+          - loc: 421,10
+      - strip-ansi:
+          - new: 6.0.1
+          - loc: 427,10
+      - strip-json-comments:
+          - new: 3.1.1
+          - loc: 430,10
+      - supports-color:
+          - new: 7.2.0
+          - loc: 433,10
+      - text-table:
+          - new: 0.2.0
+          - loc: 436,10
+      - to-regex-range:
+          - new: 5.0.1
+          - loc: 439,10
+      - tsutils:
+          - new: 3.21.0
+          - loc: 445,10
+      - type-check:
+          - new: 0.4.0
+          - loc: 448,10
+      - type-fest:
+          - new: 0.20.2
+          - loc: 451,10
+      - uri-js:
+          - new: 4.4.1
+          - loc: 463,10
+      - which:
+          - new: 2.0.2
+          - loc: 466,10
+      - word-wrap:
+          - new: 1.2.3
+          - loc: 469,10
+      - wrappy:
+          - new: 1.0.2
+          - loc: 472,10
+      - yallist:
+          - new: 4.0.0
+          - loc: 475,10
+      - yocto-queue:
+          - new: 0.1.0
+          - loc: 478,10
+package.json:
+  constraints:
+    - bun-types:
+        - msg: removed
+        - loc: 1,1
+    - express:
+        - msg: removed
+        - loc: 1,1
+    - peechy:
+        - old: 0.4.32
+        - new: latest
+        - loc: 1,1
+    - he:
+        - msg: removed
+        - loc: 1,1
+    - html-entities:
+        - msg: removed
+        - loc: 1,1
+    - svelte:
+        - msg: removed
+        - loc: 1,1
+    - typescript:
+        - old: 4.6.3
+        - new: latest
+        - loc: 1,1
+    - eslint:
+        - new: ^8.20.0
+        - loc: 1,1
+    - eslint-config-prettier:
+        - new: ^8.5.0
+        - loc: 1,1
+    - "@types/react":
+        - new: ^18.0.25
+        - loc: 1,1
+    - "@typescript-eslint/eslint-plugin":
+        - new: ^5.31.0
+        - loc: 1,1
+    - "@typescript-eslint/parser":
+        - new: ^5.31.0
+        - loc: 1,1
+    - bun-webkit:
+        - new: latest
+        - loc: 1,1
+packages/bun-types/package.json:
+  constraints:
+    - tsd:
+        - new: ^0.22.0
+        - loc: 1,1
+    - prettier:
+        - new: ^2.4.1
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 4
+  timestamp: 2023-01-24T00:51:48Z
+  hashing_strategy: raw
+  data_hash: 01d39922797e499ec514e6b09b07629c908d135c630bd517edf4df4d5ff88811
+  prev_meta_hash: 41caedffc069c55f57e1ea3d937c4673c5418f5992ff2fe0927253e9ca738f9f
+  meta_hash: d0ca087805ffd736697bac3a5485d2a16d99423e82d7d15d78d714cd28c78cb3
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-60d11703a533fd694cd1d6ddda04813eecb5d69f
+          - new: 0.0.1-dd868651f5c801985460c1128ae196d1edca9925
+          - loc: 94,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-60d11703a533fd694cd1d6ddda04813eecb5d69f
+          - new: 0.0.1-dd868651f5c801985460c1128ae196d1edca9925
+          - loc: 97,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-60d11703a533fd694cd1d6ddda04813eecb5d69f
+          - new: 0.0.1-dd868651f5c801985460c1128ae196d1edca9925
+          - loc: 100,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-60d11703a533fd694cd1d6ddda04813eecb5d69f
+          - new: 0.0.1-dd868651f5c801985460c1128ae196d1edca9925
+          - loc: 103,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-60d11703a533fd694cd1d6ddda04813eecb5d69f
+          - new: 0.0.1-dd868651f5c801985460c1128ae196d1edca9925
+          - loc: 106,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: latest
+        - new: 0.0.1-dd868651f5c801985460c1128ae196d1edca9925
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 5
+  timestamp: 2023-01-29T09:26:16Z
+  hashing_strategy: raw
+  data_hash: 2ff925981427354f283ec9068c489c87c5ecca99988ba6bcfa5ca239dd4d647d
+  prev_meta_hash: d0ca087805ffd736697bac3a5485d2a16d99423e82d7d15d78d714cd28c78cb3
+  meta_hash: 8408baf6c3343348de3f0b0a3cd38a3eef178c55603ce80b20b523a4918b996a
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-dd868651f5c801985460c1128ae196d1edca9925
+          - new: 0.0.1-61ed147fdeaa0787d77bddb332177f23ad96d6fe
+          - loc: 94,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-dd868651f5c801985460c1128ae196d1edca9925
+          - new: 0.0.1-61ed147fdeaa0787d77bddb332177f23ad96d6fe
+          - loc: 97,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-dd868651f5c801985460c1128ae196d1edca9925
+          - new: 0.0.1-61ed147fdeaa0787d77bddb332177f23ad96d6fe
+          - loc: 100,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-dd868651f5c801985460c1128ae196d1edca9925
+          - new: 0.0.1-61ed147fdeaa0787d77bddb332177f23ad96d6fe
+          - loc: 103,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-dd868651f5c801985460c1128ae196d1edca9925
+          - new: 0.0.1-61ed147fdeaa0787d77bddb332177f23ad96d6fe
+          - loc: 106,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-dd868651f5c801985460c1128ae196d1edca9925
+        - new: 0.0.1-61ed147fdeaa0787d77bddb332177f23ad96d6fe
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 6
+  timestamp: 2023-02-10T05:28:50Z
+  hashing_strategy: raw
+  data_hash: d1851943c1f44e54de7c9c3aedc032ad0b96777ae26394003a3f6e6f4698f74a
+  prev_meta_hash: 8408baf6c3343348de3f0b0a3cd38a3eef178c55603ce80b20b523a4918b996a
+  meta_hash: 2d36626356b454dcefda71448df40bc63af9a001afd14fe7dbe6448a6ba6df19
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/react":
+          - old: 18.0.27
+          - new: 18.0.28
+          - loc: 31,10
+      - "@typescript-eslint/eslint-plugin":
+          - old: 5.48.2
+          - new: 5.52.0
+          - loc: 40,10
+      - "@typescript-eslint/parser":
+          - old: 5.48.2
+          - new: 5.52.0
+          - loc: 43,10
+      - "@typescript-eslint/scope-manager":
+          - old: 5.48.2
+          - new: 5.52.0
+          - loc: 46,10
+      - "@typescript-eslint/type-utils":
+          - old: 5.48.2
+          - new: 5.52.0
+          - loc: 49,10
+      - "@typescript-eslint/types":
+          - old: 5.48.2
+          - new: 5.52.0
+          - loc: 52,10
+      - "@typescript-eslint/typescript-estree":
+          - old: 5.48.2
+          - new: 5.52.0
+          - loc: 55,10
+      - "@typescript-eslint/utils":
+          - old: 5.48.2
+          - new: 5.52.0
+          - loc: 58,10
+      - "@typescript-eslint/visitor-keys":
+          - old: 5.48.2
+          - new: 5.52.0
+          - loc: 61,10
+      - acorn:
+          - old: 8.8.1
+          - new: 8.8.2
+          - loc: 64,10
+      - eslint:
+          - old: 8.32.0
+          - new: 8.34.0
+          - loc: 160,10
+      - esquery:
+          - old: 1.4.0
+          - new: 1.4.2
+          - loc: 178,10
+      - globals:
+          - old: 13.19.0
+          - new: 13.20.0
+          - loc: 229,10
+      - js-sdsl:
+          - old: 4.2.0
+          - new: 4.3.0
+          - loc: 274,10
+      - prettier:
+          - old: 2.8.3
+          - new: 2.8.4
+          - loc: 376,10
+      - punycode:
+          - old: 2.2.0
+          - new: 2.3.0
+          - loc: 379,10
+      - react:
+          - old: 18.3.0-next-ee8509801-20230117
+          - new: 18.3.0-next-4fcc9184a-20230217
+          - loc: 385,10
+      - react-dom:
+          - old: 18.3.0-next-ee8509801-20230117
+          - new: 18.3.0-next-4fcc9184a-20230217
+          - loc: 388,10
+      - scheduler:
+          - old: 0.24.0-next-ee8509801-20230117
+          - new: 0.24.0-next-4fcc9184a-20230217
+          - loc: 406,10
+      - tslib:
+          - old: 2.4.1
+          - new: 2.5.0
+          - loc: 442,10
+      - typescript:
+          - old: 4.9.4
+          - new: 4.9.5
+          - loc: 454,10
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 7
+  timestamp: 2023-02-18T06:07:02Z
+  hashing_strategy: raw
+  data_hash: 023d194bdf0747005ac65e1658063d6d8178c31f5b5285a1c7b902babb2225d7
+  prev_meta_hash: 2d36626356b454dcefda71448df40bc63af9a001afd14fe7dbe6448a6ba6df19
+  meta_hash: 29fb570b14cd9ad4e8f131d5e51f2c5f352888836e9ffab17977e30217527449
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-61ed147fdeaa0787d77bddb332177f23ad96d6fe
+          - new: 0.0.1-595dd33692e02001631f6c3ab6f2bbb199278d26
+          - loc: 94,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-61ed147fdeaa0787d77bddb332177f23ad96d6fe
+          - new: 0.0.1-595dd33692e02001631f6c3ab6f2bbb199278d26
+          - loc: 97,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-61ed147fdeaa0787d77bddb332177f23ad96d6fe
+          - new: 0.0.1-595dd33692e02001631f6c3ab6f2bbb199278d26
+          - loc: 100,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-61ed147fdeaa0787d77bddb332177f23ad96d6fe
+          - new: 0.0.1-595dd33692e02001631f6c3ab6f2bbb199278d26
+          - loc: 103,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-61ed147fdeaa0787d77bddb332177f23ad96d6fe
+          - new: 0.0.1-595dd33692e02001631f6c3ab6f2bbb199278d26
+          - loc: 106,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-61ed147fdeaa0787d77bddb332177f23ad96d6fe
+        - new: 0.0.1-595dd33692e02001631f6c3ab6f2bbb199278d26
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 8
+  timestamp: 2023-02-25T12:28:04Z
+  hashing_strategy: raw
+  data_hash: bb80eda15256a46bd18fa05857bc024269efdc4cb7c361a00705eb9f0bdf9d8c
+  prev_meta_hash: 29fb570b14cd9ad4e8f131d5e51f2c5f352888836e9ffab17977e30217527449
+  meta_hash: e04dbc2837517b32b319b0f4b19b6b5603a149be1f753110175b70849e0c95da
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - typescript:
+          - old: 4.9.5
+          - new: 5.0.2
+          - loc: 454,10
+package.json:
+  constraints:
+    - typescript:
+        - old: latest
+        - new: ^5.0.2
+        - loc: 1,1
+packages/bun-types/package.json:
+  constraints:
+    - conditional-type-checks:
+        - new: ^1.0.6
+        - loc: 1,1
+    - typescript:
+        - new: ^5.0.2
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 9
+  timestamp: 2023-03-22T22:01:01Z
+  hashing_strategy: raw
+  data_hash: f72c5191e6dcdf5fb7f43a035b4e236ad12f96945a5bf4a00cd189419aae9148
+  prev_meta_hash: e04dbc2837517b32b319b0f4b19b6b5603a149be1f753110175b70849e0c95da
+  meta_hash: add8251c773550314fca3b03aa3a0e0c7cf92b065f328a008ef8b70396db64b8
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@esbuild/android-arm":
+          - new: 0.17.15
+          - loc: 4,10
+      - "@esbuild/android-arm64":
+          - new: 0.17.15
+          - loc: 7,10
+      - "@esbuild/android-x64":
+          - new: 0.17.15
+          - loc: 10,10
+      - "@esbuild/darwin-arm64":
+          - new: 0.17.15
+          - loc: 13,10
+      - "@esbuild/darwin-x64":
+          - new: 0.17.15
+          - loc: 16,10
+      - "@esbuild/freebsd-arm64":
+          - new: 0.17.15
+          - loc: 19,10
+      - "@esbuild/freebsd-x64":
+          - new: 0.17.15
+          - loc: 22,10
+      - "@esbuild/linux-arm":
+          - new: 0.17.15
+          - loc: 25,10
+      - "@esbuild/linux-arm64":
+          - new: 0.17.15
+          - loc: 28,10
+      - "@esbuild/linux-ia32":
+          - new: 0.17.15
+          - loc: 31,10
+      - "@esbuild/linux-loong64":
+          - new: 0.17.15
+          - loc: 34,10
+      - "@esbuild/linux-mips64el":
+          - new: 0.17.15
+          - loc: 37,10
+      - "@esbuild/linux-ppc64":
+          - new: 0.17.15
+          - loc: 40,10
+      - "@esbuild/linux-riscv64":
+          - new: 0.17.15
+          - loc: 43,10
+      - "@esbuild/linux-s390x":
+          - new: 0.17.15
+          - loc: 46,10
+      - "@esbuild/linux-x64":
+          - new: 0.17.15
+          - loc: 49,10
+      - "@esbuild/netbsd-x64":
+          - new: 0.17.15
+          - loc: 52,10
+      - "@esbuild/openbsd-x64":
+          - new: 0.17.15
+          - loc: 55,10
+      - "@esbuild/sunos-x64":
+          - new: 0.17.15
+          - loc: 58,10
+      - "@esbuild/win32-arm64":
+          - new: 0.17.15
+          - loc: 61,10
+      - "@esbuild/win32-ia32":
+          - new: 0.17.15
+          - loc: 64,10
+      - "@esbuild/win32-x64":
+          - new: 0.17.15
+          - loc: 67,10
+      - esbuild:
+          - new: 0.17.15
+          - loc: 223,10
+package.json:
+  constraints:
+    - esbuild:
+        - new: ^0.17.15
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 10
+  timestamp: 2023-04-08T09:23:11Z
+  hashing_strategy: raw
+  data_hash: 36f29b805e8677a00e21f4d85abe0223862b8e4ff115e81ced7c596afb3d8064
+  prev_meta_hash: add8251c773550314fca3b03aa3a0e0c7cf92b065f328a008ef8b70396db64b8
+  meta_hash: b9605cd1013f8395363e8b7da6de897221ee7b293554f65e26ec58e582cf2708
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-595dd33692e02001631f6c3ab6f2bbb199278d26
+          - new: 0.0.1-6bd997e38e30f50b3114b178f4d5e2fc5da6da25
+          - loc: 160,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-595dd33692e02001631f6c3ab6f2bbb199278d26
+          - new: 0.0.1-6bd997e38e30f50b3114b178f4d5e2fc5da6da25
+          - loc: 163,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-595dd33692e02001631f6c3ab6f2bbb199278d26
+          - new: 0.0.1-6bd997e38e30f50b3114b178f4d5e2fc5da6da25
+          - loc: 166,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-595dd33692e02001631f6c3ab6f2bbb199278d26
+          - new: 0.0.1-6bd997e38e30f50b3114b178f4d5e2fc5da6da25
+          - loc: 169,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-595dd33692e02001631f6c3ab6f2bbb199278d26
+          - new: 0.0.1-6bd997e38e30f50b3114b178f4d5e2fc5da6da25
+          - loc: 172,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-595dd33692e02001631f6c3ab6f2bbb199278d26
+        - new: 0.0.1-6bd997e38e30f50b3114b178f4d5e2fc5da6da25
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 11
+  timestamp: 2023-04-13T11:11:12Z
+  hashing_strategy: raw
+  data_hash: 805ee773ee714b5dc99a96f2b9e84683a810fe2fa64709c282dcc3882a7ea64e
+  prev_meta_hash: b9605cd1013f8395363e8b7da6de897221ee7b293554f65e26ec58e582cf2708
+  meta_hash: f08276a74b12558dc2d5b5bcf51b35e40301489d1d9821b8b6d1aeb8c6c70e0a
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-6bd997e38e30f50b3114b178f4d5e2fc5da6da25
+          - new: 0.0.1-eb1570290ba3e8555feb53b2a0feb68d2df65569
+          - loc: 160,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-6bd997e38e30f50b3114b178f4d5e2fc5da6da25
+          - new: 0.0.1-eb1570290ba3e8555feb53b2a0feb68d2df65569
+          - loc: 163,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-6bd997e38e30f50b3114b178f4d5e2fc5da6da25
+          - new: 0.0.1-eb1570290ba3e8555feb53b2a0feb68d2df65569
+          - loc: 166,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-6bd997e38e30f50b3114b178f4d5e2fc5da6da25
+          - new: 0.0.1-eb1570290ba3e8555feb53b2a0feb68d2df65569
+          - loc: 169,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-6bd997e38e30f50b3114b178f4d5e2fc5da6da25
+          - new: 0.0.1-eb1570290ba3e8555feb53b2a0feb68d2df65569
+          - loc: 172,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-6bd997e38e30f50b3114b178f4d5e2fc5da6da25
+        - new: 0.0.1-eb1570290ba3e8555feb53b2a0feb68d2df65569
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 12
+  timestamp: 2023-05-17T18:34:37Z
+  hashing_strategy: raw
+  data_hash: 329ce764c3eda00256f951ef38c59e27bb056e154d8c93e6ae0e5606fb97c1df
+  prev_meta_hash: f08276a74b12558dc2d5b5bcf51b35e40301489d1d9821b8b6d1aeb8c6c70e0a
+  meta_hash: 58d9725fff340cc326eb70a5fdfc30937f68fb2823fd4943ff42a09b0359f5b1
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-eb1570290ba3e8555feb53b2a0feb68d2df65569
+          - new: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - loc: 160,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-eb1570290ba3e8555feb53b2a0feb68d2df65569
+          - new: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - loc: 163,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-eb1570290ba3e8555feb53b2a0feb68d2df65569
+          - new: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - loc: 166,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-eb1570290ba3e8555feb53b2a0feb68d2df65569
+          - new: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - loc: 169,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-eb1570290ba3e8555feb53b2a0feb68d2df65569
+          - new: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - loc: 172,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-eb1570290ba3e8555feb53b2a0feb68d2df65569
+        - new: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 13
+  timestamp: 2023-05-21T07:20:04Z
+  hashing_strategy: raw
+  data_hash: 53f10aab403eedb8fe727f64527240e264b950e0ea33c6d96542d9867630b8f1
+  prev_meta_hash: 58d9725fff340cc326eb70a5fdfc30937f68fb2823fd4943ff42a09b0359f5b1
+  meta_hash: e896d9f2082ef05c9eb3353c404237d0cb540acde3c82a1bd0d2ce2a0b0ad317
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@esbuild/android-arm":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 4,10
+      - "@esbuild/android-arm64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 7,10
+      - "@esbuild/android-x64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 10,10
+      - "@esbuild/darwin-arm64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 13,10
+      - "@esbuild/darwin-x64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 16,10
+      - "@esbuild/freebsd-arm64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 19,10
+      - "@esbuild/freebsd-x64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 22,10
+      - "@esbuild/linux-arm":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 25,10
+      - "@esbuild/linux-arm64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 28,10
+      - "@esbuild/linux-ia32":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 31,10
+      - "@esbuild/linux-loong64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 34,10
+      - "@esbuild/linux-mips64el":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 37,10
+      - "@esbuild/linux-ppc64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 40,10
+      - "@esbuild/linux-riscv64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 43,10
+      - "@esbuild/linux-s390x":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 46,10
+      - "@esbuild/linux-x64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 49,10
+      - "@esbuild/netbsd-x64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 52,10
+      - "@esbuild/openbsd-x64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 55,10
+      - "@esbuild/sunos-x64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 58,10
+      - "@esbuild/win32-arm64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 61,10
+      - "@esbuild/win32-ia32":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 64,10
+      - "@esbuild/win32-x64":
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 67,10
+      - "@eslint/eslintrc":
+          - old: 1.4.1
+          - new: 2.0.3
+          - loc: 76,10
+      - "@humanwhocodes/config-array":
+          - old: 0.11.8
+          - new: 0.11.10
+          - loc: 82,10
+      - "@types/json-schema":
+          - old: 7.0.11
+          - new: 7.0.12
+          - loc: 100,10
+      - "@types/react":
+          - old: 18.0.28
+          - new: 18.2.13
+          - loc: 106,10
+      - "@types/scheduler":
+          - old: 0.16.2
+          - new: 0.16.3
+          - loc: 109,10
+      - "@types/semver":
+          - old: 7.3.13
+          - new: 7.5.0
+          - loc: 112,10
+      - "@typescript-eslint/eslint-plugin":
+          - old: 5.52.0
+          - new: 5.60.0
+          - loc: 115,10
+      - "@typescript-eslint/parser":
+          - old: 5.52.0
+          - new: 5.60.0
+          - loc: 118,10
+      - "@typescript-eslint/scope-manager":
+          - old: 5.52.0
+          - new: 5.60.0
+          - loc: 121,10
+      - "@typescript-eslint/type-utils":
+          - old: 5.52.0
+          - new: 5.60.0
+          - loc: 124,10
+      - "@typescript-eslint/types":
+          - old: 5.52.0
+          - new: 5.60.0
+          - loc: 127,10
+      - "@typescript-eslint/typescript-estree":
+          - old: 5.52.0
+          - new: 5.60.0
+          - loc: 130,10
+      - "@typescript-eslint/utils":
+          - old: 5.52.0
+          - new: 5.60.0
+          - loc: 133,10
+      - "@typescript-eslint/visitor-keys":
+          - old: 5.52.0
+          - new: 5.60.0
+          - loc: 136,10
+      - acorn:
+          - old: 8.8.2
+          - new: 8.9.0
+          - loc: 139,10
+      - csstype:
+          - old: 3.1.1
+          - new: 3.1.2
+          - loc: 214,10
+      - esbuild:
+          - old: 0.17.15
+          - new: 0.17.19
+          - loc: 232,10
+      - eslint:
+          - old: 8.34.0
+          - new: 8.43.0
+          - loc: 238,10
+      - eslint-config-prettier:
+          - old: 8.6.0
+          - new: 8.8.0
+          - loc: 241,10
+      - eslint-scope:
+          - old: 7.1.1
+          - new: 7.2.0
+          - loc: 244,10
+      - eslint-utils:
+          - msg: removed
+          - loc: 1,1
+      - eslint-visitor-keys:
+          - old: 3.3.0
+          - new: 3.4.1
+          - loc: 247,10
+      - espree:
+          - old: 9.4.1
+          - new: 9.5.2
+          - loc: 250,10
+      - esquery:
+          - old: 1.4.2
+          - new: 1.5.0
+          - loc: 253,10
+      - js-sdsl:
+          - msg: removed
+          - loc: 1,1
+      - prettier:
+          - old: 2.8.4
+          - new: 2.8.8
+          - loc: 451,10
+      - react:
+          - old: 18.3.0-next-4fcc9184a-20230217
+          - new: 18.3.0-canary-d1c8cdae3-20230619
+          - loc: 460,10
+      - react-dom:
+          - old: 18.3.0-next-4fcc9184a-20230217
+          - new: 18.3.0-canary-d1c8cdae3-20230619
+          - loc: 463,10
+      - regexpp:
+          - msg: removed
+          - loc: 1,1
+      - scheduler:
+          - old: 0.24.0-next-4fcc9184a-20230217
+          - new: 0.24.0-canary-d1c8cdae3-20230619
+          - loc: 478,10
+      - semver:
+          - old: 7.3.8
+          - new: 7.5.2
+          - loc: 481,10
+      - tslib:
+          - old: 2.5.0
+          - new: 2.5.3
+          - loc: 514,10
+      - typescript:
+          - old: 5.0.2
+          - new: 5.1.3
+          - loc: 526,10
+      - "@eslint-community/eslint-utils":
+          - new: 4.4.0
+          - loc: 70,10
+      - "@eslint-community/regexpp":
+          - new: 4.5.1
+          - loc: 73,10
+      - "@eslint/js":
+          - new: 8.43.0
+          - loc: 79,10
+      - graphemer:
+          - new: 1.4.0
+          - loc: 313,10
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 14
+  timestamp: 2023-06-21T19:59:56Z
+  hashing_strategy: raw
+  data_hash: fab8012955e6545937db37b4ad3e48c4d8ee08dc50e870520a2ce81e1a2571c6
+  prev_meta_hash: e896d9f2082ef05c9eb3353c404237d0cb540acde3c82a1bd0d2ce2a0b0ad317
+  meta_hash: 8d1651f9d76112eaf08e9a7949d595446d3aca0c530a57f01efc33c35bb86057
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - new: 0.0.1-4b3750ddfe644a5bb131d652407653fac528ad51
+          - loc: 169,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - new: 0.0.1-4b3750ddfe644a5bb131d652407653fac528ad51
+          - loc: 172,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - new: 0.0.1-4b3750ddfe644a5bb131d652407653fac528ad51
+          - loc: 175,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - new: 0.0.1-4b3750ddfe644a5bb131d652407653fac528ad51
+          - loc: 178,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - new: 0.0.1-4b3750ddfe644a5bb131d652407653fac528ad51
+          - loc: 181,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+        - new: 0.0.1-4b3750ddfe644a5bb131d652407653fac528ad51
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 15
+  timestamp: 2023-06-24T13:02:16Z
+  hashing_strategy: raw
+  data_hash: 53af6a6a6f16768326140b1edb7847a8072acb0691375b159f4277e15a06b793
+  prev_meta_hash: 8d1651f9d76112eaf08e9a7949d595446d3aca0c530a57f01efc33c35bb86057
+  meta_hash: 8ec9ed3b843d75f1af172f95f9e9383d730d39eb90da3b4de76b17c3f51e712c
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-4b3750ddfe644a5bb131d652407653fac528ad51
+          - new: 0.0.1-8a03cf746abef8a48c932ab25f8821390632f2e2
+          - loc: 169,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-4b3750ddfe644a5bb131d652407653fac528ad51
+          - new: 0.0.1-8a03cf746abef8a48c932ab25f8821390632f2e2
+          - loc: 172,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-4b3750ddfe644a5bb131d652407653fac528ad51
+          - new: 0.0.1-8a03cf746abef8a48c932ab25f8821390632f2e2
+          - loc: 175,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-4b3750ddfe644a5bb131d652407653fac528ad51
+          - new: 0.0.1-8a03cf746abef8a48c932ab25f8821390632f2e2
+          - loc: 178,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-4b3750ddfe644a5bb131d652407653fac528ad51
+          - new: 0.0.1-8a03cf746abef8a48c932ab25f8821390632f2e2
+          - loc: 181,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-4b3750ddfe644a5bb131d652407653fac528ad51
+        - new: 0.0.1-8a03cf746abef8a48c932ab25f8821390632f2e2
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 16
+  timestamp: 2023-06-28T20:53:09Z
+  hashing_strategy: raw
+  data_hash: 9af21b7ebc46fe2d80db8ff764603d7d71ff2e0156b9f1caf4af00714a52b019
+  prev_meta_hash: 8ec9ed3b843d75f1af172f95f9e9383d730d39eb90da3b4de76b17c3f51e712c
+  meta_hash: cc5f9e7d70cb4fd75b98f96902016e9047863c4e64f994d9441223ca6dc772a8
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-8a03cf746abef8a48c932ab25f8821390632f2e2
+          - new: 0.0.1-26c819733315f0ab64ae8e8e65b77d77d31211e1
+          - loc: 169,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-8a03cf746abef8a48c932ab25f8821390632f2e2
+          - new: 0.0.1-26c819733315f0ab64ae8e8e65b77d77d31211e1
+          - loc: 172,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-8a03cf746abef8a48c932ab25f8821390632f2e2
+          - new: 0.0.1-26c819733315f0ab64ae8e8e65b77d77d31211e1
+          - loc: 175,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-8a03cf746abef8a48c932ab25f8821390632f2e2
+          - new: 0.0.1-26c819733315f0ab64ae8e8e65b77d77d31211e1
+          - loc: 178,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-8a03cf746abef8a48c932ab25f8821390632f2e2
+          - new: 0.0.1-26c819733315f0ab64ae8e8e65b77d77d31211e1
+          - loc: 181,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-8a03cf746abef8a48c932ab25f8821390632f2e2
+        - new: 0.0.1-26c819733315f0ab64ae8e8e65b77d77d31211e1
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 17
+  timestamp: 2023-07-03T05:09:50Z
+  hashing_strategy: raw
+  data_hash: 2762a21d6885ac4125b51a01393276861be5ac0cbd16d36f657c921c7de9de11
+  prev_meta_hash: cc5f9e7d70cb4fd75b98f96902016e9047863c4e64f994d9441223ca6dc772a8
+  meta_hash: 09c8c18db40da613ce123aa84ad3f2af73481dbf630fb231fd154afe7d2e4536
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-26c819733315f0ab64ae8e8e65b77d77d31211e1
+          - new: 0.0.1-dcaa801946a9526c0c4a40dceb9168b81aeb7973
+          - loc: 169,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-26c819733315f0ab64ae8e8e65b77d77d31211e1
+          - new: 0.0.1-dcaa801946a9526c0c4a40dceb9168b81aeb7973
+          - loc: 172,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-26c819733315f0ab64ae8e8e65b77d77d31211e1
+          - new: 0.0.1-dcaa801946a9526c0c4a40dceb9168b81aeb7973
+          - loc: 175,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-26c819733315f0ab64ae8e8e65b77d77d31211e1
+          - new: 0.0.1-dcaa801946a9526c0c4a40dceb9168b81aeb7973
+          - loc: 178,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-26c819733315f0ab64ae8e8e65b77d77d31211e1
+          - new: 0.0.1-dcaa801946a9526c0c4a40dceb9168b81aeb7973
+          - loc: 181,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-26c819733315f0ab64ae8e8e65b77d77d31211e1
+        - new: 0.0.1-dcaa801946a9526c0c4a40dceb9168b81aeb7973
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 18
+  timestamp: 2023-07-13T03:48:52Z
+  hashing_strategy: raw
+  data_hash: 434ed8c304921608e847724f3d2adcfe63b73166c02c5c9a53fd60201fd7bfcc
+  prev_meta_hash: 09c8c18db40da613ce123aa84ad3f2af73481dbf630fb231fd154afe7d2e4536
+  meta_hash: 37e7bebabe8e61f6ff0a8f263496132afe337dfc404ba4e1f72e734058f9d0d6
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/node":
+          - new: 20.4.2
+          - loc: 103,10
+      - "@types/ws":
+          - new: 8.5.5
+          - loc: 118,10
+package.json:
+  constraints:
+    - "@types/ws":
+        - new: ^8.5.5
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 19
+  timestamp: 2023-07-13T16:39:43Z
+  hashing_strategy: raw
+  data_hash: 94dec856419267c270f7ef4d49b4cc953ef3fdf45a9b964bdbe7dc702c47044f
+  prev_meta_hash: 37e7bebabe8e61f6ff0a8f263496132afe337dfc404ba4e1f72e734058f9d0d6
+  meta_hash: bc5000e32e7af6ba14047d31ab3293f45b141d8d5bbe6d4c30df1980c5299bd6
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-dcaa801946a9526c0c4a40dceb9168b81aeb7973
+          - new: 0.0.1-770ebc986b8ae9a0dd2e85f8f94646b410110b7f
+          - loc: 175,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-dcaa801946a9526c0c4a40dceb9168b81aeb7973
+          - new: 0.0.1-770ebc986b8ae9a0dd2e85f8f94646b410110b7f
+          - loc: 178,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-dcaa801946a9526c0c4a40dceb9168b81aeb7973
+          - new: 0.0.1-770ebc986b8ae9a0dd2e85f8f94646b410110b7f
+          - loc: 181,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-dcaa801946a9526c0c4a40dceb9168b81aeb7973
+          - new: 0.0.1-770ebc986b8ae9a0dd2e85f8f94646b410110b7f
+          - loc: 184,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-dcaa801946a9526c0c4a40dceb9168b81aeb7973
+          - new: 0.0.1-770ebc986b8ae9a0dd2e85f8f94646b410110b7f
+          - loc: 187,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-dcaa801946a9526c0c4a40dceb9168b81aeb7973
+        - new: 0.0.1-770ebc986b8ae9a0dd2e85f8f94646b410110b7f
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 20
+  timestamp: 2023-07-20T00:20:00Z
+  hashing_strategy: raw
+  data_hash: dc0a9fdd1984e27ebc5d0691ce59bc4d230991a7e76362a187d62c16ff986d64
+  prev_meta_hash: bc5000e32e7af6ba14047d31ab3293f45b141d8d5bbe6d4c30df1980c5299bd6
+  meta_hash: a35b0490bca3c0a3afdd718927f5de9fc10b84c713e7f65a027630209f4b6ce3
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-770ebc986b8ae9a0dd2e85f8f94646b410110b7f
+          - new: 0.0.1-1e5c61ef78b14e22278dd884e163a8a95e0529ea
+          - loc: 175,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-770ebc986b8ae9a0dd2e85f8f94646b410110b7f
+          - new: 0.0.1-1e5c61ef78b14e22278dd884e163a8a95e0529ea
+          - loc: 178,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-770ebc986b8ae9a0dd2e85f8f94646b410110b7f
+          - new: 0.0.1-1e5c61ef78b14e22278dd884e163a8a95e0529ea
+          - loc: 181,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-770ebc986b8ae9a0dd2e85f8f94646b410110b7f
+          - new: 0.0.1-1e5c61ef78b14e22278dd884e163a8a95e0529ea
+          - loc: 184,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-770ebc986b8ae9a0dd2e85f8f94646b410110b7f
+          - new: 0.0.1-1e5c61ef78b14e22278dd884e163a8a95e0529ea
+          - loc: 187,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-770ebc986b8ae9a0dd2e85f8f94646b410110b7f
+        - new: 0.0.1-1e5c61ef78b14e22278dd884e163a8a95e0529ea
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 21
+  timestamp: 2023-07-22T11:31:58Z
+  hashing_strategy: raw
+  data_hash: 722b823fc7edfe204e678346627ffe710063ccc3166d02218f366d89fb3b57fd
+  prev_meta_hash: a35b0490bca3c0a3afdd718927f5de9fc10b84c713e7f65a027630209f4b6ce3
+  meta_hash: e4873081eeac1ca55919e52d63dcabea4bf00c3374c83875d161ccbcbc7a59cb
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@eslint-community/regexpp":
+          - old: 4.5.1
+          - new: 4.6.0
+          - loc: 76,10
+      - "@eslint/eslintrc":
+          - old: 2.0.3
+          - new: 2.1.0
+          - loc: 79,10
+      - "@eslint/js":
+          - old: 8.43.0
+          - new: 8.44.0
+          - loc: 82,10
+      - "@types/node":
+          - old: 20.4.2
+          - new: 20.4.4
+          - loc: 106,10
+      - "@types/react":
+          - old: 18.2.13
+          - new: 18.2.15
+          - loc: 112,10
+      - "@typescript-eslint/eslint-plugin":
+          - old: 5.60.0
+          - new: 5.62.0
+          - loc: 124,10
+      - "@typescript-eslint/parser":
+          - old: 5.60.0
+          - new: 5.62.0
+          - loc: 127,10
+      - "@typescript-eslint/scope-manager":
+          - old: 5.60.0
+          - new: 5.62.0
+          - loc: 130,10
+      - "@typescript-eslint/type-utils":
+          - old: 5.60.0
+          - new: 5.62.0
+          - loc: 133,10
+      - "@typescript-eslint/types":
+          - old: 5.60.0
+          - new: 5.62.0
+          - loc: 136,10
+      - "@typescript-eslint/typescript-estree":
+          - old: 5.60.0
+          - new: 5.62.0
+          - loc: 139,10
+      - "@typescript-eslint/utils":
+          - old: 5.60.0
+          - new: 5.62.0
+          - loc: 142,10
+      - "@typescript-eslint/visitor-keys":
+          - old: 5.60.0
+          - new: 5.62.0
+          - loc: 145,10
+      - acorn:
+          - old: 8.9.0
+          - new: 8.10.0
+          - loc: 148,10
+      - bun-webkit:
+          - old: 0.0.1-1e5c61ef78b14e22278dd884e163a8a95e0529ea
+          - new: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-1e5c61ef78b14e22278dd884e163a8a95e0529ea
+          - new: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-1e5c61ef78b14e22278dd884e163a8a95e0529ea
+          - new: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-1e5c61ef78b14e22278dd884e163a8a95e0529ea
+          - new: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-1e5c61ef78b14e22278dd884e163a8a95e0529ea
+          - new: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - loc: 190,10
+      - eslint:
+          - old: 8.43.0
+          - new: 8.45.0
+          - loc: 247,10
+      - eslint-scope:
+          - old: 7.2.0
+          - new: 7.2.1
+          - loc: 253,10
+      - espree:
+          - old: 9.5.2
+          - new: 9.6.1
+          - loc: 259,10
+      - fast-glob:
+          - old: 3.2.12
+          - new: 3.3.1
+          - loc: 277,10
+      - grapheme-splitter:
+          - msg: removed
+          - loc: 1,1
+      - optionator:
+          - old: 0.9.1
+          - new: 0.9.3
+          - loc: 415,10
+      - react:
+          - old: 18.3.0-canary-d1c8cdae3-20230619
+          - new: 18.3.0-canary-587ae49d7-20230720
+          - loc: 466,10
+      - react-dom:
+          - old: 18.3.0-canary-d1c8cdae3-20230619
+          - new: 18.3.0-canary-587ae49d7-20230720
+          - loc: 469,10
+      - scheduler:
+          - old: 0.24.0-canary-d1c8cdae3-20230619
+          - new: 0.24.0-canary-587ae49d7-20230720
+          - loc: 484,10
+      - semver:
+          - old: 7.5.2
+          - new: 7.5.4
+          - loc: 487,10
+      - tslib:
+          - old: 2.5.3
+          - new: 2.6.0
+          - loc: 520,10
+      - typescript:
+          - old: 5.1.3
+          - new: 5.1.6
+          - loc: 532,10
+      - word-wrap:
+          - msg: removed
+          - loc: 1,1
+      - "@aashutoshrathi/word-wrap":
+          - new: 1.2.6
+          - loc: 4,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-1e5c61ef78b14e22278dd884e163a8a95e0529ea
+        - new: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 22
+  timestamp: 2023-07-24T05:37:48Z
+  hashing_strategy: raw
+  data_hash: 5252b20daedfdf3b2c798f562fbf78e049cf2547b71ea1c6603cf37c4c25c04e
+  prev_meta_hash: e4873081eeac1ca55919e52d63dcabea4bf00c3374c83875d161ccbcbc7a59cb
+  meta_hash: f4276fe2607fe2c0ac4d2e3ba618edede0da34d06f79be215251588cd410788e
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - new: 0.0.1-9d9172d3242b40f16fa980ead750dc9ab248065f
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - new: 0.0.1-9d9172d3242b40f16fa980ead750dc9ab248065f
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - new: 0.0.1-9d9172d3242b40f16fa980ead750dc9ab248065f
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - new: 0.0.1-9d9172d3242b40f16fa980ead750dc9ab248065f
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - new: 0.0.1-9d9172d3242b40f16fa980ead750dc9ab248065f
+          - loc: 190,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+        - new: 0.0.1-9d9172d3242b40f16fa980ead750dc9ab248065f
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 23
+  timestamp: 2023-08-03T22:31:55Z
+  hashing_strategy: raw
+  data_hash: 35093a48f37b82445d6224caa77569f129dd4e13df027f3c968a7d98d8608801
+  prev_meta_hash: f4276fe2607fe2c0ac4d2e3ba618edede0da34d06f79be215251588cd410788e
+  meta_hash: 040e33184d6b1ad93880be61a656f435121b121e0e84a44e8e61298a7dad2fbb
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@eslint-community/regexpp":
+          - old: 4.6.0
+          - new: 4.6.2
+          - loc: 76,10
+      - "@eslint/eslintrc":
+          - old: 2.1.0
+          - new: 2.1.1
+          - loc: 79,10
+      - "@eslint/js":
+          - old: 8.44.0
+          - new: 8.46.0
+          - loc: 82,10
+      - "@types/node":
+          - msg: removed
+          - loc: 1,1
+      - "@types/react":
+          - old: 18.2.15
+          - new: 18.2.18
+          - loc: 109,10
+      - "@types/ws":
+          - msg: removed
+          - loc: 1,1
+      - eslint:
+          - old: 8.45.0
+          - new: 8.46.0
+          - loc: 241,10
+      - eslint-config-prettier:
+          - old: 8.8.0
+          - new: 8.10.0
+          - loc: 244,10
+      - eslint-scope:
+          - old: 7.2.1
+          - new: 7.2.2
+          - loc: 247,10
+      - eslint-visitor-keys:
+          - old: 3.4.1
+          - new: 3.4.2
+          - loc: 250,10
+      - react:
+          - old: 18.3.0-canary-587ae49d7-20230720
+          - new: 18.3.0-canary-493f72b0a-20230727
+          - loc: 460,10
+      - react-dom:
+          - old: 18.3.0-canary-587ae49d7-20230720
+          - new: 18.3.0-canary-493f72b0a-20230727
+          - loc: 463,10
+      - scheduler:
+          - old: 0.24.0-canary-587ae49d7-20230720
+          - new: 0.24.0-canary-493f72b0a-20230727
+          - loc: 478,10
+      - tslib:
+          - old: 2.6.0
+          - new: 2.6.1
+          - loc: 514,10
+package.json:
+  constraints:
+    - "@types/ws":
+        - msg: removed
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 24
+  timestamp: 2023-08-04T19:56:34Z
+  hashing_strategy: raw
+  data_hash: c33512f341fe6cf9999d47e276541e9edf847596336512abcdac80320246880c
+  prev_meta_hash: 040e33184d6b1ad93880be61a656f435121b121e0e84a44e8e61298a7dad2fbb
+  meta_hash: cd567405d9f6c528dcf8bc60baf9f67bf2c1abc0c7e810a78368eb29788dc4a1
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-9d9172d3242b40f16fa980ead750dc9ab248065f
+          - new: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - loc: 172,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-9d9172d3242b40f16fa980ead750dc9ab248065f
+          - new: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - loc: 175,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-9d9172d3242b40f16fa980ead750dc9ab248065f
+          - new: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - loc: 178,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-9d9172d3242b40f16fa980ead750dc9ab248065f
+          - new: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - loc: 181,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-9d9172d3242b40f16fa980ead750dc9ab248065f
+          - new: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - loc: 184,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-9d9172d3242b40f16fa980ead750dc9ab248065f
+        - new: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 25
+  timestamp: 2023-08-06T13:30:23Z
+  hashing_strategy: raw
+  data_hash: 70c2ce9d9b1b326f9ca4a14ccdc2d4aa051429d58452b185d5d8377c1576bec1
+  prev_meta_hash: cd567405d9f6c528dcf8bc60baf9f67bf2c1abc0c7e810a78368eb29788dc4a1
+  meta_hash: e20bd6923d490af8bde2ac79aade90de3c1c6397d92cde65ed56b593491ef682
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@eslint-community/regexpp":
+          - old: 4.6.2
+          - new: 4.6.0
+          - loc: 76,10
+      - "@eslint/eslintrc":
+          - old: 2.1.1
+          - new: 2.1.0
+          - loc: 79,10
+      - "@eslint/js":
+          - old: 8.46.0
+          - new: 8.44.0
+          - loc: 82,10
+      - "@types/react":
+          - old: 18.2.18
+          - new: 18.2.15
+          - loc: 109,10
+      - bun-webkit:
+          - old: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - new: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - loc: 172,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - new: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - loc: 175,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - new: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - loc: 178,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - new: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - loc: 181,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - new: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - loc: 184,10
+      - eslint:
+          - old: 8.46.0
+          - new: 8.45.0
+          - loc: 241,10
+      - eslint-config-prettier:
+          - old: 8.10.0
+          - new: 8.8.0
+          - loc: 244,10
+      - eslint-scope:
+          - old: 7.2.2
+          - new: 7.2.1
+          - loc: 247,10
+      - eslint-visitor-keys:
+          - old: 3.4.2
+          - new: 3.4.1
+          - loc: 250,10
+      - react:
+          - old: 18.3.0-canary-493f72b0a-20230727
+          - new: 18.3.0-canary-587ae49d7-20230720
+          - loc: 460,10
+      - react-dom:
+          - old: 18.3.0-canary-493f72b0a-20230727
+          - new: 18.3.0-canary-587ae49d7-20230720
+          - loc: 463,10
+      - scheduler:
+          - old: 0.24.0-canary-493f72b0a-20230727
+          - new: 0.24.0-canary-587ae49d7-20230720
+          - loc: 478,10
+      - tslib:
+          - old: 2.6.1
+          - new: 2.6.0
+          - loc: 514,10
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 26
+  timestamp: 2023-08-10T19:17:39Z
+  hashing_strategy: raw
+  data_hash: a8abd08ec5f2a4d28aa1be206ebdea4a636ce259bff202d67933838289fbfda4
+  prev_meta_hash: e20bd6923d490af8bde2ac79aade90de3c1c6397d92cde65ed56b593491ef682
+  meta_hash: cf6ab156c65aa95764a16b05d3652ee4d8db86653fa1e2add4471d6e7a11e14c
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - new: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - loc: 172,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - new: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - loc: 175,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - new: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - loc: 178,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - new: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - loc: 181,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-3a53c6af693c5f387de752b0c793ac1ab5f0a164
+          - new: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - loc: 184,10
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 27
+  timestamp: 2023-08-10T20:32:04Z
+  hashing_strategy: raw
+  data_hash: 79264cdbc0b22454e5886f386f048ff04c69817f7adeee56b89cfe30c9a2a13e
+  prev_meta_hash: cf6ab156c65aa95764a16b05d3652ee4d8db86653fa1e2add4471d6e7a11e14c
+  meta_hash: d5b71546a8760a54d93fdc9afeacda408d81505ce8ee9eca1c18e5bba49c260a
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - new: 0.0.1-8259132d1e63749ef9942bd5beb7a2fd02dad82e
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - new: 0.0.1-8259132d1e63749ef9942bd5beb7a2fd02dad82e
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - new: 0.0.1-8259132d1e63749ef9942bd5beb7a2fd02dad82e
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - new: 0.0.1-8259132d1e63749ef9942bd5beb7a2fd02dad82e
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+          - new: 0.0.1-8259132d1e63749ef9942bd5beb7a2fd02dad82e
+          - loc: 190,10
+      - "@vscode/debugadapter":
+          - new: 1.61.0
+          - loc: 142,10
+      - "@vscode/debugprotocol":
+          - new: 1.61.0
+          - loc: 145,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-74609640b2a7c5a1588b824f870d1b0ff91bfd8e
+        - new: 0.0.1-8259132d1e63749ef9942bd5beb7a2fd02dad82e
+        - loc: 1,1
+    - "@vscode/debugadapter":
+        - new: ^1.61.0
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 28
+  timestamp: 2023-08-17T02:40:20Z
+  hashing_strategy: raw
+  data_hash: b59d5d23ad935ecccbee2d31755f0df314f25cc0c1244a0da862c746b935358a
+  prev_meta_hash: d5b71546a8760a54d93fdc9afeacda408d81505ce8ee9eca1c18e5bba49c260a
+  meta_hash: 394681c4368caf81cc969f26f5310cb805946e0ccbb77f412cb95697c56dd3cf
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-8259132d1e63749ef9942bd5beb7a2fd02dad82e
+          - new: 0.0.1-fc705595a2e10361a64f1dab56527d7b112e75c6
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-8259132d1e63749ef9942bd5beb7a2fd02dad82e
+          - new: 0.0.1-fc705595a2e10361a64f1dab56527d7b112e75c6
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-8259132d1e63749ef9942bd5beb7a2fd02dad82e
+          - new: 0.0.1-fc705595a2e10361a64f1dab56527d7b112e75c6
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-8259132d1e63749ef9942bd5beb7a2fd02dad82e
+          - new: 0.0.1-fc705595a2e10361a64f1dab56527d7b112e75c6
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-8259132d1e63749ef9942bd5beb7a2fd02dad82e
+          - new: 0.0.1-fc705595a2e10361a64f1dab56527d7b112e75c6
+          - loc: 190,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-8259132d1e63749ef9942bd5beb7a2fd02dad82e
+        - new: 0.0.1-fc705595a2e10361a64f1dab56527d7b112e75c6
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 29
+  timestamp: 2023-08-19T02:58:03Z
+  hashing_strategy: raw
+  data_hash: ff32dd8be3e5d19e1bc8602ad57895955d7238ab5f6c773487b907f797a457a2
+  prev_meta_hash: 394681c4368caf81cc969f26f5310cb805946e0ccbb77f412cb95697c56dd3cf
+  meta_hash: 6dc02994922e44a7734718519576a8c2261190c56be18d820b40ae090b73e225
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-fc705595a2e10361a64f1dab56527d7b112e75c6
+          - new: 0.0.1-fd79ce3120a692f4aed314c3da3dd452b4aa865f
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-fc705595a2e10361a64f1dab56527d7b112e75c6
+          - new: 0.0.1-fd79ce3120a692f4aed314c3da3dd452b4aa865f
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-fc705595a2e10361a64f1dab56527d7b112e75c6
+          - new: 0.0.1-fd79ce3120a692f4aed314c3da3dd452b4aa865f
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-fc705595a2e10361a64f1dab56527d7b112e75c6
+          - new: 0.0.1-fd79ce3120a692f4aed314c3da3dd452b4aa865f
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-fc705595a2e10361a64f1dab56527d7b112e75c6
+          - new: 0.0.1-fd79ce3120a692f4aed314c3da3dd452b4aa865f
+          - loc: 190,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-fc705595a2e10361a64f1dab56527d7b112e75c6
+        - new: 0.0.1-fd79ce3120a692f4aed314c3da3dd452b4aa865f
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 30
+  timestamp: 2023-08-21T02:34:33Z
+  hashing_strategy: raw
+  data_hash: 573aa01a079773871735577d87b7b6a8872a36349e2562d70cc82f264bfb4b81
+  prev_meta_hash: 6dc02994922e44a7734718519576a8c2261190c56be18d820b40ae090b73e225
+  meta_hash: fb9e7dcb21e5e2c30de7091057fc4b4e006b8f45a8d8879ee074968c0e9ee8a7
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-fd79ce3120a692f4aed314c3da3dd452b4aa865f
+          - new: 0.0.1-48c1316e907ca597e27e5a7624160dc18a4df8ec
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-fd79ce3120a692f4aed314c3da3dd452b4aa865f
+          - new: 0.0.1-48c1316e907ca597e27e5a7624160dc18a4df8ec
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-fd79ce3120a692f4aed314c3da3dd452b4aa865f
+          - new: 0.0.1-48c1316e907ca597e27e5a7624160dc18a4df8ec
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-fd79ce3120a692f4aed314c3da3dd452b4aa865f
+          - new: 0.0.1-48c1316e907ca597e27e5a7624160dc18a4df8ec
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-fd79ce3120a692f4aed314c3da3dd452b4aa865f
+          - new: 0.0.1-48c1316e907ca597e27e5a7624160dc18a4df8ec
+          - loc: 190,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-fd79ce3120a692f4aed314c3da3dd452b4aa865f
+        - new: 0.0.1-48c1316e907ca597e27e5a7624160dc18a4df8ec
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 31
+  timestamp: 2023-08-23T21:05:05Z
+  hashing_strategy: raw
+  data_hash: 77f3276d6c6014d4a5e7d811ff30aa8da3116d0bb305ddbae861e90f8f7441b4
+  prev_meta_hash: fb9e7dcb21e5e2c30de7091057fc4b4e006b8f45a8d8879ee074968c0e9ee8a7
+  meta_hash: cc2025b100033ec00073fcfc361c2ffcdd1fbc496d685dc87a1908fbe47f62d0
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@eslint-community/regexpp":
+          - old: 4.6.0
+          - new: 4.7.0
+          - loc: 76,10
+      - "@eslint/eslintrc":
+          - old: 2.1.0
+          - new: 2.1.2
+          - loc: 79,10
+      - "@eslint/js":
+          - old: 8.44.0
+          - new: 8.47.0
+          - loc: 82,10
+      - "@types/react":
+          - old: 18.2.15
+          - new: 18.2.21
+          - loc: 109,10
+      - eslint:
+          - old: 8.45.0
+          - new: 8.47.0
+          - loc: 247,10
+      - eslint-config-prettier:
+          - old: 8.8.0
+          - new: 8.10.0
+          - loc: 250,10
+      - eslint-scope:
+          - old: 7.2.1
+          - new: 7.2.2
+          - loc: 253,10
+      - eslint-visitor-keys:
+          - old: 3.4.1
+          - new: 3.4.3
+          - loc: 256,10
+      - globals:
+          - old: 13.20.0
+          - new: 13.21.0
+          - loc: 313,10
+      - react:
+          - old: 18.3.0-canary-587ae49d7-20230720
+          - new: 18.3.0-canary-b4cdd3e89-20230823
+          - loc: 466,10
+      - react-dom:
+          - old: 18.3.0-canary-587ae49d7-20230720
+          - new: 18.3.0-canary-b4cdd3e89-20230823
+          - loc: 469,10
+      - scheduler:
+          - old: 0.24.0-canary-587ae49d7-20230720
+          - new: 0.24.0-canary-b4cdd3e89-20230823
+          - loc: 484,10
+      - tslib:
+          - old: 2.6.0
+          - new: 2.6.2
+          - loc: 523,10
+      - source-map-js:
+          - new: 1.0.2
+          - loc: 505,10
+package.json:
+  constraints:
+    - source-map-js:
+        - new: ^1.0.2
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 32
+  timestamp: 2023-08-25T05:53:34Z
+  hashing_strategy: raw
+  data_hash: 226038b7a7b77f899ea7ef0fd44d921a7e94a251d8bc7ebb53eb238bc35dbf29
+  prev_meta_hash: cc2025b100033ec00073fcfc361c2ffcdd1fbc496d685dc87a1908fbe47f62d0
+  meta_hash: 9a862ce1c20b47461f95cd41bc3432d50021dcc496181746d7ae4ab1e5e81262
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - peechy:
+          - old: 0.4.33
+          - new: 0.4.34
+          - loc: 448,10
+package.json:
+  constraints:
+    - peechy:
+        - old: latest
+        - new: 0.4.34
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 33
+  timestamp: 2023-08-25T08:43:25Z
+  hashing_strategy: raw
+  data_hash: f3241754113b68d96b29ca675fbdee836616141d8f2535f7145b5cebab4d5033
+  prev_meta_hash: 9a862ce1c20b47461f95cd41bc3432d50021dcc496181746d7ae4ab1e5e81262
+  meta_hash: 8f9386553c1f39e054a2edde4061b1f0c7f340031402b4628ad57d01947756e5
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-48c1316e907ca597e27e5a7624160dc18a4df8ec
+          - new: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-48c1316e907ca597e27e5a7624160dc18a4df8ec
+          - new: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-48c1316e907ca597e27e5a7624160dc18a4df8ec
+          - new: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-48c1316e907ca597e27e5a7624160dc18a4df8ec
+          - new: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-48c1316e907ca597e27e5a7624160dc18a4df8ec
+          - new: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - loc: 190,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-48c1316e907ca597e27e5a7624160dc18a4df8ec
+        - new: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 34
+  timestamp: 2023-09-14T21:38:46Z
+  hashing_strategy: raw
+  data_hash: ca607acfaec439473e69a89f2e62d17b89f4d24c4cf495a713f970190204f30d
+  prev_meta_hash: 8f9386553c1f39e054a2edde4061b1f0c7f340031402b4628ad57d01947756e5
+  meta_hash: 12dbb774e7bbcb833d9cb140f778c092e3c487938eae3d49a1e94ea6824f74a4
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - new: 0.0.1-5e9d12e70aee4f25e23a8658503bd6059589d4f3
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - new: 0.0.1-5e9d12e70aee4f25e23a8658503bd6059589d4f3
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - new: 0.0.1-5e9d12e70aee4f25e23a8658503bd6059589d4f3
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - new: 0.0.1-5e9d12e70aee4f25e23a8658503bd6059589d4f3
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+          - new: 0.0.1-5e9d12e70aee4f25e23a8658503bd6059589d4f3
+          - loc: 190,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-b2f1006a06f81bc860c89dd4c7cec3e7117c4c4c
+        - new: 0.0.1-5e9d12e70aee4f25e23a8658503bd6059589d4f3
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 35
+  timestamp: 2023-09-15T07:03:21Z
+  hashing_strategy: raw
+  data_hash: 5271e74c167fe82d112a98b25b2c62becda2ac959c1385003e1b949d799408fb
+  prev_meta_hash: 12dbb774e7bbcb833d9cb140f778c092e3c487938eae3d49a1e94ea6824f74a4
+  meta_hash: 7d8ab8a602be016fcd247bd1bd0134b85737ff17acf37f88286ea95b3b143c1a
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-5e9d12e70aee4f25e23a8658503bd6059589d4f3
+          - new: 0.0.1-b4cf172ad2b038b8c4aa672c32d970d52e939c11
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-5e9d12e70aee4f25e23a8658503bd6059589d4f3
+          - new: 0.0.1-b4cf172ad2b038b8c4aa672c32d970d52e939c11
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-5e9d12e70aee4f25e23a8658503bd6059589d4f3
+          - new: 0.0.1-b4cf172ad2b038b8c4aa672c32d970d52e939c11
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-5e9d12e70aee4f25e23a8658503bd6059589d4f3
+          - new: 0.0.1-b4cf172ad2b038b8c4aa672c32d970d52e939c11
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-5e9d12e70aee4f25e23a8658503bd6059589d4f3
+          - new: 0.0.1-b4cf172ad2b038b8c4aa672c32d970d52e939c11
+          - loc: 190,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-5e9d12e70aee4f25e23a8658503bd6059589d4f3
+        - new: 0.0.1-b4cf172ad2b038b8c4aa672c32d970d52e939c11
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 36
+  timestamp: 2023-09-16T07:44:07Z
+  hashing_strategy: raw
+  data_hash: 225b3f1ded60fb39ee948df07b10547fde1b4ee8e36afa5470552d72533bf67c
+  prev_meta_hash: 7d8ab8a602be016fcd247bd1bd0134b85737ff17acf37f88286ea95b3b143c1a
+  meta_hash: b883cf9552fa000c52f1dedbcc035594b0a1c98b52142393d3fb5fba399e3022
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-b4cf172ad2b038b8c4aa672c32d970d52e939c11
+          - new: 0.0.1-4d995edbc44062b251be638818edcd88d7d14dd7
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-b4cf172ad2b038b8c4aa672c32d970d52e939c11
+          - new: 0.0.1-4d995edbc44062b251be638818edcd88d7d14dd7
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-b4cf172ad2b038b8c4aa672c32d970d52e939c11
+          - new: 0.0.1-4d995edbc44062b251be638818edcd88d7d14dd7
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-b4cf172ad2b038b8c4aa672c32d970d52e939c11
+          - new: 0.0.1-4d995edbc44062b251be638818edcd88d7d14dd7
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-b4cf172ad2b038b8c4aa672c32d970d52e939c11
+          - new: 0.0.1-4d995edbc44062b251be638818edcd88d7d14dd7
+          - loc: 190,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-b4cf172ad2b038b8c4aa672c32d970d52e939c11
+        - new: 0.0.1-4d995edbc44062b251be638818edcd88d7d14dd7
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 37
+  timestamp: 2023-09-19T00:33:58Z
+  hashing_strategy: raw
+  data_hash: 32d384eec807fcd1a0a5b272d565c6b5b5a991b275851a9856f334e6a157cde9
+  prev_meta_hash: b883cf9552fa000c52f1dedbcc035594b0a1c98b52142393d3fb5fba399e3022
+  meta_hash: 4560acd4ca5b49243d8805b25cc23ba71eb423823abaf19c6385d581014d8c05
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@eslint-community/regexpp":
+          - old: 4.7.0
+          - new: 4.8.1
+          - loc: 76,10
+      - "@eslint/js":
+          - old: 8.47.0
+          - new: 8.49.0
+          - loc: 82,10
+      - "@humanwhocodes/config-array":
+          - old: 0.11.10
+          - new: 0.11.11
+          - loc: 85,10
+      - "@types/json-schema":
+          - old: 7.0.12
+          - new: 7.0.13
+          - loc: 103,10
+      - "@types/prop-types":
+          - old: 15.7.5
+          - new: 15.7.6
+          - loc: 106,10
+      - "@types/react":
+          - old: 18.2.21
+          - new: 18.2.22
+          - loc: 109,10
+      - "@types/semver":
+          - old: 7.5.0
+          - new: 7.5.2
+          - loc: 115,10
+      - "@vscode/debugadapter":
+          - old: 1.61.0
+          - new: 1.63.0
+          - loc: 142,10
+      - "@vscode/debugprotocol":
+          - old: 1.61.0
+          - new: 1.63.0
+          - loc: 145,10
+      - eslint:
+          - old: 8.47.0
+          - new: 8.49.0
+          - loc: 247,10
+      - flat-cache:
+          - old: 3.0.4
+          - new: 3.1.0
+          - loc: 298,10
+      - flatted:
+          - old: 3.2.7
+          - new: 3.2.9
+          - loc: 301,10
+      - react:
+          - old: 18.3.0-canary-b4cdd3e89-20230823
+          - new: 18.3.0-canary-2807d781a-20230918
+          - loc: 472,10
+      - react-dom:
+          - old: 18.3.0-canary-b4cdd3e89-20230823
+          - new: 18.3.0-canary-2807d781a-20230918
+          - loc: 475,10
+      - scheduler:
+          - old: 0.24.0-canary-b4cdd3e89-20230823
+          - new: 0.24.0-canary-2807d781a-20230918
+          - loc: 490,10
+      - typescript:
+          - old: 5.1.6
+          - new: 5.2.2
+          - loc: 541,10
+      - json-buffer:
+          - new: 3.0.1
+          - loc: 364,10
+      - keyv:
+          - new: 4.5.3
+          - loc: 373,10
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 38
+  timestamp: 2023-09-20T01:16:51Z
+  hashing_strategy: raw
+  data_hash: cd89ed0781375dbf7a53c4373391c1dc145bccd33c50b66c8f20d2a8133522d3
+  prev_meta_hash: 4560acd4ca5b49243d8805b25cc23ba71eb423823abaf19c6385d581014d8c05
+  meta_hash: 28ab6c1ead5267a3177d052c6d6d41bd1fb6283bad04d28ce01910cb5ceb878b
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-4d995edbc44062b251be638818edcd88d7d14dd7
+          - new: 0.0.1-f8aa36d4737faee92bd2d1e337a2fd01a5437c61
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-4d995edbc44062b251be638818edcd88d7d14dd7
+          - new: 0.0.1-f8aa36d4737faee92bd2d1e337a2fd01a5437c61
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-4d995edbc44062b251be638818edcd88d7d14dd7
+          - new: 0.0.1-f8aa36d4737faee92bd2d1e337a2fd01a5437c61
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-4d995edbc44062b251be638818edcd88d7d14dd7
+          - new: 0.0.1-f8aa36d4737faee92bd2d1e337a2fd01a5437c61
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-4d995edbc44062b251be638818edcd88d7d14dd7
+          - new: 0.0.1-f8aa36d4737faee92bd2d1e337a2fd01a5437c61
+          - loc: 190,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-4d995edbc44062b251be638818edcd88d7d14dd7
+        - new: 0.0.1-f8aa36d4737faee92bd2d1e337a2fd01a5437c61
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 39
+  timestamp: 2023-09-21T14:25:18Z
+  hashing_strategy: raw
+  data_hash: 9016d49c5b05e1a834b3f8b4a71254cb8d0ae27ac105a4cfe8b64f12f83c7d67
+  prev_meta_hash: 28ab6c1ead5267a3177d052c6d6d41bd1fb6283bad04d28ce01910cb5ceb878b
+  meta_hash: 5ea8cab0aee8ffb165c7390e0355c55a0b076ea35f2f25fd706eaed7e55e5aa7
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@eslint/js":
+          - old: 8.49.0
+          - new: 8.50.0
+          - loc: 82,10
+      - "@types/prop-types":
+          - old: 15.7.6
+          - new: 15.7.7
+          - loc: 106,10
+      - eslint:
+          - old: 8.49.0
+          - new: 8.50.0
+          - loc: 247,10
+      - globals:
+          - old: 13.21.0
+          - new: 13.22.0
+          - loc: 313,10
+      - react:
+          - old: 18.3.0-canary-2807d781a-20230918
+          - new: 18.3.0-canary-9ba1bbd65-20230922
+          - loc: 472,10
+      - react-dom:
+          - old: 18.3.0-canary-2807d781a-20230918
+          - new: 18.3.0-canary-9ba1bbd65-20230922
+          - loc: 475,10
+      - scheduler:
+          - old: 0.24.0-canary-2807d781a-20230918
+          - new: 0.24.0-canary-9ba1bbd65-20230922
+          - loc: 490,10
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 40
+  timestamp: 2023-09-25T00:43:59Z
+  hashing_strategy: raw
+  data_hash: 5a5bd2e7e079a603bece5d0f20347fa8fe3e06a83fcc19a007e045ac5a49b4dc
+  prev_meta_hash: 5ea8cab0aee8ffb165c7390e0355c55a0b076ea35f2f25fd706eaed7e55e5aa7
+  meta_hash: 79ffa4ae82614d32417143477782f052996b86b65dc3ab539794c6f3f7e8a818
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-f8aa36d4737faee92bd2d1e337a2fd01a5437c61
+          - new: 0.0.1-2c4d07c9499a65f36f554dc4cd4e9e0640632b8c
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-f8aa36d4737faee92bd2d1e337a2fd01a5437c61
+          - new: 0.0.1-2c4d07c9499a65f36f554dc4cd4e9e0640632b8c
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-f8aa36d4737faee92bd2d1e337a2fd01a5437c61
+          - new: 0.0.1-2c4d07c9499a65f36f554dc4cd4e9e0640632b8c
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-f8aa36d4737faee92bd2d1e337a2fd01a5437c61
+          - new: 0.0.1-2c4d07c9499a65f36f554dc4cd4e9e0640632b8c
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-f8aa36d4737faee92bd2d1e337a2fd01a5437c61
+          - new: 0.0.1-2c4d07c9499a65f36f554dc4cd4e9e0640632b8c
+          - loc: 190,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-f8aa36d4737faee92bd2d1e337a2fd01a5437c61
+        - new: 0.0.1-2c4d07c9499a65f36f554dc4cd4e9e0640632b8c
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 41
+  timestamp: 2023-10-04T02:56:33Z
+  hashing_strategy: raw
+  data_hash: a3a8ad7f5fb2129e323ced4769a4283ff1f4c66a9d589319a2d052e46f97a28c
+  prev_meta_hash: 79ffa4ae82614d32417143477782f052996b86b65dc3ab539794c6f3f7e8a818
+  meta_hash: 3504ee7b6598633a838e2b11d2e909a0b9ce166a8064c0fbbbca05e57dfaf2f9
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@eslint-community/regexpp":
+          - old: 4.8.1
+          - new: 4.9.1
+          - loc: 76,10
+      - "@eslint/js":
+          - old: 8.50.0
+          - new: 8.51.0
+          - loc: 82,10
+      - "@types/prop-types":
+          - old: 15.7.7
+          - new: 15.7.8
+          - loc: 106,10
+      - "@types/react":
+          - old: 18.2.22
+          - new: 18.2.28
+          - loc: 109,10
+      - "@types/scheduler":
+          - old: 0.16.3
+          - new: 0.16.4
+          - loc: 112,10
+      - "@types/semver":
+          - old: 7.5.2
+          - new: 7.5.3
+          - loc: 115,10
+      - eslint:
+          - old: 8.50.0
+          - new: 8.51.0
+          - loc: 247,10
+      - flat-cache:
+          - old: 3.1.0
+          - new: 3.1.1
+          - loc: 298,10
+      - globals:
+          - old: 13.22.0
+          - new: 13.23.0
+          - loc: 313,10
+      - keyv:
+          - old: 4.5.3
+          - new: 4.5.4
+          - loc: 373,10
+      - react:
+          - old: 18.3.0-canary-9ba1bbd65-20230922
+          - new: 18.3.0-canary-be67db46b-20231010
+          - loc: 472,10
+      - react-dom:
+          - old: 18.3.0-canary-9ba1bbd65-20230922
+          - new: 18.3.0-canary-be67db46b-20231010
+          - loc: 475,10
+      - scheduler:
+          - old: 0.24.0-canary-9ba1bbd65-20230922
+          - new: 0.24.0-canary-be67db46b-20231010
+          - loc: 490,10
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 42
+  timestamp: 2023-10-11T09:27:07Z
+  hashing_strategy: raw
+  data_hash: f55d8b0e50db27ca178f3baec6e75363aba559d72160f107fd81f0d691d0c9f0
+  prev_meta_hash: 3504ee7b6598633a838e2b11d2e909a0b9ce166a8064c0fbbbca05e57dfaf2f9
+  meta_hash: f359ed77ac85d4a910b50336c0637755e50844c40dbdd8d191735505e2dd2958
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-2c4d07c9499a65f36f554dc4cd4e9e0640632b8c
+          - new: 0.0.1-acc1e092b4758a712998d462ee54c52e75e71780
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-2c4d07c9499a65f36f554dc4cd4e9e0640632b8c
+          - new: 0.0.1-acc1e092b4758a712998d462ee54c52e75e71780
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-2c4d07c9499a65f36f554dc4cd4e9e0640632b8c
+          - new: 0.0.1-acc1e092b4758a712998d462ee54c52e75e71780
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-2c4d07c9499a65f36f554dc4cd4e9e0640632b8c
+          - new: 0.0.1-acc1e092b4758a712998d462ee54c52e75e71780
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-2c4d07c9499a65f36f554dc4cd4e9e0640632b8c
+          - new: 0.0.1-acc1e092b4758a712998d462ee54c52e75e71780
+          - loc: 190,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-2c4d07c9499a65f36f554dc4cd4e9e0640632b8c
+        - new: 0.0.1-acc1e092b4758a712998d462ee54c52e75e71780
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 43
+  timestamp: 2023-10-12T03:04:15Z
+  hashing_strategy: raw
+  data_hash: eb7d100b76501ab8876ae8b1afce69eaba3cd0f3b404ecfe6f56aba4b4789683
+  prev_meta_hash: f359ed77ac85d4a910b50336c0637755e50844c40dbdd8d191735505e2dd2958
+  meta_hash: 8c424361959d0d655bfd09bddee569fc1b34385574238b777457ee20d062b9a6
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-acc1e092b4758a712998d462ee54c52e75e71780
+          - new: 0.0.1-1a49a1f94bf42ab4f8c6b11d7bbbb21e491d2d62
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-acc1e092b4758a712998d462ee54c52e75e71780
+          - new: 0.0.1-1a49a1f94bf42ab4f8c6b11d7bbbb21e491d2d62
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-acc1e092b4758a712998d462ee54c52e75e71780
+          - new: 0.0.1-1a49a1f94bf42ab4f8c6b11d7bbbb21e491d2d62
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-acc1e092b4758a712998d462ee54c52e75e71780
+          - new: 0.0.1-1a49a1f94bf42ab4f8c6b11d7bbbb21e491d2d62
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-acc1e092b4758a712998d462ee54c52e75e71780
+          - new: 0.0.1-1a49a1f94bf42ab4f8c6b11d7bbbb21e491d2d62
+          - loc: 190,10
+      - react:
+          - old: 18.3.0-canary-be67db46b-20231010
+          - new: 18.3.0-canary-09fbee89d-20231013
+          - loc: 472,10
+      - react-dom:
+          - old: 18.3.0-canary-be67db46b-20231010
+          - new: 18.3.0-canary-09fbee89d-20231013
+          - loc: 475,10
+      - scheduler:
+          - old: 0.24.0-canary-be67db46b-20231010
+          - new: 0.24.0-canary-09fbee89d-20231013
+          - loc: 490,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-acc1e092b4758a712998d462ee54c52e75e71780
+        - new: 0.0.1-1a49a1f94bf42ab4f8c6b11d7bbbb21e491d2d62
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 44
+  timestamp: 2023-10-17T04:22:43Z
+  hashing_strategy: raw
+  data_hash: c3a543e933ae15d0cd2cec0f2e8309418324892d0b62259c19ff6b8f973a03a7
+  prev_meta_hash: 8c424361959d0d655bfd09bddee569fc1b34385574238b777457ee20d062b9a6
+  meta_hash: be93d09e3afc1b08d7993e136d8b2ba2893956aa53e981dd9bb324e97f79e826
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@humanwhocodes/config-array":
+          - old: 0.11.11
+          - new: 0.11.12
+          - loc: 85,10
+      - "@humanwhocodes/object-schema":
+          - old: 1.2.1
+          - new: 2.0.0
+          - loc: 91,10
+      - "@types/json-schema":
+          - old: 7.0.13
+          - new: 7.0.14
+          - loc: 103,10
+      - "@types/prop-types":
+          - old: 15.7.8
+          - new: 15.7.9
+          - loc: 106,10
+      - "@types/react":
+          - old: 18.2.28
+          - new: 18.2.30
+          - loc: 109,10
+      - "@types/scheduler":
+          - old: 0.16.4
+          - new: 0.16.5
+          - loc: 112,10
+      - "@types/semver":
+          - old: 7.5.3
+          - new: 7.5.4
+          - loc: 115,10
+      - bun-webkit:
+          - old: 0.0.1-1a49a1f94bf42ab4f8c6b11d7bbbb21e491d2d62
+          - new: 0.0.1-b3eb3541118a997adc959e138155f5f4736892da
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-1a49a1f94bf42ab4f8c6b11d7bbbb21e491d2d62
+          - new: 0.0.1-b3eb3541118a997adc959e138155f5f4736892da
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-1a49a1f94bf42ab4f8c6b11d7bbbb21e491d2d62
+          - new: 0.0.1-b3eb3541118a997adc959e138155f5f4736892da
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-1a49a1f94bf42ab4f8c6b11d7bbbb21e491d2d62
+          - new: 0.0.1-b3eb3541118a997adc959e138155f5f4736892da
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-1a49a1f94bf42ab4f8c6b11d7bbbb21e491d2d62
+          - new: 0.0.1-b3eb3541118a997adc959e138155f5f4736892da
+          - loc: 190,10
+      - react:
+          - old: 18.3.0-canary-09fbee89d-20231013
+          - new: 18.3.0-canary-9617d39ec-20231018
+          - loc: 472,10
+      - react-dom:
+          - old: 18.3.0-canary-09fbee89d-20231013
+          - new: 18.3.0-canary-9617d39ec-20231018
+          - loc: 475,10
+      - scheduler:
+          - old: 0.24.0-canary-09fbee89d-20231013
+          - new: 0.24.0-canary-9617d39ec-20231018
+          - loc: 490,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-1a49a1f94bf42ab4f8c6b11d7bbbb21e491d2d62
+        - new: 0.0.1-b3eb3541118a997adc959e138155f5f4736892da
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 45
+  timestamp: 2023-10-25T09:59:47Z
+  hashing_strategy: raw
+  data_hash: ee6709864621a41f6ece52fd6ef07f794561777ee59546b5117ca5eb9ae5b64f
+  prev_meta_hash: be93d09e3afc1b08d7993e136d8b2ba2893956aa53e981dd9bb324e97f79e826
+  meta_hash: 3920247e4c9ecddccc75bade9345d3918bcc5c8852727626bc699ce5ad195610
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - old: 0.0.1-b3eb3541118a997adc959e138155f5f4736892da
+          - new: 0.0.1-67c9ba93323b4a5a95bc4d1efe61166dc6e3e691
+          - loc: 178,10
+      - bun-webkit-linux-amd64:
+          - old: 0.0.1-b3eb3541118a997adc959e138155f5f4736892da
+          - new: 0.0.1-67c9ba93323b4a5a95bc4d1efe61166dc6e3e691
+          - loc: 181,10
+      - bun-webkit-linux-arm64:
+          - old: 0.0.1-b3eb3541118a997adc959e138155f5f4736892da
+          - new: 0.0.1-67c9ba93323b4a5a95bc4d1efe61166dc6e3e691
+          - loc: 184,10
+      - bun-webkit-macos-amd64:
+          - old: 0.0.1-b3eb3541118a997adc959e138155f5f4736892da
+          - new: 0.0.1-67c9ba93323b4a5a95bc4d1efe61166dc6e3e691
+          - loc: 187,10
+      - bun-webkit-macos-arm64:
+          - old: 0.0.1-b3eb3541118a997adc959e138155f5f4736892da
+          - new: 0.0.1-67c9ba93323b4a5a95bc4d1efe61166dc6e3e691
+          - loc: 190,10
+package.json:
+  constraints:
+    - bun-webkit:
+        - old: 0.0.1-b3eb3541118a997adc959e138155f5f4736892da
+        - new: 0.0.1-67c9ba93323b4a5a95bc4d1efe61166dc6e3e691
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 46
+  timestamp: 2023-10-26T05:35:14Z
+  hashing_strategy: raw
+  data_hash: 51394b415020f1221a79fc831bec9e06fb27d537127de5b53b29ae8b29ecac5a
+  prev_meta_hash: 3920247e4c9ecddccc75bade9345d3918bcc5c8852727626bc699ce5ad195610
+  meta_hash: a9563df8ce271d6b99a29f7e26c6d1134e8e8ea400c1a941bd65542d5be4accf
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - bun-webkit:
+          - msg: removed
+          - loc: 1,1
+      - bun-webkit-linux-amd64:
+          - msg: removed
+          - loc: 1,1
+      - bun-webkit-linux-arm64:
+          - msg: removed
+          - loc: 1,1
+      - bun-webkit-macos-amd64:
+          - msg: removed
+          - loc: 1,1
+      - bun-webkit-macos-arm64:
+          - msg: removed
+          - loc: 1,1
+package.json:
+  constraints:
+    - bun-webkit:
+        - msg: removed
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 47
+  timestamp: 2023-10-27T08:51:56Z
+  hashing_strategy: raw
+  data_hash: f13cb492ab36bb552482299197a080ca75e31d1f6467709c34f677c49c23956b
+  prev_meta_hash: a9563df8ce271d6b99a29f7e26c6d1134e8e8ea400c1a941bd65542d5be4accf
+  meta_hash: 32bd3f262eb69edb50d44b42d14ac7e4b860f1ba6a42e5e82c309cf0f9e9a48e
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@eslint-community/regexpp":
+          - old: 4.9.1
+          - new: 4.10.0
+          - loc: 76,10
+      - "@eslint/js":
+          - old: 8.51.0
+          - new: 8.52.0
+          - loc: 82,10
+      - "@humanwhocodes/config-array":
+          - old: 0.11.12
+          - new: 0.11.13
+          - loc: 85,10
+      - "@humanwhocodes/object-schema":
+          - old: 2.0.0
+          - new: 2.0.1
+          - loc: 91,10
+      - "@types/react":
+          - old: 18.2.30
+          - new: 18.2.33
+          - loc: 109,10
+      - "@vscode/debugadapter":
+          - old: 1.63.0
+          - new: 1.64.0
+          - loc: 145,10
+      - "@vscode/debugprotocol":
+          - old: 1.63.0
+          - new: 1.64.0
+          - loc: 148,10
+      - acorn:
+          - old: 8.10.0
+          - new: 8.11.2
+          - loc: 151,10
+      - eslint:
+          - old: 8.51.0
+          - new: 8.52.0
+          - loc: 235,10
+      - punycode:
+          - old: 2.3.0
+          - new: 2.3.1
+          - loc: 454,10
+      - react:
+          - old: 18.3.0-canary-9617d39ec-20231018
+          - new: 18.3.0-canary-08a39539f-20231031
+          - loc: 460,10
+      - react-dom:
+          - old: 18.3.0-canary-9617d39ec-20231018
+          - new: 18.3.0-canary-08a39539f-20231031
+          - loc: 463,10
+      - scheduler:
+          - old: 0.24.0-canary-9617d39ec-20231018
+          - new: 0.24.0-canary-08a39539f-20231031
+          - loc: 478,10
+      - "@ungap/structured-clone":
+          - new: 1.2.0
+          - loc: 142,10
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 48
+  timestamp: 2023-11-03T05:40:00Z
+  hashing_strategy: raw
+  data_hash: 81ce83272e9f0df9a5130786932b1bfea381d47521eba15a5539e30956ba038b
+  prev_meta_hash: 32bd3f262eb69edb50d44b42d14ac7e4b860f1ba6a42e5e82c309cf0f9e9a48e
+  meta_hash: 2cc3373aa141e0a4c9a71ff2d7be33bd7b69e87e44e1f54e1a05d05c1725986e
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@eslint/eslintrc":
+          - old: 2.1.2
+          - new: 2.1.3
+          - loc: 79,10
+      - "@eslint/js":
+          - old: 8.52.0
+          - new: 8.53.0
+          - loc: 82,10
+      - "@types/json-schema":
+          - old: 7.0.14
+          - new: 7.0.15
+          - loc: 103,10
+      - "@types/prop-types":
+          - old: 15.7.9
+          - new: 15.7.10
+          - loc: 106,10
+      - "@types/react":
+          - old: 18.2.33
+          - new: 18.2.37
+          - loc: 109,10
+      - "@types/scheduler":
+          - old: 0.16.5
+          - new: 0.16.6
+          - loc: 112,10
+      - "@types/semver":
+          - old: 7.5.4
+          - new: 7.5.5
+          - loc: 115,10
+      - eslint:
+          - old: 8.52.0
+          - new: 8.53.0
+          - loc: 235,10
+      - fast-glob:
+          - old: 3.3.1
+          - new: 3.3.2
+          - loc: 265,10
+      - flat-cache:
+          - old: 3.1.1
+          - new: 3.2.0
+          - loc: 286,10
+      - react:
+          - old: 18.3.0-canary-08a39539f-20231031
+          - new: 18.3.0-canary-432b9f1d9-20231110
+          - loc: 460,10
+      - react-dom:
+          - old: 18.3.0-canary-08a39539f-20231031
+          - new: 18.3.0-canary-432b9f1d9-20231110
+          - loc: 463,10
+      - scheduler:
+          - old: 0.24.0-canary-08a39539f-20231031
+          - new: 0.24.0-canary-432b9f1d9-20231110
+          - loc: 478,10
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 49
+  timestamp: 2023-11-14T06:10:09Z
+  hashing_strategy: raw
+  data_hash: 7e6ab5ab63cf9782dd6cd26d80b9136e8f720cb7e64452cf82a924f070a61769
+  prev_meta_hash: 2cc3373aa141e0a4c9a71ff2d7be33bd7b69e87e44e1f54e1a05d05c1725986e
+  meta_hash: 7fc6774c51eb205803ac136d4b9b4680a4bca2149a3eae0d2d20d8ae938f6a20
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@eslint-community/regexpp":
+          - old: 4.10.0
+          - new: 4.9.1
+          - loc: 76,10
+      - "@eslint/eslintrc":
+          - old: 2.1.3
+          - new: 2.1.2
+          - loc: 79,10
+      - "@eslint/js":
+          - old: 8.53.0
+          - new: 8.51.0
+          - loc: 82,10
+      - "@humanwhocodes/config-array":
+          - old: 0.11.13
+          - new: 0.11.11
+          - loc: 85,10
+      - "@humanwhocodes/object-schema":
+          - old: 2.0.1
+          - new: 1.2.1
+          - loc: 91,10
+      - "@types/json-schema":
+          - old: 7.0.15
+          - new: 7.0.13
+          - loc: 103,10
+      - "@types/prop-types":
+          - old: 15.7.10
+          - new: 15.7.8
+          - loc: 106,10
+      - "@types/react":
+          - old: 18.2.37
+          - new: 18.2.28
+          - loc: 109,10
+      - "@types/scheduler":
+          - old: 0.16.6
+          - new: 0.16.4
+          - loc: 112,10
+      - "@types/semver":
+          - old: 7.5.5
+          - new: 7.5.3
+          - loc: 115,10
+      - "@ungap/structured-clone":
+          - msg: removed
+          - loc: 1,1
+      - "@vscode/debugadapter":
+          - old: 1.64.0
+          - new: 1.63.0
+          - loc: 142,10
+      - "@vscode/debugprotocol":
+          - old: 1.64.0
+          - new: 1.63.0
+          - loc: 145,10
+      - acorn:
+          - old: 8.11.2
+          - new: 8.10.0
+          - loc: 148,10
+      - eslint:
+          - old: 8.53.0
+          - new: 8.51.0
+          - loc: 232,10
+      - fast-glob:
+          - old: 3.3.2
+          - new: 3.3.1
+          - loc: 262,10
+      - flat-cache:
+          - old: 3.2.0
+          - new: 3.1.1
+          - loc: 283,10
+      - punycode:
+          - old: 2.3.1
+          - new: 2.3.0
+          - loc: 451,10
+      - react:
+          - old: 18.3.0-canary-432b9f1d9-20231110
+          - new: 18.3.0-canary-09fbee89d-20231013
+          - loc: 457,10
+      - react-dom:
+          - old: 18.3.0-canary-432b9f1d9-20231110
+          - new: 18.3.0-canary-09fbee89d-20231013
+          - loc: 460,10
+      - scheduler:
+          - old: 0.24.0-canary-432b9f1d9-20231110
+          - new: 0.24.0-canary-09fbee89d-20231013
+          - loc: 475,10
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 50
+  timestamp: 2023-11-16T02:15:10Z
+  hashing_strategy: raw
+  data_hash: 9681f41247e0fb7a9c52e3cff48b7b23db91173fdf4aaeaccfdd7047e12f32b4
+  prev_meta_hash: 7fc6774c51eb205803ac136d4b9b4680a4bca2149a3eae0d2d20d8ae938f6a20
+  meta_hash: a017a47c03ab58b34b79809eb92f65a86982fd61319bef4be1c062bcaf1eed3b
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - prettier:
+          - old: 2.8.8
+          - new: 3.2.2
+          - loc: 448,10
+package.json:
+  constraints:
+    - prettier:
+        - old: ^2.4.1
+        - new: 3.2.2
+        - loc: 1,1
+packages/bun-types/package.json:
+  constraints:
+    - conditional-type-checks:
+        - msg: removed
+        - loc: 1,1
+    - tsd:
+        - msg: removed
+        - loc: 1,1
+    - "@types/node":
+        - new: "*"
+        - loc: 1,1
+    - "@types/ws":
+        - new: "*"
+        - loc: 1,1
+    - undici-types:
+        - new: ~5.26.4
+        - loc: 1,1
+    - "@definitelytyped/dtslint":
+        - new: ^0.0.199
+        - loc: 1,1
+    - "@definitelytyped/eslint-plugin":
+        - new: ^0.0.197
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 51
+  timestamp: 2024-01-16T07:47:13Z
+  hashing_strategy: raw
+  data_hash: f4ccb8e00bdd3f3c87584f9fb3790f6a414442d2818efbc62558fc29d3bab774
+  prev_meta_hash: a017a47c03ab58b34b79809eb92f65a86982fd61319bef4be1c062bcaf1eed3b
+  meta_hash: 536d225b1e28296e1d3b85f1a34603ea0523fca303019540bb7113cbc858b117
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@biomejs/biome":
+          - new: 1.5.3
+          - loc: 7,10
+      - "@biomejs/cli-darwin-arm64":
+          - new: 1.5.3
+          - loc: 10,10
+      - "@biomejs/cli-darwin-x64":
+          - new: 1.5.3
+          - loc: 13,10
+      - "@biomejs/cli-linux-arm64":
+          - new: 1.5.3
+          - loc: 16,10
+      - "@biomejs/cli-linux-arm64-musl":
+          - new: 1.5.3
+          - loc: 19,10
+      - "@biomejs/cli-linux-x64":
+          - new: 1.5.3
+          - loc: 22,10
+      - "@biomejs/cli-linux-x64-musl":
+          - new: 1.5.3
+          - loc: 25,10
+      - "@biomejs/cli-win32-arm64":
+          - new: 1.5.3
+          - loc: 28,10
+      - "@biomejs/cli-win32-x64":
+          - new: 1.5.3
+          - loc: 31,10
+package.json:
+  constraints:
+    - "@biomejs/biome":
+        - new: ^1.5.3
+        - loc: 1,1
+packages/bun-types/package.json:
+  constraints:
+    - "@types/node":
+        - old: "*"
+        - new: ~20.11.3
+        - loc: 1,1
+    - "@types/ws":
+        - old: "*"
+        - new: ~8.5.10
+        - loc: 1,1
+    - undici-types:
+        - msg: removed
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 52
+  timestamp: 2024-01-26T03:15:26Z
+  hashing_strategy: raw
+  data_hash: f22526269af76236f2da0db41f0288313a1c13639e074458acf59cc4b1e03249
+  prev_meta_hash: 536d225b1e28296e1d3b85f1a34603ea0523fca303019540bb7113cbc858b117
+  meta_hash: d97a3e3aa4df0dfaf50f03e1b85d07bfc61b0bcf82b09bdac717994d20e01fcf
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@esbuild/android-arm":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 49,10
+      - "@esbuild/android-arm64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 52,10
+      - "@esbuild/android-x64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 55,10
+      - "@esbuild/darwin-arm64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 58,10
+      - "@esbuild/darwin-x64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 61,10
+      - "@esbuild/freebsd-arm64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 64,10
+      - "@esbuild/freebsd-x64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 67,10
+      - "@esbuild/linux-arm":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 70,10
+      - "@esbuild/linux-arm64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 73,10
+      - "@esbuild/linux-ia32":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 76,10
+      - "@esbuild/linux-loong64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 79,10
+      - "@esbuild/linux-mips64el":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 82,10
+      - "@esbuild/linux-ppc64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 85,10
+      - "@esbuild/linux-riscv64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 88,10
+      - "@esbuild/linux-s390x":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 91,10
+      - "@esbuild/linux-x64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 94,10
+      - "@esbuild/netbsd-x64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 97,10
+      - "@esbuild/openbsd-x64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 100,10
+      - "@esbuild/sunos-x64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 103,10
+      - "@esbuild/win32-arm64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 106,10
+      - "@esbuild/win32-ia32":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 109,10
+      - "@esbuild/win32-x64":
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 112,10
+      - "@eslint-community/regexpp":
+          - old: 4.9.1
+          - new: 4.10.0
+          - loc: 118,10
+      - "@eslint/eslintrc":
+          - old: 2.1.2
+          - new: 2.1.4
+          - loc: 121,10
+      - "@eslint/js":
+          - old: 8.51.0
+          - new: 8.56.0
+          - loc: 124,10
+      - "@humanwhocodes/config-array":
+          - old: 0.11.11
+          - new: 0.11.14
+          - loc: 151,10
+      - "@humanwhocodes/object-schema":
+          - old: 1.2.1
+          - new: 2.0.2
+          - loc: 157,10
+      - "@types/json-schema":
+          - old: 7.0.13
+          - new: 7.0.15
+          - loc: 181,10
+      - "@types/prop-types":
+          - old: 15.7.8
+          - new: 15.7.11
+          - loc: 187,10
+      - "@types/react":
+          - old: 18.2.28
+          - new: 18.2.53
+          - loc: 190,10
+      - "@types/scheduler":
+          - old: 0.16.4
+          - new: 0.16.8
+          - loc: 193,10
+      - "@types/semver":
+          - old: 7.5.3
+          - new: 7.5.6
+          - loc: 196,10
+      - "@vscode/debugadapter":
+          - old: 1.63.0
+          - new: 1.64.0
+          - loc: 226,10
+      - "@vscode/debugprotocol":
+          - old: 1.63.0
+          - new: 1.64.0
+          - loc: 229,10
+      - acorn:
+          - old: 8.10.0
+          - new: 8.11.3
+          - loc: 247,10
+      - csstype:
+          - old: 3.1.2
+          - new: 3.1.3
+          - loc: 412,10
+      - esbuild:
+          - old: 0.17.19
+          - new: 0.20.0
+          - loc: 478,10
+      - eslint:
+          - old: 8.51.0
+          - new: 8.56.0
+          - loc: 490,10
+      - fast-glob:
+          - old: 3.3.1
+          - new: 3.3.2
+          - loc: 532,10
+      - fastq:
+          - old: 1.15.0
+          - new: 1.17.1
+          - loc: 541,10
+      - flat-cache:
+          - old: 3.1.1
+          - new: 3.2.0
+          - loc: 559,10
+      - globals:
+          - old: 13.23.0
+          - new: 13.24.0
+          - loc: 610,10
+      - ignore:
+          - old: 5.2.4
+          - new: 5.3.1
+          - loc: 676,10
+      - mitata:
+          - old: 0.1.6
+          - new: 0.1.8
+          - loc: 835,10
+      - ms:
+          - old: 2.1.2
+          - new: 2.1.3
+          - loc: 844,10
+      - punycode:
+          - old: 2.3.0
+          - new: 2.3.1
+          - loc: 952,10
+      - react:
+          - old: 18.3.0-canary-09fbee89d-20231013
+          - new: 18.3.0-canary-596827f6a-20240205
+          - loc: 979,10
+      - react-dom:
+          - old: 18.3.0-canary-09fbee89d-20231013
+          - new: 18.3.0-canary-596827f6a-20240205
+          - loc: 982,10
+      - scheduler:
+          - old: 0.24.0-canary-09fbee89d-20231013
+          - new: 0.24.0-canary-596827f6a-20240205
+          - loc: 1021,10
+      - typescript:
+          - old: 5.2.2
+          - new: 5.3.3
+          - loc: 1129,10
+      - "@envelop/core":
+          - new: 3.0.3
+          - loc: 34,10
+      - "@envelop/parser-cache":
+          - new: 5.0.3
+          - loc: 37,10
+      - "@envelop/types":
+          - new: 3.0.0
+          - loc: 40,10
+      - "@envelop/validation-cache":
+          - new: 5.0.3
+          - loc: 43,10
+      - "@esbuild/aix-ppc64":
+          - new: 0.20.0
+          - loc: 46,10
+      - "@fastify/busboy":
+          - new: 2.1.0
+          - loc: 127,10
+      - "@graphql-tools/executor":
+          - new: 0.0.8
+          - loc: 130,10
+      - "@graphql-tools/merge":
+          - new: 8.4.2
+          - loc: 133,10
+      - "@graphql-tools/schema":
+          - new: 9.0.19
+          - loc: 136,10
+      - "@graphql-tools/utils":
+          - new: 9.2.1
+          - loc: 139,10
+      - "@graphql-typed-document-node/core":
+          - new: 3.1.1
+          - loc: 142,10
+      - "@graphql-yoga/subscription":
+          - new: 3.1.0
+          - loc: 145,10
+      - "@graphql-yoga/typed-event-target":
+          - new: 1.0.0
+          - loc: 148,10
+      - "@peculiar/asn1-schema":
+          - new: 2.3.8
+          - loc: 169,10
+      - "@peculiar/json-schema":
+          - new: 1.1.12
+          - loc: 172,10
+      - "@peculiar/webcrypto":
+          - new: 1.4.5
+          - loc: 175,10
+      - "@repeaterjs/repeater":
+          - new: 3.0.4
+          - loc: 178,10
+      - "@types/node":
+          - new: 18.19.14
+          - loc: 184,10
+      - "@ungap/structured-clone":
+          - new: 1.2.0
+          - loc: 223,10
+      - "@whatwg-node/events":
+          - new: 0.0.2
+          - loc: 232,10
+      - "@whatwg-node/fetch":
+          - new: 0.5.3
+          - loc: 235,10
+      - "@whatwg-node/server":
+          - new: 0.4.16
+          - loc: 238,10
+      - abort-controller:
+          - new: 3.0.0
+          - loc: 241,10
+      - accepts:
+          - new: 1.3.8
+          - loc: 244,10
+      - agent-base:
+          - new: 7.1.0
+          - loc: 253,10
+      - ansi:
+          - new: 0.3.1
+          - loc: 259,10
+      - are-we-there-yet:
+          - new: 1.0.6
+          - loc: 268,10
+      - array-flatten:
+          - new: 1.1.1
+          - loc: 274,10
+      - art-template:
+          - new: 4.13.2
+          - loc: 280,10
+      - asn1js:
+          - new: 3.0.5
+          - loc: 283,10
+      - asynckit:
+          - new: 0.4.0
+          - loc: 286,10
+      - axios:
+          - new: 0.21.4
+          - loc: 289,10
+      - big-integer:
+          - new: 1.6.52
+          - loc: 295,10
+      - binary:
+          - new: 0.3.0
+          - loc: 298,10
+      - bindings:
+          - new: 1.5.0
+          - loc: 301,10
+      - bluebird:
+          - new: 3.7.2
+          - loc: 304,10
+      - body-parser:
+          - new: 1.20.1
+          - loc: 307,10
+      - buffer-indexof-polyfill:
+          - new: 1.0.2
+          - loc: 316,10
+      - buffer-shims:
+          - new: 1.0.0
+          - loc: 319,10
+      - buffers:
+          - new: 0.1.1
+          - loc: 322,10
+      - busboy:
+          - new: 1.6.0
+          - loc: 325,10
+      - bytes:
+          - new: 3.1.2
+          - loc: 328,10
+      - call-bind:
+          - new: 1.0.5
+          - loc: 331,10
+      - camelcase:
+          - new: 2.1.1
+          - loc: 340,10
+      - chainsaw:
+          - new: 0.1.0
+          - loc: 346,10
+      - chownr:
+          - new: 1.1.4
+          - loc: 355,10
+      - clean-css:
+          - new: 4.2.4
+          - loc: 358,10
+      - cliui:
+          - new: 3.2.0
+          - loc: 361,10
+      - cmake-js:
+          - new: 6.3.2
+          - loc: 364,10
+      - code-point-at:
+          - new: 1.1.0
+          - loc: 367,10
+      - combined-stream:
+          - new: 1.0.8
+          - loc: 376,10
+      - commander:
+          - new: 2.19.0
+          - loc: 379,10
+      - content-disposition:
+          - new: 0.5.4
+          - loc: 388,10
+      - content-type:
+          - new: 1.0.5
+          - loc: 391,10
+      - cookie:
+          - new: 0.5.0
+          - loc: 394,10
+      - cookie-signature:
+          - new: 1.0.6
+          - loc: 397,10
+      - core-js:
+          - new: 3.23.3
+          - loc: 400,10
+      - core-util-is:
+          - new: 1.0.3
+          - loc: 403,10
+      - cssstyle:
+          - new: 4.0.1
+          - loc: 409,10
+      - data-urls:
+          - new: 5.0.0
+          - loc: 415,10
+      - decamelize:
+          - new: 1.2.0
+          - loc: 421,10
+      - decimal.js:
+          - new: 10.4.3
+          - loc: 424,10
+      - deep-extend:
+          - new: 0.6.0
+          - loc: 427,10
+      - define-data-property:
+          - new: 1.1.1
+          - loc: 433,10
+      - delayed-stream:
+          - new: 1.0.0
+          - loc: 436,10
+      - delegates:
+          - new: 1.0.0
+          - loc: 439,10
+      - depd:
+          - new: 2.0.0
+          - loc: 442,10
+      - destroy:
+          - new: 1.2.0
+          - loc: 445,10
+      - dset:
+          - new: 3.1.3
+          - loc: 457,10
+      - duplexer2:
+          - new: 0.1.4
+          - loc: 460,10
+      - edgedb:
+          - new: 1.4.1
+          - loc: 463,10
+      - ee-first:
+          - new: 1.1.1
+          - loc: 466,10
+      - encodeurl:
+          - new: 1.0.2
+          - loc: 469,10
+      - entities:
+          - new: 4.5.0
+          - loc: 472,10
+      - es-errors:
+          - new: 1.3.0
+          - loc: 475,10
+      - escape-html:
+          - new: 1.0.3
+          - loc: 481,10
+      - escodegen:
+          - new: 1.14.3
+          - loc: 487,10
+      - esprima:
+          - new: 4.0.1
+          - loc: 505,10
+      - etag:
+          - new: 1.8.1
+          - loc: 520,10
+      - event-target-shim:
+          - new: 5.0.1
+          - loc: 523,10
+      - express:
+          - new: 4.18.2
+          - loc: 526,10
+      - file-uri-to-path:
+          - new: 1.0.0
+          - loc: 547,10
+      - finalhandler:
+          - new: 1.2.0
+          - loc: 553,10
+      - follow-redirects:
+          - new: 1.15.5
+          - loc: 565,10
+      - form-data:
+          - new: 4.0.0
+          - loc: 568,10
+      - form-data-encoder:
+          - new: 1.9.0
+          - loc: 571,10
+      - formdata-node:
+          - new: 4.4.1
+          - loc: 574,10
+      - forwarded:
+          - new: 0.2.0
+          - loc: 577,10
+      - fresh:
+          - new: 0.5.2
+          - loc: 580,10
+      - fs-extra:
+          - new: 5.0.0
+          - loc: 583,10
+      - fs-minipass:
+          - new: 1.2.7
+          - loc: 586,10
+      - fstream:
+          - new: 1.0.12
+          - loc: 592,10
+      - function-bind:
+          - new: 1.1.2
+          - loc: 595,10
+      - gauge:
+          - new: 1.2.7
+          - loc: 598,10
+      - get-intrinsic:
+          - new: 1.2.3
+          - loc: 601,10
+      - gopd:
+          - new: 1.0.1
+          - loc: 616,10
+      - graceful-fs:
+          - new: 4.2.11
+          - loc: 619,10
+      - graphql:
+          - new: 16.8.1
+          - loc: 625,10
+      - graphql-yoga:
+          - new: 3.0.0-next.12
+          - loc: 628,10
+      - has-property-descriptors:
+          - new: 1.0.1
+          - loc: 634,10
+      - has-proto:
+          - new: 1.0.1
+          - loc: 637,10
+      - has-symbols:
+          - new: 1.0.3
+          - loc: 640,10
+      - has-unicode:
+          - new: 2.0.1
+          - loc: 643,10
+      - hasown:
+          - new: 2.0.0
+          - loc: 646,10
+      - he:
+          - new: 1.2.0
+          - loc: 649,10
+      - html-encoding-sniffer:
+          - new: 4.0.0
+          - loc: 655,10
+      - html-minifier:
+          - new: 3.5.21
+          - loc: 658,10
+      - htmlparser:
+          - new: 1.7.7
+          - loc: 661,10
+      - http-errors:
+          - new: 2.0.0
+          - loc: 664,10
+      - http-proxy-agent:
+          - new: 7.0.0
+          - loc: 667,10
+      - https-proxy-agent:
+          - new: 7.0.2
+          - loc: 670,10
+      - iconv-lite:
+          - new: 0.6.3
+          - loc: 673,10
+      - ini:
+          - new: 1.3.8
+          - loc: 691,10
+      - invert-kv:
+          - new: 1.0.0
+          - loc: 694,10
+      - ipaddr.js:
+          - new: 1.9.1
+          - loc: 697,10
+      - is-fullwidth-code-point:
+          - new: 1.0.0
+          - loc: 703,10
+      - is-iojs:
+          - new: 1.1.0
+          - loc: 709,10
+      - is-keyword-js:
+          - new: 1.0.3
+          - loc: 712,10
+      - is-potential-custom-element-name:
+          - new: 1.0.1
+          - loc: 721,10
+      - isarray:
+          - new: 1.0.0
+          - loc: 724,10
+      - jsdom:
+          - new: 24.0.0
+          - loc: 736,10
+      - jsonfile:
+          - new: 4.0.0
+          - loc: 748,10
+      - lcid:
+          - new: 1.0.0
+          - loc: 754,10
+      - listenercount:
+          - new: 1.0.1
+          - loc: 760,10
+      - llvm-bindings:
+          - new: 0.4.2
+          - loc: 763,10
+      - lodash:
+          - new: 4.17.21
+          - loc: 769,10
+      - lodash.pad:
+          - new: 4.5.1
+          - loc: 775,10
+      - lodash.padend:
+          - new: 4.6.1
+          - loc: 778,10
+      - lodash.padstart:
+          - new: 4.6.1
+          - loc: 781,10
+      - media-typer:
+          - new: 0.3.0
+          - loc: 793,10
+      - memory-stream:
+          - new: 0.0.3
+          - loc: 796,10
+      - merge-descriptors:
+          - new: 1.0.1
+          - loc: 799,10
+      - merge-source-map:
+          - new: 1.1.0
+          - loc: 802,10
+      - methods:
+          - new: 1.1.2
+          - loc: 808,10
+      - mime:
+          - new: 1.6.0
+          - loc: 814,10
+      - mime-db:
+          - new: 1.52.0
+          - loc: 817,10
+      - mime-types:
+          - new: 2.1.35
+          - loc: 820,10
+      - minimist:
+          - new: 1.2.8
+          - loc: 826,10
+      - minipass:
+          - new: 2.9.0
+          - loc: 829,10
+      - minizlib:
+          - new: 1.3.3
+          - loc: 832,10
+      - mjsunit.runner:
+          - new: 0.1.3
+          - loc: 838,10
+      - mkdirp:
+          - new: 0.5.6
+          - loc: 841,10
+      - negotiator:
+          - new: 0.6.3
+          - loc: 853,10
+      - node-addon-api:
+          - new: 5.1.0
+          - loc: 859,10
+      - node-domexception:
+          - new: 1.0.0
+          - loc: 862,10
+      - node-fetch:
+          - new: 2.7.0
+          - loc: 865,10
+      - npmlog:
+          - new: 1.2.1
+          - loc: 868,10
+      - number-is-nan:
+          - new: 1.0.1
+          - loc: 871,10
+      - nwsapi:
+          - new: 2.2.7
+          - loc: 874,10
+      - object-inspect:
+          - new: 1.13.1
+          - loc: 877,10
+      - on-finished:
+          - new: 2.4.1
+          - loc: 880,10
+      - os-locale:
+          - new: 1.4.0
+          - loc: 889,10
+      - parse5:
+          - new: 7.1.2
+          - loc: 904,10
+      - parseurl:
+          - new: 1.3.3
+          - loc: 907,10
+      - path-to-regexp:
+          - new: 0.1.7
+          - loc: 925,10
+      - process-nextick-args:
+          - new: 1.0.7
+          - loc: 943,10
+      - proxy-addr:
+          - new: 2.0.7
+          - loc: 946,10
+      - psl:
+          - new: 1.9.0
+          - loc: 949,10
+      - pvtsutils:
+          - new: 1.3.5
+          - loc: 955,10
+      - pvutils:
+          - new: 1.1.3
+          - loc: 958,10
+      - qs:
+          - new: 6.11.0
+          - loc: 961,10
+      - querystringify:
+          - new: 2.2.0
+          - loc: 964,10
+      - range-parser:
+          - new: 1.2.1
+          - loc: 970,10
+      - raw-body:
+          - new: 2.5.1
+          - loc: 973,10
+      - rc:
+          - new: 1.2.8
+          - loc: 976,10
+      - readability:
+          - new: 0.1.0
+          - loc: 985,10
+      - readable-stream:
+          - new: 2.1.5
+          - loc: 988,10
+      - relateurl:
+          - new: 0.2.7
+          - loc: 991,10
+      - requires-port:
+          - new: 1.0.0
+          - loc: 994,10
+      - rrweb-cssom:
+          - new: 0.6.0
+          - loc: 1006,10
+      - safe-buffer:
+          - new: 5.2.1
+          - loc: 1012,10
+      - safer-buffer:
+          - new: 2.1.2
+          - loc: 1015,10
+      - saxes:
+          - new: 6.0.0
+          - loc: 1018,10
+      - send:
+          - new: 0.18.0
+          - loc: 1027,10
+      - serve-static:
+          - new: 1.15.0
+          - loc: 1033,10
+      - set-function-length:
+          - new: 1.2.0
+          - loc: 1036,10
+      - setimmediate:
+          - new: 1.0.5
+          - loc: 1039,10
+      - setprototypeof:
+          - new: 1.2.0
+          - loc: 1042,10
+      - side-channel:
+          - new: 1.0.4
+          - loc: 1051,10
+      - source-map:
+          - new: 0.6.1
+          - loc: 1060,10
+      - splitargs:
+          - new: 0.0.7
+          - loc: 1066,10
+      - statuses:
+          - new: 2.0.1
+          - loc: 1069,10
+      - streamsearch:
+          - new: 1.1.0
+          - loc: 1072,10
+      - string-width:
+          - new: 1.0.2
+          - loc: 1075,10
+      - string_decoder:
+          - new: 0.10.31
+          - loc: 1078,10
+      - symbol-tree:
+          - new: 3.2.4
+          - loc: 1090,10
+      - tar:
+          - new: 4.4.19
+          - loc: 1093,10
+      - toidentifier:
+          - new: 1.0.1
+          - loc: 1102,10
+      - tough-cookie:
+          - new: 4.1.3
+          - loc: 1105,10
+      - tr46:
+          - new: 5.0.0
+          - loc: 1108,10
+      - traverse:
+          - new: 0.3.9
+          - loc: 1111,10
+      - type-is:
+          - new: 1.6.18
+          - loc: 1126,10
+      - uglify-js:
+          - new: 3.4.10
+          - loc: 1132,10
+      - undici:
+          - new: 5.28.3
+          - loc: 1135,10
+      - undici-types:
+          - new: 5.26.5
+          - loc: 1138,10
+      - universalify:
+          - new: 0.2.0
+          - loc: 1141,10
+      - unpipe:
+          - new: 1.0.0
+          - loc: 1144,10
+      - unzipper:
+          - new: 0.8.14
+          - loc: 1147,10
+      - url-join:
+          - new: 0.0.1
+          - loc: 1159,10
+      - url-parse:
+          - new: 1.5.10
+          - loc: 1162,10
+      - util-deprecate:
+          - new: 1.0.2
+          - loc: 1165,10
+      - utils-merge:
+          - new: 1.0.1
+          - loc: 1168,10
+      - value-or-promise:
+          - new: 1.0.12
+          - loc: 1171,10
+      - vary:
+          - new: 1.1.2
+          - loc: 1174,10
+      - w3c-xmlserializer:
+          - new: 5.0.0
+          - loc: 1177,10
+      - web-streams-polyfill:
+          - new: 4.0.0-beta.3
+          - loc: 1180,10
+      - webcrypto-core:
+          - new: 1.7.8
+          - loc: 1183,10
+      - webidl-conversions:
+          - new: 7.0.0
+          - loc: 1186,10
+      - whatwg-encoding:
+          - new: 3.1.1
+          - loc: 1189,10
+      - whatwg-mimetype:
+          - new: 4.0.0
+          - loc: 1192,10
+      - whatwg-url:
+          - new: 14.0.0
+          - loc: 1195,10
+      - window-size:
+          - new: 0.1.4
+          - loc: 1201,10
+      - word-wrap:
+          - new: 1.2.5
+          - loc: 1204,10
+      - wrap-ansi:
+          - new: 2.1.0
+          - loc: 1207,10
+      - ws:
+          - new: 8.16.0
+          - loc: 1213,10
+      - xml-name-validator:
+          - new: 5.0.0
+          - loc: 1216,10
+      - xmlchars:
+          - new: 2.2.0
+          - loc: 1219,10
+      - y18n:
+          - new: 3.2.2
+          - loc: 1222,10
+      - yargs:
+          - new: 3.32.0
+          - loc: 1228,10
+package.json:
+  constraints:
+    - "@biomejs/biome":
+        - old: ^1.5.3
+        - new: 1.5.3
+        - loc: 1,1
+    - esbuild:
+        - old: ^0.17.15
+        - new: ^0.20.0
+        - loc: 1,1
+    - art-template:
+        - new: ^4.13.2
+        - loc: 1,1
+    - core-js:
+        - new: 3.23.3
+        - loc: 1,1
+    - edgedb:
+        - new: ^1.4.1
+        - loc: 1,1
+    - express:
+        - new: ^4.18.2
+        - loc: 1,1
+    - graphql:
+        - new: ^16.8.1
+        - loc: 1,1
+    - graphql-yoga:
+        - new: three
+        - loc: 1,1
+    - jsdom:
+        - new: ^24.0.0
+        - loc: 1,1
+    - llvm-bindings:
+        - new: ^0.4.2
+        - loc: 1,1
+    - readability:
+        - new: ^0.1.0
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 53
+  timestamp: 2024-02-05T19:25:52Z
+  hashing_strategy: raw
+  data_hash: c11521b0e88bec49785b29b1f492ef9fefba14646aeffe698f8408ef3ac4ebf0
+  prev_meta_hash: d97a3e3aa4df0dfaf50f03e1b85d07bfc61b0bcf82b09bdac717994d20e01fcf
+  meta_hash: 66c6f46cd4665c710a71ecc4633e28e576ca2e63fb24ac34b124413bee32c03b
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@envelop/core":
+          - msg: removed
+          - loc: 1,1
+      - "@envelop/parser-cache":
+          - msg: removed
+          - loc: 1,1
+      - "@envelop/types":
+          - msg: removed
+          - loc: 1,1
+      - "@envelop/validation-cache":
+          - msg: removed
+          - loc: 1,1
+      - "@esbuild/aix-ppc64":
+          - msg: removed
+          - loc: 1,1
+      - "@esbuild/android-arm":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 34,10
+      - "@esbuild/android-arm64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 37,10
+      - "@esbuild/android-x64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 40,10
+      - "@esbuild/darwin-arm64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 43,10
+      - "@esbuild/darwin-x64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 46,10
+      - "@esbuild/freebsd-arm64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 49,10
+      - "@esbuild/freebsd-x64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 52,10
+      - "@esbuild/linux-arm":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 55,10
+      - "@esbuild/linux-arm64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 58,10
+      - "@esbuild/linux-ia32":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 61,10
+      - "@esbuild/linux-loong64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 64,10
+      - "@esbuild/linux-mips64el":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 67,10
+      - "@esbuild/linux-ppc64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 70,10
+      - "@esbuild/linux-riscv64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 73,10
+      - "@esbuild/linux-s390x":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 76,10
+      - "@esbuild/linux-x64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 79,10
+      - "@esbuild/netbsd-x64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 82,10
+      - "@esbuild/openbsd-x64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 85,10
+      - "@esbuild/sunos-x64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 88,10
+      - "@esbuild/win32-arm64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 91,10
+      - "@esbuild/win32-ia32":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 94,10
+      - "@esbuild/win32-x64":
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 97,10
+      - "@eslint-community/regexpp":
+          - old: 4.10.0
+          - new: 4.9.1
+          - loc: 103,10
+      - "@eslint/eslintrc":
+          - old: 2.1.4
+          - new: 2.1.2
+          - loc: 106,10
+      - "@eslint/js":
+          - old: 8.56.0
+          - new: 8.51.0
+          - loc: 109,10
+      - "@fastify/busboy":
+          - msg: removed
+          - loc: 1,1
+      - "@graphql-tools/executor":
+          - msg: removed
+          - loc: 1,1
+      - "@graphql-tools/merge":
+          - msg: removed
+          - loc: 1,1
+      - "@graphql-tools/schema":
+          - msg: removed
+          - loc: 1,1
+      - "@graphql-tools/utils":
+          - msg: removed
+          - loc: 1,1
+      - "@graphql-typed-document-node/core":
+          - msg: removed
+          - loc: 1,1
+      - "@graphql-yoga/subscription":
+          - msg: removed
+          - loc: 1,1
+      - "@graphql-yoga/typed-event-target":
+          - msg: removed
+          - loc: 1,1
+      - "@humanwhocodes/config-array":
+          - old: 0.11.14
+          - new: 0.11.11
+          - loc: 112,10
+      - "@humanwhocodes/object-schema":
+          - old: 2.0.2
+          - new: 1.2.1
+          - loc: 118,10
+      - "@peculiar/asn1-schema":
+          - msg: removed
+          - loc: 1,1
+      - "@peculiar/json-schema":
+          - msg: removed
+          - loc: 1,1
+      - "@peculiar/webcrypto":
+          - msg: removed
+          - loc: 1,1
+      - "@repeaterjs/repeater":
+          - msg: removed
+          - loc: 1,1
+      - "@types/json-schema":
+          - old: 7.0.15
+          - new: 7.0.13
+          - loc: 130,10
+      - "@types/node":
+          - msg: removed
+          - loc: 1,1
+      - "@types/prop-types":
+          - old: 15.7.11
+          - new: 15.7.8
+          - loc: 133,10
+      - "@types/react":
+          - old: 18.2.53
+          - new: 18.2.28
+          - loc: 136,10
+      - "@types/scheduler":
+          - old: 0.16.8
+          - new: 0.16.4
+          - loc: 139,10
+      - "@types/semver":
+          - old: 7.5.6
+          - new: 7.5.3
+          - loc: 142,10
+      - "@ungap/structured-clone":
+          - msg: removed
+          - loc: 1,1
+      - "@vscode/debugadapter":
+          - old: 1.64.0
+          - new: 1.63.0
+          - loc: 169,10
+      - "@vscode/debugprotocol":
+          - old: 1.64.0
+          - new: 1.63.0
+          - loc: 172,10
+      - "@whatwg-node/events":
+          - msg: removed
+          - loc: 1,1
+      - "@whatwg-node/fetch":
+          - msg: removed
+          - loc: 1,1
+      - "@whatwg-node/server":
+          - msg: removed
+          - loc: 1,1
+      - abort-controller:
+          - msg: removed
+          - loc: 1,1
+      - accepts:
+          - msg: removed
+          - loc: 1,1
+      - acorn:
+          - old: 8.11.3
+          - new: 8.10.0
+          - loc: 175,10
+      - agent-base:
+          - msg: removed
+          - loc: 1,1
+      - ansi:
+          - msg: removed
+          - loc: 1,1
+      - are-we-there-yet:
+          - msg: removed
+          - loc: 1,1
+      - array-flatten:
+          - msg: removed
+          - loc: 1,1
+      - art-template:
+          - msg: removed
+          - loc: 1,1
+      - asn1js:
+          - msg: removed
+          - loc: 1,1
+      - asynckit:
+          - msg: removed
+          - loc: 1,1
+      - axios:
+          - msg: removed
+          - loc: 1,1
+      - big-integer:
+          - msg: removed
+          - loc: 1,1
+      - binary:
+          - msg: removed
+          - loc: 1,1
+      - bindings:
+          - msg: removed
+          - loc: 1,1
+      - bluebird:
+          - msg: removed
+          - loc: 1,1
+      - body-parser:
+          - msg: removed
+          - loc: 1,1
+      - buffer-indexof-polyfill:
+          - msg: removed
+          - loc: 1,1
+      - buffer-shims:
+          - msg: removed
+          - loc: 1,1
+      - buffers:
+          - msg: removed
+          - loc: 1,1
+      - busboy:
+          - msg: removed
+          - loc: 1,1
+      - bytes:
+          - msg: removed
+          - loc: 1,1
+      - call-bind:
+          - msg: removed
+          - loc: 1,1
+      - camelcase:
+          - msg: removed
+          - loc: 1,1
+      - chainsaw:
+          - msg: removed
+          - loc: 1,1
+      - chownr:
+          - msg: removed
+          - loc: 1,1
+      - clean-css:
+          - msg: removed
+          - loc: 1,1
+      - cliui:
+          - msg: removed
+          - loc: 1,1
+      - cmake-js:
+          - msg: removed
+          - loc: 1,1
+      - code-point-at:
+          - msg: removed
+          - loc: 1,1
+      - combined-stream:
+          - msg: removed
+          - loc: 1,1
+      - commander:
+          - msg: removed
+          - loc: 1,1
+      - content-disposition:
+          - msg: removed
+          - loc: 1,1
+      - content-type:
+          - msg: removed
+          - loc: 1,1
+      - cookie:
+          - msg: removed
+          - loc: 1,1
+      - cookie-signature:
+          - msg: removed
+          - loc: 1,1
+      - core-js:
+          - msg: removed
+          - loc: 1,1
+      - core-util-is:
+          - msg: removed
+          - loc: 1,1
+      - cssstyle:
+          - msg: removed
+          - loc: 1,1
+      - csstype:
+          - old: 3.1.3
+          - new: 3.1.2
+          - loc: 235,10
+      - data-urls:
+          - msg: removed
+          - loc: 1,1
+      - decamelize:
+          - msg: removed
+          - loc: 1,1
+      - decimal.js:
+          - msg: removed
+          - loc: 1,1
+      - deep-extend:
+          - msg: removed
+          - loc: 1,1
+      - define-data-property:
+          - msg: removed
+          - loc: 1,1
+      - delayed-stream:
+          - msg: removed
+          - loc: 1,1
+      - delegates:
+          - msg: removed
+          - loc: 1,1
+      - depd:
+          - msg: removed
+          - loc: 1,1
+      - destroy:
+          - msg: removed
+          - loc: 1,1
+      - dset:
+          - msg: removed
+          - loc: 1,1
+      - duplexer2:
+          - msg: removed
+          - loc: 1,1
+      - edgedb:
+          - msg: removed
+          - loc: 1,1
+      - ee-first:
+          - msg: removed
+          - loc: 1,1
+      - encodeurl:
+          - msg: removed
+          - loc: 1,1
+      - entities:
+          - msg: removed
+          - loc: 1,1
+      - es-errors:
+          - msg: removed
+          - loc: 1,1
+      - esbuild:
+          - old: 0.20.0
+          - new: 0.17.19
+          - loc: 253,10
+      - escape-html:
+          - msg: removed
+          - loc: 1,1
+      - escodegen:
+          - msg: removed
+          - loc: 1,1
+      - eslint:
+          - old: 8.56.0
+          - new: 8.51.0
+          - loc: 259,10
+      - esprima:
+          - msg: removed
+          - loc: 1,1
+      - etag:
+          - msg: removed
+          - loc: 1,1
+      - event-target-shim:
+          - msg: removed
+          - loc: 1,1
+      - express:
+          - msg: removed
+          - loc: 1,1
+      - fast-glob:
+          - old: 3.3.2
+          - new: 3.3.1
+          - loc: 289,10
+      - fastq:
+          - old: 1.17.1
+          - new: 1.15.0
+          - loc: 298,10
+      - file-uri-to-path:
+          - msg: removed
+          - loc: 1,1
+      - finalhandler:
+          - msg: removed
+          - loc: 1,1
+      - flat-cache:
+          - old: 3.2.0
+          - new: 3.1.1
+          - loc: 310,10
+      - follow-redirects:
+          - msg: removed
+          - loc: 1,1
+      - form-data:
+          - msg: removed
+          - loc: 1,1
+      - form-data-encoder:
+          - msg: removed
+          - loc: 1,1
+      - formdata-node:
+          - msg: removed
+          - loc: 1,1
+      - forwarded:
+          - msg: removed
+          - loc: 1,1
+      - fresh:
+          - msg: removed
+          - loc: 1,1
+      - fs-extra:
+          - msg: removed
+          - loc: 1,1
+      - fs-minipass:
+          - msg: removed
+          - loc: 1,1
+      - fstream:
+          - msg: removed
+          - loc: 1,1
+      - function-bind:
+          - msg: removed
+          - loc: 1,1
+      - gauge:
+          - msg: removed
+          - loc: 1,1
+      - get-intrinsic:
+          - msg: removed
+          - loc: 1,1
+      - globals:
+          - old: 13.24.0
+          - new: 13.23.0
+          - loc: 325,10
+      - gopd:
+          - msg: removed
+          - loc: 1,1
+      - graceful-fs:
+          - msg: removed
+          - loc: 1,1
+      - graphql:
+          - msg: removed
+          - loc: 1,1
+      - graphql-yoga:
+          - msg: removed
+          - loc: 1,1
+      - has-property-descriptors:
+          - msg: removed
+          - loc: 1,1
+      - has-proto:
+          - msg: removed
+          - loc: 1,1
+      - has-symbols:
+          - msg: removed
+          - loc: 1,1
+      - has-unicode:
+          - msg: removed
+          - loc: 1,1
+      - hasown:
+          - msg: removed
+          - loc: 1,1
+      - he:
+          - msg: removed
+          - loc: 1,1
+      - html-encoding-sniffer:
+          - msg: removed
+          - loc: 1,1
+      - html-minifier:
+          - msg: removed
+          - loc: 1,1
+      - htmlparser:
+          - msg: removed
+          - loc: 1,1
+      - http-errors:
+          - msg: removed
+          - loc: 1,1
+      - http-proxy-agent:
+          - msg: removed
+          - loc: 1,1
+      - https-proxy-agent:
+          - msg: removed
+          - loc: 1,1
+      - iconv-lite:
+          - msg: removed
+          - loc: 1,1
+      - ignore:
+          - old: 5.3.1
+          - new: 5.2.4
+          - loc: 340,10
+      - ini:
+          - msg: removed
+          - loc: 1,1
+      - invert-kv:
+          - msg: removed
+          - loc: 1,1
+      - ipaddr.js:
+          - msg: removed
+          - loc: 1,1
+      - is-fullwidth-code-point:
+          - msg: removed
+          - loc: 1,1
+      - is-iojs:
+          - msg: removed
+          - loc: 1,1
+      - is-keyword-js:
+          - msg: removed
+          - loc: 1,1
+      - is-potential-custom-element-name:
+          - msg: removed
+          - loc: 1,1
+      - isarray:
+          - msg: removed
+          - loc: 1,1
+      - jsdom:
+          - msg: removed
+          - loc: 1,1
+      - jsonfile:
+          - msg: removed
+          - loc: 1,1
+      - lcid:
+          - msg: removed
+          - loc: 1,1
+      - listenercount:
+          - msg: removed
+          - loc: 1,1
+      - llvm-bindings:
+          - msg: removed
+          - loc: 1,1
+      - lodash:
+          - msg: removed
+          - loc: 1,1
+      - lodash.pad:
+          - msg: removed
+          - loc: 1,1
+      - lodash.padend:
+          - msg: removed
+          - loc: 1,1
+      - lodash.padstart:
+          - msg: removed
+          - loc: 1,1
+      - media-typer:
+          - msg: removed
+          - loc: 1,1
+      - memory-stream:
+          - msg: removed
+          - loc: 1,1
+      - merge-descriptors:
+          - msg: removed
+          - loc: 1,1
+      - merge-source-map:
+          - msg: removed
+          - loc: 1,1
+      - methods:
+          - msg: removed
+          - loc: 1,1
+      - mime:
+          - msg: removed
+          - loc: 1,1
+      - mime-db:
+          - msg: removed
+          - loc: 1,1
+      - mime-types:
+          - msg: removed
+          - loc: 1,1
+      - minimist:
+          - msg: removed
+          - loc: 1,1
+      - minipass:
+          - msg: removed
+          - loc: 1,1
+      - minizlib:
+          - msg: removed
+          - loc: 1,1
+      - mitata:
+          - old: 0.1.8
+          - new: 0.1.6
+          - loc: 415,10
+      - mjsunit.runner:
+          - msg: removed
+          - loc: 1,1
+      - mkdirp:
+          - msg: removed
+          - loc: 1,1
+      - ms:
+          - old: 2.1.3
+          - new: 2.1.2
+          - loc: 418,10
+      - negotiator:
+          - msg: removed
+          - loc: 1,1
+      - node-addon-api:
+          - msg: removed
+          - loc: 1,1
+      - node-domexception:
+          - msg: removed
+          - loc: 1,1
+      - node-fetch:
+          - msg: removed
+          - loc: 1,1
+      - npmlog:
+          - msg: removed
+          - loc: 1,1
+      - number-is-nan:
+          - msg: removed
+          - loc: 1,1
+      - nwsapi:
+          - msg: removed
+          - loc: 1,1
+      - object-inspect:
+          - msg: removed
+          - loc: 1,1
+      - on-finished:
+          - msg: removed
+          - loc: 1,1
+      - os-locale:
+          - msg: removed
+          - loc: 1,1
+      - parse5:
+          - msg: removed
+          - loc: 1,1
+      - parseurl:
+          - msg: removed
+          - loc: 1,1
+      - path-to-regexp:
+          - msg: removed
+          - loc: 1,1
+      - process-nextick-args:
+          - msg: removed
+          - loc: 1,1
+      - proxy-addr:
+          - msg: removed
+          - loc: 1,1
+      - psl:
+          - msg: removed
+          - loc: 1,1
+      - punycode:
+          - old: 2.3.1
+          - new: 2.3.0
+          - loc: 478,10
+      - pvtsutils:
+          - msg: removed
+          - loc: 1,1
+      - pvutils:
+          - msg: removed
+          - loc: 1,1
+      - qs:
+          - msg: removed
+          - loc: 1,1
+      - querystringify:
+          - msg: removed
+          - loc: 1,1
+      - range-parser:
+          - msg: removed
+          - loc: 1,1
+      - raw-body:
+          - msg: removed
+          - loc: 1,1
+      - rc:
+          - msg: removed
+          - loc: 1,1
+      - react:
+          - old: 18.3.0-canary-596827f6a-20240205
+          - new: 18.3.0-canary-09fbee89d-20231013
+          - loc: 484,10
+      - react-dom:
+          - old: 18.3.0-canary-596827f6a-20240205
+          - new: 18.3.0-canary-09fbee89d-20231013
+          - loc: 487,10
+      - readability:
+          - msg: removed
+          - loc: 1,1
+      - readable-stream:
+          - msg: removed
+          - loc: 1,1
+      - relateurl:
+          - msg: removed
+          - loc: 1,1
+      - requires-port:
+          - msg: removed
+          - loc: 1,1
+      - rrweb-cssom:
+          - msg: removed
+          - loc: 1,1
+      - safe-buffer:
+          - msg: removed
+          - loc: 1,1
+      - safer-buffer:
+          - msg: removed
+          - loc: 1,1
+      - saxes:
+          - msg: removed
+          - loc: 1,1
+      - scheduler:
+          - old: 0.24.0-canary-596827f6a-20240205
+          - new: 0.24.0-canary-09fbee89d-20231013
+          - loc: 502,10
+      - send:
+          - msg: removed
+          - loc: 1,1
+      - serve-static:
+          - msg: removed
+          - loc: 1,1
+      - set-function-length:
+          - msg: removed
+          - loc: 1,1
+      - setimmediate:
+          - msg: removed
+          - loc: 1,1
+      - setprototypeof:
+          - msg: removed
+          - loc: 1,1
+      - side-channel:
+          - msg: removed
+          - loc: 1,1
+      - source-map:
+          - msg: removed
+          - loc: 1,1
+      - splitargs:
+          - msg: removed
+          - loc: 1,1
+      - statuses:
+          - msg: removed
+          - loc: 1,1
+      - streamsearch:
+          - msg: removed
+          - loc: 1,1
+      - string-width:
+          - msg: removed
+          - loc: 1,1
+      - string_decoder:
+          - msg: removed
+          - loc: 1,1
+      - symbol-tree:
+          - msg: removed
+          - loc: 1,1
+      - tar:
+          - msg: removed
+          - loc: 1,1
+      - toidentifier:
+          - msg: removed
+          - loc: 1,1
+      - tough-cookie:
+          - msg: removed
+          - loc: 1,1
+      - tr46:
+          - msg: removed
+          - loc: 1,1
+      - traverse:
+          - msg: removed
+          - loc: 1,1
+      - type-is:
+          - msg: removed
+          - loc: 1,1
+      - typescript:
+          - old: 5.3.3
+          - new: 5.2.2
+          - loc: 553,10
+      - uglify-js:
+          - msg: removed
+          - loc: 1,1
+      - undici:
+          - msg: removed
+          - loc: 1,1
+      - undici-types:
+          - msg: removed
+          - loc: 1,1
+      - universalify:
+          - msg: removed
+          - loc: 1,1
+      - unpipe:
+          - msg: removed
+          - loc: 1,1
+      - unzipper:
+          - msg: removed
+          - loc: 1,1
+      - url-join:
+          - msg: removed
+          - loc: 1,1
+      - url-parse:
+          - msg: removed
+          - loc: 1,1
+      - util-deprecate:
+          - msg: removed
+          - loc: 1,1
+      - utils-merge:
+          - msg: removed
+          - loc: 1,1
+      - value-or-promise:
+          - msg: removed
+          - loc: 1,1
+      - vary:
+          - msg: removed
+          - loc: 1,1
+      - w3c-xmlserializer:
+          - msg: removed
+          - loc: 1,1
+      - web-streams-polyfill:
+          - msg: removed
+          - loc: 1,1
+      - webcrypto-core:
+          - msg: removed
+          - loc: 1,1
+      - webidl-conversions:
+          - msg: removed
+          - loc: 1,1
+      - whatwg-encoding:
+          - msg: removed
+          - loc: 1,1
+      - whatwg-mimetype:
+          - msg: removed
+          - loc: 1,1
+      - whatwg-url:
+          - msg: removed
+          - loc: 1,1
+      - window-size:
+          - msg: removed
+          - loc: 1,1
+      - word-wrap:
+          - msg: removed
+          - loc: 1,1
+      - wrap-ansi:
+          - msg: removed
+          - loc: 1,1
+      - ws:
+          - msg: removed
+          - loc: 1,1
+      - xml-name-validator:
+          - msg: removed
+          - loc: 1,1
+      - xmlchars:
+          - msg: removed
+          - loc: 1,1
+      - y18n:
+          - msg: removed
+          - loc: 1,1
+      - yargs:
+          - msg: removed
+          - loc: 1,1
+package.json:
+  constraints:
+    - art-template:
+        - msg: removed
+        - loc: 1,1
+    - core-js:
+        - msg: removed
+        - loc: 1,1
+    - edgedb:
+        - msg: removed
+        - loc: 1,1
+    - esbuild:
+        - old: ^0.20.0
+        - new: ^0.17.15
+        - loc: 1,1
+    - express:
+        - msg: removed
+        - loc: 1,1
+    - graphql:
+        - msg: removed
+        - loc: 1,1
+    - graphql-yoga:
+        - msg: removed
+        - loc: 1,1
+    - jsdom:
+        - msg: removed
+        - loc: 1,1
+    - llvm-bindings:
+        - msg: removed
+        - loc: 1,1
+    - readability:
+        - msg: removed
+        - loc: 1,1
+packages/bun-types/package.json:
+  constraints:
+    - prettier:
+        - msg: removed
+        - loc: 1,1
+    - "@biomejs/biome":
+        - new: ^1.5.3
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 54
+  timestamp: 2024-02-05T20:50:09Z
+  hashing_strategy: raw
+  data_hash: 163ba1db066fbfecf4d67b3834bff7d028ca6c4a77f16b8d878680bc85cfc7be
+  prev_meta_hash: 66c6f46cd4665c710a71ecc4633e28e576ca2e63fb24ac34b124413bee32c03b
+  meta_hash: 538a7daed9abfb8673e1f3426c4a7710bf3fc51e74ed9bf99fe92254c5e0e226
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@biomejs/biome":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-darwin-arm64":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-darwin-x64":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-linux-arm64":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-linux-arm64-musl":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-linux-x64":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-linux-x64-musl":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-win32-arm64":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-win32-x64":
+          - msg: removed
+          - loc: 1,1
+      - prettier:
+          - old: 3.2.2
+          - new: 3.2.5
+          - loc: 448,10
+package.json:
+  constraints:
+    - "@biomejs/biome":
+        - msg: removed
+        - loc: 1,1
+    - prettier:
+        - old: 3.2.2
+        - new: ^3.2.5
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 55
+  timestamp: 2024-02-26T19:13:02Z
+  hashing_strategy: raw
+  data_hash: 73632add49bb5a2f3cd2e72beac5f846ba7b51b77865fa617b55283c0d4b754d
+  prev_meta_hash: 538a7daed9abfb8673e1f3426c4a7710bf3fc51e74ed9bf99fe92254c5e0e226
+  meta_hash: 3d0f0e61783a50207be4bf46df9532684c6bcf1a43f90b561de2f59cd6c30655
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@aashutoshrathi/word-wrap":
+          - msg: removed
+          - loc: 1,1
+      - "@eslint-community/regexpp":
+          - old: 4.9.1
+          - new: 4.10.0
+          - loc: 121,10
+      - "@eslint/eslintrc":
+          - old: 2.1.2
+          - new: 2.1.4
+          - loc: 124,10
+      - "@eslint/js":
+          - old: 8.51.0
+          - new: 8.57.0
+          - loc: 127,10
+      - "@humanwhocodes/config-array":
+          - old: 0.11.11
+          - new: 0.11.14
+          - loc: 130,10
+      - "@humanwhocodes/object-schema":
+          - old: 1.2.1
+          - new: 2.0.3
+          - loc: 136,10
+      - "@types/json-schema":
+          - old: 7.0.13
+          - new: 7.0.15
+          - loc: 154,10
+      - "@types/prop-types":
+          - old: 15.7.8
+          - new: 15.7.12
+          - loc: 163,10
+      - "@types/react":
+          - old: 18.2.28
+          - new: 18.3.2
+          - loc: 166,10
+      - "@types/scheduler":
+          - msg: removed
+          - loc: 1,1
+      - "@types/semver":
+          - old: 7.5.3
+          - new: 7.5.8
+          - loc: 169,10
+      - "@typescript-eslint/eslint-plugin":
+          - old: 5.62.0
+          - new: 6.21.0
+          - loc: 175,10
+      - "@typescript-eslint/parser":
+          - old: 5.62.0
+          - new: 6.21.0
+          - loc: 178,10
+      - "@typescript-eslint/scope-manager":
+          - old: 5.62.0
+          - new: 6.21.0
+          - loc: 181,10
+      - "@typescript-eslint/type-utils":
+          - old: 5.62.0
+          - new: 6.21.0
+          - loc: 184,10
+      - "@typescript-eslint/types":
+          - old: 5.62.0
+          - new: 6.21.0
+          - loc: 187,10
+      - "@typescript-eslint/typescript-estree":
+          - old: 5.62.0
+          - new: 6.21.0
+          - loc: 190,10
+      - "@typescript-eslint/utils":
+          - old: 5.62.0
+          - new: 6.21.0
+          - loc: 193,10
+      - "@typescript-eslint/visitor-keys":
+          - old: 5.62.0
+          - new: 6.21.0
+          - loc: 196,10
+      - "@vscode/debugadapter":
+          - old: 1.63.0
+          - new: 1.65.0
+          - loc: 202,10
+      - "@vscode/debugprotocol":
+          - old: 1.63.0
+          - new: 1.65.0
+          - loc: 205,10
+      - acorn:
+          - old: 8.10.0
+          - new: 8.11.3
+          - loc: 208,10
+      - brace-expansion:
+          - old: 1.1.11
+          - new: 2.0.1
+          - loc: 289,10
+      - csstype:
+          - old: 3.1.2
+          - new: 3.1.3
+          - loc: 376,10
+      - eslint:
+          - old: 8.51.0
+          - new: 8.57.0
+          - loc: 457,10
+      - fast-glob:
+          - old: 3.3.1
+          - new: 3.3.2
+          - loc: 511,10
+      - fastq:
+          - old: 1.15.0
+          - new: 1.17.1
+          - loc: 520,10
+      - flat-cache:
+          - old: 3.1.1
+          - new: 3.2.0
+          - loc: 532,10
+      - flatted:
+          - old: 3.2.9
+          - new: 3.3.1
+          - loc: 535,10
+      - globals:
+          - old: 13.23.0
+          - new: 13.24.0
+          - loc: 583,10
+      - ignore:
+          - old: 5.2.4
+          - new: 5.3.1
+          - loc: 643,10
+      - isexe:
+          - old: 2.0.0
+          - new: 3.1.1
+          - loc: 727,10
+      - js-tokens:
+          - old: 4.0.0
+          - new: 3.0.2
+          - loc: 733,10
+      - loose-envify:
+          - msg: removed
+          - loc: 1,1
+      - minimatch:
+          - old: 3.1.2
+          - new: 9.0.3
+          - loc: 802,10
+      - mitata:
+          - old: 0.1.6
+          - new: 0.1.11
+          - loc: 814,10
+      - optionator:
+          - old: 0.9.3
+          - new: 0.9.4
+          - loc: 871,10
+      - punycode:
+          - old: 2.3.0
+          - new: 2.3.1
+          - loc: 931,10
+      - react:
+          - old: 18.3.0-canary-09fbee89d-20231013
+          - new: 19.0.0-rc-915b914b3a-20240515
+          - loc: 943,10
+      - react-dom:
+          - old: 18.3.0-canary-09fbee89d-20231013
+          - new: 19.0.0-rc-915b914b3a-20240515
+          - loc: 946,10
+      - scheduler:
+          - old: 0.24.0-canary-09fbee89d-20231013
+          - new: 0.25.0-rc-915b914b3a-20240515
+          - loc: 991,10
+      - semver:
+          - old: 7.5.4
+          - new: 7.6.2
+          - loc: 994,10
+      - source-map-js:
+          - old: 1.0.2
+          - new: 1.2.0
+          - loc: 1030,10
+      - typescript:
+          - old: 5.2.2
+          - new: 5.4.5
+          - loc: 1147,10
+      - which:
+          - old: 2.0.2
+          - new: 4.0.0
+          - loc: 1180,10
+      - "@biomejs/biome":
+          - new: 1.7.3
+          - loc: 4,10
+      - "@biomejs/cli-darwin-arm64":
+          - new: 1.7.3
+          - loc: 7,10
+      - "@biomejs/cli-darwin-x64":
+          - new: 1.7.3
+          - loc: 10,10
+      - "@biomejs/cli-linux-arm64":
+          - new: 1.7.3
+          - loc: 13,10
+      - "@biomejs/cli-linux-arm64-musl":
+          - new: 1.7.3
+          - loc: 16,10
+      - "@biomejs/cli-linux-x64":
+          - new: 1.7.3
+          - loc: 19,10
+      - "@biomejs/cli-linux-x64-musl":
+          - new: 1.7.3
+          - loc: 22,10
+      - "@biomejs/cli-win32-arm64":
+          - new: 1.7.3
+          - loc: 25,10
+      - "@biomejs/cli-win32-x64":
+          - new: 1.7.3
+          - loc: 28,10
+      - "@definitelytyped/dts-critic":
+          - new: 0.0.191
+          - loc: 31,10
+      - "@definitelytyped/dtslint":
+          - new: 0.0.199
+          - loc: 34,10
+      - "@definitelytyped/eslint-plugin":
+          - new: 0.0.197
+          - loc: 37,10
+      - "@definitelytyped/header-parser":
+          - new: 0.0.190
+          - loc: 40,10
+      - "@definitelytyped/typescript-versions":
+          - new: 0.0.182
+          - loc: 43,10
+      - "@definitelytyped/utils":
+          - new: 0.0.188
+          - loc: 46,10
+      - "@es-joy/jsdoccomment":
+          - new: 0.39.4
+          - loc: 49,10
+      - "@qiwi/npm-registry-client":
+          - new: 8.9.1
+          - loc: 148,10
+      - "@types/bun":
+          - new: 1.1.2
+          - loc: 151,10
+      - "@types/json5":
+          - new: 0.0.29
+          - loc: 157,10
+      - "@types/node":
+          - new: 20.12.12
+          - loc: 160,10
+      - "@types/ws":
+          - new: 8.5.10
+          - loc: 172,10
+      - "@ungap/structured-clone":
+          - new: 1.2.0
+          - loc: 199,10
+      - aproba:
+          - new: 1.2.0
+          - loc: 223,10
+      - are-docs-informative:
+          - new: 0.0.2
+          - loc: 226,10
+      - are-we-there-yet:
+          - new: 1.1.7
+          - loc: 229,10
+      - array-buffer-byte-length:
+          - new: 1.0.1
+          - loc: 235,10
+      - array-includes:
+          - new: 3.1.8
+          - loc: 238,10
+      - array.prototype.findlastindex:
+          - new: 1.2.5
+          - loc: 244,10
+      - array.prototype.flat:
+          - new: 1.3.2
+          - loc: 247,10
+      - array.prototype.flatmap:
+          - new: 1.3.2
+          - loc: 250,10
+      - arraybuffer.prototype.slice:
+          - new: 1.0.3
+          - loc: 253,10
+      - asn1:
+          - new: 0.2.6
+          - loc: 256,10
+      - assert-plus:
+          - new: 1.0.0
+          - loc: 259,10
+      - asynckit:
+          - new: 0.4.0
+          - loc: 262,10
+      - available-typed-arrays:
+          - new: 1.0.7
+          - loc: 265,10
+      - aws-sign2:
+          - new: 0.7.0
+          - loc: 268,10
+      - aws4:
+          - new: 1.12.0
+          - loc: 271,10
+      - b4a:
+          - new: 1.6.6
+          - loc: 274,10
+      - babel-code-frame:
+          - new: 6.26.0
+          - loc: 277,10
+      - bare-events:
+          - new: 2.2.2
+          - loc: 283,10
+      - bcrypt-pbkdf:
+          - new: 1.0.2
+          - loc: 286,10
+      - buffer-from:
+          - new: 1.1.2
+          - loc: 295,10
+      - builtin-modules:
+          - new: 1.1.1
+          - loc: 298,10
+      - builtins:
+          - new: 1.0.3
+          - loc: 301,10
+      - bun-types:
+          - new: workspace:packages/bun-types
+          - loc: 304,10
+      - call-bind:
+          - new: 1.0.7
+          - loc: 307,10
+      - caseless:
+          - new: 0.12.0
+          - loc: 319,10
+      - charm:
+          - new: 1.0.2
+          - loc: 328,10
+      - chownr:
+          - new: 2.0.0
+          - loc: 331,10
+      - cliui:
+          - new: 8.0.1
+          - loc: 334,10
+      - code-point-at:
+          - new: 1.1.0
+          - loc: 337,10
+      - combined-stream:
+          - new: 1.0.8
+          - loc: 346,10
+      - command-exists:
+          - new: 1.2.9
+          - loc: 349,10
+      - commander:
+          - new: 2.20.3
+          - loc: 352,10
+      - comment-parser:
+          - new: 1.3.1
+          - loc: 355,10
+      - concat-stream:
+          - new: 2.0.0
+          - loc: 361,10
+      - console-control-strings:
+          - new: 1.1.0
+          - loc: 364,10
+      - core-util-is:
+          - new: 1.0.3
+          - loc: 370,10
+      - dashdash:
+          - new: 1.14.1
+          - loc: 379,10
+      - data-view-buffer:
+          - new: 1.0.1
+          - loc: 382,10
+      - data-view-byte-length:
+          - new: 1.0.1
+          - loc: 385,10
+      - data-view-byte-offset:
+          - new: 1.0.0
+          - loc: 388,10
+      - define-data-property:
+          - new: 1.1.4
+          - loc: 397,10
+      - define-properties:
+          - new: 1.2.1
+          - loc: 400,10
+      - delayed-stream:
+          - new: 1.0.0
+          - loc: 403,10
+      - delegates:
+          - new: 1.0.0
+          - loc: 406,10
+      - diff:
+          - new: 3.5.0
+          - loc: 409,10
+      - ecc-jsbn:
+          - new: 0.1.2
+          - loc: 421,10
+      - emoji-regex:
+          - new: 8.0.0
+          - loc: 424,10
+      - es-abstract:
+          - new: 1.23.3
+          - loc: 427,10
+      - es-define-property:
+          - new: 1.0.0
+          - loc: 430,10
+      - es-errors:
+          - new: 1.3.0
+          - loc: 433,10
+      - es-object-atoms:
+          - new: 1.0.0
+          - loc: 436,10
+      - es-set-tostringtag:
+          - new: 2.0.3
+          - loc: 439,10
+      - es-shim-unscopables:
+          - new: 1.0.2
+          - loc: 442,10
+      - es-to-primitive:
+          - new: 1.2.1
+          - loc: 445,10
+      - escalade:
+          - new: 3.1.2
+          - loc: 451,10
+      - eslint-import-resolver-node:
+          - new: 0.3.9
+          - loc: 463,10
+      - eslint-module-utils:
+          - new: 2.8.1
+          - loc: 466,10
+      - eslint-plugin-import:
+          - new: 2.29.1
+          - loc: 469,10
+      - eslint-plugin-jsdoc:
+          - new: 44.2.7
+          - loc: 472,10
+      - esprima:
+          - new: 4.0.1
+          - loc: 484,10
+      - extend:
+          - new: 3.0.2
+          - loc: 499,10
+      - extsprintf:
+          - new: 1.3.0
+          - loc: 502,10
+      - fast-fifo:
+          - new: 1.3.2
+          - loc: 508,10
+      - for-each:
+          - new: 0.3.3
+          - loc: 538,10
+      - forever-agent:
+          - new: 0.6.1
+          - loc: 541,10
+      - form-data:
+          - new: 2.3.3
+          - loc: 544,10
+      - fs-minipass:
+          - new: 2.1.0
+          - loc: 547,10
+      - function-bind:
+          - new: 1.1.2
+          - loc: 553,10
+      - function.prototype.name:
+          - new: 1.1.6
+          - loc: 556,10
+      - functions-have-names:
+          - new: 1.2.3
+          - loc: 559,10
+      - gauge:
+          - new: 2.7.4
+          - loc: 562,10
+      - get-caller-file:
+          - new: 2.0.5
+          - loc: 565,10
+      - get-intrinsic:
+          - new: 1.2.4
+          - loc: 568,10
+      - get-symbol-description:
+          - new: 1.0.2
+          - loc: 571,10
+      - getpass:
+          - new: 0.1.7
+          - loc: 574,10
+      - globalthis:
+          - new: 1.0.4
+          - loc: 586,10
+      - gopd:
+          - new: 1.0.1
+          - loc: 592,10
+      - graceful-fs:
+          - new: 4.2.11
+          - loc: 595,10
+      - har-schema:
+          - new: 2.0.0
+          - loc: 601,10
+      - har-validator:
+          - new: 5.1.5
+          - loc: 604,10
+      - has-ansi:
+          - new: 2.0.0
+          - loc: 607,10
+      - has-bigints:
+          - new: 1.0.2
+          - loc: 610,10
+      - has-property-descriptors:
+          - new: 1.0.2
+          - loc: 616,10
+      - has-proto:
+          - new: 1.0.3
+          - loc: 619,10
+      - has-symbols:
+          - new: 1.0.3
+          - loc: 622,10
+      - has-tostringtag:
+          - new: 1.0.2
+          - loc: 625,10
+      - has-unicode:
+          - new: 2.0.1
+          - loc: 628,10
+      - hasown:
+          - new: 2.0.2
+          - loc: 631,10
+      - hosted-git-info:
+          - new: 4.1.0
+          - loc: 637,10
+      - http-signature:
+          - new: 1.2.0
+          - loc: 640,10
+      - internal-slot:
+          - new: 1.0.7
+          - loc: 658,10
+      - is-array-buffer:
+          - new: 3.0.4
+          - loc: 661,10
+      - is-bigint:
+          - new: 1.0.4
+          - loc: 664,10
+      - is-boolean-object:
+          - new: 1.1.2
+          - loc: 667,10
+      - is-callable:
+          - new: 1.2.7
+          - loc: 670,10
+      - is-core-module:
+          - new: 2.13.1
+          - loc: 673,10
+      - is-data-view:
+          - new: 1.0.1
+          - loc: 676,10
+      - is-date-object:
+          - new: 1.0.5
+          - loc: 679,10
+      - is-fullwidth-code-point:
+          - new: 3.0.0
+          - loc: 685,10
+      - is-negative-zero:
+          - new: 2.0.3
+          - loc: 691,10
+      - is-number-object:
+          - new: 1.0.7
+          - loc: 697,10
+      - is-regex:
+          - new: 1.1.4
+          - loc: 703,10
+      - is-shared-array-buffer:
+          - new: 1.0.3
+          - loc: 706,10
+      - is-string:
+          - new: 1.0.7
+          - loc: 709,10
+      - is-symbol:
+          - new: 1.0.4
+          - loc: 712,10
+      - is-typed-array:
+          - new: 1.1.13
+          - loc: 715,10
+      - is-typedarray:
+          - new: 1.0.0
+          - loc: 718,10
+      - is-weakref:
+          - new: 1.0.2
+          - loc: 721,10
+      - isarray:
+          - new: 2.0.5
+          - loc: 724,10
+      - isstream:
+          - new: 0.1.2
+          - loc: 730,10
+      - jsbn:
+          - new: 0.1.1
+          - loc: 739,10
+      - jsdoc-type-pratt-parser:
+          - new: 4.0.0
+          - loc: 742,10
+      - json-schema:
+          - new: 0.4.0
+          - loc: 748,10
+      - json-stable-stringify:
+          - new: 1.1.1
+          - loc: 754,10
+      - json-stringify-safe:
+          - new: 5.0.1
+          - loc: 760,10
+      - json5:
+          - new: 1.0.2
+          - loc: 763,10
+      - jsonify:
+          - new: 0.0.1
+          - loc: 766,10
+      - jsprim:
+          - new: 1.4.2
+          - loc: 769,10
+      - mime-db:
+          - new: 1.52.0
+          - loc: 796,10
+      - mime-types:
+          - new: 2.1.35
+          - loc: 799,10
+      - minimist:
+          - new: 1.2.8
+          - loc: 805,10
+      - minipass:
+          - new: 5.0.0
+          - loc: 808,10
+      - minizlib:
+          - new: 2.1.2
+          - loc: 811,10
+      - mkdirp:
+          - new: 1.0.4
+          - loc: 817,10
+      - normalize-package-data:
+          - new: 3.0.3
+          - loc: 832,10
+      - npm-package-arg:
+          - new: 8.1.5
+          - loc: 835,10
+      - npmlog:
+          - new: 4.1.2
+          - loc: 838,10
+      - number-is-nan:
+          - new: 1.0.1
+          - loc: 841,10
+      - oauth-sign:
+          - new: 0.9.0
+          - loc: 844,10
+      - object-assign:
+          - new: 4.1.1
+          - loc: 847,10
+      - object-inspect:
+          - new: 1.13.1
+          - loc: 850,10
+      - object-keys:
+          - new: 1.1.1
+          - loc: 853,10
+      - object.assign:
+          - new: 4.1.5
+          - loc: 856,10
+      - object.fromentries:
+          - new: 2.0.8
+          - loc: 859,10
+      - object.groupby:
+          - new: 1.0.3
+          - loc: 862,10
+      - object.values:
+          - new: 1.2.0
+          - loc: 865,10
+      - path-parse:
+          - new: 1.0.7
+          - loc: 901,10
+      - performance-now:
+          - new: 2.1.0
+          - loc: 910,10
+      - possible-typed-array-names:
+          - new: 1.0.0
+          - loc: 916,10
+      - process-nextick-args:
+          - new: 2.0.1
+          - loc: 925,10
+      - psl:
+          - new: 1.9.0
+          - loc: 928,10
+      - qs:
+          - new: 6.5.3
+          - loc: 934,10
+      - queue-tick:
+          - new: 1.0.1
+          - loc: 940,10
+      - readable-stream:
+          - new: 3.6.2
+          - loc: 949,10
+      - regexp.prototype.flags:
+          - new: 1.5.2
+          - loc: 952,10
+      - request:
+          - new: 2.88.2
+          - loc: 955,10
+      - require-directory:
+          - new: 2.1.1
+          - loc: 958,10
+      - resolve:
+          - new: 1.22.8
+          - loc: 961,10
+      - retry:
+          - new: 0.12.0
+          - loc: 967,10
+      - safe-array-concat:
+          - new: 1.1.2
+          - loc: 979,10
+      - safe-buffer:
+          - new: 5.2.1
+          - loc: 982,10
+      - safe-regex-test:
+          - new: 1.0.3
+          - loc: 985,10
+      - safer-buffer:
+          - new: 2.1.2
+          - loc: 988,10
+      - set-blocking:
+          - new: 2.0.0
+          - loc: 1000,10
+      - set-function-length:
+          - new: 1.2.2
+          - loc: 1003,10
+      - set-function-name:
+          - new: 2.0.2
+          - loc: 1006,10
+      - side-channel:
+          - new: 1.0.6
+          - loc: 1015,10
+      - signal-exit:
+          - new: 3.0.7
+          - loc: 1018,10
+      - slide:
+          - new: 1.1.6
+          - loc: 1024,10
+      - spdx-correct:
+          - new: 3.2.0
+          - loc: 1033,10
+      - spdx-exceptions:
+          - new: 2.5.0
+          - loc: 1036,10
+      - spdx-expression-parse:
+          - new: 3.0.1
+          - loc: 1039,10
+      - spdx-license-ids:
+          - new: 3.0.17
+          - loc: 1042,10
+      - sprintf-js:
+          - new: 1.0.3
+          - loc: 1045,10
+      - sshpk:
+          - new: 1.18.0
+          - loc: 1048,10
+      - ssri:
+          - new: 8.0.1
+          - loc: 1051,10
+      - streamx:
+          - new: 2.16.1
+          - loc: 1054,10
+      - string-width:
+          - new: 4.2.3
+          - loc: 1057,10
+      - string.prototype.trim:
+          - new: 1.2.9
+          - loc: 1060,10
+      - string.prototype.trimend:
+          - new: 1.0.8
+          - loc: 1063,10
+      - string.prototype.trimstart:
+          - new: 1.0.8
+          - loc: 1066,10
+      - string_decoder:
+          - new: 1.3.0
+          - loc: 1069,10
+      - strip-bom:
+          - new: 3.0.0
+          - loc: 1075,10
+      - supports-preserve-symlinks-flag:
+          - new: 1.0.0
+          - loc: 1084,10
+      - tar:
+          - new: 6.2.1
+          - loc: 1087,10
+      - tar-stream:
+          - new: 3.1.7
+          - loc: 1090,10
+      - tmp:
+          - new: 0.2.3
+          - loc: 1096,10
+      - tough-cookie:
+          - new: 2.5.0
+          - loc: 1102,10
+      - ts-api-utils:
+          - new: 1.3.0
+          - loc: 1105,10
+      - tsconfig-paths:
+          - new: 3.15.0
+          - loc: 1108,10
+      - tslint:
+          - new: 5.14.0
+          - loc: 1114,10
+      - tunnel-agent:
+          - new: 0.6.0
+          - loc: 1120,10
+      - tweetnacl:
+          - new: 0.14.5
+          - loc: 1123,10
+      - typed-array-buffer:
+          - new: 1.0.2
+          - loc: 1132,10
+      - typed-array-byte-length:
+          - new: 1.0.1
+          - loc: 1135,10
+      - typed-array-byte-offset:
+          - new: 1.0.2
+          - loc: 1138,10
+      - typed-array-length:
+          - new: 1.0.6
+          - loc: 1141,10
+      - typedarray:
+          - new: 0.0.6
+          - loc: 1144,10
+      - unbox-primitive:
+          - new: 1.0.2
+          - loc: 1150,10
+      - undici-types:
+          - new: 5.26.5
+          - loc: 1153,10
+      - util-deprecate:
+          - new: 1.0.2
+          - loc: 1165,10
+      - uuid:
+          - new: 3.4.0
+          - loc: 1168,10
+      - validate-npm-package-license:
+          - new: 3.0.4
+          - loc: 1171,10
+      - validate-npm-package-name:
+          - new: 3.0.0
+          - loc: 1174,10
+      - verror:
+          - new: 1.10.0
+          - loc: 1177,10
+      - which-boxed-primitive:
+          - new: 1.0.2
+          - loc: 1183,10
+      - which-typed-array:
+          - new: 1.1.15
+          - loc: 1186,10
+      - wide-align:
+          - new: 1.1.5
+          - loc: 1189,10
+      - word-wrap:
+          - new: 1.2.5
+          - loc: 1192,10
+      - wrap-ansi:
+          - new: 7.0.0
+          - loc: 1195,10
+      - y18n:
+          - new: 5.0.8
+          - loc: 1201,10
+      - yargs:
+          - new: 17.7.2
+          - loc: 1207,10
+      - yargs-parser:
+          - new: 21.1.1
+          - loc: 1210,10
+package.json:
+  constraints:
+    - "@types/bun":
+        - new: ^1.1.2
+        - loc: 1,1
+packages/bun-types/package.json:
+  constraints:
+    - "@types/node":
+        - old: ~20.11.3
+        - new: ~20.12.8
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 56
+  timestamp: 2024-05-16T07:46:28Z
+  hashing_strategy: raw
+  data_hash: 58d4bd4584c17d8cc850a05ec4850e11977a1ef3b46b95ee3a2c432b0928a388
+  prev_meta_hash: 3d0f0e61783a50207be4bf46df9532684c6bcf1a43f90b561de2f59cd6c30655
+  meta_hash: dd08d509bdcd9be73a3c7881421c80d4934573e136e903d5c87560de7ead7c6d
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - react:
+          - old: 19.0.0-rc-915b914b3a-20240515
+          - new: 18.3.1
+          - loc: 946,10
+      - react-dom:
+          - old: 19.0.0-rc-915b914b3a-20240515
+          - new: 18.3.1
+          - loc: 949,10
+      - scheduler:
+          - old: 0.25.0-rc-915b914b3a-20240515
+          - new: 0.23.2
+          - loc: 994,10
+      - loose-envify:
+          - new: 1.4.0
+          - loc: 784,10
+package.json:
+  constraints:
+    - react:
+        - old: next
+        - new: ^18.2.0
+        - loc: 1,1
+    - react-dom:
+        - old: next
+        - new: ^18.2.0
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 57
+  timestamp: 2024-05-16T22:53:13Z
+  hashing_strategy: raw
+  data_hash: ff18c9939bb4581c7b9ce92cd80d18c32ffca6c2402e1f348d3021e075ca1a99
+  prev_meta_hash: dd08d509bdcd9be73a3c7881421c80d4934573e136e903d5c87560de7ead7c6d
+  meta_hash: 2bf5162d2b349ed99be9beb3ac1f425cbd32883abadb3928a7a0042ccd549db6
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@esbuild/android-arm":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 55,10
+      - "@esbuild/android-arm64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 58,10
+      - "@esbuild/android-x64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 61,10
+      - "@esbuild/darwin-arm64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 64,10
+      - "@esbuild/darwin-x64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 67,10
+      - "@esbuild/freebsd-arm64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 70,10
+      - "@esbuild/freebsd-x64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 73,10
+      - "@esbuild/linux-arm":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 76,10
+      - "@esbuild/linux-arm64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 79,10
+      - "@esbuild/linux-ia32":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 82,10
+      - "@esbuild/linux-loong64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 85,10
+      - "@esbuild/linux-mips64el":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 88,10
+      - "@esbuild/linux-ppc64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 91,10
+      - "@esbuild/linux-riscv64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 94,10
+      - "@esbuild/linux-s390x":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 97,10
+      - "@esbuild/linux-x64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 100,10
+      - "@esbuild/netbsd-x64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 103,10
+      - "@esbuild/openbsd-x64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 106,10
+      - "@esbuild/sunos-x64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 109,10
+      - "@esbuild/win32-arm64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 112,10
+      - "@esbuild/win32-ia32":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 115,10
+      - "@esbuild/win32-x64":
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 118,10
+      - "@eslint/eslintrc":
+          - old: 2.1.4
+          - new: 3.1.0
+          - loc: 130,10
+      - "@eslint/js":
+          - old: 8.57.0
+          - new: 9.4.0
+          - loc: 133,10
+      - "@types/bun":
+          - old: 1.1.2
+          - new: 1.1.3
+          - loc: 163,10
+      - "@types/react":
+          - old: 18.3.2
+          - new: 18.3.3
+          - loc: 178,10
+      - "@typescript-eslint/eslint-plugin":
+          - old: 6.21.0
+          - new: 7.11.0
+          - loc: 187,10
+      - "@typescript-eslint/parser":
+          - old: 6.21.0
+          - new: 7.11.0
+          - loc: 190,10
+      - "@typescript-eslint/scope-manager":
+          - old: 6.21.0
+          - new: 7.11.0
+          - loc: 193,10
+      - "@typescript-eslint/type-utils":
+          - old: 6.21.0
+          - new: 7.11.0
+          - loc: 196,10
+      - "@typescript-eslint/types":
+          - old: 6.21.0
+          - new: 7.11.0
+          - loc: 199,10
+      - "@typescript-eslint/typescript-estree":
+          - old: 6.21.0
+          - new: 7.11.0
+          - loc: 202,10
+      - "@typescript-eslint/utils":
+          - old: 6.21.0
+          - new: 7.11.0
+          - loc: 205,10
+      - "@typescript-eslint/visitor-keys":
+          - old: 6.21.0
+          - new: 7.11.0
+          - loc: 208,10
+      - esbuild:
+          - old: 0.17.19
+          - new: 0.21.4
+          - loc: 460,10
+      - eslint:
+          - old: 8.57.0
+          - new: 9.4.0
+          - loc: 469,10
+      - eslint-config-prettier:
+          - old: 8.10.0
+          - new: 9.1.0
+          - loc: 472,10
+      - eslint-scope:
+          - old: 7.2.2
+          - new: 8.0.1
+          - loc: 487,10
+      - eslint-visitor-keys:
+          - old: 3.4.3
+          - new: 4.0.0
+          - loc: 490,10
+      - espree:
+          - old: 9.6.1
+          - new: 10.0.1
+          - loc: 493,10
+      - file-entry-cache:
+          - old: 6.0.1
+          - new: 8.0.0
+          - loc: 535,10
+      - flat-cache:
+          - old: 3.2.0
+          - new: 4.0.1
+          - loc: 544,10
+      - globals:
+          - old: 13.24.0
+          - new: 14.0.0
+          - loc: 595,10
+      - minimatch:
+          - old: 9.0.3
+          - new: 9.0.4
+          - loc: 817,10
+      - natural-compare-lite:
+          - msg: removed
+          - loc: 1,1
+      - tsutils:
+          - old: 3.21.0
+          - new: 2.29.0
+          - loc: 1129,10
+      - "@esbuild/aix-ppc64":
+          - new: 0.21.4
+          - loc: 52,10
+      - "@eslint/config-array":
+          - new: 0.15.1
+          - loc: 127,10
+      - "@eslint/object-schema":
+          - new: 2.1.3
+          - loc: 136,10
+      - "@humanwhocodes/retry":
+          - new: 0.3.0
+          - loc: 148,10
+package.json:
+  constraints:
+    - "@vscode/debugadapter":
+        - old: ^1.61.0
+        - new: ^1.65.0
+        - loc: 1,1
+    - esbuild:
+        - old: ^0.17.15
+        - new: ^0.21.4
+        - loc: 1,1
+    - eslint:
+        - old: ^8.20.0
+        - new: ^9.4.0
+        - loc: 1,1
+    - eslint-config-prettier:
+        - old: ^8.5.0
+        - new: ^9.1.0
+        - loc: 1,1
+    - mitata:
+        - old: ^0.1.3
+        - new: ^0.1.11
+        - loc: 1,1
+    - react:
+        - old: ^18.2.0
+        - new: ^18.3.1
+        - loc: 1,1
+    - react-dom:
+        - old: ^18.2.0
+        - new: ^18.3.1
+        - loc: 1,1
+    - source-map-js:
+        - old: ^1.0.2
+        - new: ^1.2.0
+        - loc: 1,1
+    - typescript:
+        - old: ^5.0.2
+        - new: ^5.4.5
+        - loc: 1,1
+    - "@types/bun":
+        - old: ^1.1.2
+        - new: ^1.1.3
+        - loc: 1,1
+    - "@types/react":
+        - old: ^18.0.25
+        - new: ^18.3.3
+        - loc: 1,1
+    - "@typescript-eslint/eslint-plugin":
+        - old: ^5.31.0
+        - new: ^7.11.0
+        - loc: 1,1
+    - "@typescript-eslint/parser":
+        - old: ^5.31.0
+        - new: ^7.11.0
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 58
+  timestamp: 2024-06-27T21:56:07Z
+  hashing_strategy: raw
+  data_hash: 517ec18969759e3ef34a2e3a0487dc80da984817fbfeec8b39997941b6df61d5
+  prev_meta_hash: 2bf5162d2b349ed99be9beb3ac1f425cbd32883abadb3928a7a0042ccd549db6
+  meta_hash: 8f214af3a2603ade6f4bd683ea98803a231c6386c9a32c9b3a7c989c411dc9be
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@biomejs/biome":
+          - old: 1.7.3
+          - new: 1.8.3
+          - loc: 4,10
+      - "@biomejs/cli-darwin-arm64":
+          - old: 1.7.3
+          - new: 1.8.3
+          - loc: 7,10
+      - "@biomejs/cli-darwin-x64":
+          - old: 1.7.3
+          - new: 1.8.3
+          - loc: 10,10
+      - "@biomejs/cli-linux-arm64":
+          - old: 1.7.3
+          - new: 1.8.3
+          - loc: 13,10
+      - "@biomejs/cli-linux-arm64-musl":
+          - old: 1.7.3
+          - new: 1.8.3
+          - loc: 16,10
+      - "@biomejs/cli-linux-x64":
+          - old: 1.7.3
+          - new: 1.8.3
+          - loc: 19,10
+      - "@biomejs/cli-linux-x64-musl":
+          - old: 1.7.3
+          - new: 1.8.3
+          - loc: 22,10
+      - "@biomejs/cli-win32-arm64":
+          - old: 1.7.3
+          - new: 1.8.3
+          - loc: 25,10
+      - "@biomejs/cli-win32-x64":
+          - old: 1.7.3
+          - new: 1.8.3
+          - loc: 28,10
+      - "@esbuild/aix-ppc64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 52,10
+      - "@esbuild/android-arm":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 55,10
+      - "@esbuild/android-arm64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 58,10
+      - "@esbuild/android-x64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 61,10
+      - "@esbuild/darwin-arm64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 64,10
+      - "@esbuild/darwin-x64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 67,10
+      - "@esbuild/freebsd-arm64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 70,10
+      - "@esbuild/freebsd-x64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 73,10
+      - "@esbuild/linux-arm":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 76,10
+      - "@esbuild/linux-arm64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 79,10
+      - "@esbuild/linux-ia32":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 82,10
+      - "@esbuild/linux-loong64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 85,10
+      - "@esbuild/linux-mips64el":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 88,10
+      - "@esbuild/linux-ppc64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 91,10
+      - "@esbuild/linux-riscv64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 94,10
+      - "@esbuild/linux-s390x":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 97,10
+      - "@esbuild/linux-x64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 100,10
+      - "@esbuild/netbsd-x64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 103,10
+      - "@esbuild/openbsd-x64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 106,10
+      - "@esbuild/sunos-x64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 109,10
+      - "@esbuild/win32-arm64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 112,10
+      - "@esbuild/win32-ia32":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 115,10
+      - "@esbuild/win32-x64":
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 118,10
+      - "@eslint-community/regexpp":
+          - old: 4.10.0
+          - new: 4.11.0
+          - loc: 124,10
+      - "@eslint/config-array":
+          - old: 0.15.1
+          - new: 0.17.0
+          - loc: 127,10
+      - "@eslint/js":
+          - old: 9.4.0
+          - new: 9.7.0
+          - loc: 133,10
+      - "@eslint/object-schema":
+          - old: 2.1.3
+          - new: 2.1.4
+          - loc: 136,10
+      - "@types/bun":
+          - old: 1.1.3
+          - new: 1.1.6
+          - loc: 163,10
+      - "@types/node":
+          - old: 20.12.12
+          - new: 20.12.14
+          - loc: 172,10
+      - "@types/ws":
+          - old: 8.5.10
+          - new: 8.5.11
+          - loc: 184,10
+      - "@typescript-eslint/eslint-plugin":
+          - old: 7.11.0
+          - new: 7.16.1
+          - loc: 187,10
+      - "@typescript-eslint/parser":
+          - old: 7.11.0
+          - new: 7.16.1
+          - loc: 190,10
+      - "@typescript-eslint/scope-manager":
+          - old: 7.11.0
+          - new: 7.16.1
+          - loc: 193,10
+      - "@typescript-eslint/type-utils":
+          - old: 7.11.0
+          - new: 7.16.1
+          - loc: 196,10
+      - "@typescript-eslint/types":
+          - old: 7.11.0
+          - new: 7.16.1
+          - loc: 199,10
+      - "@typescript-eslint/typescript-estree":
+          - old: 7.11.0
+          - new: 7.16.1
+          - loc: 202,10
+      - "@typescript-eslint/utils":
+          - old: 7.11.0
+          - new: 7.16.1
+          - loc: 205,10
+      - "@typescript-eslint/visitor-keys":
+          - old: 7.11.0
+          - new: 7.16.1
+          - loc: 208,10
+      - "@vscode/debugadapter":
+          - old: 1.65.0
+          - new: 1.66.0
+          - loc: 214,10
+      - "@vscode/debugprotocol":
+          - old: 1.65.0
+          - new: 1.66.0
+          - loc: 217,10
+      - acorn:
+          - old: 8.11.3
+          - new: 8.12.1
+          - loc: 220,10
+      - aws4:
+          - old: 1.12.0
+          - new: 1.13.0
+          - loc: 283,10
+      - bare-events:
+          - old: 2.2.2
+          - new: 2.4.2
+          - loc: 295,10
+      - braces:
+          - old: 3.0.2
+          - new: 3.0.3
+          - loc: 304,10
+      - debug:
+          - old: 4.3.4
+          - new: 4.3.5
+          - loc: 403,10
+      - esbuild:
+          - old: 0.21.4
+          - new: 0.21.5
+          - loc: 460,10
+      - eslint:
+          - old: 9.4.0
+          - new: 9.7.0
+          - loc: 469,10
+      - eslint-scope:
+          - old: 8.0.1
+          - new: 8.0.2
+          - loc: 487,10
+      - espree:
+          - old: 10.0.1
+          - new: 10.1.0
+          - loc: 493,10
+      - esquery:
+          - old: 1.5.0
+          - new: 1.6.0
+          - loc: 499,10
+      - fill-range:
+          - old: 7.0.1
+          - new: 7.1.1
+          - loc: 538,10
+      - is-core-module:
+          - old: 2.13.1
+          - new: 2.15.0
+          - loc: 685,10
+      - js-tokens:
+          - old: 3.0.2
+          - new: 4.0.0
+          - loc: 745,10
+      - micromatch:
+          - old: 4.0.5
+          - new: 4.0.7
+          - loc: 808,10
+      - minimatch:
+          - old: 9.0.4
+          - new: 9.0.5
+          - loc: 817,10
+      - object-inspect:
+          - old: 1.13.1
+          - new: 1.13.2
+          - loc: 862,10
+      - prettier:
+          - old: 3.2.5
+          - new: 3.3.3
+          - loc: 934,10
+      - semver:
+          - old: 7.6.2
+          - new: 7.6.3
+          - loc: 1006,10
+      - spdx-license-ids:
+          - old: 3.0.17
+          - new: 3.0.18
+          - loc: 1054,10
+      - streamx:
+          - old: 2.16.1
+          - new: 2.18.0
+          - loc: 1066,10
+      - tslib:
+          - old: 2.6.2
+          - new: 2.6.3
+          - loc: 1126,10
+      - typescript:
+          - old: 5.4.5
+          - new: 5.5.3
+          - loc: 1162,10
+      - text-decoder:
+          - new: 1.1.1
+          - loc: 1105,10
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 59
+  timestamp: 2024-07-18T08:13:36Z
+  hashing_strategy: raw
+  data_hash: 2ed7bd77c8bccfa3bb84392f001d3769738872254990fcaa6484f12f8b4d922f
+  prev_meta_hash: 8f214af3a2603ade6f4bd683ea98803a231c6386c9a32c9b3a7c989c411dc9be
+  meta_hash: 2086b817b80e1a8e669087c9514f96bbd16ccc0a6e580156156a6a52f965a5b9
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - prettier-plugin-organize-imports:
+          - new: 4.0.0
+          - loc: 937,10
+package.json:
+  constraints:
+    - prettier-plugin-organize-imports:
+        - new: ^4.0.0
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 60
+  timestamp: 2024-09-04T04:32:52Z
+  hashing_strategy: raw
+  data_hash: 6b2701df001153d9ef89f437eae1ffe7addb21c8c95d2e4d6fb0296b729223f6
+  prev_meta_hash: 2086b817b80e1a8e669087c9514f96bbd16ccc0a6e580156156a6a52f965a5b9
+  meta_hash: 9563fb8f5a363e3527c7e363d5e89b33cacf52b7f861adb0d1d4159f53f8b9d1
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - prettier-plugin-organize-imports:
+          - old: 4.0.0
+          - new: 4.1.0
+          - loc: 973,10
+      - "@mdn/browser-compat-data":
+          - new: 5.5.49
+          - loc: 151,10
+      - autoprefixer:
+          - new: 10.4.20
+          - loc: 280,10
+      - browserslist:
+          - new: 4.23.3
+          - loc: 313,10
+      - caniuse-lite:
+          - new: 1.0.30001653
+          - loc: 337,10
+      - electron-to-chromium:
+          - new: 1.5.13
+          - loc: 448,10
+      - fraction.js:
+          - new: 4.3.7
+          - loc: 574,10
+      - nanoid:
+          - new: 3.3.7
+          - loc: 856,10
+      - node-releases:
+          - new: 2.0.18
+          - loc: 865,10
+      - normalize-range:
+          - new: 0.1.2
+          - loc: 871,10
+      - picocolors:
+          - new: 1.0.1
+          - loc: 952,10
+      - postcss:
+          - new: 8.4.41
+          - loc: 961,10
+      - postcss-value-parser:
+          - new: 4.2.0
+          - loc: 964,10
+      - update-browserslist-db:
+          - new: 1.1.0
+          - loc: 1210,10
+package.json:
+  constraints:
+    - caniuse-lite:
+        - new: ^1.0.30001620
+        - loc: 1,1
+    - autoprefixer:
+        - new: ^10.4.19
+        - loc: 1,1
+    - "@mdn/browser-compat-data":
+        - new: ~5.5.28
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 61
+  timestamp: 2024-09-26T20:39:26Z
+  hashing_strategy: raw
+  data_hash: a9182fe3cf67a22e999f6d7b2698f83eef5b7712b2a763c4173501830d5e4fc5
+  prev_meta_hash: 9563fb8f5a363e3527c7e363d5e89b33cacf52b7f861adb0d1d4159f53f8b9d1
+  meta_hash: b90e8f721f5d60d98bc5fc61ca76d1bfea7ee7e99db0a8487788cf1ae869a148
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - typescript:
+          - old: 5.5.3
+          - new: 5.7.2
+          - loc: 1201,10
+package.json:
+  constraints:
+    - typescript:
+        - old: ^5.4.5
+        - new: ^5.7.2
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 62
+  timestamp: 2024-12-10T20:43:17Z
+  hashing_strategy: raw
+  data_hash: 823595545c767e52cd9fd7018a768c2ccbac34342693e179bf9ecfcb1b728575
+  prev_meta_hash: b90e8f721f5d60d98bc5fc61ca76d1bfea7ee7e99db0a8487788cf1ae869a148
+  meta_hash: fd504ac9ca896640ab449c9703490ab6e3370d2558f97eabbd3754a42fc50d58

@@ -1,0 +1,2637 @@
+genesis_rollover: true
+rotated_at: 2026-06-04T15:03:45.578Z
+previous_chain_hash: fd504ac9ca896640ab449c9703490ab6e3370d2558f97eabbd3754a42fc50d58
+package-lock.json:
+  packages: []
+package.json:
+  chain_event: init
+  constraints:
+    - mitata: ^0.1.11
+    - peechy: 0.4.34
+    - react: ^18.3.1
+    - react-dom: ^18.3.1
+    - prettier: ^3.2.5
+    - typescript: ^5.7.2
+    - eslint: ^9.4.0
+    - eslint-config-prettier: ^9.1.0
+    - "@types/react": ^18.3.3
+    - "@typescript-eslint/eslint-plugin": ^7.11.0
+    - "@typescript-eslint/parser": ^7.11.0
+    - esbuild: ^0.21.4
+    - "@vscode/debugadapter": ^1.65.0
+    - source-map-js: ^1.2.0
+    - "@types/bun": ^1.1.3
+    - prettier-plugin-organize-imports: ^4.0.0
+    - caniuse-lite: ^1.0.30001620
+    - autoprefixer: ^10.4.19
+    - "@mdn/browser-compat-data": ~5.5.28
+packages/bun-types/package.json:
+  chain_event: init
+  constraints:
+    - typescript: ^5.0.2
+    - "@types/node": ~20.12.8
+    - "@types/ws": ~8.5.10
+    - "@definitelytyped/dtslint": ^0.0.199
+    - "@definitelytyped/eslint-plugin": ^0.0.197
+    - "@biomejs/biome": ^1.5.3
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 0
+  timestamp: 2026-06-04T15:03:46.080Z
+  hashing_strategy: raw
+  data_hash: 48c4ed13b78b6d77957b205633321f02cc566d2827893a125ded6b0d4068ef31
+  prev_meta_hash: fd504ac9ca896640ab449c9703490ab6e3370d2558f97eabbd3754a42fc50d58
+  meta_hash: 186bd392d67b3a5d7abe5bc2f050e624eaabfe5587e3a3a29df5e488def7aa2d
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - brace-expansion:
+          - old: 2.0.1
+          - new: 1.1.11
+          - loc: 307,10
+      - isexe:
+          - old: 3.1.1
+          - new: 2.0.0
+          - loc: 757,10
+      - minimatch:
+          - old: 9.0.5
+          - new: 3.1.2
+          - loc: 835,10
+      - mkdirp:
+          - old: 1.0.4
+          - new: 0.5.6
+          - loc: 850,10
+      - which:
+          - old: 4.0.0
+          - new: 2.0.2
+          - loc: 1237,10
+      - "@definitelytyped/dts-critic/typescript":
+          - new: 5.5.3
+          - loc: 1273,10
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin":
+          - new: 6.21.0
+          - loc: 1276,10
+      - "@definitelytyped/dtslint/@typescript-eslint/parser":
+          - new: 6.21.0
+          - loc: 1279,10
+      - "@definitelytyped/dtslint/@typescript-eslint/types":
+          - new: 6.21.0
+          - loc: 1282,10
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree":
+          - new: 6.21.0
+          - loc: 1285,10
+      - "@definitelytyped/dtslint/@typescript-eslint/utils":
+          - new: 6.21.0
+          - loc: 1288,10
+      - "@definitelytyped/dtslint/eslint":
+          - new: 8.57.0
+          - loc: 1291,10
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/types":
+          - new: 6.21.0
+          - loc: 1294,10
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils":
+          - new: 6.21.0
+          - loc: 1297,10
+      - "@definitelytyped/utils/@types/node":
+          - new: 16.18.102
+          - loc: 1300,10
+      - "@definitelytyped/utils/minimatch":
+          - new: 9.0.5
+          - loc: 1303,10
+      - "@definitelytyped/utils/which":
+          - new: 4.0.0
+          - loc: 1306,10
+      - "@eslint-community/eslint-utils/eslint-visitor-keys":
+          - new: 3.4.3
+          - loc: 1309,10
+      - "@typescript-eslint/typescript-estree/minimatch":
+          - new: 9.0.5
+          - loc: 1312,10
+      - "@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - new: 3.4.3
+          - loc: 1315,10
+      - are-we-there-yet/readable-stream:
+          - new: 2.3.8
+          - loc: 1318,10
+      - babel-code-frame/chalk:
+          - new: 1.1.3
+          - loc: 1321,10
+      - babel-code-frame/js-tokens:
+          - new: 3.0.2
+          - loc: 1324,10
+      - bun-types/typescript:
+          - new: 5.5.3
+          - loc: 1327,10
+      - eslint-import-resolver-node/debug:
+          - new: 3.2.7
+          - loc: 1330,10
+      - eslint-module-utils/debug:
+          - new: 3.2.7
+          - loc: 1333,10
+      - eslint-plugin-import/debug:
+          - new: 3.2.7
+          - loc: 1336,10
+      - eslint-plugin-import/doctrine:
+          - new: 2.1.0
+          - loc: 1339,10
+      - eslint-plugin-import/semver:
+          - new: 6.3.1
+          - loc: 1342,10
+      - fast-glob/glob-parent:
+          - new: 5.1.2
+          - loc: 1345,10
+      - fs-minipass/minipass:
+          - new: 3.3.6
+          - loc: 1348,10
+      - gauge/string-width:
+          - new: 1.0.2
+          - loc: 1351,10
+      - gauge/strip-ansi:
+          - new: 3.0.1
+          - loc: 1354,10
+      - has-ansi/ansi-regex:
+          - new: 2.1.1
+          - loc: 1357,10
+      - minizlib/minipass:
+          - new: 3.3.6
+          - loc: 1360,10
+      - ssri/minipass:
+          - new: 3.3.6
+          - loc: 1363,10
+      - tar/mkdirp:
+          - new: 1.0.4
+          - loc: 1366,10
+      - tslint/chalk:
+          - new: 2.4.2
+          - loc: 1369,10
+      - tslint/js-yaml:
+          - new: 3.14.1
+          - loc: 1372,10
+      - tslint/semver:
+          - new: 5.7.2
+          - loc: 1375,10
+      - tslint/tslib:
+          - new: 1.14.1
+          - loc: 1378,10
+      - tsutils/tslib:
+          - new: 1.14.1
+          - loc: 1381,10
+      - verror/core-util-is:
+          - new: 1.0.2
+          - loc: 1384,10
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/scope-manager":
+          - new: 6.21.0
+          - loc: 1387,10
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/type-utils":
+          - new: 6.21.0
+          - loc: 1390,10
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/visitor-keys":
+          - new: 6.21.0
+          - loc: 1393,10
+      - "@definitelytyped/dtslint/@typescript-eslint/parser/@typescript-eslint/scope-manager":
+          - new: 6.21.0
+          - loc: 1396,10
+      - "@definitelytyped/dtslint/@typescript-eslint/parser/@typescript-eslint/visitor-keys":
+          - new: 6.21.0
+          - loc: 1399,10
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys":
+          - new: 6.21.0
+          - loc: 1402,10
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/minimatch":
+          - new: 9.0.3
+          - loc: 1405,10
+      - "@definitelytyped/dtslint/@typescript-eslint/utils/@typescript-eslint/scope-manager":
+          - new: 6.21.0
+          - loc: 1408,10
+      - "@definitelytyped/dtslint/eslint/@eslint/eslintrc":
+          - new: 2.1.4
+          - loc: 1411,10
+      - "@definitelytyped/dtslint/eslint/@eslint/js":
+          - new: 8.57.0
+          - loc: 1414,10
+      - "@definitelytyped/dtslint/eslint/eslint-scope":
+          - new: 7.2.2
+          - loc: 1417,10
+      - "@definitelytyped/dtslint/eslint/eslint-visitor-keys":
+          - new: 3.4.3
+          - loc: 1420,10
+      - "@definitelytyped/dtslint/eslint/espree":
+          - new: 9.6.1
+          - loc: 1423,10
+      - "@definitelytyped/dtslint/eslint/file-entry-cache":
+          - new: 6.0.1
+          - loc: 1426,10
+      - "@definitelytyped/dtslint/eslint/globals":
+          - new: 13.24.0
+          - loc: 1429,10
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/scope-manager":
+          - new: 6.21.0
+          - loc: 1432,10
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree":
+          - new: 6.21.0
+          - loc: 1435,10
+      - "@definitelytyped/utils/minimatch/brace-expansion":
+          - new: 2.0.1
+          - loc: 1438,10
+      - "@definitelytyped/utils/which/isexe":
+          - new: 3.1.1
+          - loc: 1441,10
+      - "@typescript-eslint/typescript-estree/minimatch/brace-expansion":
+          - new: 2.0.1
+          - loc: 1444,10
+      - are-we-there-yet/readable-stream/isarray:
+          - new: 1.0.0
+          - loc: 1447,10
+      - are-we-there-yet/readable-stream/safe-buffer:
+          - new: 5.1.2
+          - loc: 1450,10
+      - are-we-there-yet/readable-stream/string_decoder:
+          - new: 1.1.1
+          - loc: 1453,10
+      - babel-code-frame/chalk/ansi-styles:
+          - new: 2.2.1
+          - loc: 1456,10
+      - babel-code-frame/chalk/escape-string-regexp:
+          - new: 1.0.5
+          - loc: 1459,10
+      - babel-code-frame/chalk/strip-ansi:
+          - new: 3.0.1
+          - loc: 1462,10
+      - babel-code-frame/chalk/supports-color:
+          - new: 2.0.0
+          - loc: 1465,10
+      - gauge/string-width/is-fullwidth-code-point:
+          - new: 1.0.0
+          - loc: 1468,10
+      - gauge/strip-ansi/ansi-regex:
+          - new: 2.1.1
+          - loc: 1471,10
+      - tslint/chalk/ansi-styles:
+          - new: 3.2.1
+          - loc: 1474,10
+      - tslint/chalk/escape-string-regexp:
+          - new: 1.0.5
+          - loc: 1477,10
+      - tslint/chalk/supports-color:
+          - new: 5.5.0
+          - loc: 1480,10
+      - tslint/js-yaml/argparse:
+          - new: 1.0.10
+          - loc: 1483,10
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - new: 3.4.3
+          - loc: 1486,10
+      - "@definitelytyped/dtslint/@typescript-eslint/parser/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - new: 3.4.3
+          - loc: 1489,10
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - new: 3.4.3
+          - loc: 1492,10
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/minimatch/brace-expansion":
+          - new: 2.0.1
+          - loc: 1495,10
+      - "@definitelytyped/dtslint/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys":
+          - new: 6.21.0
+          - loc: 1498,10
+      - "@definitelytyped/dtslint/eslint/file-entry-cache/flat-cache":
+          - new: 3.2.0
+          - loc: 1501,10
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys":
+          - new: 6.21.0
+          - loc: 1504,10
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys":
+          - new: 6.21.0
+          - loc: 1507,10
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/minimatch":
+          - new: 9.0.3
+          - loc: 1510,10
+      - babel-code-frame/chalk/strip-ansi/ansi-regex:
+          - new: 2.1.1
+          - loc: 1513,10
+      - tslint/chalk/ansi-styles/color-convert:
+          - new: 1.9.3
+          - loc: 1516,10
+      - tslint/chalk/supports-color/has-flag:
+          - new: 3.0.0
+          - loc: 1519,10
+      - "@definitelytyped/dtslint/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - new: 3.4.3
+          - loc: 1522,10
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - new: 3.4.3
+          - loc: 1525,10
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - new: 3.4.3
+          - loc: 1528,10
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/minimatch/brace-expansion":
+          - new: 2.0.1
+          - loc: 1531,10
+      - tslint/chalk/ansi-styles/color-convert/color-name:
+          - new: 1.1.3
+          - loc: 1534,10
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 1
+  timestamp: 2025-01-17T22:37:26Z
+  hashing_strategy: raw
+  data_hash: 32a7da15a2e23b17a063b0dfd45919d96f156ec0594e2ed2f32f1346391fd59d
+  prev_meta_hash: 186bd392d67b3a5d7abe5bc2f050e624eaabfe5587e3a3a29df5e488def7aa2d
+  meta_hash: d52b8c35259d93053146d6206ce01b18fa60e7d4cf6ce9d4ecfd7cfe1f10e998
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/bun":
+          - old: 1.1.6
+          - new: 1.1.17
+          - loc: 166,10
+      - "@types/node":
+          - old: 20.12.14
+          - new: 22.10.7
+          - loc: 175,10
+      - undici-types:
+          - old: 5.26.5
+          - new: 6.20.0
+          - loc: 1207,10
+      - bun-types/typescript:
+          - msg: removed
+          - loc: 1,1
+      - "@types/ws/@types/node":
+          - new: 20.12.14
+          - loc: 1312,10
+      - "@types/ws/@types/node/undici-types":
+          - new: 5.26.5
+          - loc: 1444,10
+package.json:
+  constraints:
+    - "@types/bun":
+        - old: ^1.1.3
+        - new: "*"
+        - loc: 1,1
+packages/bun-types/package.json:
+  constraints:
+    - "@types/node":
+        - old: ~20.12.8
+        - new: "*"
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 2
+  timestamp: 2025-01-21T07:12:54Z
+  hashing_strategy: raw
+  data_hash: b057efad76a1b06c425e402aa83675766b6bc2dac34ddcc31e6e9544eb1b8b2a
+  prev_meta_hash: d52b8c35259d93053146d6206ce01b18fa60e7d4cf6ce9d4ecfd7cfe1f10e998
+  meta_hash: df23b059b53da2fca78cfcfa016f4ef0eccc3725a914bfb6122f6bc48d73a014
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - caniuse-lite:
+          - old: 1.0.30001653
+          - new: 1.0.30001695
+          - loc: 337,10
+      - autoprefixer/caniuse-lite:
+          - new: 1.0.30001653
+          - loc: 1324,10
+      - browserslist/caniuse-lite:
+          - new: 1.0.30001653
+          - loc: 1333,10
+package.json:
+  constraints:
+    - caniuse-lite:
+        - old: ^1.0.30001620
+        - new: ^1.0.30001660
+        - loc: 1,1
+    - autoprefixer:
+        - old: ^10.4.19
+        - new: ^10.4.20
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 3
+  timestamp: 2025-01-31T11:47:49Z
+  hashing_strategy: raw
+  data_hash: 6ff4f454142d578e12b9fdbcf667dd729a0bbe56db29bc9e818a8e64ad0d737a
+  prev_meta_hash: df23b059b53da2fca78cfcfa016f4ef0eccc3725a914bfb6122f6bc48d73a014
+  meta_hash: 15fbc19c8a80e5416319e141e94984cd1ef2bbce691d1911945c6f01c3ecacb9
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/bun":
+          - old: 1.1.17
+          - new: 1.2.2
+          - loc: 166,10
+      - "@types/node":
+          - old: 22.10.7
+          - new: 22.13.5
+          - loc: 175,10
+package.json:
+  constraints:
+    - caniuse-lite:
+        - old: ^1.0.30001660
+        - new: ^1.0.30001620
+        - loc: 1,1
+    - autoprefixer:
+        - old: ^10.4.20
+        - new: ^10.4.19
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 4
+  timestamp: 2025-03-04T00:04:12Z
+  hashing_strategy: raw
+  data_hash: 68ff7464e3bdeb37115cafd6512b4da7958d93e7eb318e5579aa2dfad3232b0e
+  prev_meta_hash: 15fbc19c8a80e5416319e141e94984cd1ef2bbce691d1911945c6f01c3ecacb9
+  meta_hash: 3a21c76e3366df71db25f04165aec58a7854225576f25cbc68384b650155bc87
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/ws":
+          - msg: removed
+          - loc: 1,1
+      - "@types/ws/@types/node":
+          - msg: removed
+          - loc: 1,1
+      - "@types/ws/@types/node/undici-types":
+          - msg: removed
+          - loc: 1,1
+packages/bun-types/package.json:
+  constraints:
+    - "@types/ws":
+        - msg: removed
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 5
+  timestamp: 2025-04-15T02:10:52Z
+  hashing_strategy: raw
+  data_hash: 377284b142aa6a12788b88ff7047801ed39aab28ea23cdac6db8dd1b918811d3
+  prev_meta_hash: 3a21c76e3366df71db25f04165aec58a7854225576f25cbc68384b650155bc87
+  meta_hash: 3556010411175522fdd4e46f09492aaadbec3673700e47796e96a6f3371bafde
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - prettier:
+          - old: 3.3.3
+          - new: 3.5.3
+          - loc: 967,10
+package.json:
+  constraints:
+    - prettier:
+        - old: ^3.2.5
+        - new: ^3.5.3
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 6
+  timestamp: 2025-05-09T06:22:16Z
+  hashing_strategy: raw
+  data_hash: e056ad3c9b73ef8228f48bd8601c86412f943bfb4f0d44a9f3a6b7c25fd407d7
+  prev_meta_hash: 3556010411175522fdd4e46f09492aaadbec3673700e47796e96a6f3371bafde
+  meta_hash: 1c029ba974913a607ac4c4ec46c499b8b42ae4107fc85cf7f0d86a274edc1f42
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@biomejs/biome":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-darwin-arm64":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-darwin-x64":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-linux-arm64":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-linux-arm64-musl":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-linux-x64":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-linux-x64-musl":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-win32-arm64":
+          - msg: removed
+          - loc: 1,1
+      - "@biomejs/cli-win32-x64":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dts-critic":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/header-parser":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/typescript-versions":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/utils":
+          - msg: removed
+          - loc: 1,1
+      - "@es-joy/jsdoccomment":
+          - msg: removed
+          - loc: 1,1
+      - "@eslint-community/eslint-utils":
+          - msg: removed
+          - loc: 1,1
+      - "@eslint-community/regexpp":
+          - msg: removed
+          - loc: 1,1
+      - "@eslint/config-array":
+          - msg: removed
+          - loc: 1,1
+      - "@eslint/eslintrc":
+          - msg: removed
+          - loc: 1,1
+      - "@eslint/js":
+          - msg: removed
+          - loc: 1,1
+      - "@eslint/object-schema":
+          - msg: removed
+          - loc: 1,1
+      - "@humanwhocodes/config-array":
+          - msg: removed
+          - loc: 1,1
+      - "@humanwhocodes/module-importer":
+          - msg: removed
+          - loc: 1,1
+      - "@humanwhocodes/object-schema":
+          - msg: removed
+          - loc: 1,1
+      - "@humanwhocodes/retry":
+          - msg: removed
+          - loc: 1,1
+      - "@mdn/browser-compat-data":
+          - msg: removed
+          - loc: 1,1
+      - "@nodelib/fs.scandir":
+          - msg: removed
+          - loc: 1,1
+      - "@nodelib/fs.stat":
+          - msg: removed
+          - loc: 1,1
+      - "@nodelib/fs.walk":
+          - msg: removed
+          - loc: 1,1
+      - "@qiwi/npm-registry-client":
+          - msg: removed
+          - loc: 1,1
+      - "@types/bun":
+          - old: 1.2.2
+          - new: workspace:packages/@types/bun
+          - loc: 73,10
+      - "@types/json-schema":
+          - msg: removed
+          - loc: 1,1
+      - "@types/json5":
+          - msg: removed
+          - loc: 1,1
+      - "@types/node":
+          - old: 22.13.5
+          - new: 22.15.18
+          - loc: 76,10
+      - "@types/prop-types":
+          - old: 15.7.12
+          - new: 15.7.14
+          - loc: 79,10
+      - "@types/react":
+          - old: 18.3.3
+          - new: 18.3.21
+          - loc: 82,10
+      - "@types/semver":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/eslint-plugin":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/parser":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/scope-manager":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/type-utils":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/types":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/typescript-estree":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/utils":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@ungap/structured-clone":
+          - msg: removed
+          - loc: 1,1
+      - "@vscode/debugadapter":
+          - msg: removed
+          - loc: 1,1
+      - "@vscode/debugprotocol":
+          - msg: removed
+          - loc: 1,1
+      - acorn:
+          - msg: removed
+          - loc: 1,1
+      - acorn-jsx:
+          - msg: removed
+          - loc: 1,1
+      - ajv:
+          - msg: removed
+          - loc: 1,1
+      - ansi-regex:
+          - msg: removed
+          - loc: 1,1
+      - ansi-styles:
+          - msg: removed
+          - loc: 1,1
+      - aproba:
+          - msg: removed
+          - loc: 1,1
+      - are-docs-informative:
+          - msg: removed
+          - loc: 1,1
+      - are-we-there-yet:
+          - msg: removed
+          - loc: 1,1
+      - argparse:
+          - msg: removed
+          - loc: 1,1
+      - array-buffer-byte-length:
+          - msg: removed
+          - loc: 1,1
+      - array-includes:
+          - msg: removed
+          - loc: 1,1
+      - array-union:
+          - msg: removed
+          - loc: 1,1
+      - array.prototype.findlastindex:
+          - msg: removed
+          - loc: 1,1
+      - array.prototype.flat:
+          - msg: removed
+          - loc: 1,1
+      - array.prototype.flatmap:
+          - msg: removed
+          - loc: 1,1
+      - arraybuffer.prototype.slice:
+          - msg: removed
+          - loc: 1,1
+      - asn1:
+          - msg: removed
+          - loc: 1,1
+      - assert-plus:
+          - msg: removed
+          - loc: 1,1
+      - asynckit:
+          - msg: removed
+          - loc: 1,1
+      - autoprefixer:
+          - msg: removed
+          - loc: 1,1
+      - available-typed-arrays:
+          - msg: removed
+          - loc: 1,1
+      - aws-sign2:
+          - msg: removed
+          - loc: 1,1
+      - aws4:
+          - msg: removed
+          - loc: 1,1
+      - b4a:
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame:
+          - msg: removed
+          - loc: 1,1
+      - balanced-match:
+          - msg: removed
+          - loc: 1,1
+      - bare-events:
+          - msg: removed
+          - loc: 1,1
+      - bcrypt-pbkdf:
+          - msg: removed
+          - loc: 1,1
+      - brace-expansion:
+          - msg: removed
+          - loc: 1,1
+      - braces:
+          - msg: removed
+          - loc: 1,1
+      - browserslist:
+          - msg: removed
+          - loc: 1,1
+      - buffer-from:
+          - msg: removed
+          - loc: 1,1
+      - builtin-modules:
+          - msg: removed
+          - loc: 1,1
+      - builtins:
+          - msg: removed
+          - loc: 1,1
+      - call-bind:
+          - msg: removed
+          - loc: 1,1
+      - callsites:
+          - msg: removed
+          - loc: 1,1
+      - caniuse-lite:
+          - msg: removed
+          - loc: 1,1
+      - caseless:
+          - msg: removed
+          - loc: 1,1
+      - chalk:
+          - msg: removed
+          - loc: 1,1
+      - charm:
+          - msg: removed
+          - loc: 1,1
+      - chownr:
+          - msg: removed
+          - loc: 1,1
+      - cliui:
+          - msg: removed
+          - loc: 1,1
+      - code-point-at:
+          - msg: removed
+          - loc: 1,1
+      - color-convert:
+          - msg: removed
+          - loc: 1,1
+      - color-name:
+          - msg: removed
+          - loc: 1,1
+      - combined-stream:
+          - msg: removed
+          - loc: 1,1
+      - command-exists:
+          - msg: removed
+          - loc: 1,1
+      - commander:
+          - msg: removed
+          - loc: 1,1
+      - comment-parser:
+          - msg: removed
+          - loc: 1,1
+      - concat-map:
+          - msg: removed
+          - loc: 1,1
+      - concat-stream:
+          - msg: removed
+          - loc: 1,1
+      - console-control-strings:
+          - msg: removed
+          - loc: 1,1
+      - core-util-is:
+          - msg: removed
+          - loc: 1,1
+      - cross-spawn:
+          - msg: removed
+          - loc: 1,1
+      - dashdash:
+          - msg: removed
+          - loc: 1,1
+      - data-view-buffer:
+          - msg: removed
+          - loc: 1,1
+      - data-view-byte-length:
+          - msg: removed
+          - loc: 1,1
+      - data-view-byte-offset:
+          - msg: removed
+          - loc: 1,1
+      - debug:
+          - msg: removed
+          - loc: 1,1
+      - deep-is:
+          - msg: removed
+          - loc: 1,1
+      - define-data-property:
+          - msg: removed
+          - loc: 1,1
+      - define-properties:
+          - msg: removed
+          - loc: 1,1
+      - delayed-stream:
+          - msg: removed
+          - loc: 1,1
+      - delegates:
+          - msg: removed
+          - loc: 1,1
+      - diff:
+          - msg: removed
+          - loc: 1,1
+      - dir-glob:
+          - msg: removed
+          - loc: 1,1
+      - doctrine:
+          - msg: removed
+          - loc: 1,1
+      - ecc-jsbn:
+          - msg: removed
+          - loc: 1,1
+      - electron-to-chromium:
+          - msg: removed
+          - loc: 1,1
+      - emoji-regex:
+          - msg: removed
+          - loc: 1,1
+      - es-abstract:
+          - msg: removed
+          - loc: 1,1
+      - es-define-property:
+          - msg: removed
+          - loc: 1,1
+      - es-errors:
+          - msg: removed
+          - loc: 1,1
+      - es-object-atoms:
+          - msg: removed
+          - loc: 1,1
+      - es-set-tostringtag:
+          - msg: removed
+          - loc: 1,1
+      - es-shim-unscopables:
+          - msg: removed
+          - loc: 1,1
+      - es-to-primitive:
+          - msg: removed
+          - loc: 1,1
+      - escalade:
+          - msg: removed
+          - loc: 1,1
+      - escape-string-regexp:
+          - msg: removed
+          - loc: 1,1
+      - eslint:
+          - msg: removed
+          - loc: 1,1
+      - eslint-config-prettier:
+          - msg: removed
+          - loc: 1,1
+      - eslint-import-resolver-node:
+          - msg: removed
+          - loc: 1,1
+      - eslint-module-utils:
+          - msg: removed
+          - loc: 1,1
+      - eslint-plugin-import:
+          - msg: removed
+          - loc: 1,1
+      - eslint-plugin-jsdoc:
+          - msg: removed
+          - loc: 1,1
+      - eslint-scope:
+          - msg: removed
+          - loc: 1,1
+      - eslint-visitor-keys:
+          - msg: removed
+          - loc: 1,1
+      - espree:
+          - msg: removed
+          - loc: 1,1
+      - esprima:
+          - msg: removed
+          - loc: 1,1
+      - esquery:
+          - msg: removed
+          - loc: 1,1
+      - esrecurse:
+          - msg: removed
+          - loc: 1,1
+      - estraverse:
+          - msg: removed
+          - loc: 1,1
+      - esutils:
+          - msg: removed
+          - loc: 1,1
+      - extend:
+          - msg: removed
+          - loc: 1,1
+      - extsprintf:
+          - msg: removed
+          - loc: 1,1
+      - fast-deep-equal:
+          - msg: removed
+          - loc: 1,1
+      - fast-fifo:
+          - msg: removed
+          - loc: 1,1
+      - fast-glob:
+          - msg: removed
+          - loc: 1,1
+      - fast-json-stable-stringify:
+          - msg: removed
+          - loc: 1,1
+      - fast-levenshtein:
+          - msg: removed
+          - loc: 1,1
+      - fastq:
+          - msg: removed
+          - loc: 1,1
+      - file-entry-cache:
+          - msg: removed
+          - loc: 1,1
+      - fill-range:
+          - msg: removed
+          - loc: 1,1
+      - find-up:
+          - msg: removed
+          - loc: 1,1
+      - flat-cache:
+          - msg: removed
+          - loc: 1,1
+      - flatted:
+          - msg: removed
+          - loc: 1,1
+      - for-each:
+          - msg: removed
+          - loc: 1,1
+      - forever-agent:
+          - msg: removed
+          - loc: 1,1
+      - form-data:
+          - msg: removed
+          - loc: 1,1
+      - fraction.js:
+          - msg: removed
+          - loc: 1,1
+      - fs-minipass:
+          - msg: removed
+          - loc: 1,1
+      - fs.realpath:
+          - msg: removed
+          - loc: 1,1
+      - function-bind:
+          - msg: removed
+          - loc: 1,1
+      - function.prototype.name:
+          - msg: removed
+          - loc: 1,1
+      - functions-have-names:
+          - msg: removed
+          - loc: 1,1
+      - gauge:
+          - msg: removed
+          - loc: 1,1
+      - get-caller-file:
+          - msg: removed
+          - loc: 1,1
+      - get-intrinsic:
+          - msg: removed
+          - loc: 1,1
+      - get-symbol-description:
+          - msg: removed
+          - loc: 1,1
+      - getpass:
+          - msg: removed
+          - loc: 1,1
+      - glob:
+          - msg: removed
+          - loc: 1,1
+      - glob-parent:
+          - msg: removed
+          - loc: 1,1
+      - globals:
+          - msg: removed
+          - loc: 1,1
+      - globalthis:
+          - msg: removed
+          - loc: 1,1
+      - globby:
+          - msg: removed
+          - loc: 1,1
+      - gopd:
+          - msg: removed
+          - loc: 1,1
+      - graceful-fs:
+          - msg: removed
+          - loc: 1,1
+      - graphemer:
+          - msg: removed
+          - loc: 1,1
+      - har-schema:
+          - msg: removed
+          - loc: 1,1
+      - har-validator:
+          - msg: removed
+          - loc: 1,1
+      - has-ansi:
+          - msg: removed
+          - loc: 1,1
+      - has-bigints:
+          - msg: removed
+          - loc: 1,1
+      - has-flag:
+          - msg: removed
+          - loc: 1,1
+      - has-property-descriptors:
+          - msg: removed
+          - loc: 1,1
+      - has-proto:
+          - msg: removed
+          - loc: 1,1
+      - has-symbols:
+          - msg: removed
+          - loc: 1,1
+      - has-tostringtag:
+          - msg: removed
+          - loc: 1,1
+      - has-unicode:
+          - msg: removed
+          - loc: 1,1
+      - hasown:
+          - msg: removed
+          - loc: 1,1
+      - hosted-git-info:
+          - msg: removed
+          - loc: 1,1
+      - http-signature:
+          - msg: removed
+          - loc: 1,1
+      - ignore:
+          - msg: removed
+          - loc: 1,1
+      - import-fresh:
+          - msg: removed
+          - loc: 1,1
+      - imurmurhash:
+          - msg: removed
+          - loc: 1,1
+      - inflight:
+          - msg: removed
+          - loc: 1,1
+      - inherits:
+          - msg: removed
+          - loc: 1,1
+      - internal-slot:
+          - msg: removed
+          - loc: 1,1
+      - is-array-buffer:
+          - msg: removed
+          - loc: 1,1
+      - is-bigint:
+          - msg: removed
+          - loc: 1,1
+      - is-boolean-object:
+          - msg: removed
+          - loc: 1,1
+      - is-callable:
+          - msg: removed
+          - loc: 1,1
+      - is-core-module:
+          - msg: removed
+          - loc: 1,1
+      - is-data-view:
+          - msg: removed
+          - loc: 1,1
+      - is-date-object:
+          - msg: removed
+          - loc: 1,1
+      - is-extglob:
+          - msg: removed
+          - loc: 1,1
+      - is-fullwidth-code-point:
+          - msg: removed
+          - loc: 1,1
+      - is-glob:
+          - msg: removed
+          - loc: 1,1
+      - is-negative-zero:
+          - msg: removed
+          - loc: 1,1
+      - is-number:
+          - msg: removed
+          - loc: 1,1
+      - is-number-object:
+          - msg: removed
+          - loc: 1,1
+      - is-path-inside:
+          - msg: removed
+          - loc: 1,1
+      - is-regex:
+          - msg: removed
+          - loc: 1,1
+      - is-shared-array-buffer:
+          - msg: removed
+          - loc: 1,1
+      - is-string:
+          - msg: removed
+          - loc: 1,1
+      - is-symbol:
+          - msg: removed
+          - loc: 1,1
+      - is-typed-array:
+          - msg: removed
+          - loc: 1,1
+      - is-typedarray:
+          - msg: removed
+          - loc: 1,1
+      - is-weakref:
+          - msg: removed
+          - loc: 1,1
+      - isarray:
+          - msg: removed
+          - loc: 1,1
+      - isexe:
+          - msg: removed
+          - loc: 1,1
+      - isstream:
+          - msg: removed
+          - loc: 1,1
+      - js-yaml:
+          - msg: removed
+          - loc: 1,1
+      - jsbn:
+          - msg: removed
+          - loc: 1,1
+      - jsdoc-type-pratt-parser:
+          - msg: removed
+          - loc: 1,1
+      - json-buffer:
+          - msg: removed
+          - loc: 1,1
+      - json-schema:
+          - msg: removed
+          - loc: 1,1
+      - json-schema-traverse:
+          - msg: removed
+          - loc: 1,1
+      - json-stable-stringify:
+          - msg: removed
+          - loc: 1,1
+      - json-stable-stringify-without-jsonify:
+          - msg: removed
+          - loc: 1,1
+      - json-stringify-safe:
+          - msg: removed
+          - loc: 1,1
+      - json5:
+          - msg: removed
+          - loc: 1,1
+      - jsonify:
+          - msg: removed
+          - loc: 1,1
+      - jsprim:
+          - msg: removed
+          - loc: 1,1
+      - keyv:
+          - msg: removed
+          - loc: 1,1
+      - levn:
+          - msg: removed
+          - loc: 1,1
+      - locate-path:
+          - msg: removed
+          - loc: 1,1
+      - lodash.merge:
+          - msg: removed
+          - loc: 1,1
+      - lru-cache:
+          - msg: removed
+          - loc: 1,1
+      - merge2:
+          - msg: removed
+          - loc: 1,1
+      - micromatch:
+          - msg: removed
+          - loc: 1,1
+      - mime-db:
+          - msg: removed
+          - loc: 1,1
+      - mime-types:
+          - msg: removed
+          - loc: 1,1
+      - minimatch:
+          - msg: removed
+          - loc: 1,1
+      - minimist:
+          - msg: removed
+          - loc: 1,1
+      - minipass:
+          - msg: removed
+          - loc: 1,1
+      - minizlib:
+          - msg: removed
+          - loc: 1,1
+      - mitata:
+          - old: 0.1.11
+          - new: 0.1.14
+          - loc: 121,10
+      - mkdirp:
+          - msg: removed
+          - loc: 1,1
+      - ms:
+          - msg: removed
+          - loc: 1,1
+      - nanoid:
+          - msg: removed
+          - loc: 1,1
+      - natural-compare:
+          - msg: removed
+          - loc: 1,1
+      - node-releases:
+          - msg: removed
+          - loc: 1,1
+      - normalize-package-data:
+          - msg: removed
+          - loc: 1,1
+      - normalize-range:
+          - msg: removed
+          - loc: 1,1
+      - npm-package-arg:
+          - msg: removed
+          - loc: 1,1
+      - npmlog:
+          - msg: removed
+          - loc: 1,1
+      - number-is-nan:
+          - msg: removed
+          - loc: 1,1
+      - oauth-sign:
+          - msg: removed
+          - loc: 1,1
+      - object-assign:
+          - msg: removed
+          - loc: 1,1
+      - object-inspect:
+          - msg: removed
+          - loc: 1,1
+      - object-keys:
+          - msg: removed
+          - loc: 1,1
+      - object.assign:
+          - msg: removed
+          - loc: 1,1
+      - object.fromentries:
+          - msg: removed
+          - loc: 1,1
+      - object.groupby:
+          - msg: removed
+          - loc: 1,1
+      - object.values:
+          - msg: removed
+          - loc: 1,1
+      - once:
+          - msg: removed
+          - loc: 1,1
+      - optionator:
+          - msg: removed
+          - loc: 1,1
+      - p-limit:
+          - msg: removed
+          - loc: 1,1
+      - p-locate:
+          - msg: removed
+          - loc: 1,1
+      - parent-module:
+          - msg: removed
+          - loc: 1,1
+      - path-exists:
+          - msg: removed
+          - loc: 1,1
+      - path-is-absolute:
+          - msg: removed
+          - loc: 1,1
+      - path-key:
+          - msg: removed
+          - loc: 1,1
+      - path-parse:
+          - msg: removed
+          - loc: 1,1
+      - path-type:
+          - msg: removed
+          - loc: 1,1
+      - performance-now:
+          - msg: removed
+          - loc: 1,1
+      - picocolors:
+          - msg: removed
+          - loc: 1,1
+      - picomatch:
+          - msg: removed
+          - loc: 1,1
+      - possible-typed-array-names:
+          - msg: removed
+          - loc: 1,1
+      - postcss:
+          - msg: removed
+          - loc: 1,1
+      - postcss-value-parser:
+          - msg: removed
+          - loc: 1,1
+      - prelude-ls:
+          - msg: removed
+          - loc: 1,1
+      - process-nextick-args:
+          - msg: removed
+          - loc: 1,1
+      - psl:
+          - msg: removed
+          - loc: 1,1
+      - punycode:
+          - msg: removed
+          - loc: 1,1
+      - qs:
+          - msg: removed
+          - loc: 1,1
+      - queue-microtask:
+          - msg: removed
+          - loc: 1,1
+      - queue-tick:
+          - msg: removed
+          - loc: 1,1
+      - readable-stream:
+          - msg: removed
+          - loc: 1,1
+      - regexp.prototype.flags:
+          - msg: removed
+          - loc: 1,1
+      - request:
+          - msg: removed
+          - loc: 1,1
+      - require-directory:
+          - msg: removed
+          - loc: 1,1
+      - resolve:
+          - msg: removed
+          - loc: 1,1
+      - resolve-from:
+          - msg: removed
+          - loc: 1,1
+      - retry:
+          - msg: removed
+          - loc: 1,1
+      - reusify:
+          - msg: removed
+          - loc: 1,1
+      - rimraf:
+          - msg: removed
+          - loc: 1,1
+      - run-parallel:
+          - msg: removed
+          - loc: 1,1
+      - safe-array-concat:
+          - msg: removed
+          - loc: 1,1
+      - safe-buffer:
+          - msg: removed
+          - loc: 1,1
+      - safe-regex-test:
+          - msg: removed
+          - loc: 1,1
+      - safer-buffer:
+          - msg: removed
+          - loc: 1,1
+      - semver:
+          - msg: removed
+          - loc: 1,1
+      - set-blocking:
+          - msg: removed
+          - loc: 1,1
+      - set-function-length:
+          - msg: removed
+          - loc: 1,1
+      - set-function-name:
+          - msg: removed
+          - loc: 1,1
+      - shebang-command:
+          - msg: removed
+          - loc: 1,1
+      - shebang-regex:
+          - msg: removed
+          - loc: 1,1
+      - side-channel:
+          - msg: removed
+          - loc: 1,1
+      - signal-exit:
+          - msg: removed
+          - loc: 1,1
+      - slash:
+          - msg: removed
+          - loc: 1,1
+      - slide:
+          - msg: removed
+          - loc: 1,1
+      - source-map-js:
+          - old: 1.2.0
+          - new: 1.2.1
+          - loc: 160,10
+      - spdx-correct:
+          - msg: removed
+          - loc: 1,1
+      - spdx-exceptions:
+          - msg: removed
+          - loc: 1,1
+      - spdx-expression-parse:
+          - msg: removed
+          - loc: 1,1
+      - spdx-license-ids:
+          - msg: removed
+          - loc: 1,1
+      - sprintf-js:
+          - msg: removed
+          - loc: 1,1
+      - sshpk:
+          - msg: removed
+          - loc: 1,1
+      - ssri:
+          - msg: removed
+          - loc: 1,1
+      - streamx:
+          - msg: removed
+          - loc: 1,1
+      - string-width:
+          - msg: removed
+          - loc: 1,1
+      - string.prototype.trim:
+          - msg: removed
+          - loc: 1,1
+      - string.prototype.trimend:
+          - msg: removed
+          - loc: 1,1
+      - string.prototype.trimstart:
+          - msg: removed
+          - loc: 1,1
+      - string_decoder:
+          - msg: removed
+          - loc: 1,1
+      - strip-ansi:
+          - msg: removed
+          - loc: 1,1
+      - strip-bom:
+          - msg: removed
+          - loc: 1,1
+      - strip-json-comments:
+          - msg: removed
+          - loc: 1,1
+      - supports-color:
+          - msg: removed
+          - loc: 1,1
+      - supports-preserve-symlinks-flag:
+          - msg: removed
+          - loc: 1,1
+      - tar:
+          - msg: removed
+          - loc: 1,1
+      - tar-stream:
+          - msg: removed
+          - loc: 1,1
+      - text-decoder:
+          - msg: removed
+          - loc: 1,1
+      - text-table:
+          - msg: removed
+          - loc: 1,1
+      - tmp:
+          - msg: removed
+          - loc: 1,1
+      - to-regex-range:
+          - msg: removed
+          - loc: 1,1
+      - tough-cookie:
+          - msg: removed
+          - loc: 1,1
+      - ts-api-utils:
+          - msg: removed
+          - loc: 1,1
+      - tsconfig-paths:
+          - msg: removed
+          - loc: 1,1
+      - tslib:
+          - old: 2.6.3
+          - new: 2.8.1
+          - loc: 163,10
+      - tslint:
+          - msg: removed
+          - loc: 1,1
+      - tsutils:
+          - msg: removed
+          - loc: 1,1
+      - tunnel-agent:
+          - msg: removed
+          - loc: 1,1
+      - tweetnacl:
+          - msg: removed
+          - loc: 1,1
+      - type-check:
+          - msg: removed
+          - loc: 1,1
+      - type-fest:
+          - msg: removed
+          - loc: 1,1
+      - typed-array-buffer:
+          - msg: removed
+          - loc: 1,1
+      - typed-array-byte-length:
+          - msg: removed
+          - loc: 1,1
+      - typed-array-byte-offset:
+          - msg: removed
+          - loc: 1,1
+      - typed-array-length:
+          - msg: removed
+          - loc: 1,1
+      - typedarray:
+          - msg: removed
+          - loc: 1,1
+      - typescript:
+          - old: 5.7.2
+          - new: 5.8.3
+          - loc: 166,10
+      - unbox-primitive:
+          - msg: removed
+          - loc: 1,1
+      - undici-types:
+          - old: 6.20.0
+          - new: 6.21.0
+          - loc: 169,10
+      - update-browserslist-db:
+          - msg: removed
+          - loc: 1,1
+      - uri-js:
+          - msg: removed
+          - loc: 1,1
+      - util-deprecate:
+          - msg: removed
+          - loc: 1,1
+      - uuid:
+          - msg: removed
+          - loc: 1,1
+      - validate-npm-package-license:
+          - msg: removed
+          - loc: 1,1
+      - validate-npm-package-name:
+          - msg: removed
+          - loc: 1,1
+      - verror:
+          - msg: removed
+          - loc: 1,1
+      - which:
+          - msg: removed
+          - loc: 1,1
+      - which-boxed-primitive:
+          - msg: removed
+          - loc: 1,1
+      - which-typed-array:
+          - msg: removed
+          - loc: 1,1
+      - wide-align:
+          - msg: removed
+          - loc: 1,1
+      - word-wrap:
+          - msg: removed
+          - loc: 1,1
+      - wrap-ansi:
+          - msg: removed
+          - loc: 1,1
+      - wrappy:
+          - msg: removed
+          - loc: 1,1
+      - y18n:
+          - msg: removed
+          - loc: 1,1
+      - yallist:
+          - msg: removed
+          - loc: 1,1
+      - yargs:
+          - msg: removed
+          - loc: 1,1
+      - yargs-parser:
+          - msg: removed
+          - loc: 1,1
+      - yocto-queue:
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dts-critic/typescript":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/parser":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/types":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/utils":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/types":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/utils/@types/node":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/utils/minimatch":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/utils/which":
+          - msg: removed
+          - loc: 1,1
+      - "@eslint-community/eslint-utils/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/typescript-estree/minimatch":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - are-we-there-yet/readable-stream:
+          - msg: removed
+          - loc: 1,1
+      - autoprefixer/caniuse-lite:
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame/chalk:
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame/js-tokens:
+          - msg: removed
+          - loc: 1,1
+      - browserslist/caniuse-lite:
+          - msg: removed
+          - loc: 1,1
+      - eslint-import-resolver-node/debug:
+          - msg: removed
+          - loc: 1,1
+      - eslint-module-utils/debug:
+          - msg: removed
+          - loc: 1,1
+      - eslint-plugin-import/debug:
+          - msg: removed
+          - loc: 1,1
+      - eslint-plugin-import/doctrine:
+          - msg: removed
+          - loc: 1,1
+      - eslint-plugin-import/semver:
+          - msg: removed
+          - loc: 1,1
+      - fast-glob/glob-parent:
+          - msg: removed
+          - loc: 1,1
+      - fs-minipass/minipass:
+          - msg: removed
+          - loc: 1,1
+      - gauge/string-width:
+          - msg: removed
+          - loc: 1,1
+      - gauge/strip-ansi:
+          - msg: removed
+          - loc: 1,1
+      - has-ansi/ansi-regex:
+          - msg: removed
+          - loc: 1,1
+      - minizlib/minipass:
+          - msg: removed
+          - loc: 1,1
+      - ssri/minipass:
+          - msg: removed
+          - loc: 1,1
+      - tar/mkdirp:
+          - msg: removed
+          - loc: 1,1
+      - tslint/chalk:
+          - msg: removed
+          - loc: 1,1
+      - tslint/js-yaml:
+          - msg: removed
+          - loc: 1,1
+      - tslint/semver:
+          - msg: removed
+          - loc: 1,1
+      - tslint/tslib:
+          - msg: removed
+          - loc: 1,1
+      - tsutils/tslib:
+          - msg: removed
+          - loc: 1,1
+      - verror/core-util-is:
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/scope-manager":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/type-utils":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/parser/@typescript-eslint/scope-manager":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/parser/@typescript-eslint/visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/minimatch":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/utils/@typescript-eslint/scope-manager":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/@eslint/eslintrc":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/@eslint/js":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/eslint-scope":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/espree":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/file-entry-cache":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/globals":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/scope-manager":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/utils/minimatch/brace-expansion":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/utils/which/isexe":
+          - msg: removed
+          - loc: 1,1
+      - "@typescript-eslint/typescript-estree/minimatch/brace-expansion":
+          - msg: removed
+          - loc: 1,1
+      - are-we-there-yet/readable-stream/isarray:
+          - msg: removed
+          - loc: 1,1
+      - are-we-there-yet/readable-stream/safe-buffer:
+          - msg: removed
+          - loc: 1,1
+      - are-we-there-yet/readable-stream/string_decoder:
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame/chalk/ansi-styles:
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame/chalk/escape-string-regexp:
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame/chalk/strip-ansi:
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame/chalk/supports-color:
+          - msg: removed
+          - loc: 1,1
+      - gauge/string-width/is-fullwidth-code-point:
+          - msg: removed
+          - loc: 1,1
+      - gauge/strip-ansi/ansi-regex:
+          - msg: removed
+          - loc: 1,1
+      - tslint/chalk/ansi-styles:
+          - msg: removed
+          - loc: 1,1
+      - tslint/chalk/escape-string-regexp:
+          - msg: removed
+          - loc: 1,1
+      - tslint/chalk/supports-color:
+          - msg: removed
+          - loc: 1,1
+      - tslint/js-yaml/argparse:
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/eslint-plugin/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/parser/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/typescript-estree/minimatch/brace-expansion":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/eslint/file-entry-cache/flat-cache":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/minimatch":
+          - msg: removed
+          - loc: 1,1
+      - babel-code-frame/chalk/strip-ansi/ansi-regex:
+          - msg: removed
+          - loc: 1,1
+      - tslint/chalk/ansi-styles/color-convert:
+          - msg: removed
+          - loc: 1,1
+      - tslint/chalk/supports-color/has-flag:
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/dtslint/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/scope-manager/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/@typescript-eslint/visitor-keys/eslint-visitor-keys":
+          - msg: removed
+          - loc: 1,1
+      - "@definitelytyped/eslint-plugin/@typescript-eslint/utils/@typescript-eslint/typescript-estree/minimatch/brace-expansion":
+          - msg: removed
+          - loc: 1,1
+      - tslint/chalk/ansi-styles/color-convert/color-name:
+          - msg: removed
+          - loc: 1,1
+package.json:
+  constraints:
+    - "@mdn/browser-compat-data":
+        - msg: removed
+        - loc: 1,1
+    - "@types/bun":
+        - msg: removed
+        - loc: 1,1
+    - "@typescript-eslint/eslint-plugin":
+        - msg: removed
+        - loc: 1,1
+    - "@typescript-eslint/parser":
+        - msg: removed
+        - loc: 1,1
+    - "@vscode/debugadapter":
+        - msg: removed
+        - loc: 1,1
+    - autoprefixer:
+        - msg: removed
+        - loc: 1,1
+    - caniuse-lite:
+        - msg: removed
+        - loc: 1,1
+    - eslint:
+        - msg: removed
+        - loc: 1,1
+    - eslint-config-prettier:
+        - msg: removed
+        - loc: 1,1
+packages/bun-types/package.json:
+  constraints:
+    - "@biomejs/biome":
+        - msg: removed
+        - loc: 1,1
+    - "@definitelytyped/dtslint":
+        - msg: removed
+        - loc: 1,1
+    - "@definitelytyped/eslint-plugin":
+        - msg: removed
+        - loc: 1,1
+packages/@types/bun/package.json:
+  constraints:
+    - bun-types:
+        - new: "workspace:"
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 7
+  timestamp: 2025-05-17T12:21:28Z
+  hashing_strategy: raw
+  data_hash: dcd047bce2145028efefc429034f5dfb5634a8ca31748396e4fd7a5385dda426
+  prev_meta_hash: 1c029ba974913a607ac4c4ec46c499b8b42ae4107fc85cf7f0d86a274edc1f42
+  meta_hash: f6e9b48d7dd35dd1fde82b94e971a7998440957840e64e2fe89ada33b10426be
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/prop-types":
+          - msg: removed
+          - loc: 1,1
+      - "@types/react":
+          - old: 18.3.21
+          - new: 19.1.8
+          - loc: 79,10
+package.json:
+  constraints:
+    - "@types/react":
+        - msg: removed
+        - loc: 1,1
+packages/bun-types/package.json:
+  constraints:
+    - "@types/react":
+        - new: ^19
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 8
+  timestamp: 2025-07-03T03:06:43Z
+  hashing_strategy: raw
+  data_hash: 03dc9db0ac3071ad252bf8771ef906f5507e25f46a7b03cecf1569e0109f876a
+  prev_meta_hash: f6e9b48d7dd35dd1fde82b94e971a7998440957840e64e2fe89ada33b10426be
+  meta_hash: bd9c9f6154e2bca8520cd098885673800ab8d4ebd110dad2f7fa071a7e8f9eed
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@lezer/common":
+          - new: 1.2.3
+          - loc: 73,10
+      - "@lezer/cpp":
+          - new: 1.1.3
+          - loc: 76,10
+      - "@lezer/highlight":
+          - new: 1.2.1
+          - loc: 79,10
+      - "@lezer/lr":
+          - new: 1.4.2
+          - loc: 82,10
+package.json:
+  constraints:
+    - "@lezer/common":
+        - new: ^1.2.3
+        - loc: 1,1
+    - "@lezer/cpp":
+        - new: ^1.1.3
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 9
+  timestamp: 2025-07-21T23:26:07Z
+  hashing_strategy: raw
+  data_hash: 7c0c9dbe77e59fe767c4fd9cdfe129151b3a0bb65295539ce5d54a8f17e3f0f1
+  prev_meta_hash: bd9c9f6154e2bca8520cd098885673800ab8d4ebd110dad2f7fa071a7e8f9eed
+  meta_hash: b5cc7562f40188ae65690cf70f4185d3307a3dc7f706ac3c40b045c2724805cc
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/node":
+          - old: 22.15.18
+          - new: 24.1.0
+          - loc: 178,10
+      - camel-case:
+          - old: 4.1.2
+          - new: 3.0.0
+          - loc: 205,10
+      - param-case:
+          - old: 3.0.4
+          - new: 2.1.1
+          - loc: 349,10
+      - prettier:
+          - old: 3.5.3
+          - new: 3.6.2
+          - loc: 361,10
+      - prettier-plugin-organize-imports:
+          - old: 4.1.0
+          - new: 4.2.0
+          - loc: 364,10
+      - undici-types:
+          - old: 6.21.0
+          - new: 7.8.0
+          - loc: 406,10
+      - upper-case:
+          - old: 2.0.2
+          - new: 1.1.3
+          - loc: 415,10
+      - "@octokit/app":
+          - new: 14.1.0
+          - loc: 85,10
+      - "@octokit/auth-app":
+          - new: 6.1.4
+          - loc: 88,10
+      - "@octokit/auth-oauth-app":
+          - new: 7.1.0
+          - loc: 91,10
+      - "@octokit/auth-oauth-device":
+          - new: 6.1.0
+          - loc: 94,10
+      - "@octokit/auth-oauth-user":
+          - new: 4.1.0
+          - loc: 97,10
+      - "@octokit/auth-token":
+          - new: 4.0.0
+          - loc: 100,10
+      - "@octokit/auth-unauthenticated":
+          - new: 5.0.1
+          - loc: 103,10
+      - "@octokit/core":
+          - new: 5.2.2
+          - loc: 106,10
+      - "@octokit/endpoint":
+          - new: 9.0.6
+          - loc: 109,10
+      - "@octokit/graphql":
+          - new: 7.1.1
+          - loc: 112,10
+      - "@octokit/oauth-app":
+          - new: 6.1.0
+          - loc: 115,10
+      - "@octokit/oauth-authorization-url":
+          - new: 6.0.2
+          - loc: 118,10
+      - "@octokit/oauth-methods":
+          - new: 4.1.0
+          - loc: 121,10
+      - "@octokit/openapi-types":
+          - new: 24.2.0
+          - loc: 124,10
+      - "@octokit/plugin-paginate-graphql":
+          - new: 4.0.1
+          - loc: 127,10
+      - "@octokit/plugin-paginate-rest":
+          - new: 11.4.4-cjs.2
+          - loc: 130,10
+      - "@octokit/plugin-rest-endpoint-methods":
+          - new: 13.3.2-cjs.1
+          - loc: 133,10
+      - "@octokit/plugin-retry":
+          - new: 6.1.0
+          - loc: 136,10
+      - "@octokit/plugin-throttling":
+          - new: 8.2.0
+          - loc: 139,10
+      - "@octokit/request":
+          - new: 8.4.1
+          - loc: 142,10
+      - "@octokit/request-error":
+          - new: 5.1.1
+          - loc: 145,10
+      - "@octokit/types":
+          - new: 13.10.0
+          - loc: 148,10
+      - "@octokit/webhooks":
+          - new: 12.3.2
+          - loc: 151,10
+      - "@octokit/webhooks-methods":
+          - new: 5.1.1
+          - loc: 154,10
+      - "@octokit/webhooks-types":
+          - new: 7.6.1
+          - loc: 157,10
+      - "@sentry/types":
+          - new: 7.120.3
+          - loc: 160,10
+      - "@types/aws-lambda":
+          - new: 8.10.152
+          - loc: 163,10
+      - "@types/btoa-lite":
+          - new: 1.0.2
+          - loc: 166,10
+      - "@types/jsonwebtoken":
+          - new: 9.0.10
+          - loc: 172,10
+      - "@types/ms":
+          - new: 2.1.0
+          - loc: 175,10
+      - aggregate-error:
+          - new: 3.1.0
+          - loc: 184,10
+      - before-after-hook:
+          - new: 2.2.3
+          - loc: 187,10
+      - bottleneck:
+          - new: 2.19.5
+          - loc: 190,10
+      - btoa-lite:
+          - new: 1.0.0
+          - loc: 193,10
+      - buffer-equal-constant-time:
+          - new: 1.0.1
+          - loc: 196,10
+      - bun-tracestrings:
+          - new: github:oven-sh/bun.report#912ca63
+          - loc: 199,10
+      - clean-css:
+          - new: 4.2.4
+          - loc: 214,10
+      - clean-stack:
+          - new: 2.2.0
+          - loc: 217,10
+      - commander:
+          - new: 2.20.3
+          - loc: 220,10
+      - deprecation:
+          - new: 2.3.1
+          - loc: 229,10
+      - detect-libc:
+          - new: 2.0.4
+          - loc: 232,10
+      - ecdsa-sig-formatter:
+          - new: 1.0.11
+          - loc: 238,10
+      - he:
+          - new: 1.2.0
+          - loc: 244,10
+      - html-minifier:
+          - new: 4.0.0
+          - loc: 250,10
+      - indent-string:
+          - new: 4.0.0
+          - loc: 253,10
+      - jsonwebtoken:
+          - new: 9.0.2
+          - loc: 259,10
+      - jwa:
+          - new: 1.4.2
+          - loc: 262,10
+      - jws:
+          - new: 3.2.2
+          - loc: 265,10
+      - lightningcss:
+          - new: 1.30.1
+          - loc: 268,10
+      - lightningcss-darwin-arm64:
+          - new: 1.30.1
+          - loc: 271,10
+      - lightningcss-darwin-x64:
+          - new: 1.30.1
+          - loc: 274,10
+      - lightningcss-freebsd-x64:
+          - new: 1.30.1
+          - loc: 277,10
+      - lightningcss-linux-arm-gnueabihf:
+          - new: 1.30.1
+          - loc: 280,10
+      - lightningcss-linux-arm64-gnu:
+          - new: 1.30.1
+          - loc: 283,10
+      - lightningcss-linux-arm64-musl:
+          - new: 1.30.1
+          - loc: 286,10
+      - lightningcss-linux-x64-gnu:
+          - new: 1.30.1
+          - loc: 289,10
+      - lightningcss-linux-x64-musl:
+          - new: 1.30.1
+          - loc: 292,10
+      - lightningcss-win32-arm64-msvc:
+          - new: 1.30.1
+          - loc: 295,10
+      - lightningcss-win32-x64-msvc:
+          - new: 1.30.1
+          - loc: 298,10
+      - lodash.includes:
+          - new: 4.3.0
+          - loc: 301,10
+      - lodash.isboolean:
+          - new: 3.0.3
+          - loc: 304,10
+      - lodash.isinteger:
+          - new: 4.0.4
+          - loc: 307,10
+      - lodash.isnumber:
+          - new: 3.0.3
+          - loc: 310,10
+      - lodash.isplainobject:
+          - new: 4.0.6
+          - loc: 313,10
+      - lodash.isstring:
+          - new: 4.0.1
+          - loc: 316,10
+      - lodash.once:
+          - new: 4.1.1
+          - loc: 319,10
+      - lru-cache:
+          - new: 11.0.2-patch.1
+          - loc: 328,10
+      - marked:
+          - new: 12.0.2
+          - loc: 331,10
+      - ms:
+          - new: 2.1.3
+          - loc: 337,10
+      - octokit:
+          - new: 3.2.2
+          - loc: 343,10
+      - once:
+          - new: 1.4.0
+          - loc: 346,10
+      - relateurl:
+          - new: 0.2.7
+          - loc: 373,10
+      - safe-buffer:
+          - new: 5.2.1
+          - loc: 376,10
+      - semver:
+          - new: 7.7.2
+          - loc: 382,10
+      - source-map:
+          - new: 0.6.1
+          - loc: 391,10
+      - uglify-js:
+          - new: 3.19.3
+          - loc: 403,10
+      - universal-github-app-jwt:
+          - new: 1.2.0
+          - loc: 409,10
+      - universal-user-agent:
+          - new: 6.0.1
+          - loc: 412,10
+      - wrappy:
+          - new: 1.0.2
+          - loc: 421,10
+      - "@octokit/app/@octokit/plugin-paginate-rest":
+          - new: 9.2.2
+          - loc: 424,10
+      - "@octokit/app/@octokit/types":
+          - new: 12.6.0
+          - loc: 427,10
+      - "@octokit/auth-unauthenticated/@octokit/types":
+          - new: 12.6.0
+          - loc: 430,10
+      - "@octokit/plugin-throttling/@octokit/types":
+          - new: 12.6.0
+          - loc: 433,10
+      - "@octokit/webhooks/@octokit/webhooks-methods":
+          - new: 4.1.0
+          - loc: 436,10
+      - camel-case/no-case:
+          - new: 2.3.2
+          - loc: 439,10
+      - change-case/camel-case:
+          - new: 4.1.2
+          - loc: 442,10
+      - change-case/param-case:
+          - new: 3.0.4
+          - loc: 445,10
+      - constant-case/upper-case:
+          - new: 2.0.2
+          - loc: 448,10
+      - param-case/no-case:
+          - new: 2.3.2
+          - loc: 451,10
+      - "@octokit/app/@octokit/types/@octokit/openapi-types":
+          - new: 20.0.0
+          - loc: 454,10
+      - "@octokit/auth-unauthenticated/@octokit/types/@octokit/openapi-types":
+          - new: 20.0.0
+          - loc: 457,10
+      - "@octokit/plugin-throttling/@octokit/types/@octokit/openapi-types":
+          - new: 20.0.0
+          - loc: 460,10
+      - camel-case/no-case/lower-case:
+          - new: 1.1.4
+          - loc: 463,10
+      - param-case/no-case/lower-case:
+          - new: 1.1.4
+          - loc: 466,10
+package.json:
+  constraints:
+    - bun-tracestrings:
+        - new: github:oven-sh/bun.report#912ca63e26c51429d3e6799aa2a6ab079b188fd8
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 10
+  timestamp: 2025-07-25T06:32:54Z
+  hashing_strategy: raw
+  data_hash: f2f8c9bd6b8652d4076a36c47595b139984563f012607bf6f85ce12406e7e5e6
+  prev_meta_hash: b5cc7562f40188ae65690cf70f4185d3307a3dc7f706ac3c40b045c2724805cc
+  meta_hash: aed4d212dc6733e37b97778dee24e32c08148f0f9b9904f27a7ec571490614e8
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - typescript:
+          - old: 5.8.3
+          - new: 5.9.2
+          - loc: 400,10
+      - bun-tracestrings/typescript:
+          - new: 5.8.3
+          - loc: 439,10
+package.json:
+  constraints:
+    - typescript:
+        - old: ^5.7.2
+        - new: 5.9.2
+        - loc: 1,1
+packages/bun-types/package.json:
+  constraints:
+    - typescript:
+        - msg: removed
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 11
+  timestamp: 2025-08-01T23:09:44Z
+  hashing_strategy: raw
+  data_hash: fe3681503ab8a480b12b955f581b8b4f28a1283ee5211958f5c4659b248913fe
+  prev_meta_hash: aed4d212dc6733e37b97778dee24e32c08148f0f9b9904f27a7ec571490614e8
+  meta_hash: 45400093953409e1f04213d4f64364989ced8f9f5a83ec404402865b496b05d9
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@sentry/types":
+          - old: 7.120.3
+          - new: 7.120.4
+          - loc: 160,10
+      - "@types/node":
+          - old: 24.1.0
+          - new: 24.2.1
+          - loc: 178,10
+      - "@types/react":
+          - old: 19.1.8
+          - new: 19.1.10
+          - loc: 181,10
+      - undici-types:
+          - old: 7.8.0
+          - new: 7.10.0
+          - loc: 406,10
+      - bun-tracestrings/typescript:
+          - msg: removed
+          - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 12
+  timestamp: 2025-08-15T05:42:05Z
+  hashing_strategy: raw
+  data_hash: 518fc0b5eb0fd637c798645d6f4da5b4da49aec76fc237212f847c49edbc046b
+  prev_meta_hash: 45400093953409e1f04213d4f64364989ced8f9f5a83ec404402865b496b05d9
+  meta_hash: e1af7f91ecf58a60534c9f4d192400b5cd4d46518879460a694060fc0584e38c
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - prettier-plugin-organize-imports:
+          - old: 4.2.0
+          - new: 4.3.0
+          - loc: 364,10
+package.json:
+  constraints:
+    - esbuild:
+        - old: ^0.21.4
+        - new: ^0.21.5
+        - loc: 1,1
+    - mitata:
+        - old: ^0.1.11
+        - new: ^0.1.14
+        - loc: 1,1
+    - prettier:
+        - old: ^3.5.3
+        - new: ^3.6.2
+        - loc: 1,1
+    - prettier-plugin-organize-imports:
+        - old: ^4.0.0
+        - new: ^4.3.0
+        - loc: 1,1
+    - source-map-js:
+        - old: ^1.2.0
+        - new: ^1.2.1
+        - loc: 1,1
+    - "@types/bun":
+        - new: workspace:*
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 13
+  timestamp: 2025-10-04T00:10:28Z
+  hashing_strategy: raw
+  data_hash: de802eef1e4ecb44c5d0bf9f17d740736379c9deb5c4ece1a6107815d8b4a542
+  prev_meta_hash: e1af7f91ecf58a60534c9f4d192400b5cd4d46518879460a694060fc0584e38c
+  meta_hash: 150dd80746a51541d6f52e6a8b99a5a6d75ab31f4e97d8325933fd4843973dcf
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/react":
+          - msg: removed
+          - loc: 1,1
+      - csstype:
+          - msg: removed
+          - loc: 1,1
+packages/bun-types/package.json:
+  constraints:
+    - "@types/react":
+        - msg: removed
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 14
+  timestamp: 2025-11-10T23:50:45Z
+  hashing_strategy: raw
+  data_hash: 5d6b18b7929a30677bea19ab4a8fc9cfb9969f70731dea84ff38d4402b686b8d
+  prev_meta_hash: 150dd80746a51541d6f52e6a8b99a5a6d75ab31f4e97d8325933fd4843973dcf
+  meta_hash: c9f67d1072be9bc73daa9555ed8d0b23fb03cc1ef05f67a20c2c5493b5c5155b
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@lezer/common":
+          - old: 1.2.3
+          - new: 1.3.0
+          - loc: 73,10
+      - "@lezer/highlight":
+          - old: 1.2.1
+          - new: 1.2.3
+          - loc: 79,10
+      - "@lezer/lr":
+          - old: 1.4.2
+          - new: 1.4.3
+          - loc: 82,10
+      - "@types/aws-lambda":
+          - old: 8.10.152
+          - new: 8.10.159
+          - loc: 163,10
+      - "@types/node":
+          - old: 24.2.1
+          - new: 24.10.1
+          - loc: 178,10
+      - detect-libc:
+          - old: 2.0.4
+          - new: 2.1.2
+          - loc: 226,10
+      - lightningcss:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 262,10
+      - lightningcss-darwin-arm64:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 268,10
+      - lightningcss-darwin-x64:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 271,10
+      - lightningcss-freebsd-x64:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 274,10
+      - lightningcss-linux-arm-gnueabihf:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 277,10
+      - lightningcss-linux-arm64-gnu:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 280,10
+      - lightningcss-linux-arm64-musl:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 283,10
+      - lightningcss-linux-x64-gnu:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 286,10
+      - lightningcss-linux-x64-musl:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 289,10
+      - lightningcss-win32-arm64-msvc:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 292,10
+      - lightningcss-win32-x64-msvc:
+          - old: 1.30.1
+          - new: 1.30.2
+          - loc: 295,10
+      - semver:
+          - old: 7.7.2
+          - new: 7.7.3
+          - loc: 379,10
+      - undici-types:
+          - old: 7.10.0
+          - new: 7.16.0
+          - loc: 403,10
+      - lightningcss-android-arm64:
+          - new: 1.30.2
+          - loc: 265,10
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 15
+  timestamp: 2025-11-25T04:16:03Z
+  hashing_strategy: raw
+  data_hash: 076da0ec0e09addeed2472efcefc7ba003dfe5ff3c8951f47c1560bf9634b7a7
+  prev_meta_hash: c9f67d1072be9bc73daa9555ed8d0b23fb03cc1ef05f67a20c2c5493b5c5155b
+  meta_hash: e7318d56c45eac5e56097bcd025374d38c8c1d288bffda381478a8ae12890834
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/node":
+          - old: 24.10.1
+          - new: 25.0.0
+          - loc: 178,10
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 16
+  timestamp: 2025-12-11T02:15:55Z
+  hashing_strategy: raw
+  data_hash: 4be7e47bb1cbe37d70cf4a72b0eba4e17260c7b571bc709be5ae1af42a5d17d8
+  prev_meta_hash: e7318d56c45eac5e56097bcd025374d38c8c1d288bffda381478a8ae12890834
+  meta_hash: 04cb04903d34fcb7231d4534863b86b1a1b2b8b46dcd200950e0d3ebdeeeb04d
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - typescript:
+          - old: 5.9.2
+          - new: 6.0.2
+          - loc: 397,10
+      - bun-tracestrings/typescript:
+          - new: 5.9.2
+          - loc: 436,10
+package.json:
+  constraints:
+    - typescript:
+        - old: 5.9.2
+        - new: 6.0.2
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 17
+  timestamp: 2026-03-25T16:39:54Z
+  hashing_strategy: raw
+  data_hash: 2f605f1590ab71c44be9b0284e83245ae3b23fc9ce1ef87415e2dd72b75e79bc
+  prev_meta_hash: 04cb04903d34fcb7231d4534863b86b1a1b2b8b46dcd200950e0d3ebdeeeb04d
+  meta_hash: 668e2b4b5b29d1b2e9e0f043d9ec5384cadac0b55f9cda7152347c1ffd870917
+---
+lockfiles:
+  bun.lock:
+    packages: []
+Cargo.toml:
+  constraints:
+    - rust-argon2:
+        - new: "3.0"
+        - loc: 1,1
+    - bcrypt:
+        - new: "0.19"
+        - loc: 1,1
+    - getrandom:
+        - new: "0.4"
+        - loc: 1,1
+    - strum:
+        - new: '{ version = "0.26", features ='
+        - loc: 1,1
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 18
+  timestamp: 2026-06-04T07:00:00Z
+  hashing_strategy: raw
+  data_hash: 3ca9596d17a952466e2366ee4eb7079ea93d511e1e182eaaffcb19809e6d0acf
+  prev_meta_hash: 668e2b4b5b29d1b2e9e0f043d9ec5384cadac0b55f9cda7152347c1ffd870917
+  meta_hash: 42cab8a0330bc4c35813de686bf4286cd02a9326a20eabea9d969f3d050cc39d
