@@ -14,7 +14,7 @@
 	},
 	"private": true,
 	"devDependencies": {
-		"@biomejs/biome": "2.5.6",
+		"@biomejs/biome": "2.5.9",
 		"@types/bun": "latest",
 		"typescript": "^7.0.2"
 	},
