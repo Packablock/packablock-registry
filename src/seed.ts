@@ -197,7 +197,7 @@ async function runSeeder() {
 		},
 		{
 			id: 7,
-			owner: "Packablock",
+			owner: "packablock",
 			repo: "demo",
 			registration_token: "tok_demo_123",
 			created_at: new Date().toISOString(),
