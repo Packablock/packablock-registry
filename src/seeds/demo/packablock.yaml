@@ -1,0 +1,150 @@
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/lodash": 4.17.25
+      - "@types/node": 22.20.1
+      - lodash: 4.18.1
+      - typescript: 5.9.3
+      - typescript-service: workspace:packages/typescript-service
+      - undici-types: 6.21.0
+      - zod: 3.25.76
+package.json:
+  constraints:
+    - typescript: ^5.5.0
+    - "@types/node": ^22.0.0
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 0
+  timestamp: 2026-08-26T02:21:05.272Z
+  hashing_strategy: raw
+  data_hash: 6c0643315be7c7286745ce91554a524954901ea0d48de44d18b532cc24d7f70e
+  prev_meta_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+  meta_hash: 2eb4c01f33f0ae27f4fea46cadee4ae647e94fc910123452f8f22431156c3b91
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - "@types/node":
+          - old: 22.20.1
+          - new: 26.3.0
+          - loc: 8,9
+      - undici-types:
+          - old: 6.21.0
+          - new: 8.3.0
+          - loc: 27,67
+package.json:
+  constraints:
+    - typescript: ^5.5.0
+    - "@types/node": ^26.2.0
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 1
+  timestamp: 2026-08-26T02:48:34.909Z
+  hashing_strategy: raw
+  data_hash: 5f6263c79f6a30dd00f42e3718b9d744a4acc5443e8115ecb7aa26d8de8306a9
+  prev_meta_hash: 2eb4c01f33f0ae27f4fea46cadee4ae647e94fc910123452f8f22431156c3b91
+  meta_hash: 534f41b3b93dece864dffadc78867a810be9072ffe985d8fcb3d24ebe2543af3
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - typescript:
+          - old: 5.9.3
+          - new: 7.0.2
+          - loc: 9,9
+      - "@typescript/typescript-aix-ppc64":
+          - new: 7.0.2
+          - loc: 29,5
+      - "@typescript/typescript-darwin-arm64":
+          - new: 7.0.2
+          - loc: 31,5
+      - "@typescript/typescript-darwin-x64":
+          - new: 7.0.2
+          - loc: 33,5
+      - "@typescript/typescript-freebsd-arm64":
+          - new: 7.0.2
+          - loc: 35,5
+      - "@typescript/typescript-freebsd-x64":
+          - new: 7.0.2
+          - loc: 37,5
+      - "@typescript/typescript-linux-arm":
+          - new: 7.0.2
+          - loc: 39,5
+      - "@typescript/typescript-linux-arm64":
+          - new: 7.0.2
+          - loc: 41,5
+      - "@typescript/typescript-linux-loong64":
+          - new: 7.0.2
+          - loc: 43,5
+      - "@typescript/typescript-linux-mips64el":
+          - new: 7.0.2
+          - loc: 45,5
+      - "@typescript/typescript-linux-ppc64":
+          - new: 7.0.2
+          - loc: 47,5
+      - "@typescript/typescript-linux-riscv64":
+          - new: 7.0.2
+          - loc: 49,5
+      - "@typescript/typescript-linux-s390x":
+          - new: 7.0.2
+          - loc: 51,5
+      - "@typescript/typescript-linux-x64":
+          - new: 7.0.2
+          - loc: 53,5
+      - "@typescript/typescript-netbsd-arm64":
+          - new: 7.0.2
+          - loc: 55,5
+      - "@typescript/typescript-netbsd-x64":
+          - new: 7.0.2
+          - loc: 57,5
+      - "@typescript/typescript-openbsd-arm64":
+          - new: 7.0.2
+          - loc: 59,5
+      - "@typescript/typescript-openbsd-x64":
+          - new: 7.0.2
+          - loc: 61,5
+      - "@typescript/typescript-sunos-x64":
+          - new: 7.0.2
+          - loc: 63,5
+      - "@typescript/typescript-win32-arm64":
+          - new: 7.0.2
+          - loc: 65,5
+      - "@typescript/typescript-win32-x64":
+          - new: 7.0.2
+          - loc: 67,5
+package.json:
+  constraints:
+    - typescript: ^7.0.2
+    - "@types/node": ^26.2.0
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 2
+  timestamp: 2026-08-26T02:59:12.193Z
+  hashing_strategy: raw
+  data_hash: ddad84ee03d79f706d60613f585efcdc360db546b3e7833202d5fb2382cc66c1
+  prev_meta_hash: 534f41b3b93dece864dffadc78867a810be9072ffe985d8fcb3d24ebe2543af3
+  meta_hash: 1f0c1de0f979bb711b7b67c1055750d59bbeb939f7983e6b884c33d671fca65e
+---
+lockfiles:
+  bun.lock:
+    packages:
+      - zod:
+          - old: 3.25.76
+          - new: 4.4.3
+          - loc: 17,9
+package.json:
+  constraints:
+    - typescript: ^7.0.2
+    - "@types/node": ^26.2.0
+---
+$yaml-chain-meta:
+  version: 1.0.0
+  block_index: 3
+  timestamp: 2026-08-26T03:00:53.681Z
+  hashing_strategy: raw
+  data_hash: 31e0940458d8f09734acea6d28a63da4d9dc83c67352cb5df4be3b756c90a2e8
+  prev_meta_hash: 1f0c1de0f979bb711b7b67c1055750d59bbeb939f7983e6b884c33d671fca65e
+  meta_hash: d7e95ee61ae8a48deef6e374e8c15af11fee331cc179921015232c3e3c0f0c66

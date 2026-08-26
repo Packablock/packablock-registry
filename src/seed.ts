@@ -195,6 +195,18 @@ async function runSeeder() {
 			pinned_public_key: null,
 			project_id: "rails-e2e-demo",
 		},
+		{
+			id: 7,
+			owner: "Packablock",
+			repo: "demo",
+			registration_token: "tok_demo_123",
+			created_at: new Date().toISOString(),
+			is_premium: 0,
+			verification_status: "none",
+			challenge_nonce: null,
+			pinned_public_key: null,
+			project_id: "supply-chain-defense",
+		},
 	];
 
 	const insertRepo = db.prepare(`
@@ -610,6 +622,44 @@ async function runSeeder() {
 		);
 	} else {
 		console.log("⚠️ Rails E2E chain file not found in packablock-demo!");
+	}
+
+	let demoRepoDir = path.join(process.cwd(), "src", "seeds", "demo");
+	if (!fs.existsSync(demoRepoDir)) {
+		demoRepoDir = path.join(
+			process.cwd(),
+			"..",
+			"demo",
+		);
+	}
+	const demoChainPath = path.join(demoRepoDir, "packablock.yaml");
+
+	if (fs.existsSync(demoChainPath)) {
+		console.log("📖 Importing Demo E2E chain...");
+		const demoContent = fs.readFileSync(demoChainPath, "utf8");
+		const demoDocs = splitRawDocuments(demoContent);
+		const demoBlockCount = demoDocs.length / 2;
+		const lastDemoDoc = demoDocs[demoDocs.length - 1];
+		if (lastDemoDoc === undefined) {
+			throw new Error("Demo chain is empty");
+		}
+		const demoMetaObj = YAML.parse(lastDemoDoc)?.["$yaml-chain-meta"];
+		const demoLastHash = demoMetaObj?.meta_hash;
+
+		console.log(
+			`  Demo E2E block count: ${demoBlockCount}, last hash: ${demoLastHash}`,
+		);
+
+		// Insert active log for Repo 7 (Packablock/demo)
+		db.run(
+			`
+			INSERT INTO logs (repo_id, chain_content, block_count, last_block_hash, updated_at)
+			VALUES (?, ?, ?, ?, ?)
+		`,
+			[7, demoContent, demoBlockCount, demoLastHash, new Date().toISOString()],
+		);
+	} else {
+		console.log("⚠️ Demo E2E chain file not found!");
 	}
 
 	// 5. Seed Integration Events Dashboard logs
