@@ -86,7 +86,7 @@ async function runSeeder() {
 	const projects = [
 		{
 			id: "supply-chain-defense",
-			name: "Supply Chain Defense Panel",
+			name: "Demo",
 			created_at: new Date().toISOString(),
 		},
 		{
@@ -132,7 +132,7 @@ async function runSeeder() {
 			challenge_nonce: "nonce_signer_123",
 			pinned_public_key:
 				"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAR/xZWsxU3ULctSIu/K7zOzj6HPsKz09mofAGHaQArx developer@packablock.com",
-			project_id: "supply-chain-defense",
+			project_id: null,
 		},
 		{
 			id: 2,
