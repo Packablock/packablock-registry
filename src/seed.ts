@@ -201,7 +201,7 @@ async function runSeeder() {
 			repo: "demo",
 			registration_token: "tok_demo_123",
 			created_at: new Date().toISOString(),
-			is_premium: 0,
+			is_premium: 1,
 			verification_status: "none",
 			challenge_nonce: null,
 			pinned_public_key: null,
