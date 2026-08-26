@@ -626,11 +626,7 @@ async function runSeeder() {
 
 	let demoRepoDir = path.join(process.cwd(), "src", "seeds", "demo");
 	if (!fs.existsSync(demoRepoDir)) {
-		demoRepoDir = path.join(
-			process.cwd(),
-			"..",
-			"demo",
-		);
+		demoRepoDir = path.join(process.cwd(), "..", "demo");
 	}
 	const demoChainPath = path.join(demoRepoDir, "packablock.yaml");
 
