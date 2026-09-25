@@ -267,7 +267,10 @@ async function runSeeder() {
 	const block1_0 = createValidChainPair(
 		0,
 		prevHash1,
-		{},
+		{
+			"bun.lockb": { version: 1, dependencies: 42 },
+			"package.json": { name: "packablock-signer", version: "1.0.0" }
+		},
 		{
 			ssh_fingerprint: "SHA256:6iz0DBVAEGHOi6th+GYtd+t2/GoETMXrkT8V/jWa6og",
 			git_actor: "developer@packablock.com",
@@ -280,7 +283,9 @@ async function runSeeder() {
 	const block1_1 = createValidChainPair(
 		1,
 		prevHash1,
-		{},
+		{
+			"package-lock.json": { name: "packablock-signer", lockfileVersion: 3, packages: 120 }
+		},
 		{
 			oidc_claims: {
 				actor: "agy-github-runner",
@@ -297,7 +302,10 @@ async function runSeeder() {
 	const block1_2 = createValidChainPair(
 		2,
 		prevHash1,
-		{},
+		{
+			"bun.lockb": { version: 1, dependencies: 45 },
+			"Gemfile.lock": { rails: "8.0.0" }
+		},
 		{
 			oidc_claims: {
 				actor: "contributor-1-github-runner",
@@ -325,28 +333,116 @@ async function runSeeder() {
 		0,
 		lastHashEpoch0,
 		{
-			genesis_rollover: true,
+			chain_event: "genesis_rollover",
+			rollover_reason: "Annual cryptographic root rotation & key audit",
+			rollover_authority: "Packablock Root CA Sentinel",
+			previous_epoch: 0,
+			"bun.lockb": {
+				version: 1,
+				dependencies: {
+					"@packablock/core": "^1.5.0",
+					"fastify": "^4.26.2",
+					"zod": "^3.22.4"
+				}
+			},
+			"package.json": {
+				name: "@packablock/pkablk-signer",
+				version: "1.1.0",
+				type: "module",
+				license: "Apache-2.0"
+			}
 		},
 		{
-			oidc_claims: { actor: "pkablk-rollover-cli" },
+			oidc_claims: { actor: "pkablk-rollover-cli", repository: "Packablock/packablock-client", workflow: "Epoch Migration" },
 			git_actor: "owner@packablock.com",
 		},
 	);
 	chain1_epoch1 += block1_3.chainFragment;
 	prevHash1 = block1_3.metaHash;
 
-	// Block #1 (GPG Signed - Epoch 1)
+	// Block #1 (GPG Signed Release - Epoch 1)
 	const block1_4 = createValidChainPair(
 		1,
 		prevHash1,
-		{},
 		{
-			gpg_signature: "GPG-SIGN-256-AUTHENTIC",
+			"package-lock.json": {
+				name: "@packablock/pkablk-signer",
+				version: "1.1.0",
+				lockfileVersion: 3,
+				packages: {
+					"": {
+						name: "@packablock/pkablk-signer",
+						version: "1.1.0",
+						license: "Apache-2.0",
+						dependencies: {
+							"@actions/core": "^1.10.1",
+							"@actions/github": "^6.0.0",
+							"yaml": "^2.4.1"
+						}
+					},
+					"node_modules/@actions/core": {
+						version: "1.10.1",
+						resolved: "https://registry.npmjs.org/@actions/core/-/core-1.10.1.tgz",
+						integrity: "sha512-3lBR9EDAY+iYIpTnT2x5cm/U9cgQH2x3MR277ZPUCJyF2PjY8KTV6jWqO5O1H+EDkwUvTuVD23wQ4aPHDCqkrw=="
+					},
+					"node_modules/@actions/github": {
+						version: "6.0.0",
+						resolved: "https://registry.npmjs.org/@actions/github/-/github-6.0.0.tgz",
+						integrity: "sha512-alScjKq0gkllU12ZmWfl095HSr+lUd88v3U4802cydkAlNRe8nO719e7eT5zViof87rN8bN60r1bU28c0m4KZw=="
+					}
+				}
+			},
+			"Gemfile.lock": {
+				GEM: {
+					remote: "https://rubygems.org/",
+					specs: {
+						rails: "8.0.0",
+						puma: "6.4.2",
+						propshaft: "1.1.0"
+					}
+				},
+				PLATFORMS: ["x86_64-linux"],
+				DEPENDENCIES: ["rails (~> 8.0.0)", "puma (>= 5.0)"],
+				RUBY_VERSION: "ruby 3.3.0p0"
+			}
+		},
+		{
+			gpg_signature: "GPG-SIGN-256-AUTHENTIC-KEY-9D72A",
 			git_actor: "owner@packablock.com",
 		},
 	);
 	chain1_epoch1 += "\n" + block1_4.chainFragment;
-	const finalHash1 = block1_4.metaHash;
+	prevHash1 = block1_4.metaHash;
+
+	// Block #2 (Dependency Bump & Attestation Checkpoint - Epoch 1)
+	const block1_5 = createValidChainPair(
+		2,
+		prevHash1,
+		{
+			"bun.lockb": {
+				version: 1,
+				dependencies: {
+					"@packablock/core": "^1.5.2",
+					"fastify": "^4.28.1",
+					"zod": "^3.23.8",
+					"typescript": "^5.5.4"
+				}
+			},
+			attestation: {
+				predicate_type: "https://slsa.dev/provenance/v1",
+				builder: { id: "https://github.com/Packablock/packablock-client/.github/workflows/ci.yml@refs/heads/main" },
+				materials: [
+					{ uri: "git+https://github.com/Packablock/packablock-client@9b4e3a8", digest: { sha1: "9b4e3a8f9c1" } }
+				]
+			}
+		},
+		{
+			oidc_claims: { actor: "agy-github-runner", repository: "Packablock/packablock-client", workflow: "Attestation Sync" },
+			git_actor: "agy@packablock.com",
+		}
+	);
+	chain1_epoch1 += "\n" + block1_5.chainFragment;
+	const finalHash1 = block1_5.metaHash;
 
 	// Insert active log for Repo 1
 	db.run(
@@ -354,7 +450,7 @@ async function runSeeder() {
 		INSERT INTO logs (repo_id, chain_content, block_count, last_block_hash, updated_at)
 		VALUES (?, ?, ?, ?, ?)
 	`,
-		[1, chain1_epoch1, 2, finalHash1, new Date().toISOString()],
+		[1, chain1_epoch1, 3, finalHash1, new Date().toISOString()],
 	);
 
 	let demoDir = path.join(process.cwd(), "src", "seeds", "example-rollover");
