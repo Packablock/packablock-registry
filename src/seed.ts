@@ -269,7 +269,7 @@ async function runSeeder() {
 		prevHash1,
 		{
 			"bun.lockb": { version: 1, dependencies: 42 },
-			"package.json": { name: "packablock-signer", version: "1.0.0" }
+			"package.json": { name: "packablock-signer", version: "1.0.0" },
 		},
 		{
 			ssh_fingerprint: "SHA256:6iz0DBVAEGHOi6th+GYtd+t2/GoETMXrkT8V/jWa6og",
@@ -284,7 +284,11 @@ async function runSeeder() {
 		1,
 		prevHash1,
 		{
-			"package-lock.json": { name: "packablock-signer", lockfileVersion: 3, packages: 120 }
+			"package-lock.json": {
+				name: "packablock-signer",
+				lockfileVersion: 3,
+				packages: 120,
+			},
 		},
 		{
 			oidc_claims: {
@@ -304,7 +308,7 @@ async function runSeeder() {
 		prevHash1,
 		{
 			"bun.lockb": { version: 1, dependencies: 45 },
-			"Gemfile.lock": { rails: "8.0.0" }
+			"Gemfile.lock": { rails: "8.0.0" },
 		},
 		{
 			oidc_claims: {
@@ -341,19 +345,23 @@ async function runSeeder() {
 				version: 1,
 				dependencies: {
 					"@packablock/core": "^1.5.0",
-					"fastify": "^4.26.2",
-					"zod": "^3.22.4"
-				}
+					fastify: "^4.26.2",
+					zod: "^3.22.4",
+				},
 			},
 			"package.json": {
 				name: "@packablock/pkablk-signer",
 				version: "1.1.0",
 				type: "module",
-				license: "Apache-2.0"
-			}
+				license: "Apache-2.0",
+			},
 		},
 		{
-			oidc_claims: { actor: "pkablk-rollover-cli", repository: "Packablock/packablock-client", workflow: "Epoch Migration" },
+			oidc_claims: {
+				actor: "pkablk-rollover-cli",
+				repository: "Packablock/packablock-client",
+				workflow: "Epoch Migration",
+			},
 			git_actor: "owner@packablock.com",
 		},
 	);
@@ -377,20 +385,24 @@ async function runSeeder() {
 						dependencies: {
 							"@actions/core": "^1.10.1",
 							"@actions/github": "^6.0.0",
-							"yaml": "^2.4.1"
-						}
+							yaml: "^2.4.1",
+						},
 					},
 					"node_modules/@actions/core": {
 						version: "1.10.1",
-						resolved: "https://registry.npmjs.org/@actions/core/-/core-1.10.1.tgz",
-						integrity: "sha512-3lBR9EDAY+iYIpTnT2x5cm/U9cgQH2x3MR277ZPUCJyF2PjY8KTV6jWqO5O1H+EDkwUvTuVD23wQ4aPHDCqkrw=="
+						resolved:
+							"https://registry.npmjs.org/@actions/core/-/core-1.10.1.tgz",
+						integrity:
+							"sha512-3lBR9EDAY+iYIpTnT2x5cm/U9cgQH2x3MR277ZPUCJyF2PjY8KTV6jWqO5O1H+EDkwUvTuVD23wQ4aPHDCqkrw==",
 					},
 					"node_modules/@actions/github": {
 						version: "6.0.0",
-						resolved: "https://registry.npmjs.org/@actions/github/-/github-6.0.0.tgz",
-						integrity: "sha512-alScjKq0gkllU12ZmWfl095HSr+lUd88v3U4802cydkAlNRe8nO719e7eT5zViof87rN8bN60r1bU28c0m4KZw=="
-					}
-				}
+						resolved:
+							"https://registry.npmjs.org/@actions/github/-/github-6.0.0.tgz",
+						integrity:
+							"sha512-alScjKq0gkllU12ZmWfl095HSr+lUd88v3U4802cydkAlNRe8nO719e7eT5zViof87rN8bN60r1bU28c0m4KZw==",
+					},
+				},
 			},
 			"Gemfile.lock": {
 				GEM: {
@@ -398,13 +410,13 @@ async function runSeeder() {
 					specs: {
 						rails: "8.0.0",
 						puma: "6.4.2",
-						propshaft: "1.1.0"
-					}
+						propshaft: "1.1.0",
+					},
 				},
 				PLATFORMS: ["x86_64-linux"],
 				DEPENDENCIES: ["rails (~> 8.0.0)", "puma (>= 5.0)"],
-				RUBY_VERSION: "ruby 3.3.0p0"
-			}
+				RUBY_VERSION: "ruby 3.3.0p0",
+			},
 		},
 		{
 			gpg_signature: "GPG-SIGN-256-AUTHENTIC-KEY-9D72A",
@@ -423,23 +435,32 @@ async function runSeeder() {
 				version: 1,
 				dependencies: {
 					"@packablock/core": "^1.5.2",
-					"fastify": "^4.28.1",
-					"zod": "^3.23.8",
-					"typescript": "^5.5.4"
-				}
+					fastify: "^4.28.1",
+					zod: "^3.23.8",
+					typescript: "^5.5.4",
+				},
 			},
 			attestation: {
 				predicate_type: "https://slsa.dev/provenance/v1",
-				builder: { id: "https://github.com/Packablock/packablock-client/.github/workflows/ci.yml@refs/heads/main" },
+				builder: {
+					id: "https://github.com/Packablock/packablock-client/.github/workflows/ci.yml@refs/heads/main",
+				},
 				materials: [
-					{ uri: "git+https://github.com/Packablock/packablock-client@9b4e3a8", digest: { sha1: "9b4e3a8f9c1" } }
-				]
-			}
+					{
+						uri: "git+https://github.com/Packablock/packablock-client@9b4e3a8",
+						digest: { sha1: "9b4e3a8f9c1" },
+					},
+				],
+			},
 		},
 		{
-			oidc_claims: { actor: "agy-github-runner", repository: "Packablock/packablock-client", workflow: "Attestation Sync" },
+			oidc_claims: {
+				actor: "agy-github-runner",
+				repository: "Packablock/packablock-client",
+				workflow: "Attestation Sync",
+			},
 			git_actor: "agy@packablock.com",
-		}
+		},
 	);
 	chain1_epoch1 += "\n" + block1_5.chainFragment;
 	const finalHash1 = block1_5.metaHash;
