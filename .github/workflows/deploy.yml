@@ -10,9 +10,9 @@ permissions:
   id-token: 'write' # Required for Workload Identity Federation OIDC token request
 
 env:
-  PROJECT_ID: 'adwb-4444'
+  PROJECT_ID: 'packablock-prod'
   REGION: 'us-west1'
-  GAR_REPO: 'us-west1-docker.pkg.dev/adwb-4444/packablock-images'
+  GAR_REPO: 'us-west1-docker.pkg.dev/packablock-prod/packablock-images'
   SERVICE_NAME: 'packablock-registry'
 
 jobs:
@@ -28,8 +28,8 @@ jobs:
         id: auth
         uses: google-github-actions/auth@v3
         with:
-          workload_identity_provider: 'projects/450487093520/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
-          service_account: 'gh-deployer@adwb-4444.iam.gserviceaccount.com'
+          workload_identity_provider: 'projects/867441258076/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
+          service_account: 'gh-deployer@packablock-prod.iam.gserviceaccount.com'
 
       # 2. Authenticate Docker with Artifact Registry
       - name: Configure Docker
